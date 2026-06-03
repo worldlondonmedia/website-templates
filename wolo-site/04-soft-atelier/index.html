@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%232A2118%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23B85447%22%3EW%3C%2Ftext%3E%3C%2Fsvg%3E">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>World London Media: From Content to Impact</title>
+
+<meta name="description" content="World London Media (WoLo) is a premium visual production studio. Brand films, advertising, 3D visualization and drone cinematography from London and Izmir. Ideas move. Quality shows." />
+<meta name="theme-color" content="#F2EBDD" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="World London Media" />
+<meta property="og:title" content="World London Media: From Content to Impact" />
+<meta property="og:description" content="A premium visual production studio. We craft impressions that endure. Your brand, telling its own story." />
+<meta property="og:url" content="https://worldlondonmedia.com/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1200&q=80" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"World London Media","alternateName":"WoLo","description":"A premium visual production studio crafting brand films, advertising, 3D visualization and drone cinematography.","url":"https://worldlondonmedia.com","email":"info@worldlondonmedia.com","slogan":"Ideas move. Quality shows.","areaServed":["London, United Kingdom","Izmir, Turkey"],"sameAs":["https://worldlondonmedia.com"]}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Albert+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:    #F2EBDD;
+    --paper-2:  #E8DECB;
+    --paper-3:  #D9CDB4;
+    --ink:      #2A2118;
+    --terra:    #B85447;
+    --terra-2:  #9F4035;
+    --sage:     #6B7B5C;
+    --gold:     #B69267;
+    --display:  'Italiana', serif;
+    --serif:    'Cormorant Garamond', serif;
+    --sans:     'Albert Sans', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  /* Lenis aktifken native smooth scroll'u kapat (cakismasin) */
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-stopped { overflow: hidden; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--terra); color: var(--paper); }
+
+  /* KAGIT GRAIN DOKUSU */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='1' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.13 0 0 0 0 0.09 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    padding: 28px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 1000;
+    background: rgba(242, 235, 221, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(42, 33, 24, 0.08);
+    transition: transform .5s cubic-bezier(.4,0,.2,1), background .4s;
+  }
+  nav.nav-hidden { transform: translateY(-100%); }
+  .logo {
+    font-family: var(--display);
+    font-size: 24px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  .logo .dot { color: var(--terra); margin: 0 4px; }
+  .nav-right { display: flex; align-items: center; gap: 28px; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    position: relative;
+    padding: 4px 0;
+    transition: color .35s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 0; height: 1px;
+    background: var(--terra);
+    transition: width .5s cubic-bezier(.65,0,.35,1);
+  }
+  .nav-links a:hover { color: var(--terra); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+    transition: color .25s, border-color .25s;
+  }
+  .nav-cta:hover { color: var(--terra); border-color: var(--terra); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding: 160px 48px 60px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Hero ambient video/poster arka plani (cok yumusak, krem ustu) */
+  .hero-bg {
+    position: absolute; inset: -8%;
+    z-index: 0;
+    overflow: hidden;
+    will-change: transform;
+  }
+  .hero-bg video, .hero-bg .hero-bg-poster {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: saturate(0.85) contrast(0.95);
+  }
+  .hero-bg .hero-bg-poster {
+    background-size: cover; background-position: center;
+    background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1600&q=80');
+  }
+  /* Krem tint overlay: video sicak ve okunabilir kalsin */
+  .hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(242,235,221,0.78) 0%, rgba(242,235,221,0.55) 45%, rgba(242,235,221,0.85) 100%),
+      radial-gradient(circle at 78% 30%, rgba(184,84,71,0.10), transparent 55%);
+  }
+  .hero > *:not(.hero-bg) { position: relative; z-index: 1; }
+
+  .hero-eyebrow {
+    position: absolute;
+    top: 132px; left: 48px;
+    z-index: 1;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terra);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--terra);
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(58px, 8.6vw, 150px);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .hero h1 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--terra);
+  }
+  .hero h1 .word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+  /* Hero kelime reveal: saf CSS (GSAP/raf'tan bagimsiz, fail-safe).
+     Mask icinde asagidan yukseler. Baslik asla gizli takili kalmaz. */
+  .hero h1 .word > span {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: heroWordRise 1.2s cubic-bezier(.16,1,.3,1) forwards;
+  }
+  .hero h1 .word:nth-child(1) > span { animation-delay: 0.35s; }
+  .hero h1 .word:nth-child(2) > span { animation-delay: 0.43s; }
+  .hero h1 .word:nth-child(3) > span { animation-delay: 0.51s; }
+  .hero h1 .word:nth-child(4) > span { animation-delay: 0.59s; }
+  .hero h1 .word:nth-child(5) > span { animation-delay: 0.67s; }
+  .hero h1 .word:nth-child(6) > span { animation-delay: 0.75s; }
+  @keyframes heroWordRise { to { transform: translateY(0); } }
+
+  /* Hero metin/gorsel reveal: saf CSS, fade + rise */
+  .hero-eyebrow, .hero-blurb, .hero-motto, .hero-bottom, .hero-image {
+    opacity: 0;
+    animation: heroFade 1.1s cubic-bezier(.2,.85,.3,1) forwards;
+  }
+  .hero-eyebrow { animation-delay: 0.2s; }
+  .hero-image   { animation-delay: 0.5s; animation-name: heroFadeScale; }
+  .hero-blurb   { animation-delay: 0.95s; }
+  .hero-motto   { animation-delay: 1.15s; }
+  .hero-bottom  { animation-delay: 1.3s; }
+  @keyframes heroFade { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes heroFadeScale { from { opacity: 0; transform: scale(1.05); } to { opacity: 1; transform: scale(1); } }
+
+  .hero-blurb {
+    max-width: 400px;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 300;
+    margin-top: 32px;
+  }
+  .hero-blurb em { font-style: italic; color: var(--terra); }
+
+  .hero-motto {
+    margin-top: 28px;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-motto::before { content: ''; width: 28px; height: 1px; background: var(--sage); }
+
+  .hero-image {
+    aspect-ratio: 4/5;
+    background:
+      linear-gradient(135deg, rgba(184, 84, 71, 0.1) 0%, rgba(107, 123, 92, 0.15) 100%),
+      url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 1px;
+    position: relative;
+    box-shadow: 0 30px 80px -20px rgba(42, 33, 24, 0.28);
+    will-change: transform;
+  }
+  .hero-image-cap {
+    position: absolute;
+    bottom: -32px; left: 0;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink);
+    opacity: 0.7;
+  }
+  .hero-image-cap span { display: block; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-style: normal; opacity: 0.6; margin-top: 4px; }
+
+  .hero-bottom {
+    grid-column: 1 / -1;
+    display: flex; justify-content: space-between;
+    align-items: end;
+    padding-top: 80px;
+    border-top: 1px solid rgba(42, 33, 24, 0.15);
+    margin-top: 40px;
+  }
+  .hero-tags {
+    display: flex; gap: 32px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.7;
+    flex-wrap: wrap;
+  }
+  .hero-tags span::before { content: '◌'; color: var(--terra); margin-right: 8px; opacity: 0.7; }
+  .hero-scroll {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    opacity: 0.6;
+    display: flex; align-items: center; gap: 12px;
+    white-space: nowrap;
+  }
+  .hero-scroll::after {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--ink);
+    opacity: 0.4;
+  }
+
+  /* INTRO */
+  .intro {
+    padding: 160px 48px;
+    background: var(--paper);
+    position: relative;
+  }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 80px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .intro-label {
+    font-family: var(--sans);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--terra);
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .intro-label::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--terra);
+  }
+  .intro-title {
+    font-family: var(--display);
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+  }
+  .intro-title em { font-family: var(--serif); font-style: italic; color: var(--terra); }
+  .intro-body {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .intro-body em { font-style: italic; color: var(--terra); }
+  .intro-body p { margin-bottom: 24px; }
+  .intro-body p:last-child { margin-bottom: 0; }
+
+  /* APPROACH (services / disciplines) */
+  .approach {
+    padding: 120px 48px;
+    background: var(--paper-2);
+    position: relative;
+    overflow: hidden;
+  }
+  .approach::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(184, 84, 71, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .approach::after {
+    content: '';
+    position: absolute;
+    bottom: -200px; left: -200px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(107, 123, 92, 0.15), transparent 70%);
+    pointer-events: none;
+  }
+  .approach-head {
+    max-width: 1500px;
+    margin: 0 auto 80px;
+    position: relative;
+  }
+  .approach h2 {
+    font-family: var(--display);
+    font-size: clamp(44px, 6vw, 96px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin-top: 16px;
+    max-width: 1000px;
+  }
+  .approach h2 em { font-family: var(--serif); font-style: italic; font-weight: 300; color: var(--terra); }
+
+  .craft-list {
+    max-width: 1500px;
+    margin: 0 auto;
+    list-style: none;
+    position: relative;
+  }
+  .craft-row {
+    display: grid;
+    grid-template-columns: 80px 1.4fr 1fr 60px;
+    gap: 40px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(42, 33, 24, 0.15);
+    align-items: baseline;
+    cursor: pointer;
+    transition: padding-left .6s cubic-bezier(.65,0,.35,1);
+    position: relative;
+  }
+  .craft-row:last-child { border-bottom: 1px solid rgba(42, 33, 24, 0.15); }
+  .craft-row:hover { padding-left: 24px; }
+  .craft-row::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background: var(--terra);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .6s cubic-bezier(.65,0,.35,1);
+  }
+  .craft-row:hover::before { transform: scaleY(1); }
+  .craft-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--terra);
+  }
+  .craft-name {
+    font-family: var(--display);
+    font-size: clamp(30px, 3.6vw, 44px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    transition: color .35s;
+  }
+  .craft-row:hover .craft-name { color: var(--terra); }
+  .craft-desc {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: var(--ink);
+    opacity: 0.8;
+  }
+  .craft-arrow {
+    font-family: var(--display);
+    font-size: 24px;
+    text-align: right;
+    transition: transform .35s, color .35s;
+  }
+  .craft-row:hover .craft-arrow { transform: translateX(8px); color: var(--terra); }
+
+  /* GALLERY / SHOWREEL */
+  .gallery {
+    padding: 120px 48px;
+    background: var(--paper);
+    position: relative;
+  }
+  .gallery-head {
+    max-width: 1500px;
+    margin: 0 auto 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 32px;
+  }
+  .gallery h2 {
+    font-family: var(--display);
+    font-size: clamp(44px, 6vw, 96px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .gallery h2 em { font-family: var(--serif); font-style: italic; font-weight: 300; color: var(--terra); }
+  .gallery-link {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+    transition: color .3s, border-color .3s;
+    white-space: nowrap;
+  }
+  .gallery-link:hover { color: var(--terra); border-color: var(--terra); }
+
+  .gallery-grid {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+  }
+  .g-item {
+    cursor: pointer;
+    background: none; border: none; padding: 0; text-align: left;
+    font: inherit; color: inherit; width: 100%;
+    display: block;
+  }
+  .g-frame {
+    background: #1a1a1a;
+    overflow: hidden;
+    position: relative;
+    border-radius: 1px;
+    will-change: transform;
+  }
+  .g-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.1s cubic-bezier(.65,0,.35,1), filter 1.1s cubic-bezier(.65,0,.35,1);
+    will-change: transform;
+  }
+  .g-item:hover .g-frame img { transform: scale(1.05); }
+  /* Oynat ikonu (video-hazir kareler) */
+  .g-frame .play {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%) scale(0.9);
+    width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(242,235,221,0.92);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0;
+    transition: opacity .5s ease, transform .5s cubic-bezier(.2,.85,.3,1);
+    z-index: 2;
+  }
+  .g-frame .play::after {
+    content: ''; width: 0; height: 0;
+    border-left: 14px solid var(--ink);
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    margin-left: 4px;
+  }
+  .g-item:hover .g-frame .play { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  .g-frame::after {
+    content: attr(data-caption);
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 18px 16px;
+    background: linear-gradient(to top, rgba(42,33,24,0.85), transparent);
+    color: var(--paper);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity .55s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .g-item:hover .g-frame::after { opacity: 1; }
+  .g-cap {
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .g-cap h3 {
+    font-family: var(--display);
+    font-size: 24px;
+    line-height: 1;
+  }
+  .g-cap .meta {
+    font-family: var(--sans);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.7;
+    white-space: nowrap;
+  }
+  .g-1 { grid-column: 1 / 7; }
+  .g-1 .g-frame { aspect-ratio: 4/5; }
+  .g-2 { grid-column: 8 / 13; padding-top: 80px; }
+  .g-2 .g-frame { aspect-ratio: 3/4; }
+  .g-3 { grid-column: 1 / 5; padding-top: 40px; }
+  .g-3 .g-frame { aspect-ratio: 1/1; }
+  .g-4 { grid-column: 6 / 13; }
+  .g-4 .g-frame { aspect-ratio: 16/10; }
+  .g-5 { grid-column: 2 / 8; padding-top: 60px; }
+  .g-5 .g-frame { aspect-ratio: 5/4; }
+  .g-6 { grid-column: 9 / 13; padding-top: 40px; }
+  .g-6 .g-frame { aspect-ratio: 4/5; }
+
+  /* QUOTE / MANIFESTO */
+  .quote-section {
+    padding: 200px 48px;
+    background: var(--ink);
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .quote-mark {
+    font-family: var(--display);
+    font-size: 240px;
+    line-height: 0.6;
+    color: var(--terra);
+    opacity: 0.3;
+    margin-bottom: -40px;
+  }
+  .quote-body {
+    font-family: var(--display);
+    font-size: clamp(34px, 4.4vw, 72px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .quote-body em { font-family: var(--serif); font-style: italic; font-weight: 300; color: var(--paper-3); }
+  /* Manifesto kelime kelime reveal icin */
+  .quote-body .qw { display: inline-block; opacity: 0.18; transition: opacity .05s; }
+  .quote-attr {
+    margin-top: 48px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    opacity: 0.65;
+  }
+  .quote-attr::before { content: ''; }
+
+  /* PROCESS */
+  .process {
+    padding: 120px 48px;
+    background: var(--paper-2);
+    position: relative;
+  }
+  .process-head {
+    max-width: 1500px;
+    margin: 0 auto 80px;
+  }
+  .process h2 {
+    font-family: var(--display);
+    font-size: clamp(44px, 6vw, 96px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .process h2 em { font-family: var(--serif); font-style: italic; font-weight: 300; color: var(--terra); }
+  .process-wrap {
+    max-width: 1500px;
+    margin: 0 auto;
+    position: relative;
+  }
+  /* Adimlar arasi baglanti cizgisi (SVG) */
+  .process-line {
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    height: 2px;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .process-line path { fill: none; stroke: var(--terra); stroke-width: 1.5; opacity: 0.45; stroke-dasharray: 6 7; }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    position: relative;
+    z-index: 1;
+  }
+  .pcard {
+    background: var(--paper);
+    border-radius: 2px;
+    padding: 36px 28px;
+    transition: transform .5s cubic-bezier(.2,.85,.3,1), box-shadow .5s;
+    position: relative;
+  }
+  .pcard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px -20px rgba(42, 33, 24, 0.15);
+  }
+  .pcard-no {
+    font-family: var(--display);
+    font-size: 56px;
+    line-height: 1;
+    color: var(--terra);
+    margin-bottom: 24px;
+    font-variant-numeric: tabular-nums;
+  }
+  .pcard h3 {
+    font-family: var(--display);
+    font-size: 28px;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+  .pcard p {
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 300;
+    opacity: 0.85;
+  }
+  .pcard-tag {
+    margin-top: 24px;
+    font-family: var(--sans);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--terra);
+    opacity: 0.8;
+  }
+
+  /* STATS */
+  .stats {
+    padding: 110px 48px;
+    background: var(--paper);
+  }
+  .stats-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    text-align: center;
+  }
+  .stat {
+    border-top: 1px solid rgba(42, 33, 24, 0.15);
+    padding-top: 28px;
+  }
+  .stat-num {
+    font-family: var(--display);
+    font-size: clamp(48px, 5vw, 78px);
+    line-height: 1;
+    color: var(--terra);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-num .suffix { font-family: var(--serif); font-style: italic; }
+  .stat-label {
+    margin-top: 16px;
+    font-family: var(--sans);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.7;
+  }
+
+  /* CARED-FOR (clients) */
+  .cared {
+    padding: 120px 48px;
+    background: var(--paper-2);
+    text-align: center;
+  }
+  .cared-label {
+    font-family: var(--sans);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--terra);
+    margin-bottom: 24px;
+  }
+  .cared h2 {
+    font-family: var(--display);
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 60px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cared h2 em { font-family: var(--serif); font-style: italic; font-weight: 300; color: var(--terra); }
+  .clients {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(42, 33, 24, 0.15);
+  }
+  .client {
+    padding: 44px 24px;
+    border-bottom: 1px solid rgba(42, 33, 24, 0.15);
+    border-right: 1px solid rgba(42, 33, 24, 0.15);
+    font-family: var(--display);
+    font-size: 28px;
+    transition: background .35s, color .35s;
+    cursor: default;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .client:nth-child(3n) { border-right: none; }
+  .client:hover { background: var(--terra); color: var(--paper); }
+  .client em { font-family: var(--serif); font-style: italic; font-weight: 300; }
+
+  /* CONTACT */
+  .contact {
+    padding: 160px 48px 80px;
+    background: var(--terra);
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+  }
+  .contact-left { position: relative; }
+  .contact-eyebrow {
+    font-family: var(--sans);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--paper);
+    margin-bottom: 32px;
+    opacity: 0.8;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .contact-eyebrow::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--paper);
+    opacity: 0.7;
+  }
+  .contact h2 {
+    font-family: var(--display);
+    font-size: clamp(48px, 8vw, 120px);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+  }
+  .contact h2 em { font-family: var(--serif); font-style: italic; font-weight: 300; color: var(--paper-3); }
+
+  .contact-info {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  .contact-info a {
+    color: var(--paper);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(242, 235, 221, 0.4);
+    padding-bottom: 1px;
+    transition: border-color .3s, opacity .3s;
+  }
+  .contact-info a:hover { border-color: var(--paper); opacity: 0.85; }
+  .contact-info-block { margin-bottom: 32px; }
+  .contact-info-block .label {
+    font-family: var(--sans);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--paper-3);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .contact-bottom {
+    max-width: 1400px;
+    margin: 80px auto 0;
+    padding-top: 32px;
+    border-top: 1px solid rgba(242, 235, 221, 0.25);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-family: var(--sans);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.85;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 80px 48px 32px;
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+  }
+  .foot-brand {
+    font-family: var(--display);
+    font-size: clamp(64px, 12vw, 200px);
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+  }
+  .foot-brand em { font-family: var(--serif); font-style: italic; font-weight: 300; color: var(--terra); }
+  .foot-meta {
+    border-top: 1px solid rgba(242, 235, 221, 0.15);
+    padding-top: 20px;
+    display: flex; justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-family: var(--sans);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.65;
+  }
+
+  /* REVEAL (GSAP yoksa CSS fallback) */
+  .reveal { opacity: 0; transform: translateY(40px); }
+
+  /* LIGHTBOX */
+  .lightbox {
+    position: fixed; inset: 0;
+    z-index: 10002;
+    background: rgba(42, 33, 24, 0.94);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 5vh 5vw;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s ease;
+  }
+  .lightbox.open { opacity: 1; pointer-events: auto; }
+  .lightbox-inner {
+    position: relative;
+    max-width: 1200px; width: 100%;
+    transform: scale(0.96);
+    transition: transform .55s cubic-bezier(.2,.85,.3,1);
+  }
+  .lightbox.open .lightbox-inner { transform: scale(1); }
+  .lightbox img {
+    width: 100%; max-height: 82vh; object-fit: contain;
+    display: block;
+    border-radius: 2px;
+    box-shadow: 0 40px 100px -30px rgba(0,0,0,0.6);
+  }
+  .lightbox-cap {
+    margin-top: 20px;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    color: var(--paper);
+  }
+  .lightbox-cap h3 { font-family: var(--display); font-size: 26px; }
+  .lightbox-cap .meta { font-family: var(--sans); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.7; }
+  .lightbox-close {
+    position: absolute; top: -48px; right: 0;
+    background: none; border: none; cursor: pointer;
+    color: var(--paper);
+    font-family: var(--display); font-size: 34px; line-height: 1;
+    opacity: 0.8; transition: opacity .25s, transform .25s;
+  }
+  .lightbox-close:hover { opacity: 1; transform: rotate(90deg); }
+
+  /* V2 PACK */
+  .skip-link { position: absolute; top: -100px; left: 8px; background: var(--terra); color: var(--paper); padding: 8px 16px; font-family: var(--sans); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--terra); outline-offset: 4px; }
+  .lang-toggle button:focus-visible { outline-offset: 0; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 2px; background: var(--terra); z-index: 10000; transition: width .12s ease-out; pointer-events: none; }
+  .back-top { position: fixed; bottom: 24px; right: 24px; width: 48px; height: 48px; border-radius: 50%; background: var(--paper); color: var(--ink); border: 1px solid var(--terra); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .35s, background .25s, color .25s, transform .35s; z-index: 999; font-family: var(--display); font-size: 20px; }
+  .back-top.visible { opacity: 1; pointer-events: auto; }
+  .back-top:hover { background: var(--terra); color: var(--paper); transform: translateY(-3px); }
+
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--ink);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--ink);
+    border: none;
+    padding: 5px 11px;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all .25s;
+  }
+  .lang-toggle button.active { background: var(--ink); color: var(--paper); }
+
+  /* prefers-reduced-motion: tum agir hareketi kapat, icerik TAM gorunur kalsin */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .quote-body .qw { opacity: 1 !important; }
+    .hero h1 .word > span { transform: none !important; }
+    .hero-eyebrow, .hero-blurb, .hero-motto, .hero-bottom, .hero-image { opacity: 1 !important; transform: none !important; }
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 22px; }
+    .logo { font-size: 19px; }
+    .nav-links { display: none; }
+    .nav-right { gap: 16px; }
+    .nav-cta { font-size: 14px; }
+    .hero { grid-template-columns: 1fr; padding: 124px 22px 40px; gap: 40px; align-items: start; }
+    /* .hero > *:not(.hero-bg) relative+top'u ezmek icin ozgullugu yuksek tut */
+    .hero .hero-eyebrow { position: relative; top: auto; left: auto; margin-bottom: 8px; order: -1; }
+    .hero h1 { font-size: clamp(46px, 13vw, 72px); }
+    .hero-bottom { flex-direction: column; gap: 24px; align-items: flex-start; }
+    .hero-tags { gap: 14px; }
+    .intro-grid, .gallery-head, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+    .gallery-head { align-items: flex-start; }
+    .gallery-grid > * { grid-column: 1 / -1 !important; padding-top: 0 !important; }
+    .craft-row { grid-template-columns: 44px 1fr 28px; gap: 20px; }
+    .craft-row .craft-desc { display: none; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .process-line { display: none; }
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+    .clients { grid-template-columns: 1fr 1fr; }
+    .client { font-size: 22px; padding: 32px 16px; }
+    .client:nth-child(3n) { border-right: 1px solid rgba(42, 33, 24, 0.15); }
+    .client:nth-child(2n) { border-right: none; }
+    .approach, .gallery, .contact, .quote-section, .process, .cared, .intro, .stats { padding-left: 22px; padding-right: 22px; }
+    .quote-section { padding-top: 130px; padding-bottom: 130px; }
+    .intro { padding-top: 110px; padding-bottom: 110px; }
+  }
+  @media (max-width: 600px) {
+    /* Mobilde nav sade kalsin: logo + dil. CTA'yi gizle (hero icinde zaten var) */
+    .nav-cta { display: none; }
+    .logo { font-size: 17px; }
+    nav { padding: 14px 18px; }
+    .hero { padding: 116px 18px 36px; }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 0.14em; flex-wrap: wrap; }
+    .hero-eyebrow span { white-space: normal; }
+    /* Mobilde yatay tasma olmasin: sadece dikeyde biraz pay (parallax icin) */
+    .hero-bg { left: 0; right: 0; top: -6%; bottom: -6%; }
+    /* Process kartlari mobilde tek sutun: tasma yok, okuma rahat */
+    .process-grid { grid-template-columns: 1fr; gap: 18px; }
+  }
+  @media (max-width: 520px) {
+    .clients { grid-template-columns: 1fr; }
+    .client, .client:nth-child(2n), .client:nth-child(3n) { border-right: none; }
+    .stats-grid { grid-template-columns: 1fr; gap: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link" data-i18n="skip">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<button class="back-top" aria-label="Back to top" data-i18n-aria="back_top">&#8593;</button>
+
+<nav>
+  <a href="../../index.html" class="logo" aria-label="World London Media">World<span class="dot">&middot;</span>London<span class="dot">&middot;</span>Media</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#approach" data-i18n="nav_approach">Disciplines</a></li>
+      <li><a href="#work" data-i18n="nav_work">Showreel</a></li>
+      <li><a href="#process" data-i18n="nav_process">Process</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Begin a project &rarr;</a>
+    <div class="lang-toggle" role="group" aria-label="Language / Dil">
+      <button data-l="en" type="button" aria-label="English" onclick="setLang('en')">EN</button>
+      <button data-l="tr" type="button" aria-label="Türkçe" onclick="setLang('tr')">TR</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <!-- Hero ambient arka plan: poster ile baslar, MP4 swap'i tek satir.
+       Gercek videoyu eklemek icin asagidaki <source>'u ac ve src'yi koy. -->
+  <div class="hero-bg" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="none"
+           poster="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1600&q=80">
+      <!-- <source src="REEL.mp4" type="video/mp4"> -->
+    </video>
+    <div class="hero-bg-poster"></div>
+  </div>
+
+  <div class="hero-eyebrow"><span data-i18n="hero_eyebrow">A visual production studio &middot; London &amp; Izmir</span></div>
+
+  <div class="hero-copy">
+    <h1 data-i18n="hero_h1">
+      <span class="word"><span>From</span></span>
+      <span class="word"><span>Content</span></span>
+      <span class="word"><span>to</span></span>
+      <span class="word"><span><em>Impact.</em></span></span>
+    </h1>
+    <p class="hero-blurb" data-i18n="hero_blurb">We craft impressions that endure. <em>Your brand, telling its own story</em> through film, advertising and design.</p>
+    <p class="hero-motto" data-i18n="hero_motto">Ideas move. Quality shows.</p>
+  </div>
+
+  <div class="hero-image" role="img" aria-label="WoLo brand film still">
+    <div class="hero-image-cap">
+      <span data-i18n="hero_cap_t">Brand film, in production</span>
+      <span data-i18n="hero_cap_s">London &middot; Izmir &middot; 2026</span>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <div class="hero-tags">
+      <span data-i18n="tag_1">Brand Films</span>
+      <span data-i18n="tag_2">Advertising</span>
+      <span data-i18n="tag_3">3D Visualization</span>
+      <span data-i18n="tag_4">Drone</span>
+    </div>
+    <div class="hero-scroll" data-i18n="hero_scroll">Scroll</div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="intro-grid">
+    <div>
+      <div class="intro-label" data-i18n="intro_label">A studio note</div>
+      <h2 class="intro-title" data-i18n="intro_title">The craft of <em>moving</em> people.</h2>
+    </div>
+    <div class="intro-body">
+      <p data-i18n="intro_p1">World London Media (WoLo) is a premium visual production studio working between <em>London and Izmir.</em> We turn brand ambition into film, advertising and design that audiences actually feel.</p>
+      <p data-i18n="intro_p2">We treat animation as a tool, not a goal. Every frame, every cut, every render exists to <em>carry the right emotion, accurately.</em> That is the whole discipline.</p>
+    </div>
+  </div>
+</section>
+
+<section class="approach" id="approach">
+  <div class="approach-head reveal">
+    <div class="intro-label" data-i18n="sec_app_label">&middot; What we make</div>
+    <h2 data-i18n="sec_app_h2">Six <em>disciplines,</em><br/>one obsession with quality.</h2>
+  </div>
+
+  <ul class="craft-list">
+    <li class="craft-row reveal">
+      <span class="craft-num">i.</span>
+      <span class="craft-name" data-i18n="cr1_name">Brand Films</span>
+      <span class="craft-desc" data-i18n="cr1_desc">Cinematic brand storytelling. Narrative, light and pace shaped so your brand says something worth remembering.</span>
+      <span class="craft-arrow" aria-hidden="true">&rarr;</span>
+    </li>
+    <li class="craft-row reveal">
+      <span class="craft-num">ii.</span>
+      <span class="craft-name" data-i18n="cr2_name">Advertising</span>
+      <span class="craft-desc" data-i18n="cr2_desc">Content for TV, digital and social. Campaigns built to perform, crafted so they never feel like an ad.</span>
+      <span class="craft-arrow" aria-hidden="true">&rarr;</span>
+    </li>
+    <li class="craft-row reveal">
+      <span class="craft-num">iii.</span>
+      <span class="craft-name" data-i18n="cr3_name">3D Visualization</span>
+      <span class="craft-desc" data-i18n="cr3_desc">Architectural renders and product modeling. Photoreal worlds and objects, built before they ever exist.</span>
+      <span class="craft-arrow" aria-hidden="true">&rarr;</span>
+    </li>
+    <li class="craft-row reveal">
+      <span class="craft-num">iv.</span>
+      <span class="craft-name" data-i18n="cr4_name">Corporate Film</span>
+      <span class="craft-desc" data-i18n="cr4_desc">Corporate storytelling with warmth. Company films, interviews and culture pieces that respect the audience.</span>
+      <span class="craft-arrow" aria-hidden="true">&rarr;</span>
+    </li>
+    <li class="craft-row reveal">
+      <span class="craft-num">v.</span>
+      <span class="craft-name" data-i18n="cr5_name">Commercial Production</span>
+      <span class="craft-desc" data-i18n="cr5_desc">Full commercial production. Concept, crew, locations and post, run end to end with one accountable team.</span>
+      <span class="craft-arrow" aria-hidden="true">&rarr;</span>
+    </li>
+    <li class="craft-row reveal">
+      <span class="craft-num">vi.</span>
+      <span class="craft-name" data-i18n="cr6_name">Drone Cinematography</span>
+      <span class="craft-desc" data-i18n="cr6_desc">Aerial perspectives. Licensed drone work that opens a scene, reveals a scale, and earns the wide shot.</span>
+      <span class="craft-arrow" aria-hidden="true">&rarr;</span>
+    </li>
+  </ul>
+</section>
+
+<section class="gallery" id="work">
+  <div class="gallery-head">
+    <div>
+      <div class="intro-label" data-i18n="sec_gal_label">&middot; Showreel</div>
+      <h2 data-i18n="sec_gal_h2">Selected work, in<br/><em>motion.</em></h2>
+    </div>
+    <a href="#contact" class="gallery-link" data-i18n="gal_link">Request the full reel &rarr;</a>
+  </div>
+
+  <div class="gallery-grid">
+    <button class="g-item g-1 reveal" type="button" aria-label="Open: Samsung brand film">
+      <div class="g-frame" data-caption="Brand film &middot; 60s + cutdowns" data-img="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1600&q=80" data-title="Samsung" data-meta="Brand Film · 2025">
+        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1200&q=80" alt="Cinematic brand film still, warm tones" loading="lazy" decoding="async" />
+        <span class="play" aria-hidden="true"></span>
+      </div>
+      <div class="g-cap"><h3>Samsung</h3><span class="meta" data-i18n="g1_meta">Brand Film &middot; 2025</span></div>
+    </button>
+    <button class="g-item g-2 reveal" type="button" aria-label="Open: Karaca advertising campaign">
+      <div class="g-frame" data-caption="TV + social campaign &middot; multi-market" data-img="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1400&q=80" data-title="Karaca" data-meta="Advertising · 2024">
+        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1000&q=80" alt="Product advertising still" loading="lazy" decoding="async" />
+        <span class="play" aria-hidden="true"></span>
+      </div>
+      <div class="g-cap"><h3>Karaca</h3><span class="meta" data-i18n="g2_meta">Advertising &middot; 2024</span></div>
+    </button>
+    <button class="g-item g-3 reveal" type="button" aria-label="Open: Le Cordon Bleu 3D visualization">
+      <div class="g-frame" data-caption="Architectural render &middot; interior set" data-img="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1400&q=80" data-title="Le Cordon Bleu" data-meta="3D Visualization · 2025">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1000&q=80" alt="3D architectural visualization render" loading="lazy" decoding="async" />
+        <span class="play" aria-hidden="true"></span>
+      </div>
+      <div class="g-cap"><h3>Le Cordon Bleu</h3><span class="meta" data-i18n="g3_meta">3D Visualization &middot; 2025</span></div>
+    </button>
+    <button class="g-item g-4 reveal" type="button" aria-label="Open: Yeni Raki drone cinematography">
+      <div class="g-frame" data-caption="Aerial film &middot; coastline, golden hour" data-img="https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=1600&q=80" data-title="Yeni Rakı" data-meta="Drone Cinematography · 2024">
+        <img src="https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=1400&q=80" alt="Aerial drone cinematography over coastline" loading="lazy" decoding="async" />
+        <span class="play" aria-hidden="true"></span>
+      </div>
+      <div class="g-cap"><h3>Yeni Rak&#305;</h3><span class="meta" data-i18n="g4_meta">Drone Cinematography &middot; 2024</span></div>
+    </button>
+    <button class="g-item g-5 reveal" type="button" aria-label="Open: LC Waikiki commercial production">
+      <div class="g-frame" data-caption="Commercial production &middot; studio + location" data-img="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1400&q=80" data-title="LC Waikiki" data-meta="Commercial Production · 2024">
+        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&q=80" alt="Fashion commercial production still" loading="lazy" decoding="async" />
+        <span class="play" aria-hidden="true"></span>
+      </div>
+      <div class="g-cap"><h3>LC Waikiki</h3><span class="meta" data-i18n="g5_meta">Commercial Production &middot; 2024</span></div>
+    </button>
+    <button class="g-item g-6 reveal" type="button" aria-label="Open: Barrus London corporate film">
+      <div class="g-frame" data-caption="Corporate film &middot; brand documentary" data-img="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1400&q=80" data-title="Barrus London" data-meta="Corporate Film · 2025">
+        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1000&q=80" alt="Corporate film cinematography still" loading="lazy" decoding="async" />
+        <span class="play" aria-hidden="true"></span>
+      </div>
+      <div class="g-cap"><h3>Barrus London</h3><span class="meta" data-i18n="g6_meta">Corporate Film &middot; 2025</span></div>
+    </button>
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+  <p class="quote-body" data-i18n="quote_body">We craft impressions that <em>endure.</em> Your brand, telling its own story.</p>
+  <p class="quote-attr" data-i18n="quote_attr">World London Media &middot; Ideas move. Quality shows.</p>
+</section>
+
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat reveal">
+      <div class="stat-num" data-count="6"><span class="num">0</span></div>
+      <div class="stat-label" data-i18n="stat1">Disciplines under one roof</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num" data-count="2"><span class="num">0</span></div>
+      <div class="stat-label" data-i18n="stat2">Studios: London &amp; Izmir</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num" data-count="120" data-suffix="+"><span class="num">0</span><span class="suffix">+</span></div>
+      <div class="stat-label" data-i18n="stat3">Films &amp; campaigns delivered</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num" data-count="14" data-suffix="+"><span class="num">0</span><span class="suffix">+</span></div>
+      <div class="stat-label" data-i18n="stat4">Years crafting visuals</div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="process-head reveal">
+    <div class="intro-label" data-i18n="sec_method_label">&middot; Method</div>
+    <h2 data-i18n="sec_method_h2">Four <em>movements,</em><br/>one rhythm.</h2>
+  </div>
+  <div class="process-wrap">
+    <svg class="process-line" preserveAspectRatio="none" viewBox="0 0 1000 4" aria-hidden="true">
+      <path d="M125 2 H 875" />
+    </svg>
+    <div class="process-grid">
+      <div class="pcard reveal">
+        <div class="pcard-no">01</div>
+        <h3 data-i18n="p1_h">Brief</h3>
+        <p data-i18n="p1_p">We listen first. Goals, audience, constraints and the feeling you are after. The brief becomes a shared map before anything else.</p>
+        <div class="pcard-tag" data-i18n="p1_tag">Discovery</div>
+      </div>
+      <div class="pcard reveal">
+        <div class="pcard-no">02</div>
+        <h3 data-i18n="p2_h">Concept</h3>
+        <p data-i18n="p2_p">Idea, references, treatment and look. We pin the creative direction and approve it together before a single frame is shot.</p>
+        <div class="pcard-tag" data-i18n="p2_tag">Direction</div>
+      </div>
+      <div class="pcard reveal">
+        <div class="pcard-no">03</div>
+        <h3 data-i18n="p3_h">Production</h3>
+        <p data-i18n="p3_p">Crew, cameras, drone and CG. We shoot and build with a small, accountable team that moves with intent.</p>
+        <div class="pcard-tag" data-i18n="p3_tag">Production</div>
+      </div>
+      <div class="pcard reveal">
+        <div class="pcard-no">04</div>
+        <h3 data-i18n="p4_h">Delivery</h3>
+        <p data-i18n="p4_p">Edit, grade, sound and every format you need. Delivered ready for screen, broadcast and social, graded for each.</p>
+        <div class="pcard-tag" data-i18n="p4_tag">Delivery</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cared">
+  <div class="cared-label" data-i18n="cared_label">&middot; Selected clients</div>
+  <h2 data-i18n="cared_h2">Trusted by brands that take their <em>image</em> seriously.</h2>
+  <div class="clients">
+    <div class="client">Samsung</div>
+    <div class="client"><em>Karaca</em></div>
+    <div class="client">LC Waikiki</div>
+    <div class="client">Yeni <em>Rak&#305;</em></div>
+    <div class="client">Le Cordon Bleu</div>
+    <div class="client">Barrus <em>London</em></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-left">
+      <div class="contact-eyebrow" data-i18n="contact_eyebrow">Begin a conversation</div>
+      <h2 data-i18n="contact_h2">Tell us your <em>story.</em><br/>We will make it move.</h2>
+    </div>
+    <div class="contact-info">
+      <div class="contact-info-block">
+        <span class="label" data-i18n="ci_email_l">Email</span>
+        <a href="mailto:info@worldlondonmedia.com">info@worldlondonmedia.com</a>
+      </div>
+      <div class="contact-info-block">
+        <span class="label" data-i18n="ci_wa_l">WhatsApp</span>
+        <a href="https://wa.me/447717115002" target="_blank" rel="noopener">+44 7717 115002</a>
+      </div>
+      <div class="contact-info-block">
+        <span class="label" data-i18n="ci_studio_l">Studios</span>
+        <span data-i18n="ci_studio_v">London, United Kingdom &middot; Izmir, T&uuml;rkiye</span>
+      </div>
+    </div>
+  </div>
+  <div class="contact-bottom">
+    <span data-i18n="cb_left">New projects &middot; booking 2026</span>
+    <span data-i18n="cb_right">Average response &middot; within 24 hours</span>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-brand">World<br/><em>London</em> Media</div>
+  <div class="foot-meta">
+    <span data-i18n="foot_left">&copy; 2026 World London Media &middot; Ideas move. Quality shows.</span>
+    <span data-i18n="foot_right">Set in Italiana &middot; Cormorant Garamond &middot; Albert Sans</span>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Work preview" aria-hidden="true">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" type="button" aria-label="Close" data-i18n-aria="close">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox-cap">
+      <h3 id="lightbox-title"></h3>
+      <span class="meta" id="lightbox-meta"></span>
+    </div>
+  </div>
+</div>
+
+<!-- Kutuphaneler: GSAP + ScrollTrigger + Lenis -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  // prefers-reduced-motion kontrolu: hareketin agir kismini kapatmak icin
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var hasGSAP = typeof window.gsap !== 'undefined';
+  var hasST = typeof window.ScrollTrigger !== 'undefined';
+  var hasLenis = typeof window.Lenis !== 'undefined';
+
+  // FAIL-SAFE: GSAP/ScrollTrigger yuklenemezse (CDN bloklu, offline, ag hatasi)
+  // .reveal ogeleri opacity:0'da takili KALMASIN. Icerik her kosulda gorunur olsun.
+  // (reduced-motion zaten CSS ile cozuluyor; bu, "kutuphane yok" senaryosu icin.)
+  if (prefersReduced || !hasGSAP || !hasST) {
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     1) LENIS smooth scroll + ScrollTrigger senkronu
+  --------------------------------------------------------------- */
+  var lenis = null;
+  if (hasLenis && hasGSAP && hasST && !prefersReduced) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    lenis = new Lenis({
+      duration: 1.15,
+      easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+      smoothWheel: true
+    });
+
+    // Lenis scroll'unu ScrollTrigger'a bagla
+    lenis.on('scroll', ScrollTrigger.update);
+
+    // GSAP ticker ile Lenis raf'i sur (kendi raf'ini kapat)
+    gsap.ticker.add(function (time) {
+      lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0);
+  } else if (hasGSAP && hasST) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  /* ---------------------------------------------------------------
+     2) Yumusak anchor scroll (Lenis varsa onun uzerinden)
+  --------------------------------------------------------------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      var target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      if (lenis) {
+        lenis.scrollTo(target, { offset: -10, duration: 1.2 });
+      } else {
+        target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth' });
+      }
+    });
+  });
+
+  /* ---------------------------------------------------------------
+     3) HERO: giris reveal SAF CSS ile (GSAP/raf'tan bagimsiz, fail-safe).
+        Burada sadece scroll'a bagli ambient parallax + Ken Burns var.
+        Bu efektler hero icerigini asla gizlemez.
+  --------------------------------------------------------------- */
+  if (hasGSAP && hasST && !prefersReduced) {
+    // Ambient parallax: hero arka plani ve gorsel yavasca kayar
+    gsap.to('.hero-bg', {
+      yPercent: 14, ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+    });
+    // Hero arka plan (video/poster) icin cok yavas Ken Burns (sonsuz dongu)
+    gsap.to('.hero-bg video, .hero-bg .hero-bg-poster', {
+      scale: 1.12, duration: 18, ease: 'none', repeat: -1, yoyo: true
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     4) Genel section reveal (stagger) + craft rows fromLeft
+  --------------------------------------------------------------- */
+  if (hasGSAP && hasST && !prefersReduced) {
+    // Standart .reveal ogeleri (hero disindakiler)
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      // Craft + gallery'yi ayri ele alacagiz
+      if (el.classList.contains('craft-row') || el.classList.contains('g-item')) return;
+      gsap.fromTo(el, { autoAlpha: 0, y: 48 }, {
+        autoAlpha: 1, y: 0, duration: 1.1, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 86%' }
+      });
+    });
+
+    // Craft rows: soldan kayarak gelir (fromLeft), stagger.
+    // Mobilde offset kucuk: overflow-x:hidden zaten klipler ama scrollWidth temiz kalsin.
+    var craftX = window.matchMedia('(max-width: 600px)').matches ? -20 : -56;
+    gsap.fromTo('.craft-row', { autoAlpha: 0, x: craftX }, {
+      autoAlpha: 1, x: 0, duration: 1.0, ease: 'power3.out', stagger: 0.12,
+      scrollTrigger: { trigger: '.craft-list', start: 'top 80%' }
+    });
+
+    // Gallery: stagger scale-in + blur-to-clear
+    document.querySelectorAll('.g-item').forEach(function (item, i) {
+      var frame = item.querySelector('.g-frame img');
+      gsap.fromTo(item, { autoAlpha: 0, y: 70, scale: 0.94 }, {
+        autoAlpha: 1, y: 0, scale: 1, duration: 1.2, ease: 'power3.out',
+        scrollTrigger: { trigger: item, start: 'top 90%' }
+      });
+      if (frame) {
+        gsap.fromTo(frame, { filter: 'blur(14px)' }, {
+          filter: 'blur(0px)', duration: 1.4, ease: 'power2.out',
+          scrollTrigger: { trigger: item, start: 'top 90%' }
+        });
+        // Hafif parallax: her gorsel kendi cercevesinde kayar
+        gsap.fromTo(frame, { yPercent: -6 }, {
+          yPercent: 6, ease: 'none',
+          scrollTrigger: { trigger: item, start: 'top bottom', end: 'bottom top', scrub: true }
+        });
+      }
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     5) Manifesto (quote): kelime kelime opaklik reveal (scrub)
+  --------------------------------------------------------------- */
+  (function manifesto() {
+    var quote = document.querySelector('.quote-body');
+    if (!quote) return;
+
+    function wrapWords() {
+      // data-i18n innerHTML degisince yeniden cagrilir
+      var html = quote.innerHTML;
+      // <em> etiketlerini koru, sadece metin dugumlerini kelimelere bol
+      var temp = document.createElement('div');
+      temp.innerHTML = html;
+      var out = '';
+      temp.childNodes.forEach(function (node) {
+        if (node.nodeType === 3) {
+          out += node.textContent.split(/(\s+)/).map(function (tok) {
+            if (tok.trim() === '') return tok;
+            return '<span class="qw">' + tok + '</span>';
+          }).join('');
+        } else if (node.nodeType === 1) {
+          var inner = node.textContent.split(/(\s+)/).map(function (tok) {
+            if (tok.trim() === '') return tok;
+            return '<span class="qw">' + tok + '</span>';
+          }).join('');
+          out += '<em>' + inner + '</em>';
+        }
+      });
+      quote.innerHTML = out;
+    }
+
+    quote._rewrap = wrapWords;
+    wrapWords();
+
+    if (hasGSAP && hasST && !prefersReduced) {
+      ScrollTrigger.create({
+        trigger: '.quote-section',
+        start: 'top 70%',
+        end: 'bottom 75%',
+        scrub: true,
+        onUpdate: function (self) {
+          var words = quote.querySelectorAll('.qw');
+          var p = self.progress;
+          words.forEach(function (w, i) {
+            var threshold = i / words.length;
+            w.style.opacity = p >= threshold ? '1' : (0.18 + (p / Math.max(threshold, 0.001)) * 0.4).toFixed(2);
+            if (p >= threshold) w.style.opacity = '1';
+          });
+        }
+      });
+    } else {
+      quote.querySelectorAll('.qw').forEach(function (w) { w.style.opacity = '1'; });
+    }
+  })();
+
+  /* ---------------------------------------------------------------
+     6) STATS sayac animasyonu (gorununce 0 -> hedef)
+  --------------------------------------------------------------- */
+  if (hasGSAP && hasST && !prefersReduced) {
+    document.querySelectorAll('.stat-num').forEach(function (el) {
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      var numEl = el.querySelector('.num');
+      var counter = { v: 0 };
+      gsap.to(counter, {
+        v: target, duration: 1.8, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' },
+        onUpdate: function () { numEl.textContent = Math.round(counter.v); }
+      });
+    });
+  } else {
+    document.querySelectorAll('.stat-num').forEach(function (el) {
+      var numEl = el.querySelector('.num');
+      numEl.textContent = el.getAttribute('data-count');
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     7) Process baglanti cizgisi: scroll'da cizilir
+  --------------------------------------------------------------- */
+  if (hasGSAP && hasST && !prefersReduced) {
+    var linePath = document.querySelector('.process-line path');
+    if (linePath) {
+      var len = linePath.getTotalLength();
+      linePath.style.strokeDasharray = len;
+      linePath.style.strokeDashoffset = len;
+      gsap.to(linePath, {
+        strokeDashoffset: 0, ease: 'none',
+        scrollTrigger: { trigger: '.process-grid', start: 'top 80%', end: 'center 60%', scrub: true }
+      });
+    }
+  }
+
+  /* ---------------------------------------------------------------
+     8) NAV: scroll yonune gore gizle/goster + ScrollTrigger refresh
+  --------------------------------------------------------------- */
+  (function navBehavior() {
+    var nav = document.querySelector('nav');
+    var lastY = 0;
+    function onScroll(y) {
+      if (y > 120 && y > lastY) nav.classList.add('nav-hidden');
+      else nav.classList.remove('nav-hidden');
+      lastY = y;
+    }
+    if (lenis) lenis.on('scroll', function (e) { onScroll(e.scroll); });
+    else window.addEventListener('scroll', function () { onScroll(window.scrollY); }, { passive: true });
+  })();
+
+  /* ---------------------------------------------------------------
+     9) Scroll progress + back-to-top
+  --------------------------------------------------------------- */
+  (function progressBar() {
+    var progress = document.querySelector('.scroll-progress');
+    var backTop = document.querySelector('.back-top');
+    function update(y) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = ((y / Math.max(max, 1)) * 100) + '%';
+      backTop.classList.toggle('visible', y > 600);
+    }
+    if (lenis) lenis.on('scroll', function (e) { update(e.scroll); });
+    else window.addEventListener('scroll', function () { update(window.scrollY); }, { passive: true });
+    backTop.addEventListener('click', function () {
+      if (lenis) lenis.scrollTo(0, { duration: 1.2 });
+      else window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+    });
+  })();
+
+  /* ---------------------------------------------------------------
+     10) LIGHTBOX (full-screen) galeri kareleri icin
+  --------------------------------------------------------------- */
+  (function lightbox() {
+    var lb = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lightbox-img');
+    var lbTitle = document.getElementById('lightbox-title');
+    var lbMeta = document.getElementById('lightbox-meta');
+    var lbClose = lb.querySelector('.lightbox-close');
+    var lastFocused = null;
+
+    function open(frame) {
+      lastFocused = document.activeElement;
+      lbImg.src = frame.getAttribute('data-img');
+      lbImg.alt = (frame.getAttribute('data-title') || '') + ', ' + (frame.getAttribute('data-meta') || '');
+      lbTitle.textContent = frame.getAttribute('data-title') || '';
+      lbMeta.textContent = frame.getAttribute('data-meta') || '';
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      if (lenis) lenis.stop();
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    }
+    function close() {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      if (lenis) lenis.start();
+      document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();
+    }
+
+    document.querySelectorAll('.g-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        open(item.querySelector('.g-frame'));
+      });
+    });
+    lbClose.addEventListener('click', close);
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lb.classList.contains('open')) close();
+    });
+  })();
+
+  /* ---------------------------------------------------------------
+     11) i18n: TR / EN toggle (iki dilde tam metin)
+  --------------------------------------------------------------- */
+  var i18n_tr = {
+    skip: 'İçeriğe geç',
+    nav_approach: 'Disiplinler', nav_work: 'Showreel', nav_process: 'Süreç', nav_contact: 'İletişim',
+    nav_cta: 'Bir proje başlat &rarr;',
+    hero_eyebrow: 'Görsel üretim stüdyosu &middot; Londra &amp; İzmir',
+    hero_h1: '<span class="word"><span>İçerikten</span></span> <span class="word"><span><em>Etkiye.</em></span></span>',
+    hero_blurb: 'Kalıcı izlenimler üretiriz. <em>Markanız, kendi hikâyesini anlatır:</em> film, reklam ve tasarımla.',
+    hero_motto: 'Fikirler hareket eder. Kalite kendini gösterir.',
+    hero_cap_t: 'Marka filmi, prodüksiyonda',
+    hero_cap_s: 'Londra &middot; İzmir &middot; 2026',
+    tag_1: 'Marka Filmleri', tag_2: 'Reklam', tag_3: '3D Görselleştirme', tag_4: 'Drone',
+    hero_scroll: 'Kaydır',
+    intro_label: 'Stüdyodan bir not',
+    intro_title: 'İnsanı <em>harekete</em> geçirme zanaatı.',
+    intro_p1: 'World London Media (WoLo), <em>Londra ve İzmir</em> arasında çalışan premium bir görsel üretim stüdyosudur. Marka hedefini, izleyicinin gerçekten hissettiği film, reklam ve tasarıma dönüştürürüz.',
+    intro_p2: 'Animasyonu bir amaç değil, bir araç olarak görürüz. Her kare, her kesme, her render, <em>doğru duyguyu doğru aktarmak</em> için vardır. Zanaatın tamamı budur.',
+    sec_app_label: '&middot; Ne üretiyoruz',
+    sec_app_h2: 'Altı <em>disiplin,</em><br/>tek bir kalite takıntısı.',
+    cr1_name: 'Marka Filmleri',
+    cr1_desc: 'Sinematik marka hikâyeciliği. Anlatı, ışık ve tempo öyle kurulur ki markanız hatırlanmaya değer bir şey söyler.',
+    cr2_name: 'Reklam',
+    cr2_desc: 'TV, dijital ve sosyal medya için içerik. Performans için kurgulanan, ama hiç reklam gibi hissettirmeyen kampanyalar.',
+    cr3_name: '3D Görselleştirme',
+    cr3_desc: 'Mimari render ve ürün modelleme. Var olmadan önce inşa edilen fotogerçekçi dünyalar ve nesneler.',
+    cr4_name: 'Kurumsal Film',
+    cr4_desc: 'Sıcaklığı olan kurumsal anlatı. İzleyiciye saygı gösteren şirket filmleri, röportajlar ve kültür içerikleri.',
+    cr5_name: 'Reklam Prodüksiyonu',
+    cr5_desc: 'Uçtan uca reklam prodüksiyonu. Konsept, ekip, lokasyon ve post; tek ve sorumlu bir ekiple yürütülür.',
+    cr6_name: 'Havadan Sinematografi',
+    cr6_desc: 'Havadan perspektifler. Bir sahneyi açan, ölçeği ortaya koyan ve geniş planı hak eden lisanslı drone çekimleri.',
+    sec_gal_label: '&middot; Showreel',
+    sec_gal_h2: 'Seçili işler,<br/><em>harekette.</em>',
+    gal_link: 'Tüm reel\'i isteyin &rarr;',
+    g1_meta: 'Marka Filmi &middot; 2025',
+    g2_meta: 'Reklam &middot; 2024',
+    g3_meta: '3D Görselleştirme &middot; 2025',
+    g4_meta: 'Havadan Sinematografi &middot; 2024',
+    g5_meta: 'Reklam Prodüksiyonu &middot; 2024',
+    g6_meta: 'Kurumsal Film &middot; 2025',
+    quote_body: 'Kalıcı izlenimler <em>üretiriz.</em> Markanız, kendi hikâyesini anlatır.',
+    quote_attr: 'World London Media &middot; Fikirler hareket eder. Kalite kendini gösterir.',
+    stat1: 'Tek çatı altında disiplin',
+    stat2: 'Stüdyo: Londra &amp; İzmir',
+    stat3: 'Teslim edilen film &amp; kampanya',
+    stat4: 'Yıllık görsel üretim deneyimi',
+    sec_method_label: '&middot; Yöntem',
+    sec_method_h2: 'Dört <em>hareket,</em><br/>bir ritim.',
+    p1_h: 'Brief', p1_p: 'Önce dinleriz. Hedefler, kitle, kısıtlar ve peşinde olduğunuz duygu. Brief, başka her şeyden önce ortak bir haritaya dönüşür.', p1_tag: 'Keşif',
+    p2_h: 'Konsept', p2_p: 'Fikir, referanslar, treatment ve görsel dil. Tek bir kare çekilmeden önce kreatif yönü birlikte sabitler ve onaylarız.', p2_tag: 'Yön',
+    p3_h: 'Prodüksiyon', p3_p: 'Ekip, kameralar, drone ve CG. Niyetle hareket eden küçük ve sorumlu bir ekiple çeker ve inşa ederiz.', p3_tag: 'Prodüksiyon',
+    p4_h: 'Teslim', p4_p: 'Kurgu, renk, ses ve ihtiyacınız olan her format. Ekran, yayın ve sosyal için hazır, her biri ayrı renklendirilmiş halde teslim.', p4_tag: 'Teslim',
+    cared_label: '&middot; Seçili müşteriler',
+    cared_h2: 'Görsel kimliğini ciddiye alan markaların <em>güvendiği</em> stüdyo.',
+    contact_eyebrow: 'Bir konuşma başlatın',
+    contact_h2: 'Bize hikâyenizi <em>anlatın.</em><br/>Biz onu harekete geçirelim.',
+    ci_email_l: 'E-posta',
+    ci_wa_l: 'WhatsApp',
+    ci_studio_l: 'Stüdyolar',
+    ci_studio_v: 'Londra, Birleşik Krallık &middot; İzmir, Türkiye',
+    cb_left: 'Yeni projeler &middot; 2026 için rezervasyon',
+    cb_right: 'Ortalama yanıt &middot; 24 saat içinde',
+    foot_left: '&copy; 2026 World London Media &middot; Fikirler hareket eder. Kalite kendini gösterir.',
+    foot_right: 'Italiana &middot; Cormorant Garamond &middot; Albert Sans'
+  };
+
+  var i18n_aria_tr = {
+    back_top: 'Başa dön',
+    close: 'Kapat'
+  };
+
+  var langFirstRun = true;
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original != null) el.innerHTML = el.dataset.original;
+    });
+
+    // Hero H1: dil degisince (toggle) innerHTML yeniden yazilir ve yeni
+    // .word>span'ler CSS reveal animasyonunu sifirdan baslatir. Ilk yukleme
+    // disinda animasyonu aninda bitir ki baslik gecici bos kalmasin.
+    if (!langFirstRun) {
+      document.querySelectorAll('.hero h1 .word > span').forEach(function (s) {
+        s.style.animation = 'none';
+        s.style.transform = 'none';
+      });
+    }
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      var key = el.dataset.i18nAria;
+      if (lang === 'tr' && i18n_aria_tr[key]) el.setAttribute('aria-label', i18n_aria_tr[key]);
+      else if (el.dataset.originalAria != null) el.setAttribute('aria-label', el.dataset.originalAria);
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+      var on = b.dataset.l === lang;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+
+    // Manifesto dil degisince kelimeleri tekrar sar
+    var quote = document.querySelector('.quote-body');
+    if (quote && quote._rewrap) {
+      quote._rewrap();
+      if (prefersReduced || !hasGSAP || !hasST) {
+        quote.querySelectorAll('.qw').forEach(function (w) { w.style.opacity = '1'; });
+      } else if (window.ScrollTrigger) {
+        ScrollTrigger.refresh();
+      }
+    }
+    localStorage.setItem('wolo-lang', lang);
+  }
+  // Disaridan onclick ile erisilebilsin
+  window.setLang = setLang;
+
+  // Orijinal (EN) icerigi sakla
+  document.querySelectorAll('[data-i18n]').forEach(function (el) { el.dataset.original = el.innerHTML; });
+  document.querySelectorAll('[data-i18n-aria]').forEach(function (el) { el.dataset.originalAria = el.getAttribute('aria-label') || ''; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+  langFirstRun = false; // bundan sonraki cagrilar toggle: H1 reveal'i tekrar oynamaz
+
+  // Tum kurulumdan sonra ScrollTrigger'i tazele (font/gorsel yuklenince)
+  if (hasST) {
+    window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+  }
+})();
+</script>
+
+<!-- WoLo: galeriye don butonu (template'in kendi stilinden bagimsiz, sabit) -->
+<a href="../../index.html" class="wolo-back" aria-label="Galeriye don">
+  <span class="wolo-back__arrow" aria-hidden="true">&#8592;</span>
+  <span class="wolo-back__label">Galeri</span>
+</a>
+<style>
+  .wolo-back{position:fixed;left:20px;bottom:20px;z-index:99999;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;font-weight:500;letter-spacing:.02em;color:#fff;background:rgba(15,15,15,.78);-webkit-backdrop-filter:blur(10px) saturate(140%);backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(255,255,255,.2);border-radius:100px;text-decoration:none;box-shadow:0 6px 24px rgba(0,0,0,.28);transition:transform .25s ease,background .25s ease;mix-blend-mode:normal}
+  .wolo-back:hover{background:rgba(15,15,15,.96);transform:translateY(-2px)}
+  .wolo-back:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  .wolo-back__arrow{font-size:15px;line-height:1;transition:transform .25s ease}
+  .wolo-back:hover .wolo-back__arrow{transform:translateX(-3px)}
+  @media (max-width:480px){.wolo-back{left:14px;bottom:14px;padding:9px 14px;font-size:12px}}
+  @media (prefers-reduced-motion:reduce){.wolo-back,.wolo-back__arrow{transition:none}.wolo-back:hover{transform:none}.wolo-back:hover .wolo-back__arrow{transform:none}}
+</style>
+</body>
+</html>

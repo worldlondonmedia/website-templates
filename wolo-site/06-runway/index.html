@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%230a0a0a%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23ff2200%22%3EW%3C%2Ftext%3E%3C%2Fsvg%3E">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>World London Media · From Content to Impact · Premium Visual Production</title>
+
+<meta name="description" content="WoLo (World London Media): premium visual production studio in London and Izmir. Brand films, advertising, 3D visualization, corporate film, commercial production, drone cinematography. Ideas move. Quality shows." />
+<meta name="theme-color" content="#0a0a0a" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="World London Media" />
+<meta property="og:title" content="WoLo · From Content to Impact" />
+<meta property="og:description" content="Ideas move. Quality shows. A premium visual production studio in London and Izmir." />
+<meta property="og:url" content="https://worldlondonmedia.com/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&q=80" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"World London Media","alternateName":"WoLo","description":"Premium visual production studio. Brand films, advertising, 3D visualization, corporate film, commercial production, drone cinematography.","url":"https://worldlondonmedia.com","email":"info@worldlondonmedia.com","telephone":"+447717115002","priceRange":"£££","slogan":"Ideas move. Quality shows.","address":[{"@type":"PostalAddress","addressLocality":"London","addressCountry":"GB"},{"@type":"PostalAddress","addressLocality":"Izmir","addressCountry":"TR"}]}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone:    #f5f1ea;
+    --bone-2:  #e9e3d5;
+    --ink:     #0a0a0a;
+    --ink-2:   #1a1a1a;
+    --red:     #ff2200;
+    --grotesk: 'Bricolage Grotesque', sans-serif;
+    --sans:    'Manrope', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+  .lenis.lenis-stopped { overflow: hidden; }
+  body {
+    background: var(--bone);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--red); color: var(--bone); }
+  img { max-width: 100%; display: block; }
+
+  /* TOP BAR (marquee, korunan kimlik) */
+  .topbar {
+    background: var(--ink);
+    color: var(--bone);
+    padding: 8px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--ink);
+  }
+  .topbar-track {
+    display: inline-block;
+    animation: scrollL 32s linear infinite;
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+  }
+  .topbar .red { color: var(--red); margin: 0 16px; }
+  @keyframes scrollL {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* NAV */
+  nav {
+    background: rgba(245, 241, 234, 0.86);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    backdrop-filter: blur(12px) saturate(140%);
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--ink);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    font-family: var(--grotesk);
+    font-weight: 800;
+    font-size: 24px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.05em;
+    line-height: 1;
+  }
+  .logo .red { color: var(--red); }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    transition: color .25s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 0; height: 1px;
+    background: var(--red);
+    transition: width .35s cubic-bezier(.65,0,.35,1);
+  }
+  .nav-links a:hover { color: var(--red); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-right { display: flex; align-items: center; }
+  .nav-cta {
+    background: var(--ink);
+    color: var(--bone);
+    padding: 10px 18px;
+    text-decoration: none;
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    border-radius: 100px;
+    transition: all .25s;
+    border: 1px solid var(--ink);
+  }
+  .nav-cta:hover { background: var(--red); border-color: var(--red); }
+
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--ink);
+    border-radius: 100px;
+    overflow: hidden;
+    margin-left: 12px;
+  }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--ink);
+    border: none;
+    padding: 5px 11px;
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all .25s;
+  }
+  .lang-toggle button.active { background: var(--ink); color: var(--bone); }
+
+  /* HERO: video-hazir, ambient hareket */
+  .hero {
+    position: relative;
+    height: 92vh;
+    min-height: 720px;
+    overflow: hidden;
+    background: var(--ink);
+  }
+  .hero-media {
+    position: absolute;
+    inset: -8%;
+    width: 116%;
+    height: 116%;
+    overflow: hidden;
+    will-change: transform;
+  }
+  .hero-media video,
+  .hero-poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Ken Burns ambient hareket (poster icin), prefers-reduced-motion da kapanir */
+  .hero-poster {
+    background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=2400&q=85');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(0.65) contrast(1.05);
+    animation: kenburns 22s ease-in-out infinite alternate;
+  }
+  @keyframes kenburns {
+    from { transform: scale(1.04) translate(0, 0); }
+    to   { transform: scale(1.14) translate(-1.5%, -1.5%); }
+  }
+  .hero-media::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(10,10,10,0.45) 0%, rgba(10,10,10,0.12) 28%, rgba(10,10,10,0.0) 58%, rgba(10,10,10,0.62) 100%);
+    z-index: 2;
+  }
+  .hero-meta-tl, .hero-meta-tr, .hero-meta-bl, .hero-meta-br {
+    position: absolute;
+    color: var(--bone);
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    z-index: 5;
+  }
+  .hero-meta-tl { top: 24px; left: 24px; }
+  .hero-meta-tr { top: 24px; right: 24px; text-align: right; }
+  .hero-meta-bl { bottom: 24px; left: 24px; }
+  .hero-meta-br { bottom: 24px; right: 24px; text-align: right; }
+  .hero-meta-tl strong, .hero-meta-tr strong, .hero-meta-bl strong, .hero-meta-br strong {
+    color: var(--red);
+    font-weight: 500;
+  }
+
+  .hero-title {
+    position: absolute;
+    bottom: 76px;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    pointer-events: none;
+    padding: 0 24px;
+  }
+  .hero-title h1 {
+    font-family: var(--grotesk);
+    font-weight: 200;
+    font-size: clamp(56px, 13vw, 220px);
+    line-height: 0.86;
+    letter-spacing: -0.06em;
+    color: var(--bone);
+    text-transform: uppercase;
+  }
+  .hero-title h1 .word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+  .hero-title h1 .word > span { display: inline-block; will-change: transform; }
+  .hero-title h1 em {
+    font-style: italic;
+    font-weight: 200;
+    color: var(--red);
+  }
+  .hero-title h1 .out {
+    -webkit-text-stroke: 2px var(--bone);
+    color: transparent;
+  }
+  .hero-sub {
+    margin-top: 22px;
+    max-width: 540px;
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: clamp(14px, 1.4vw, 17px);
+    line-height: 1.5;
+    color: rgba(245, 241, 234, 0.88);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .hero-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+    width: 84px; height: 84px;
+    border: 2px solid var(--red);
+    border-radius: 50%;
+    color: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--grotesk);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: rgba(255, 34, 0, 0.06);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    text-decoration: none;
+    pointer-events: auto;
+    transition: transform .4s cubic-bezier(.65,0,.35,1);
+  }
+  .hero-marker:hover { transform: translate(-50%, -50%) scale(1.08); }
+  .hero-marker .num { font-size: 22px; line-height: 1; }
+  .hero-marker .lbl { font-size: 8px; letter-spacing: 0.28em; margin-top: 2px; }
+
+  /* SEAM / red marquee (korunan kimlik) */
+  .seam {
+    background: var(--red);
+    color: var(--bone);
+    padding: 18px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .seam-track {
+    display: inline-block;
+    animation: scrollR 38s linear infinite;
+    font-family: var(--grotesk);
+    font-weight: 700;
+    font-size: clamp(24px, 4vw, 34px);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+  .seam .dot { color: var(--bone); margin: 0 12px; opacity: 0.6; }
+  .seam .it { font-style: italic; font-weight: 300; color: var(--ink); }
+  @keyframes scrollR {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+  /* CHAPTER (lookbook / showreel) */
+  .chapter {
+    padding: 110px 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .chapter-meta {
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--red);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .chapter-meta::before {
+    content: '';
+    width: 60px; height: 1px;
+    background: var(--red);
+  }
+  .chapter h2 {
+    font-family: var(--grotesk);
+    font-weight: 200;
+    font-size: clamp(52px, 10vw, 180px);
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    max-width: 1500px;
+  }
+  .chapter h2 em { font-style: italic; font-weight: 200; color: var(--red); }
+  .chapter h2 .out { -webkit-text-stroke: 2px var(--ink); color: transparent; }
+
+  .look-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .look {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    display: block;
+  }
+  .look-meta {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+  }
+  .look-meta .red { color: var(--red); }
+  /* Portfolio embed slot: gercek video/<iframe> swap'a hazir */
+  .look-frame {
+    position: relative;
+    aspect-ratio: 4/5;
+    background: var(--ink-2);
+    overflow: hidden;
+  }
+  .look-frame img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.6) contrast(1.05);
+    transition: filter 1s, transform 1.2s cubic-bezier(.65,0,.35,1);
+    will-change: transform, filter;
+  }
+  .look:hover .look-frame img,
+  .look:focus-visible .look-frame img { filter: grayscale(0) contrast(1); transform: scale(1.05); }
+  /* Play indikatoru (video-slot oldugunu belli eder) */
+  .look-play {
+    position: absolute;
+    bottom: 16px; left: 16px;
+    z-index: 3;
+    width: 52px; height: 52px;
+    border: 1.5px solid var(--bone);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bone);
+    background: rgba(10,10,10,0.3);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    transition: background .35s, border-color .35s, transform .35s;
+  }
+  .look-play svg { width: 14px; height: 14px; margin-left: 2px; fill: currentColor; }
+  .look:hover .look-play,
+  .look:focus-visible .look-play { background: var(--red); border-color: var(--red); transform: scale(1.05); }
+  .look-meta-overlay {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(245, 241, 234, 0.95);
+    color: var(--ink);
+    padding: 14px 20px;
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .35s;
+    border: 1px solid var(--red);
+    text-align: center;
+    line-height: 1.6;
+    z-index: 4;
+  }
+  .look-meta-overlay strong { display: block; color: var(--red); font-size: 22px; line-height: 1; margin-bottom: 6px; letter-spacing: -0.02em; }
+  .look:hover .look-meta-overlay,
+  .look:focus-visible .look-meta-overlay { opacity: 1; }
+  .look-num {
+    font-family: var(--grotesk);
+    font-weight: 200;
+    font-size: clamp(64px, 12vw, 150px);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    margin-top: 24px;
+    text-transform: uppercase;
+  }
+  .look-num em { font-style: italic; font-weight: 200; color: var(--red); }
+  .look-cap {
+    margin-top: -6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 16px;
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  .look-cap .title {
+    font-family: var(--grotesk);
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    transition: color .35s;
+  }
+  .look:hover .look-cap .title,
+  .look:focus-visible .look-cap .title { color: var(--red); }
+
+  /* DISCIPLINES (6 servis, hover video-slot) */
+  .disciplines {
+    padding: 110px 32px;
+    background: var(--ink);
+    color: var(--bone);
+    border-bottom: 1px solid var(--ink);
+    position: relative;
+  }
+  .disciplines .chapter-meta { color: var(--red); }
+  .disciplines .chapter-meta::before { background: var(--red); }
+  .disciplines h2 { color: var(--bone); }
+  .disciplines h2 .out { -webkit-text-stroke: 2px var(--bone); color: transparent; }
+
+  .disc-list {
+    list-style: none;
+    border-top: 1px solid rgba(245, 241, 234, 0.2);
+    max-width: 1500px;
+    position: relative;
+    z-index: 2;
+  }
+  .disc {
+    display: grid;
+    grid-template-columns: 80px 1.5fr 1fr 100px;
+    gap: 32px;
+    padding: 34px 0;
+    border-bottom: 1px solid rgba(245, 241, 234, 0.2);
+    align-items: center;
+    cursor: pointer;
+    transition: padding-left .55s cubic-bezier(.65,0,.35,1);
+  }
+  .disc:hover, .disc:focus-within { padding-left: 24px; }
+  .disc-num {
+    font-family: var(--grotesk);
+    font-weight: 200;
+    font-size: 32px;
+    color: var(--red);
+    letter-spacing: -0.04em;
+  }
+  .disc h3 {
+    font-family: var(--grotesk);
+    font-weight: 300;
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--bone);
+    transition: color .35s;
+  }
+  .disc:hover h3, .disc:focus-within h3 { color: var(--red); }
+  .disc h3 em { font-style: italic; font-weight: 200; color: var(--red); }
+  .disc-body {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(245, 241, 234, 0.8);
+    max-width: 360px;
+  }
+  .disc-arrow {
+    text-align: right;
+    font-family: var(--grotesk);
+    font-weight: 200;
+    font-size: 32px;
+    color: rgba(245, 241, 234, 0.5);
+    transition: color .35s, transform .35s;
+  }
+  .disc:hover .disc-arrow, .disc:focus-within .disc-arrow { color: var(--red); transform: translateX(8px); }
+
+  /* Hover video-slot: cursor'i takip eden floating preview (gercek video swap'a hazir) */
+  .disc-preview {
+    position: fixed;
+    top: 0; left: 0;
+    width: 260px;
+    height: 325px;
+    pointer-events: none;
+    z-index: 90;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.92);
+    transition: opacity .4s ease, transform .4s ease;
+    overflow: hidden;
+    border: 1px solid var(--red);
+    will-change: transform, opacity;
+  }
+  .disc-preview.active { opacity: 1; }
+  .disc-preview-inner {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(0.2) contrast(1.05);
+  }
+  .disc-preview::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0) 55%, rgba(10,10,10,0.55) 100%);
+  }
+
+  /* PHILOSOPHY / QUOTE */
+  .quote {
+    padding: 160px 32px;
+    background: var(--bone);
+    border-bottom: 1px solid var(--ink);
+    text-align: center;
+  }
+  .quote-text {
+    font-family: var(--grotesk);
+    font-weight: 200;
+    font-size: clamp(34px, 5vw, 88px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .quote-text em { font-style: italic; font-weight: 200; color: var(--red); }
+  .quote-attr {
+    margin-top: 32px;
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--red);
+  }
+
+  /* STATS (sayac animasyonu) */
+  .stats {
+    padding: 90px 32px;
+    background: var(--ink);
+    color: var(--bone);
+    border-bottom: 1px solid var(--ink);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .stat { border-top: 2px solid var(--red); padding-top: 20px; }
+  .stat-num {
+    font-family: var(--grotesk);
+    font-weight: 200;
+    font-size: clamp(56px, 7vw, 96px);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    color: var(--bone);
+  }
+  .stat-num .suf { color: var(--red); }
+  .stat-lbl {
+    margin-top: 12px;
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: rgba(245, 241, 234, 0.7);
+  }
+
+  /* CLIENTS */
+  .clients {
+    padding: 110px 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .client-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--ink);
+    border-left: 1px solid var(--ink);
+    max-width: 1500px;
+  }
+  .client {
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 48px 32px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--grotesk);
+    font-weight: 300;
+    font-size: clamp(22px, 3vw, 38px);
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: var(--ink);
+    transition: background .4s, color .4s;
+  }
+  .client em { font-style: italic; font-weight: 200; }
+  .client:hover { background: var(--ink); color: var(--bone); }
+
+  /* PROCESS / backstage: timeline animasyonu */
+  .backstage {
+    padding: 110px 32px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .back-wrap { position: relative; max-width: 1500px; }
+  .back-line {
+    position: absolute;
+    top: 0; left: 0;
+    height: 2px;
+    width: 100%;
+    background: rgba(10,10,10,0.12);
+    overflow: hidden;
+  }
+  .back-line-fill {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+  .back-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding-top: 0;
+  }
+  .back {
+    border-top: 2px solid transparent;
+    padding-top: 24px;
+    cursor: default;
+  }
+  .back-num {
+    font-family: var(--grotesk);
+    font-weight: 200;
+    font-size: clamp(64px, 7vw, 88px);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    margin-bottom: 16px;
+  }
+  .back-num em { font-style: italic; color: var(--red); font-weight: 200; }
+  .back h3 {
+    font-family: var(--grotesk);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .back p {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink);
+    opacity: 0.82;
+  }
+  .back-tag {
+    margin-top: 16px;
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--red);
+  }
+
+  /* CONTACT */
+  .contact {
+    position: relative;
+    background: var(--ink);
+    color: var(--bone);
+    overflow: hidden;
+    height: 84vh;
+    min-height: 600px;
+  }
+  .contact-media {
+    position: absolute; inset: -6%;
+    width: 112%; height: 112%;
+    will-change: transform;
+  }
+  .contact-image {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=2400&q=85');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(0.78) contrast(1.05);
+  }
+  .contact-media::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(10,10,10,0.78) 0%, rgba(10,10,10,0.46) 55%, rgba(255,34,0,0.5) 100%);
+  }
+  .contact-content {
+    position: relative;
+    z-index: 5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 32px;
+  }
+  .contact-eyebrow {
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: var(--red);
+    margin-bottom: 24px;
+  }
+  .contact h2 {
+    font-family: var(--grotesk);
+    font-weight: 200;
+    font-size: clamp(56px, 10vw, 180px);
+    line-height: 0.88;
+    letter-spacing: -0.05em;
+    color: var(--bone);
+    text-transform: uppercase;
+    margin-bottom: 36px;
+    max-width: 1300px;
+  }
+  .contact h2 em { font-style: italic; font-weight: 200; color: var(--red); }
+  .contact-mail {
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: clamp(20px, 2.6vw, 32px);
+    color: var(--bone);
+    text-decoration: none;
+    border-bottom: 2px solid var(--red);
+    padding-bottom: 4px;
+    transition: color .35s;
+  }
+  .contact-mail:hover { color: var(--red); }
+  .contact-lines {
+    margin-top: 28px;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  .contact-lines a { color: var(--bone); text-decoration: none; transition: color .25s; }
+  .contact-lines a:hover { color: var(--red); }
+  .contact-lines .sep { color: var(--red); }
+
+  /* FOOTER */
+  footer {
+    background: var(--bone);
+    color: var(--ink);
+    padding: 54px 32px 24px;
+    border-top: 1px solid var(--ink);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  .foot-brand {
+    font-family: var(--grotesk);
+    font-weight: 800;
+    font-size: clamp(56px, 8vw, 96px);
+    line-height: 0.9;
+    color: var(--ink);
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+  }
+  .foot-brand .red { color: var(--red); }
+  .foot-motto {
+    margin-top: 12px;
+    font-family: var(--grotesk);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    opacity: 0.7;
+  }
+  footer h4 {
+    font-family: var(--grotesk);
+    font-weight: 600;
+    font-size: 11px;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-bottom: 12px;
+  }
+  footer ul { list-style: none; }
+  footer li {
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+  footer a { color: inherit; text-decoration: none; transition: color .25s; }
+  footer a:hover { color: var(--red); }
+  .foot-bot {
+    border-top: 1px solid var(--ink);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-family: var(--grotesk);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  /* GSAP reveal baz durumu (JS yoksa / reduced motion'da gorunur kalir) */
+  .reveal { opacity: 0; transform: translateY(34px); }
+
+  /* Custom cursor (tracking hover state) */
+  .cursor-dot, .cursor-ring {
+    position: fixed;
+    top: 0; left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10002;
+    mix-blend-mode: difference;
+    will-change: transform;
+  }
+  .cursor-dot { width: 7px; height: 7px; background: var(--bone); transform: translate(-50%, -50%); }
+  .cursor-ring {
+    width: 38px; height: 38px;
+    border: 1px solid var(--bone);
+    transform: translate(-50%, -50%);
+    transition: width .3s, height .3s, background .3s, opacity .3s;
+  }
+  .cursor-ring.hover { width: 72px; height: 72px; background: rgba(245,241,234,0.12); }
+
+  /* V2 PACK */
+  .skip-link { position: absolute; top: -100px; left: 8px; background: var(--red); color: var(--bone); padding: 8px 16px; font-family: var(--grotesk); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 2px; background: var(--red); z-index: 10000; pointer-events: none; }
+  .back-top { position: fixed; bottom: 24px; right: 24px; width: 48px; height: 48px; border-radius: 100px; background: var(--ink); color: var(--bone); border: 1px solid var(--ink); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .35s, background .25s, transform .35s; z-index: 999; font-family: var(--grotesk); font-weight: 500; font-size: 18px; }
+  .back-top.visible { opacity: 1; pointer-events: auto; }
+  .back-top:hover { background: var(--red); border-color: var(--red); transform: translateY(-3px); }
+
+  /* prefers-reduced-motion: agir hareketi kapat, icerik TAM gorunur kalir */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .hero-title h1 .word > span { transform: none !important; }
+    .hero-poster { animation: none !important; transform: scale(1.04); }
+    .back-line-fill { transform: scaleX(1) !important; }
+    .cursor-dot, .cursor-ring { display: none !important; }
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 12px 16px; }
+    .nav-links { display: none; }
+    .hero { height: 78vh; min-height: 520px; }
+    .hero-title { bottom: 40px; }
+    .hero-meta-tr, .hero-meta-bl, .hero-meta-br { display: none; }
+    .chapter, .disciplines, .quote, .backstage, .clients, .stats { padding: 64px 20px; }
+    .look-grid { grid-template-columns: 1fr; gap: 48px; }
+    .look[style] { margin-top: 0 !important; }
+    .disc { grid-template-columns: 50px 1fr 40px; gap: 16px; }
+    .disc-body { display: none; }
+    .disc-preview { display: none; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .client-grid { grid-template-columns: 1fr 1fr; }
+    .back-grid { grid-template-columns: 1fr 1fr; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .cursor-dot, .cursor-ring { display: none; }
+  }
+  @media (max-width: 520px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .client-grid { grid-template-columns: 1fr; }
+    .back-grid { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link" data-i18n="skip">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<button class="back-top" aria-label="Back to top" data-i18n-aria="backtop">↑</button>
+
+<div class="topbar" aria-hidden="true">
+  <div class="topbar-track">
+    <span>WORLD LONDON MEDIA</span>
+    <span class="red">×</span>
+    <span>IDEAS MOVE · QUALITY SHOWS</span>
+    <span class="red">×</span>
+    <span>LONDON · IZMIR</span>
+    <span class="red">×</span>
+    <span>FROM CONTENT TO IMPACT</span>
+    <span class="red">×</span>
+    <span>WORLD LONDON MEDIA</span>
+    <span class="red">×</span>
+    <span>IDEAS MOVE · QUALITY SHOWS</span>
+    <span class="red">×</span>
+    <span>LONDON · IZMIR</span>
+    <span class="red">×</span>
+    <span>FROM CONTENT TO IMPACT</span>
+    <span class="red">×</span>
+  </div>
+</div>
+
+<nav>
+  <a href="#main" class="logo" aria-label="World London Media">WoLo<span class="red">.</span></a>
+  <ul class="nav-links">
+    <li><a href="#work" data-i18n="nav_work">Work</a></li>
+    <li><a href="#disciplines" data-i18n="nav_disc">Services</a></li>
+    <li><a href="#clients" data-i18n="nav_clients">Clients</a></li>
+    <li><a href="#process" data-i18n="nav_proc">Process</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Start a project</a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button data-l="en" onclick="setLang('en')" aria-label="English">EN</button>
+      <button data-l="tr" onclick="setLang('tr')" aria-label="Türkçe">TR</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero" aria-label="Intro">
+  <div class="hero-media">
+    <!-- VIDEO-HAZIR: gercek mp4 geldiginde poster div'i silip asagidaki <video>'yu ac.
+         Tek satir swap: src="hero.mp4" ekle + poster="..." ver, sonra poster div'i kaldir. -->
+    <!-- <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+              poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=2400&q=85">
+           <source src="hero.mp4" type="video/mp4" />
+         </video> -->
+    <div class="hero-poster" role="img" aria-label="WoLo showreel poster frame"></div>
+  </div>
+
+  <div class="hero-meta-tl">
+    <strong data-i18n="hm_tl_label">VOL. 2026</strong><br/>
+    <span data-i18n="hm_tl_text">London · Izmir</span>
+  </div>
+  <div class="hero-meta-tr">
+    <strong data-i18n="hm_tr_label">FORMAT</strong><br/>
+    <span data-i18n="hm_tr_text">Film · 3D<br/>Direction · Drone</span>
+  </div>
+  <div class="hero-meta-bl">
+    <strong data-i18n="hm_bl_label">EST.</strong><br/>
+    <span data-i18n="hm_bl_text">World London<br/>Media</span>
+  </div>
+  <div class="hero-meta-br">
+    <strong data-i18n="hm_br_label">REEL</strong><br/>
+    <span data-i18n="hm_br_text">Selected work<br/>2018-2026</span>
+  </div>
+
+  <a href="#work" class="hero-marker" data-cursor aria-label="View showreel">
+    <div>
+      <div class="num">▶</div>
+      <div class="lbl" data-i18n="reel">REEL</div>
+    </div>
+  </a>
+
+  <div class="hero-title">
+    <h1 data-hero-title data-i18n="hero_h1">From <em>content</em> to <span class="out">impact.</span></h1>
+    <p class="hero-sub reveal" data-i18n="hero_sub">We craft impressions that endure. Your brand, telling its own story, in film, frame and form.</p>
+  </div>
+</section>
+
+<div class="seam" aria-hidden="true">
+  <div class="seam-track">
+    BRAND FILMS <span class="dot">×</span>
+    <span class="it">advertising</span> <span class="dot">×</span>
+    3D VISUALIZATION <span class="dot">×</span>
+    <span class="it">corporate film</span> <span class="dot">×</span>
+    COMMERCIAL <span class="dot">×</span>
+    <span class="it">drone</span> <span class="dot">×</span>
+    BRAND FILMS <span class="dot">×</span>
+    <span class="it">advertising</span> <span class="dot">×</span>
+    3D VISUALIZATION <span class="dot">×</span>
+    <span class="it">corporate film</span> <span class="dot">×</span>
+    COMMERCIAL <span class="dot">×</span>
+    <span class="it">drone</span> <span class="dot">×</span>
+  </div>
+</div>
+
+<!-- SHOWREEL / WORK -->
+<section class="chapter" id="work" aria-labelledby="work-h">
+  <div class="chapter-meta" data-i18n="ch_work_meta">CHAPTER 01 / SELECTED WORK</div>
+  <h2 id="work-h" data-i18n="ch_work_h2">Work that <em>moves.</em><br/><span class="out">Frame by frame.</span></h2>
+
+  <div class="look-grid">
+    <!-- Her kare gercek video embed slotu: <img>'i <video poster> veya <iframe> ile swap et. -->
+    <a href="#contact" class="look reveal" data-cursor>
+      <div class="look-meta"><span data-i18n="w1_n">WORK 01</span><span class="red">SAMSUNG</span></div>
+      <div class="look-frame">
+        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1400&q=85" alt="Brand film still, cinematic product hero shot" loading="lazy" decoding="async" />
+        <span class="look-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3l16 9L5 21z"/></svg></span>
+        <div class="look-meta-overlay"><strong data-i18n="play">PLAY</strong><span data-i18n="w1_o">Brand film · launch campaign</span></div>
+      </div>
+      <div class="look-num">01<em>.</em></div>
+      <div class="look-cap"><span class="title" data-i18n="w1_t">Product Launch Film</span><span data-i18n="w1_c">Brand Film · 4K</span></div>
+    </a>
+
+    <a href="#contact" class="look reveal" style="margin-top: 80px;" data-cursor>
+      <div class="look-meta"><span data-i18n="w2_n">WORK 02</span><span class="red">KARACA</span></div>
+      <div class="look-frame">
+        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1400&q=85" alt="Advertising still, styled tabletop scene" loading="lazy" decoding="async" />
+        <span class="look-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3l16 9L5 21z"/></svg></span>
+        <div class="look-meta-overlay"><strong data-i18n="play">PLAY</strong><span data-i18n="w2_o">TV + social campaign</span></div>
+      </div>
+      <div class="look-num">02<em>.</em></div>
+      <div class="look-cap"><span class="title" data-i18n="w2_t">Lifestyle Campaign</span><span data-i18n="w2_c">Advertising · TV</span></div>
+    </a>
+
+    <a href="#contact" class="look reveal" style="margin-top: 40px;" data-cursor>
+      <div class="look-meta"><span data-i18n="w3_n">WORK 03</span><span class="red">BARRUS</span></div>
+      <div class="look-frame">
+        <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=1400&q=85" alt="3D visualization still, architectural interior render" loading="lazy" decoding="async" />
+        <span class="look-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3l16 9L5 21z"/></svg></span>
+        <div class="look-meta-overlay"><strong data-i18n="play">PLAY</strong><span data-i18n="w3_o">Architectural render reel</span></div>
+      </div>
+      <div class="look-num">03<em>.</em></div>
+      <div class="look-cap"><span class="title" data-i18n="w3_t">Space &amp; Product Render</span><span data-i18n="w3_c">3D · CGI</span></div>
+    </a>
+
+    <a href="#contact" class="look reveal" style="margin-top: 120px;" data-cursor>
+      <div class="look-meta"><span data-i18n="w4_n">WORK 04</span><span class="red">LE CORDON BLEU</span></div>
+      <div class="look-frame">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=85" alt="Corporate film still, kitchen and craft documentary frame" loading="lazy" decoding="async" />
+        <span class="look-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3l16 9L5 21z"/></svg></span>
+        <div class="look-meta-overlay"><strong data-i18n="play">PLAY</strong><span data-i18n="w4_o">Brand documentary</span></div>
+      </div>
+      <div class="look-num">04<em>.</em></div>
+      <div class="look-cap"><span class="title" data-i18n="w4_t">House Story Film</span><span data-i18n="w4_c">Corporate · Doc</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- SERVICES / DISCIPLINES (6 disiplin) -->
+<section class="disciplines" id="disciplines" aria-labelledby="disc-h">
+  <div class="chapter-meta" data-i18n="ch_disc_meta">CHAPTER 02 / DISCIPLINES</div>
+  <h2 id="disc-h" data-i18n="ch_disc_h2"><span class="out">Six</span> <em>disciplines.</em><br/>One studio.</h2>
+
+  <ul class="disc-list">
+    <li class="disc" data-cursor data-preview="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=900&q=80">
+      <span class="disc-num">01.</span>
+      <h3 data-i18n="d1_h">Brand <em>Films</em></h3>
+      <p class="disc-body" data-i18n="d1_b">Cinematic brand storytelling. The film that makes a name feel like a place you have already been.</p>
+      <span class="disc-arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="disc" data-cursor data-preview="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=900&q=80">
+      <span class="disc-num">02.</span>
+      <h3 data-i18n="d2_h">Advertising</h3>
+      <p class="disc-body" data-i18n="d2_b">TV, digital and social content built to be watched, not skipped. Concept through final master.</p>
+      <span class="disc-arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="disc" data-cursor data-preview="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900&q=80">
+      <span class="disc-num">03.</span>
+      <h3 data-i18n="d3_h">3D <em>Visualization</em></h3>
+      <p class="disc-body" data-i18n="d3_b">Architectural renders and product modeling. Spaces and objects that do not exist yet, made believable.</p>
+      <span class="disc-arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="disc" data-cursor data-preview="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80">
+      <span class="disc-num">04.</span>
+      <h3 data-i18n="d4_h">Corporate <em>Film</em></h3>
+      <p class="disc-body" data-i18n="d4_b">Company stories told with restraint. People, process and purpose, without the corporate stiffness.</p>
+      <span class="disc-arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="disc" data-cursor data-preview="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=900&q=80">
+      <span class="disc-num">05.</span>
+      <h3 data-i18n="d5_h">Commercial <em>Production</em></h3>
+      <p class="disc-body" data-i18n="d5_b">Full-service commercial and advertising production. Crew, set, direction and delivery, end to end.</p>
+      <span class="disc-arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="disc" data-cursor data-preview="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=900&q=80">
+      <span class="disc-num">06.</span>
+      <h3 data-i18n="d6_h">Drone <em>Cinematography</em></h3>
+      <p class="disc-body" data-i18n="d6_b">Aerial perspectives that change the scale of a story. Licensed, planned, cinematic.</p>
+      <span class="disc-arrow" aria-hidden="true">→</span>
+    </li>
+  </ul>
+  <!-- Cursor'i takip eden hover video-slot (gercek mp4'e swap edilebilir) -->
+  <div class="disc-preview" aria-hidden="true"><div class="disc-preview-inner"></div></div>
+</section>
+
+<!-- PHILOSOPHY / ABOUT -->
+<section class="quote" aria-labelledby="quote-h">
+  <p class="quote-text" id="quote-h" data-i18n="quote_text">Ideas <em>move.</em><br/>Quality <em>shows.</em> Design is conveying the right emotion, accurately.</p>
+  <p class="quote-attr" data-i18n="quote_attr">WORLD LONDON MEDIA · LONDON + IZMIR</p>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-label="By the numbers">
+  <div class="stats-grid">
+    <div class="stat reveal">
+      <div class="stat-num"><span data-count="120">0</span><span class="suf">+</span></div>
+      <div class="stat-lbl" data-i18n="st1">Projects delivered</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num"><span data-count="6">0</span></div>
+      <div class="stat-lbl" data-i18n="st2">Creative disciplines</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num"><span data-count="2">0</span></div>
+      <div class="stat-lbl" data-i18n="st3">Cities · London + Izmir</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num"><span data-count="48">0</span><span class="suf">h</span></div>
+      <div class="stat-lbl" data-i18n="st4">First selects turnaround</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients" id="clients" aria-labelledby="clients-h">
+  <div class="chapter-meta" data-i18n="ch_clients_meta">CHAPTER 03 / SELECTED CLIENTS</div>
+  <h2 id="clients-h" data-i18n="ch_clients_h2">Brands we have<br/>made <em>move.</em></h2>
+  <div class="client-grid">
+    <div class="client reveal">Samsung</div>
+    <div class="client reveal">Karaca</div>
+    <div class="client reveal">LC <em>Waikiki</em></div>
+    <div class="client reveal">Yeni <em>Rakı</em></div>
+    <div class="client reveal">Le Cordon Bleu</div>
+    <div class="client reveal">Barrus London</div>
+  </div>
+</section>
+
+<!-- PROCESS / BACKSTAGE (timeline animasyonu) -->
+<section class="backstage" id="process" aria-labelledby="proc-h">
+  <div class="chapter-meta" data-i18n="ch_proc_meta">CHAPTER 04 / PROCESS</div>
+  <h2 id="proc-h" data-i18n="ch_proc_h2">From <em>brief</em> to<br/>final master.</h2>
+
+  <div class="back-wrap">
+    <div class="back-line" aria-hidden="true"><div class="back-line-fill"></div></div>
+    <div class="back-grid">
+      <div class="back reveal">
+        <div class="back-num">01<em>.</em></div>
+        <h3 data-i18n="p1_h">Brief</h3>
+        <p data-i18n="p1_b">We listen first. Goals, audience, the feeling you want left behind. The brief sharpens into a single idea.</p>
+        <div class="back-tag" data-i18n="p1_t">STEP 01</div>
+      </div>
+      <div class="back reveal">
+        <div class="back-num">02<em>.</em></div>
+        <h3 data-i18n="p2_h">Concept</h3>
+        <p data-i18n="p2_b">Treatment, references, look and tone. Pinned, debated, approved before a single frame is shot.</p>
+        <div class="back-tag" data-i18n="p2_t">STEP 02</div>
+      </div>
+      <div class="back reveal">
+        <div class="back-num">03<em>.</em></div>
+        <h3 data-i18n="p3_h">Production</h3>
+        <p data-i18n="p3_b">Crew, set, light, camera, drone, 3D. We move with intent because precision is cheaper than a reshoot.</p>
+        <div class="back-tag" data-i18n="p3_t">STEP 03</div>
+      </div>
+      <div class="back reveal">
+        <div class="back-num">04<em>.</em></div>
+        <h3 data-i18n="p4_h">Delivery</h3>
+        <p data-i18n="p4_b">Edit, grade, sound and finish. Mastered for every screen it will live on, ready to release.</p>
+        <div class="back-tag" data-i18n="p4_t">STEP 04</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="contact-media">
+    <div class="contact-image"></div>
+  </div>
+  <div class="contact-content">
+    <div class="contact-eyebrow" data-i18n="contact_eyebrow">LONDON + IZMIR · NOW BOOKING</div>
+    <h2 id="contact-h" data-i18n="contact_h2">Bring us<br/>your <em>brief.</em></h2>
+    <a href="mailto:info@worldlondonmedia.com" class="contact-mail" data-cursor>info@worldlondonmedia.com →</a>
+    <div class="contact-lines">
+      <a href="https://wa.me/447717115002" data-cursor>WhatsApp +44 7717 115002</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <span data-i18n="contact_loc">London · Izmir</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">WoLo<span class="red">.</span></div>
+      <p class="foot-motto" data-i18n="foot_motto">Ideas move. Quality shows.</p>
+    </div>
+    <div>
+      <h4 data-i18n="foot_studio">Studio</h4>
+      <ul>
+        <li>World London Media</li>
+        <li>London, United Kingdom</li>
+        <li>Izmir, Türkiye</li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="foot_index">Index</h4>
+      <ul>
+        <li><a href="#work" data-i18n="nav_work">Work</a></li>
+        <li><a href="#disciplines" data-i18n="nav_disc">Services</a></li>
+        <li><a href="#process" data-i18n="nav_proc">Process</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="foot_connect">Connect</h4>
+      <ul>
+        <li><a href="mailto:info@worldlondonmedia.com">info@worldlondonmedia.com</a></li>
+        <li><a href="https://wa.me/447717115002">WhatsApp</a></li>
+        <li><a href="https://worldlondonmedia.com">worldlondonmedia.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 WORLD LONDON MEDIA</span>
+    <span data-i18n="foot_set">SET IN BRICOLAGE GROTESQUE · MANROPE</span>
+  </div>
+</footer>
+
+<!-- WoLo: galeriye don butonu (template'in kendi stilinden bagimsiz, sabit) -->
+<a href="../../index.html" class="wolo-back" aria-label="Galeriye don">
+  <span class="wolo-back__arrow" aria-hidden="true">&#8592;</span>
+  <span class="wolo-back__label">Galeri</span>
+</a>
+<style>
+  .wolo-back{position:fixed;left:20px;bottom:20px;z-index:99999;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;font-weight:500;letter-spacing:.02em;color:#fff;background:rgba(15,15,15,.78);-webkit-backdrop-filter:blur(10px) saturate(140%);backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(255,255,255,.2);border-radius:100px;text-decoration:none;box-shadow:0 6px 24px rgba(0,0,0,.28);transition:transform .25s ease,background .25s ease;mix-blend-mode:normal}
+  .wolo-back:hover{background:rgba(15,15,15,.96);transform:translateY(-2px)}
+  .wolo-back:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  .wolo-back__arrow{font-size:15px;line-height:1;transition:transform .25s ease}
+  .wolo-back:hover .wolo-back__arrow{transform:translateX(-3px)}
+  @media (max-width:480px){.wolo-back{left:14px;bottom:14px;padding:9px 14px;font-size:12px}}
+  @media (prefers-reduced-motion:reduce){.wolo-back,.wolo-back__arrow{transition:none}.wolo-back:hover{transform:none}.wolo-back:hover .wolo-back__arrow{transform:none}}
+</style>
+
+<!-- KUTUPHANELER: GSAP + ScrollTrigger + Lenis (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  // reduced motion: tum agir hareketi global olarak kapatmak icin tek bayrak
+  const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasGSAP = typeof window.gsap !== 'undefined';
+  const hasST = typeof window.ScrollTrigger !== 'undefined';
+  const hasLenis = typeof window.Lenis !== 'undefined';
+
+  /* ---------- i18n (TR cevirileri uretildi) ---------- */
+  const i18n_tr = {
+    skip: 'İçeriğe geç',
+    nav_work: 'İşler', nav_disc: 'Hizmetler', nav_clients: 'Müşteriler', nav_proc: 'Süreç', nav_contact: 'İletişim', nav_cta: 'Projeye başla',
+    reel: 'REEL', play: 'OYNAT',
+    hm_tl_label: 'CİLT 2026', hm_tl_text: 'Londra · İzmir',
+    hm_tr_label: 'FORMAT', hm_tr_text: 'Film · 3D<br/>Yönetim · Drone',
+    hm_bl_label: 'KURULUŞ', hm_bl_text: 'World London<br/>Media',
+    hm_br_label: 'REEL', hm_br_text: 'Seçilmiş işler<br/>2018-2026',
+    hero_h1: 'İçerikten <em>etkiye</em> <span class="out">giden yol.</span>',
+    hero_sub: 'Kalıcı izlenimler üretiyoruz. Markanız, kendi hikayesini film, kare ve formla anlatsın.',
+
+    ch_work_meta: 'BÖLÜM 01 / SEÇİLMİŞ İŞLER',
+    ch_work_h2: 'Harekete <em>geçen</em><br/><span class="out">işler.</span>',
+    w1_n: 'İŞ 01', w1_o: 'Marka filmi · lansman kampanyası', w1_t: 'Ürün Lansman Filmi', w1_c: 'Marka Filmi · 4K',
+    w2_n: 'İŞ 02', w2_o: 'TV + sosyal kampanya', w2_t: 'Lifestyle Kampanyası', w2_c: 'Reklam · TV',
+    w3_n: 'İŞ 03', w3_o: 'Mimari render reel', w3_t: 'Mekan ve Ürün Render', w3_c: '3D · CGI',
+    w4_n: 'İŞ 04', w4_o: 'Marka belgeseli', w4_t: 'Kurum Hikayesi Filmi', w4_c: 'Kurumsal · Belgesel',
+
+    ch_disc_meta: 'BÖLÜM 02 / DİSİPLİNLER',
+    ch_disc_h2: '<span class="out">Altı</span> <em>disiplin.</em><br/>Tek stüdyo.',
+    d1_h: 'Marka <em>Filmleri</em>',
+    d1_b: 'Sinematik marka hikayeciliği. Bir ismi, sanki daha önce gittiğiniz bir yer gibi hissettiren film.',
+    d2_h: 'Reklam',
+    d2_b: 'İzlenmek için, geçilmek için değil. TV, dijital ve sosyal medya içerikleri. Konseptten final mastera.',
+    d3_h: '3D <em>Görselleştirme</em>',
+    d3_b: 'Mimari render ve ürün modelleme. Henüz var olmayan mekanları ve nesneleri inandırıcı kılarız.',
+    d4_h: 'Kurumsal <em>Film</em>',
+    d4_b: 'Şirket hikayeleri, ölçülü bir dille. İnsan, süreç ve amaç: kurumsal sertlik olmadan.',
+    d5_h: 'Reklam <em>Prodüksiyonu</em>',
+    d5_b: 'Uçtan uca reklam ve ticari prodüksiyon. Ekip, set, yönetim ve teslim: baştan sona.',
+    d6_h: 'Drone <em>Sinematografi</em>',
+    d6_b: 'Hikayenin ölçeğini değiştiren havadan perspektifler. Lisanslı, planlı, sinematik.',
+
+    quote_text: 'Fikirler <em>hareket eder.</em><br/>Kalite <em>kendini gösterir.</em> Tasarım, doğru duyguyu doğru aktarmaktır.',
+    quote_attr: 'WORLD LONDON MEDIA · LONDRA + İZMİR',
+
+    st1: 'Teslim edilen proje', st2: 'Yaratıcı disiplin', st3: 'Şehir · Londra + İzmir', st4: 'İlk seçki teslim süresi',
+
+    ch_clients_meta: 'BÖLÜM 03 / SEÇİLMİŞ MÜŞTERİLER',
+    ch_clients_h2: 'Harekete <em>geçirdiğimiz</em><br/>markalar.',
+
+    ch_proc_meta: 'BÖLÜM 04 / SÜREÇ',
+    ch_proc_h2: 'Brief\'ten<br/>final <em>mastera.</em>',
+    p1_h: 'Brief', p1_b: 'Önce dinleriz. Hedefler, kitle, geride bırakmak istediğiniz his. Brief tek bir fikre keskinleşir.', p1_t: 'ADIM 01',
+    p2_h: 'Konsept', p2_b: 'Treatment, referanslar, look ve ton. Tek kare çekilmeden önce pinlenir, tartışılır, onaylanır.', p2_t: 'ADIM 02',
+    p3_h: 'Prodüksiyon', p3_b: 'Ekip, set, ışık, kamera, drone, 3D. Niyetle ilerleriz; çünkü hassasiyet, yeniden çekimden ucuzdur.', p3_t: 'ADIM 03',
+    p4_h: 'Teslim', p4_b: 'Kurgu, renk, ses ve finish. Yayınlanacağı her ekran için masterlanmış, yayına hazır.', p4_t: 'ADIM 04',
+
+    contact_eyebrow: 'LONDRA + İZMİR · RANDEVU AÇIK',
+    contact_h2: 'Bize<br/><em>brief</em>\'ini getir.',
+    contact_loc: 'Londra · İzmir',
+
+    foot_motto: 'Fikirler hareket eder. Kalite kendini gösterir.',
+    foot_studio: 'Stüdyo', foot_index: 'Dizin', foot_connect: 'İletişim',
+    foot_set: 'BRICOLAGE GROTESQUE · MANROPE'
+  };
+  const ariaMap = {
+    en: { backtop: 'Back to top' },
+    tr: { backtop: 'Başa dön' }
+  };
+
+  window.setLang = function (lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original !== undefined) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      const k = el.dataset.i18nAria;
+      const m = (ariaMap[lang] && ariaMap[lang][k]) || (ariaMap.en && ariaMap.en[k]);
+      if (m) el.setAttribute('aria-label', m);
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+      const on = b.dataset.l === lang;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    try { localStorage.setItem('wolo-lang', lang); } catch (e) {}
+    // dil degisince hero kelimelerini yeniden bol
+    splitHeroTitle();
+  };
+
+  // orijinal (EN) icerikleri sakla
+  document.querySelectorAll('[data-i18n]').forEach(function (el) { el.dataset.original = el.innerHTML; });
+
+  /* ---------- Hero baslik: word reveal icin kelimelere bol ---------- */
+  function splitHeroTitle() {
+    const h1 = document.querySelector('[data-hero-title]');
+    if (!h1) return;
+    if (h1.dataset.split === '1' && !h1.dataset.dirty) return;
+    // her gorunur kelimeyi .word > span sarmalina al (HTML korunarak)
+    const walker = document.createTreeWalker(h1, NodeFilter.SHOW_TEXT, null);
+    const textNodes = [];
+    let n;
+    while ((n = walker.nextNode())) textNodes.push(n);
+    textNodes.forEach(function (node) {
+      const parts = node.textContent.split(/(\s+)/);
+      const frag = document.createDocumentFragment();
+      parts.forEach(function (p) {
+        if (p.trim() === '') { frag.appendChild(document.createTextNode(p)); return; }
+        const word = document.createElement('span');
+        word.className = 'word';
+        const inner = document.createElement('span');
+        inner.textContent = p;
+        word.appendChild(inner);
+        frag.appendChild(word);
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+    h1.dataset.split = '1';
+    h1.dataset.dirty = '';
+  }
+
+  /* ---------- Lenis smooth scroll + ScrollTrigger senkron ---------- */
+  let lenis = null;
+  if (hasLenis && !REDUCE) {
+    lenis = new Lenis({
+      duration: 1.15,
+      easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+      smoothWheel: true
+    });
+    if (hasST) {
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+    }
+  }
+
+  // ankor linkleri (Lenis varsa onunla, yoksa native)
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (!t) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(t, { offset: -70 });
+      else t.scrollIntoView({ behavior: REDUCE ? 'auto' : 'smooth' });
+    });
+  });
+
+  /* ---------- GSAP + ScrollTrigger sahneleri ---------- */
+  function initGSAP() {
+    if (!hasGSAP || !hasST) { fallbackReveal(); return; }
+    gsap.registerPlugin(ScrollTrigger);
+
+    splitHeroTitle();
+
+    // Hero kelime reveal (giriste)
+    gsap.set('.hero-title h1 .word > span', { yPercent: 110 });
+    gsap.to('.hero-title h1 .word > span', {
+      yPercent: 0, duration: 1.1, ease: 'expo.out', stagger: 0.08, delay: 0.15
+    });
+    gsap.fromTo('.hero-sub', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.7 });
+
+    // Hero parallax (media katmani scroll'da yavasca kayar)
+    gsap.to('.hero-media', {
+      yPercent: 18, ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+    });
+
+    // Genel reveal (fade/translate stagger)
+    gsap.utils.toArray('.reveal').forEach(function (el) {
+      gsap.fromTo(el, { opacity: 0, y: 34 }, {
+        opacity: 1, y: 0, duration: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' }
+      });
+    });
+
+    // Lookbook kareleri: ic gorselde parallax
+    gsap.utils.toArray('.look-frame img').forEach(function (img) {
+      gsap.fromTo(img, { yPercent: -8 }, {
+        yPercent: 8, ease: 'none',
+        scrollTrigger: { trigger: img.closest('.look'), start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
+
+    // Bolum basliklari: word reveal (split)
+    gsap.utils.toArray('.chapter h2, .disciplines h2, .backstage h2, .clients h2').forEach(function (h2) {
+      gsap.fromTo(h2, { opacity: 0, y: 40 }, {
+        opacity: 1, y: 0, duration: 1.1, ease: 'expo.out',
+        scrollTrigger: { trigger: h2, start: 'top 85%' }
+      });
+    });
+
+    // Disiplin satirlari: kademeli giris
+    gsap.fromTo('.disc', { opacity: 0, x: -24 }, {
+      opacity: 1, x: 0, duration: 0.8, ease: 'power3.out', stagger: 0.08,
+      scrollTrigger: { trigger: '.disc-list', start: 'top 80%' }
+    });
+
+    // Process timeline: kirmizi cizgi scroll ile dolar
+    gsap.to('.back-line-fill', {
+      scaleX: 1, ease: 'none',
+      scrollTrigger: { trigger: '.back-wrap', start: 'top 80%', end: 'bottom 70%', scrub: true }
+    });
+
+    // Stat sayac animasyonu
+    gsap.utils.toArray('[data-count]').forEach(function (el) {
+      const target = parseInt(el.dataset.count, 10);
+      const obj = { v: 0 };
+      ScrollTrigger.create({
+        trigger: el, start: 'top 88%', once: true,
+        onEnter: function () {
+          gsap.to(obj, {
+            v: target, duration: 1.6, ease: 'power2.out',
+            onUpdate: function () { el.textContent = Math.round(obj.v); }
+          });
+        }
+      });
+    });
+
+    // Contact gorseli parallax
+    gsap.to('.contact-media', {
+      yPercent: 12, ease: 'none',
+      scrollTrigger: { trigger: '.contact', start: 'top bottom', end: 'bottom top', scrub: true }
+    });
+
+    // scroll progress bar (ST proxy)
+    const bar = document.querySelector('.scroll-progress');
+    ScrollTrigger.create({
+      start: 0, end: 'max',
+      onUpdate: function (self) { if (bar) bar.style.width = (self.progress * 100) + '%'; }
+    });
+  }
+
+  // GSAP yoksa: reveal'leri hemen ac (icerik gizli kalmasin)
+  function fallbackReveal() {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.style.opacity = 1; el.style.transform = 'none'; });
+      return;
+    }
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.style.transition = 'opacity 1s ease, transform 1s ease';
+          e.target.style.opacity = 1;
+          e.target.style.transform = 'none';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    // statik sayac (animasyonsuz)
+    document.querySelectorAll('[data-count]').forEach(function (el) { el.textContent = el.dataset.count; });
+  }
+
+  if (REDUCE) {
+    // reduced motion: her sey gorunur, sayaclar son degerde
+    document.querySelectorAll('.reveal').forEach(function (el) { el.style.opacity = 1; el.style.transform = 'none'; });
+    document.querySelectorAll('[data-count]').forEach(function (el) { el.textContent = el.dataset.count; });
+    splitHeroTitle();
+    // progress bar yine de calissin (hafif)
+    const bar = document.querySelector('.scroll-progress');
+    window.addEventListener('scroll', function () {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (bar) bar.style.width = ((window.scrollY / Math.max(max, 1)) * 100) + '%';
+    }, { passive: true });
+  } else {
+    initGSAP();
+  }
+
+  /* ---------- Back-to-top ---------- */
+  const backTop = document.querySelector('.back-top');
+  window.addEventListener('scroll', function () {
+    if (backTop) backTop.classList.toggle('visible', window.scrollY > 600);
+  }, { passive: true });
+  if (backTop) backTop.addEventListener('click', function () {
+    if (lenis) lenis.scrollTo(0); else window.scrollTo({ top: 0, behavior: REDUCE ? 'auto' : 'smooth' });
+  });
+
+  /* ---------- Custom cursor (tracking hover state) ---------- */
+  const fine = window.matchMedia('(pointer: fine)').matches;
+  if (fine && !REDUCE) {
+    const dot = document.querySelector('.cursor-dot');
+    const ring = document.querySelector('.cursor-ring');
+    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+    let rx = mx, ry = my;
+    window.addEventListener('mousemove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      if (dot) dot.style.transform = 'translate(' + mx + 'px,' + my + 'px) translate(-50%,-50%)';
+    }, { passive: true });
+    (function loop() {
+      rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
+      if (ring) ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%,-50%)';
+      requestAnimationFrame(loop);
+    })();
+    document.querySelectorAll('a, button, [data-cursor], .lang-toggle button').forEach(function (el) {
+      el.addEventListener('mouseenter', function () { if (ring) ring.classList.add('hover'); });
+      el.addEventListener('mouseleave', function () { if (ring) ring.classList.remove('hover'); });
+    });
+  } else {
+    // dokunmatik / reduced: custom cursor'i gizle
+    document.querySelectorAll('.cursor-dot, .cursor-ring').forEach(function (el) { el.style.display = 'none'; });
+  }
+
+  /* ---------- Disiplin hover video-slot (cursor'i takip eden preview) ---------- */
+  if (fine && !REDUCE) {
+    const preview = document.querySelector('.disc-preview');
+    const inner = preview ? preview.querySelector('.disc-preview-inner') : null;
+    if (preview && inner) {
+      let px = 0, py = 0, tx = 0, ty = 0, active = false;
+      document.querySelectorAll('.disc[data-preview]').forEach(function (row) {
+        row.addEventListener('mouseenter', function () {
+          inner.style.backgroundImage = 'url(' + row.dataset.preview + ')';
+          preview.classList.add('active');
+          active = true;
+        });
+        row.addEventListener('mouseleave', function () {
+          preview.classList.remove('active');
+          active = false;
+        });
+      });
+      window.addEventListener('mousemove', function (e) { tx = e.clientX; ty = e.clientY; }, { passive: true });
+      (function previewLoop() {
+        px += (tx - px) * 0.14; py += (ty - py) * 0.14;
+        if (active) preview.style.transform = 'translate(' + px + 'px,' + py + 'px) translate(-50%,-50%) scale(1)';
+        else preview.style.transform = 'translate(' + px + 'px,' + py + 'px) translate(-50%,-50%) scale(0.92)';
+        requestAnimationFrame(previewLoop);
+      })();
+    }
+  }
+
+  /* ---------- Dil baslat ---------- */
+  let startLang = 'en';
+  try { startLang = localStorage.getItem('wolo-lang') || 'en'; } catch (e) {}
+  setLang(startLang);
+
+  // ScrollTrigger refresh: fontlar/gorseller yuklenince layout otursun
+  window.addEventListener('load', function () {
+    if (hasST) ScrollTrigger.refresh();
+  });
+})();
+</script>
+</body>
+</html>

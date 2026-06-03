@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%231f3326%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23b89048%22%3EW%3C%2Ftext%3E%3C%2Fsvg%3E">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>World London Media · Atelier Vert · From Content to Impact</title>
+
+<meta name="description" content="World London Media (WoLo) is a premium visual production studio. Brand films, advertising, 3D visualization and drone cinematography, crafted in London and Izmir. Ideas move. Quality shows." />
+<meta name="theme-color" content="#1f3326" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="World London Media · Atelier Vert" />
+<meta property="og:title" content="World London Media · From Content to Impact" />
+<meta property="og:description" content="We craft impressions that endure. Your brand, telling its own story." />
+<meta property="og:url" content="https://worldlondonmedia.com/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&q=80" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"World London Media","alternateName":"WoLo","description":"Premium visual production studio. Brand films, advertising, 3D visualization and drone cinematography.","url":"https://worldlondonmedia.com","email":"info@worldlondonmedia.com","telephone":"+447717115002","priceRange":"£££","areaServed":["London, United Kingdom","Izmir, Türkiye"],"slogan":"Ideas move. Quality shows.","makesOffer":[{"@type":"Offer","name":"Brand Films"},{"@type":"Offer","name":"Advertising"},{"@type":"Offer","name":"3D Visualization"},{"@type":"Offer","name":"Corporate Film"},{"@type":"Offer","name":"Commercial Production"},{"@type":"Offer","name":"Drone Cinematography"}]}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Cormorant+SC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest:    #1f3326;
+    --forest-2:  #2c4633;
+    --rose:      #c89c97;
+    --rose-2:    #d4b3ae;
+    --gold:      #b89048;
+    --gold-2:    #d4b074;
+    --cream:     #f4ecda;
+    --cream-2:   #ebe0c5;
+    --display:   'Yeseva One', serif;
+    --caps:      'Marcellus', serif;
+    --serif:     'EB Garamond', serif;
+    --sc:        'Cormorant SC', serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  /* Lenis aktifken native scroll-behavior'i kapat (cakismasin) */
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+  .lenis.lenis-stopped { overflow: hidden; }
+  body {
+    background: var(--cream);
+    color: var(--forest);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--rose); color: var(--forest); }
+
+  /* Film grain dokusu (tum sayfanin uzerinde) */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='1'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.20 0 0 0 0 0.15 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+  }
+
+  /* SVG SUSLEMELER */
+  .ornament-flourish { display: block; margin: 0 auto; color: var(--gold); }
+
+  /* UST BANT (kayan seritte WoLo bilgileri) */
+  .topband {
+    background: var(--forest);
+    color: var(--gold-2);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gold);
+    text-align: center;
+    font-family: var(--caps);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    overflow: hidden;
+  }
+  .topband-track {
+    display: inline-block;
+    animation: scrollL 60s linear infinite;
+    white-space: nowrap;
+  }
+  .topband .gold { color: var(--rose-2); margin: 0 16px; }
+  @keyframes scrollL { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* NAV */
+  nav {
+    background: rgba(244, 236, 218, 0.88);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 24px 48px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    border-bottom: 1px solid var(--forest);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-left, .nav-right { display: flex; gap: 32px; align-items: center; }
+  .nav-right { justify-content: flex-end; }
+  nav a {
+    color: var(--forest);
+    text-decoration: none;
+    font-family: var(--caps);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    transition: color .35s;
+    position: relative;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 50%;
+    width: 0; height: 1px;
+    background: var(--rose);
+    transition: width .4s, left .4s;
+  }
+  nav a:hover { color: var(--rose); }
+  nav a:hover::after { width: 100%; left: 0; }
+  .logo {
+    font-family: var(--display);
+    font-size: 34px;
+    color: var(--forest);
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: -0.005em;
+    line-height: 0.95;
+  }
+  .logo .gold { color: var(--rose); font-style: italic; }
+  .logo small {
+    display: block;
+    font-family: var(--caps);
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    margin-top: 4px;
+    color: var(--gold);
+  }
+  .nav-cta {
+    border: 1px solid var(--forest);
+    padding: 10px 22px;
+    color: var(--forest) !important;
+    font-family: var(--caps);
+    font-size: 11px !important;
+    transition: all .35s;
+    border-radius: 0 !important;
+  }
+  .nav-cta:hover { background: var(--forest); color: var(--cream) !important; }
+  .nav-cta::after { display: none; }
+
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--forest);
+    overflow: hidden;
+    margin-left: 12px;
+  }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--forest);
+    border: none;
+    padding: 5px 11px;
+    font-family: var(--caps);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: all .25s;
+    text-transform: uppercase;
+  }
+  .lang-toggle button.active { background: var(--forest); color: var(--gold-2); }
+
+  /* ORNAMENTAL AYIRAC */
+  .ornament-divider {
+    text-align: center;
+    margin: 24px 0;
+    color: var(--gold);
+    font-size: 18px;
+    letter-spacing: 0.4em;
+  }
+  .ornament-divider::before, .ornament-divider::after {
+    content: '';
+    display: inline-block;
+    width: 80px; height: 1px;
+    background: var(--gold);
+    vertical-align: middle;
+    margin: 0 16px;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding: 80px 48px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Asma/vine sus SVG'leri (sol + sag) */
+  .hero-vine {
+    position: absolute;
+    width: 280px;
+    height: 100%;
+    top: 0;
+    pointer-events: none;
+    opacity: 0.18;
+    z-index: 3;
+  }
+  .hero-vine.left { left: 0; }
+  .hero-vine.right { right: 0; transform: scaleX(-1); }
+
+  .hero-eyebrow {
+    font-family: var(--sc);
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.45em;
+    margin-bottom: 32px;
+    font-weight: 400;
+    position: relative; z-index: 4;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(52px, 8.4vw, 150px);
+    line-height: 0.95;
+    letter-spacing: -0.005em;
+    color: var(--forest);
+    max-width: 1300px;
+    margin-bottom: 24px;
+    position: relative; z-index: 4;
+  }
+  .hero h1 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--rose);
+  }
+  .hero-blurb {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.5;
+    max-width: 720px;
+    color: var(--forest);
+    opacity: 0.88;
+    margin: 0 auto 40px;
+    position: relative; z-index: 4;
+  }
+  .hero-blurb em { color: var(--rose); font-style: normal; font-family: var(--display); font-size: 1.05em; }
+  .hero-ctas { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 4; }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 28px;
+    background: var(--forest);
+    color: var(--cream);
+    text-decoration: none;
+    font-family: var(--caps);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    border: 1px solid var(--gold);
+    transition: all .35s;
+  }
+  .hero-cta:hover { background: var(--rose); color: var(--cream); border-color: var(--rose); }
+  .hero-cta.ghost { background: transparent; color: var(--forest); border-color: var(--forest); }
+  .hero-cta.ghost:hover { background: var(--forest); color: var(--cream); border-color: var(--gold); }
+
+  /* HERO VIDEO/GORSEL CERCEVE (video-hazir, poster fallback) */
+  .hero-frame {
+    margin-top: 48px;
+    width: 100%;
+    max-width: 980px;
+    aspect-ratio: 16/9;
+    border: 8px solid var(--cream);
+    box-shadow:
+      0 0 0 1px var(--gold),
+      0 0 0 12px var(--cream),
+      0 0 0 13px var(--gold),
+      0 30px 80px -20px rgba(31, 51, 38, 0.4);
+    position: relative;
+    z-index: 4;
+    overflow: hidden;
+  }
+  .hero-frame .media-wrap { position: absolute; inset: 0; overflow: hidden; }
+  .hero-frame video,
+  .hero-frame .poster {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 112%; height: 112%;
+    object-fit: cover;
+    transform: translate(-50%, -50%) scale(1);
+    will-change: transform;
+  }
+  .hero-frame .poster {
+    background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1800&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+  /* Yumusak Ken Burns ambiyans hareketi (video gelene kadar poster icin) */
+  .hero-frame .poster.kenburns { animation: kenburns 18s ease-in-out infinite alternate; }
+  @keyframes kenburns {
+    from { transform: translate(-50%, -50%) scale(1) ; }
+    to   { transform: translate(-52%, -49%) scale(1.12); }
+  }
+  .hero-frame .play-badge {
+    position: absolute;
+    bottom: 18px; right: 18px;
+    z-index: 5;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: rgba(31, 51, 38, 0.72);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--gold);
+    color: var(--cream);
+    display: grid; place-items: center;
+    cursor: pointer;
+    transition: transform .35s, background .35s;
+  }
+  .hero-frame .play-badge:hover { transform: scale(1.08); background: var(--rose); }
+  .hero-frame .play-badge svg { width: 20px; height: 20px; margin-left: 3px; }
+  .hero-frame-cap {
+    margin-top: 32px;
+    font-family: var(--sc);
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    position: relative; z-index: 4;
+  }
+  .scroll-hint {
+    margin-top: 40px;
+    font-family: var(--sc);
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    position: relative; z-index: 4;
+    display: inline-flex; flex-direction: column; align-items: center; gap: 10px;
+  }
+  .scroll-hint .line { width: 1px; height: 44px; background: var(--gold); transform-origin: top; animation: dropLine 2.2s ease-in-out infinite; }
+  @keyframes dropLine { 0% { transform: scaleY(0); opacity: 0; } 40% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1) translateY(44px); opacity: 0; } }
+
+  /* SECTION SABLON */
+  .section { padding: 120px 48px; position: relative; }
+  .section-eyebrow {
+    text-align: center;
+    font-family: var(--sc);
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.45em;
+    margin-bottom: 16px;
+  }
+  .section h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(46px, 6.2vw, 104px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--forest);
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .section h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--rose);
+  }
+  .section-lead {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.55;
+    max-width: 640px;
+    margin: 0 auto 48px;
+    text-align: center;
+    color: var(--forest);
+    opacity: 0.85;
+  }
+
+  /* SHOWREEL / IS VITRINI */
+  .showreel { background: var(--forest); color: var(--cream); border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); overflow: hidden; }
+  .showreel .section-eyebrow, .showreel .section-lead { color: var(--cream); }
+  .showreel .section-eyebrow { color: var(--gold-2); }
+  .showreel h2 { color: var(--cream); }
+  .showreel h2 em { color: var(--gold-2); }
+  .reel-stage {
+    max-width: 1100px;
+    margin: 0 auto 64px;
+    aspect-ratio: 21/9;
+    position: relative;
+    border: 6px solid var(--cream);
+    box-shadow: 0 0 0 1px var(--gold), 0 0 0 8px var(--forest-2), 0 0 0 9px var(--gold);
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .reel-stage .poster {
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1800&q=80') center/cover;
+    transform: scale(1.06);
+    will-change: transform;
+  }
+  .reel-stage::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(31,51,38,0.55), rgba(31,51,38,0.05) 55%);
+  }
+  .reel-play {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 92px; height: 92px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    background: rgba(244, 236, 218, 0.12);
+    -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+    color: var(--cream);
+    display: grid; place-items: center;
+    transition: transform .4s, background .4s;
+  }
+  .reel-stage:hover .reel-play { transform: translate(-50%, -50%) scale(1.08); background: rgba(200,156,151,0.25); }
+  .reel-play svg { width: 30px; height: 30px; margin-left: 5px; }
+  .reel-label {
+    position: absolute; left: 28px; bottom: 24px; z-index: 3;
+    font-family: var(--sc); font-size: 13px; letter-spacing: 0.34em; color: var(--cream);
+  }
+
+  /* IS VITRINI GRID (parallax kareler) */
+  .work-grid {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px 32px;
+  }
+  .w-item { cursor: pointer; }
+  .w-frame {
+    background: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border: 6px solid var(--cream);
+    box-shadow: 0 0 0 1px var(--gold), 0 0 0 8px var(--forest-2), 0 0 0 9px var(--gold);
+    transition: transform 1s cubic-bezier(.5,1.4,.5,1);
+    position: relative;
+  }
+  .w-frame::after {
+    content: '↗';
+    position: absolute; top: 12px; right: 14px;
+    font-family: var(--display); font-size: 22px; color: var(--cream);
+    opacity: 0; transform: translateY(6px); transition: opacity .4s, transform .4s;
+    text-shadow: 0 2px 8px rgba(0,0,0,.5);
+  }
+  .w-item:hover .w-frame { transform: rotate(-1deg) scale(1.02); }
+  .w-item:hover .w-frame::after { opacity: 1; transform: translateY(0); }
+  .w-frame .parallax-img { position: absolute; inset: -12%; background-size: cover; background-position: center; will-change: transform; }
+  .w-cap { margin-top: 22px; text-align: center; }
+  .w-cap h4 { font-family: var(--display); font-weight: 400; font-size: 28px; color: var(--cream); }
+  .w-cap h4 em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--gold-2); }
+  .w-cap .meta { font-family: var(--sc); font-size: 11px; letter-spacing: 0.32em; color: var(--gold-2); margin-top: 6px; }
+  .w-1 { grid-column: 1 / 7; }
+  .w-1 .w-frame { aspect-ratio: 4/5; }
+  .w-2 { grid-column: 8 / 13; padding-top: 80px; }
+  .w-2 .w-frame { aspect-ratio: 3/4; }
+  .w-3 { grid-column: 1 / 5; padding-top: 40px; }
+  .w-3 .w-frame { aspect-ratio: 1/1; }
+  .w-4 { grid-column: 6 / 13; }
+  .w-4 .w-frame { aspect-ratio: 16/10; }
+
+  /* SERVISLER (collection) */
+  .collection { background: var(--cream-2); border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); }
+  .col-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 80px;
+  }
+  .col-item {
+    text-align: center;
+    padding: 40px 16px;
+    border-top: 1px solid rgba(31, 51, 38, 0.2);
+    cursor: default;
+    transition: background .35s;
+  }
+  .col-item:hover { background: rgba(184, 144, 72, 0.08); }
+  .col-no { font-family: var(--display); font-size: 22px; color: var(--gold); margin-bottom: 16px; }
+  .col-item h3 { font-family: var(--display); font-weight: 400; font-size: 42px; line-height: 1.05; margin-bottom: 16px; }
+  .col-item h3 em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--rose); }
+  .col-item p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 460px;
+    margin: 0 auto 16px;
+    color: var(--forest);
+    opacity: 0.85;
+  }
+  .col-tags { font-family: var(--sc); font-size: 11px; letter-spacing: 0.3em; color: var(--gold); }
+
+  /* MUSTERILER */
+  .clients { background: var(--cream); text-align: center; }
+  .client-row {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 18px 0;
+    border-top: 1px solid rgba(31,51,38,0.2);
+    border-bottom: 1px solid rgba(31,51,38,0.2);
+  }
+  .client-name {
+    flex: 0 0 33.333%;
+    padding: 36px 12px;
+    font-family: var(--display);
+    font-size: clamp(26px, 3.2vw, 46px);
+    color: var(--forest);
+    line-height: 1;
+    border-right: 1px solid rgba(31,51,38,0.12);
+    border-bottom: 1px solid rgba(31,51,38,0.12);
+    transition: color .4s, letter-spacing .4s;
+  }
+  .client-name:nth-child(3n) { border-right: none; }
+  .client-name:hover { color: var(--rose); letter-spacing: 0.02em; }
+  .client-stats {
+    max-width: 1000px; margin: 64px auto 0;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  }
+  .stat .num { font-family: var(--display); font-size: clamp(48px, 7vw, 88px); color: var(--gold); line-height: 1; }
+  .stat .num em { font-family: var(--serif); font-style: italic; color: var(--rose); font-size: 0.5em; }
+  .stat .lbl { font-family: var(--sc); font-size: 12px; letter-spacing: 0.34em; color: var(--forest); margin-top: 12px; }
+
+  /* MANIFESTO */
+  .manifesto {
+    background: var(--forest);
+    color: var(--cream);
+    padding: 150px 48px;
+    text-align: center;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    position: relative;
+  }
+  .manifesto .section-eyebrow { color: var(--gold-2); }
+  .manifesto-text {
+    font-family: var(--display);
+    font-size: clamp(34px, 4.4vw, 72px);
+    line-height: 1.18;
+    max-width: 1100px;
+    margin: 0 auto;
+    color: var(--cream);
+  }
+  /* Word-reveal kelimeleri */
+  .manifesto-text .word { display: inline-block; opacity: 0.16; transition: opacity .2s; }
+  .manifesto-text em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--gold-2); }
+  .manifesto-attr { margin-top: 36px; font-family: var(--sc); font-size: 12px; letter-spacing: 0.4em; color: var(--gold-2); }
+
+  /* PROCESS (animated SVG diagram) */
+  .process { background: var(--cream); }
+  .process-wrap { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 220px 1fr; gap: 56px; align-items: start; }
+  .process-track { position: sticky; top: 140px; }
+  .process-track svg { width: 100%; height: auto; overflow: visible; }
+  .process-list { list-style: none; }
+  .p-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 1.3fr;
+    gap: 48px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(31, 51, 38, 0.25);
+    align-items: baseline;
+    transition: padding-left .55s cubic-bezier(.65,0,.35,1), background .4s;
+  }
+  .p-row:last-child { border-bottom: 1px solid rgba(31, 51, 38, 0.25); }
+  .p-row:hover { padding-left: 24px; background: rgba(184, 144, 72, 0.05); }
+  .p-num { font-family: var(--display); font-size: 54px; color: var(--rose); line-height: 1; }
+  .p-row h3 { font-family: var(--display); font-weight: 400; font-size: 34px; line-height: 1.05; color: var(--forest); }
+  .p-row h3 em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--rose); }
+  .p-row p { font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.55; color: var(--forest); opacity: 0.85; }
+
+  /* CONTACT */
+  .contact { background: var(--rose); color: var(--forest); padding: 150px 48px 90px; text-align: center; border-top: 1px solid var(--gold); }
+  .contact .section-eyebrow { color: var(--cream); }
+  .contact h2 { font-family: var(--display); font-size: clamp(54px, 8.5vw, 150px); color: var(--forest); margin-bottom: 32px; line-height: 1; }
+  .contact h2 em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--cream); }
+  .contact-mail {
+    font-family: var(--display);
+    font-size: clamp(26px, 3.8vw, 52px);
+    color: var(--forest);
+    text-decoration: none;
+    border-bottom: 2px solid var(--forest);
+    padding-bottom: 4px;
+    transition: color .35s, border-color .35s;
+    display: inline-block;
+  }
+  .contact-mail:hover { color: var(--cream); border-color: var(--cream); }
+  .contact-channels { margin-top: 40px; display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
+  .contact-chip {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 24px;
+    border: 1px solid var(--forest);
+    color: var(--forest);
+    text-decoration: none;
+    font-family: var(--caps);
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    transition: all .35s;
+  }
+  .contact-chip:hover { background: var(--forest); color: var(--cream); border-color: var(--gold); }
+  .contact-chip svg { width: 16px; height: 16px; }
+  .contact-rule { width: 1px; height: 60px; background: var(--forest); opacity: 0.5; margin: 40px auto; }
+  .contact-meta { font-family: var(--sc); font-size: 12px; letter-spacing: 0.4em; color: var(--forest); opacity: 0.85; }
+
+  /* FOOTER */
+  footer { background: var(--forest); color: var(--cream); padding: 70px 48px 24px; text-align: center; border-top: 1px solid var(--gold); }
+  .foot-mono { font-family: var(--display); font-size: clamp(64px, 10vw, 168px); line-height: 0.95; color: var(--cream); margin-bottom: 8px; }
+  .foot-mono em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--rose-2); }
+  .foot-tag { font-family: var(--sc); font-size: 13px; letter-spacing: 0.4em; color: var(--gold-2); margin-bottom: 40px; }
+  .foot-bot {
+    border-top: 1px solid rgba(244, 236, 218, 0.2);
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: var(--sc);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    color: var(--gold-2);
+  }
+
+  /* REVEAL temel (JS yoksa veya reduced-motion'da gorunur kalir) */
+  .reveal { opacity: 0; transform: translateY(30px); }
+  .reveal.in { opacity: 1; transform: translateY(0); transition: opacity 1s ease, transform 1s ease; }
+
+  /* LIGHTBOX */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 10002;
+    background: rgba(20, 30, 24, 0.94);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    display: grid; place-items: center;
+    padding: 40px;
+    opacity: 0; pointer-events: none;
+    transition: opacity .4s ease;
+  }
+  .lightbox.open { opacity: 1; pointer-events: auto; }
+  .lightbox-inner {
+    max-width: 1100px; width: 100%;
+    transform: scale(0.96); transition: transform .45s cubic-bezier(.2,.8,.2,1);
+  }
+  .lightbox.open .lightbox-inner { transform: scale(1); }
+  .lightbox-media {
+    width: 100%; aspect-ratio: 16/9;
+    background-size: cover; background-position: center;
+    border: 6px solid var(--cream);
+    box-shadow: 0 0 0 1px var(--gold), 0 0 0 12px rgba(244,236,218,0.06), 0 0 0 13px var(--gold);
+  }
+  .lightbox-cap { margin-top: 24px; text-align: center; }
+  .lightbox-cap h4 { font-family: var(--display); font-size: 34px; color: var(--cream); font-weight: 400; }
+  .lightbox-cap h4 em { font-family: var(--serif); font-style: italic; color: var(--gold-2); }
+  .lightbox-cap .meta { font-family: var(--sc); font-size: 12px; letter-spacing: 0.34em; color: var(--gold-2); margin-top: 8px; }
+  .lightbox-close {
+    position: absolute; top: 24px; right: 28px;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: transparent; border: 1px solid var(--gold); color: var(--cream);
+    font-family: var(--display); font-size: 24px; cursor: pointer;
+    transition: background .3s, transform .3s;
+  }
+  .lightbox-close:hover { background: var(--gold); color: var(--forest); transform: rotate(90deg); }
+
+  /* HELPER / V2 PACK */
+  .skip-link { position: absolute; top: -100px; left: 8px; background: var(--forest); color: var(--gold-2); padding: 8px 16px; font-family: var(--caps); font-size: 11px; text-transform: uppercase; letter-spacing: 0.3em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 2px; background: var(--gold); z-index: 10000; transition: width .12s ease-out; pointer-events: none; }
+  .back-top { position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px; border-radius: 50%; background: rgba(244,236,218,0.85); color: var(--forest); border: 1px solid var(--gold); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .35s, background .35s, color .35s, transform .35s; z-index: 999; font-family: var(--display); font-size: 20px; }
+  .back-top.visible { opacity: 1; pointer-events: auto; }
+  .back-top:hover { background: var(--gold); color: var(--cream); transform: translateY(-3px); }
+
+  /* Asma SVG hafif nefes alma (sadece motion aciksa) */
+  .hero-vine { animation: vinebreath 6s ease-in-out infinite alternate; }
+  @keyframes vinebreath { from { opacity: 0.16; } to { opacity: 0.26; } }
+
+  /* PREFERS-REDUCED-MOTION: tum agir hareketi kapat, icerik TAM gorunur kalsin */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .manifesto-text .word { opacity: 1 !important; }
+    .hero-frame .poster.kenburns { animation: none !important; }
+  }
+
+  @media (max-width: 900px) {
+    .hero-vine { display: none; }
+    nav { padding: 16px 20px; grid-template-columns: 1fr auto; }
+    .nav-left { display: none; }
+    .nav-right { gap: 12px; }
+    .nav-right .nav-cta { display: none; }
+    .logo { font-size: 28px; }
+    .section { padding: 80px 22px; }
+    .hero { padding: 60px 22px 50px; }
+    .col-grid { grid-template-columns: 1fr; gap: 0; }
+    .work-grid { gap: 28px; }
+    .work-grid > * { grid-column: 1 / -1 !important; padding-top: 0 !important; }
+    .client-name { flex: 0 0 50%; }
+    .client-name:nth-child(3n) { border-right: 1px solid rgba(31,51,38,0.12); }
+    .client-name:nth-child(2n) { border-right: none; }
+    .client-stats { grid-template-columns: 1fr; gap: 40px; }
+    .process-wrap { grid-template-columns: 1fr; gap: 24px; }
+    .process-track { display: none; }
+    .p-row { grid-template-columns: 56px 1fr; gap: 12px 18px; }
+    .p-row p { grid-column: 1 / -1; }
+    .foot-bot { justify-content: center; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link" data-i18n="skip">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<button class="back-top" aria-label="Back to top" data-i18n-aria="backtop">↑</button>
+
+<div class="topband" aria-hidden="true">
+  <div class="topband-track">
+    <span>WORLD LONDON MEDIA · ATELIER VERT</span>
+    <span class="gold">❦</span>
+    <span>LONDON · IZMIR</span>
+    <span class="gold">❦</span>
+    <span>IDEAS MOVE · QUALITY SHOWS</span>
+    <span class="gold">❦</span>
+    <span>FROM CONTENT TO IMPACT</span>
+    <span class="gold">❦</span>
+    <span>WORLD LONDON MEDIA · ATELIER VERT</span>
+    <span class="gold">❦</span>
+    <span>LONDON · IZMIR</span>
+    <span class="gold">❦</span>
+    <span>IDEAS MOVE · QUALITY SHOWS</span>
+    <span class="gold">❦</span>
+    <span>FROM CONTENT TO IMPACT</span>
+    <span class="gold">❦</span>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-left">
+    <a href="#work" data-i18n="nav_work">Work</a>
+    <a href="#services" data-i18n="nav_services">Services</a>
+    <a href="#process" data-i18n="nav_process">Process</a>
+  </div>
+  <a href="../../index.html" class="logo">
+    World <span class="gold">London</span> Media
+    <small>· ATELIER VERT · LONDON &amp; IZMIR ·</small>
+  </a>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Get in touch</a>
+    <div class="lang-toggle" role="group" aria-label="Language / Dil">
+      <button data-l="en" onclick="setLang('en')" aria-label="English">EN</button>
+      <button data-l="tr" onclick="setLang('tr')" aria-label="Türkçe">TR</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero" aria-label="Intro">
+  <!-- Sol asma/vine sus -->
+  <svg class="hero-vine left" viewBox="0 0 280 800" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+    <g stroke="#b89048" stroke-width="1.5" fill="none" stroke-linecap="round">
+      <path d="M40 0 Q 80 80 60 160 Q 40 240 100 320 Q 160 400 80 480 Q 0 560 80 640 Q 160 720 100 800"/>
+      <path d="M30 100 Q 70 110 60 130 Q 50 150 80 160 M70 130 L 90 120 M70 130 L 80 145"/>
+      <path d="M75 280 Q 100 290 90 310 Q 80 330 110 340 M95 310 L 115 300 M95 310 L 105 325"/>
+      <path d="M65 480 Q 90 490 80 510 Q 70 530 100 540 M85 510 L 105 500 M85 510 L 95 525"/>
+      <circle cx="90" cy="200" r="18"/><circle cx="90" cy="200" r="8"/>
+      <circle cx="100" cy="420" r="16"/><circle cx="100" cy="420" r="6"/>
+      <circle cx="90" cy="620" r="20"/><circle cx="90" cy="620" r="10"/>
+    </g>
+  </svg>
+  <!-- Sag asma/vine sus (CSS ile aynalanir) -->
+  <svg class="hero-vine right" viewBox="0 0 280 800" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+    <g stroke="#b89048" stroke-width="1.5" fill="none" stroke-linecap="round">
+      <path d="M40 0 Q 80 80 60 160 Q 40 240 100 320 Q 160 400 80 480 Q 0 560 80 640 Q 160 720 100 800"/>
+      <path d="M30 100 Q 70 110 60 130 Q 50 150 80 160 M70 130 L 90 120 M70 130 L 80 145"/>
+      <path d="M75 280 Q 100 290 90 310 Q 80 330 110 340 M95 310 L 115 300 M95 310 L 105 325"/>
+      <path d="M65 480 Q 90 490 80 510 Q 70 530 100 540 M85 510 L 105 500 M85 510 L 95 525"/>
+      <circle cx="90" cy="200" r="18"/><circle cx="90" cy="200" r="8"/>
+      <circle cx="100" cy="420" r="16"/><circle cx="100" cy="420" r="6"/>
+      <circle cx="90" cy="620" r="20"/><circle cx="90" cy="620" r="10"/>
+    </g>
+  </svg>
+
+  <div class="hero-eyebrow" data-i18n="hero_eyebrow">❦ Premium visual production · London &amp; Izmir ❦</div>
+  <h1 data-i18n="hero_h1">From <em>content</em><br/>to <em>impact.</em></h1>
+  <p class="hero-blurb" data-i18n="hero_blurb">We craft impressions that <em>endure.</em> Your brand, telling its own story, through cinematic film, advertising, and considered visual design.</p>
+  <div class="hero-ctas">
+    <a href="#work" class="hero-cta" data-i18n="hero_cta">See the work ❦</a>
+    <a href="#contact" class="hero-cta ghost" data-i18n="hero_cta2">Start a project</a>
+  </div>
+
+  <!-- VIDEO-HAZIR HERO CERCEVE: poster fallback + Ken Burns ambiyans.
+       Gercek brand video swap'i tek satir: asagidaki <source> yorumunu acip data-poster'i kaldir,
+       <video> elementine autoplay muted loop playsinline ekle (JS zaten hazirliyor). -->
+  <div class="hero-frame">
+    <div class="media-wrap">
+      <video class="hero-video" playsinline muted loop preload="none" poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1800&q=80" aria-label="WoLo showreel">
+        <!-- <source src="/media/wolo-reel.mp4" type="video/mp4" /> -->
+      </video>
+      <div class="poster kenburns" role="img" aria-label="WoLo brand film still"></div>
+    </div>
+    <button class="play-badge" type="button" aria-label="Play showreel" data-lightbox data-img="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1800&q=80" data-title="WoLo Showreel" data-meta="2026 · BRAND REEL">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+  </div>
+  <p class="hero-frame-cap" data-i18n="hero_frame_cap">❦ Showreel · MMXXVI · Ideas move. Quality shows. ❦</p>
+
+  <span class="scroll-hint" aria-hidden="true">
+    <span data-i18n="scroll_hint">SCROLL</span>
+    <span class="line"></span>
+  </span>
+</section>
+
+<!-- SHOWREEL / IS VITRINI -->
+<section class="section showreel" id="work" aria-label="Selected work">
+  <p class="section-eyebrow reveal" data-i18n="sec_work_label">❦ Selected Work ❦</p>
+  <h2 class="reveal" data-split data-i18n="sec_work_title">Frames that <em>move</em> people.</h2>
+  <p class="section-lead reveal" data-i18n="sec_work_lead">A handful of recent productions. Every frame is a placeholder, ready to be swapped for the real cut.</p>
+
+  <!-- Ana showreel sahnesi (tiklayinca lightbox) -->
+  <div class="reel-stage reveal" data-lightbox data-img="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1800&q=80" data-title="The WoLo Showreel" data-meta="2026 · DIRECTORS CUT" role="button" tabindex="0" aria-label="Play the WoLo showreel">
+    <div class="poster"></div>
+    <span class="reel-play" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    </span>
+    <span class="reel-label" data-i18n="reel_label">❦ Showreel · 02:14 ❦</span>
+  </div>
+
+  <div class="work-grid">
+    <div class="w-item w-1 reveal" data-lightbox data-img="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1400&q=80" data-title="Karaca" data-meta="BRAND FILM · 2025" role="button" tabindex="0" aria-label="Open Karaca brand film">
+      <div class="w-frame"><div class="parallax-img" style="background-image:url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1400&q=80')"></div></div>
+      <div class="w-cap"><h4>Karaca · <em>Atelier</em></h4><span class="meta">❦ BRAND FILM · 2025 ❦</span></div>
+    </div>
+    <div class="w-item w-2 reveal" data-lightbox data-img="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1100&q=80" data-title="Le Cordon Bleu" data-meta="COMMERCIAL · 2025" role="button" tabindex="0" aria-label="Open Le Cordon Bleu commercial">
+      <div class="w-frame"><div class="parallax-img" style="background-image:url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1100&q=80')"></div></div>
+      <div class="w-cap"><h4>Le Cordon <em>Bleu</em></h4><span class="meta">❦ COMMERCIAL · 2025 ❦</span></div>
+    </div>
+    <div class="w-item w-3 reveal" data-lightbox data-img="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1100&q=80" data-title="Barrus London" data-meta="DRONE · 2024" role="button" tabindex="0" aria-label="Open Barrus London drone film">
+      <div class="w-frame"><div class="parallax-img" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1100&q=80')"></div></div>
+      <div class="w-cap"><h4>Barrus <em>London</em></h4><span class="meta">❦ DRONE · 2024 ❦</span></div>
+    </div>
+    <div class="w-item w-4 reveal" data-lightbox data-img="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1600&q=80" data-title="Yeni Raki" data-meta="ADVERTISING · 2025" role="button" tabindex="0" aria-label="Open Yeni Raki advertising film">
+      <div class="w-frame"><div class="parallax-img" style="background-image:url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1600&q=80')"></div></div>
+      <div class="w-cap"><h4>Yeni <em>Raki</em></h4><span class="meta">❦ ADVERTISING · 2025 ❦</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVISLER -->
+<section class="section collection" id="services" aria-label="Services">
+  <p class="section-eyebrow reveal" data-i18n="sec_svc_label">❦ Six disciplines ❦</p>
+  <h2 class="reveal" data-split data-i18n="sec_svc_title">What we <em>make.</em></h2>
+  <p class="ornament-divider" aria-hidden="true">❦ ❦ ❦</p>
+
+  <div class="col-grid">
+    <div class="col-item reveal">
+      <div class="col-no">i.</div>
+      <h3 data-i18n="svc1_t">Brand <em>Films</em></h3>
+      <p data-i18n="svc1_d">Cinematic brand storytelling. We find the feeling at the heart of a brand and give it a film worth remembering.</p>
+      <div class="col-tags" data-i18n="svc1_tags">NARRATIVE · DIRECTION · COLOUR</div>
+    </div>
+    <div class="col-item reveal">
+      <div class="col-no">ii.</div>
+      <h3 data-i18n="svc2_t">Adver<em>tising</em></h3>
+      <p data-i18n="svc2_d">Content for TV, digital, and social. Built to be seen, made to be shared, measured by the impact it leaves.</p>
+      <div class="col-tags" data-i18n="svc2_tags">TV · DIGITAL · SOCIAL</div>
+    </div>
+    <div class="col-item reveal">
+      <div class="col-no">iii.</div>
+      <h3 data-i18n="svc3_t">3D <em>Visualization</em></h3>
+      <p data-i18n="svc3_d">Architectural renders and product modeling. Spaces and objects rendered before they exist, accurate to the millimetre.</p>
+      <div class="col-tags" data-i18n="svc3_tags">RENDER · PRODUCT · ARCHVIZ</div>
+    </div>
+    <div class="col-item reveal">
+      <div class="col-no">iv.</div>
+      <h3 data-i18n="svc4_t">Corporate <em>Film</em></h3>
+      <p data-i18n="svc4_d">Films that carry a company's voice with composure. Internal stories, launches, and the human face of an organisation.</p>
+      <div class="col-tags" data-i18n="svc4_tags">CORPORATE · INTERVIEW · EVENT</div>
+    </div>
+    <div class="col-item reveal">
+      <div class="col-no">v.</div>
+      <h3 data-i18n="svc5_t">Commercial <em>Production</em></h3>
+      <p data-i18n="svc5_d">End-to-end advertising production. Concept, crew, locations, and post, held to a single standard of finish.</p>
+      <div class="col-tags" data-i18n="svc5_tags">PRODUCTION · CREW · POST</div>
+    </div>
+    <div class="col-item reveal">
+      <div class="col-no">vi.</div>
+      <h3 data-i18n="svc6_t">Drone <em>Cinematography</em></h3>
+      <p data-i18n="svc6_d">Aerial perspectives that lift a story off the ground. Licensed, cinematic, and steady where it matters.</p>
+      <div class="col-tags" data-i18n="svc6_tags">AERIAL · FPV · LICENSED</div>
+    </div>
+  </div>
+</section>
+
+<!-- MUSTERILER -->
+<section class="section clients" id="clients" aria-label="Selected clients">
+  <p class="section-eyebrow reveal" data-i18n="sec_cli_label">❦ Selected Clients ❦</p>
+  <h2 class="reveal" data-split data-i18n="sec_cli_title">In good <em>company.</em></h2>
+  <p class="section-lead reveal" data-i18n="sec_cli_lead">Brands and houses that trusted us with their image.</p>
+
+  <div class="client-row reveal">
+    <div class="client-name">Samsung</div>
+    <div class="client-name">Karaca</div>
+    <div class="client-name">LC Waikiki</div>
+    <div class="client-name">Yeni Raki</div>
+    <div class="client-name">Le Cordon Bleu</div>
+    <div class="client-name">Barrus London</div>
+  </div>
+
+  <div class="client-stats">
+    <div class="stat reveal">
+      <div class="num"><span class="count" data-to="120">0</span><em>+</em></div>
+      <div class="lbl" data-i18n="stat1">PRODUCTIONS DELIVERED</div>
+    </div>
+    <div class="stat reveal">
+      <div class="num"><span class="count" data-to="14">0</span></div>
+      <div class="lbl" data-i18n="stat2">YEARS OF CRAFT</div>
+    </div>
+    <div class="stat reveal">
+      <div class="num"><span class="count" data-to="2">0</span></div>
+      <div class="lbl" data-i18n="stat3">STUDIOS · LONDON &amp; IZMIR</div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO (word reveal) -->
+<section class="manifesto" id="about" aria-label="Philosophy">
+  <p class="section-eyebrow" data-i18n="sec_man_label">❦ Philosophy ❦</p>
+  <p class="manifesto-text" data-i18n="manif_text">Ideas <em>move.</em> Quality <em>shows.</em> Design is not decoration, it is conveying the right emotion, accurately, until the room remembers it <em>twice.</em></p>
+  <p class="manifesto-attr" data-i18n="manif_attr">❦ WORLD LONDON MEDIA · LONDON &amp; IZMIR ❦</p>
+</section>
+
+<!-- PROCESS (animated SVG progress diagram) -->
+<section class="section process" id="process" aria-label="Process">
+  <p class="section-eyebrow reveal" data-i18n="sec_proc_label">❦ Of the Method ❦</p>
+  <h2 class="reveal" data-split data-i18n="sec_proc_title">Four <em>movements,</em><br/>one rhythm.</h2>
+  <p class="ornament-divider" aria-hidden="true">❦ ❦ ❦</p>
+
+  <div class="process-wrap">
+    <!-- Sticky animasyonlu dikey diyagram: scroll ilerledikce altin cizgi doluyor -->
+    <div class="process-track" aria-hidden="true">
+      <svg viewBox="0 0 80 600" preserveAspectRatio="xMidYMin meet">
+        <line x1="40" y1="20" x2="40" y2="580" stroke="rgba(31,51,38,0.18)" stroke-width="2"/>
+        <line class="proc-fill" x1="40" y1="20" x2="40" y2="580" stroke="#b89048" stroke-width="2" stroke-dasharray="560" stroke-dashoffset="560"/>
+        <g fill="#b89048" font-family="'Yeseva One', serif">
+          <circle class="proc-dot" data-i="0" cx="40" cy="60"  r="7" fill="#f4ecda" stroke="#b89048" stroke-width="2"/>
+          <circle class="proc-dot" data-i="1" cx="40" cy="220" r="7" fill="#f4ecda" stroke="#b89048" stroke-width="2"/>
+          <circle class="proc-dot" data-i="2" cx="40" cy="380" r="7" fill="#f4ecda" stroke="#b89048" stroke-width="2"/>
+          <circle class="proc-dot" data-i="3" cx="40" cy="540" r="7" fill="#f4ecda" stroke="#b89048" stroke-width="2"/>
+        </g>
+      </svg>
+    </div>
+
+    <ul class="process-list">
+      <li class="p-row reveal" data-step="0">
+        <span class="p-num">i.</span>
+        <h3 data-i18n="p1_t">The <em>brief</em></h3>
+        <p data-i18n="p1_d">A conversation about the brand, the audience, and the feeling we are chasing. The brief writes itself once we know the room and the people.</p>
+      </li>
+      <li class="p-row reveal" data-step="1">
+        <span class="p-num">ii.</span>
+        <h3 data-i18n="p2_t">The <em>concept</em></h3>
+        <p data-i18n="p2_d">References, treatment, palette, casting, locations and schedule, pinned to the wall and approved before any camera leaves its case.</p>
+      </li>
+      <li class="p-row reveal" data-step="2">
+        <span class="p-num">iii.</span>
+        <h3 data-i18n="p3_t">The <em>production</em></h3>
+        <p data-i18n="p3_d">Small crews, long lights, real rooms. On set or in the air, we move with intent because mistakes get expensive in post.</p>
+      </li>
+      <li class="p-row reveal" data-step="3">
+        <span class="p-num">iv.</span>
+        <h3 data-i18n="p4_t">The <em>delivery</em></h3>
+        <p data-i18n="p4_d">Edit, grade, sound, and final masters. Cut for screen and feed, delivered on time, archived for the long run.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" aria-label="Contact">
+  <p class="section-eyebrow reveal" data-i18n="contact_label">❦ Get in touch ❦</p>
+  <h2 class="reveal" data-split data-i18n="contact_h2">Tell us your <em>story.</em></h2>
+  <a href="mailto:info@worldlondonmedia.com" class="contact-mail reveal">info@worldlondonmedia.com</a>
+
+  <div class="contact-channels reveal">
+    <a href="https://wa.me/447717115002" class="contact-chip" target="_blank" rel="noopener" data-i18n="contact_wa">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zM6.6 20.13c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      WhatsApp
+    </a>
+    <a href="https://worldlondonmedia.com" class="contact-chip" target="_blank" rel="noopener">
+      worldlondonmedia.com
+    </a>
+  </div>
+
+  <div class="contact-rule" aria-hidden="true"></div>
+  <p class="contact-meta" data-i18n="contact_meta">❦ BY APPOINTMENT · LONDON · IZMIR ❦</p>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-mono">World <em>London</em> Media</div>
+  <div class="foot-tag" data-i18n="foot_tag">❦ IDEAS MOVE · QUALITY SHOWS ❦</div>
+  <div class="foot-bot">
+    <span data-i18n="foot_left">© MMXXVI · WORLD LONDON MEDIA · LONDON &amp; IZMIR</span>
+    <span data-i18n="foot_right">SET IN YESEVA ONE · MARCELLUS · EB GARAMOND</span>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Work preview" aria-hidden="true">
+  <button class="lightbox-close" type="button" aria-label="Close preview">×</button>
+  <div class="lightbox-inner">
+    <div class="lightbox-media" id="lightbox-media"></div>
+    <div class="lightbox-cap">
+      <h4 id="lightbox-title"></h4>
+      <span class="meta" id="lightbox-meta"></span>
+    </div>
+  </div>
+</div>
+
+<!-- KUTUPHANELER (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  // prefers-reduced-motion kontrolu: agir hareketin tamami buna gore kapanir
+  const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasGSAP = typeof window.gsap !== 'undefined';
+  const hasST = typeof window.ScrollTrigger !== 'undefined';
+  const hasLenis = typeof window.Lenis !== 'undefined';
+
+  /* ---------- LENIS SMOOTH SCROLL + SCROLLTRIGGER SENKRON ---------- */
+  let lenis = null;
+  if (hasLenis && !REDUCED) {
+    lenis = new Lenis({
+      duration: 1.15,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true
+    });
+
+    if (hasGSAP && hasST) {
+      gsap.registerPlugin(ScrollTrigger);
+      // Lenis scroll -> ScrollTrigger.update senkronu
+      lenis.on('scroll', ScrollTrigger.update);
+      // raf'i GSAP ticker'a bagla (tek raf dongusu)
+      gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      // GSAP yoksa kendi raf'imizla cevir
+      function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+    }
+  } else if (hasGSAP && hasST) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  /* ---------- HASH LINK SMOOTH SCROLL (Lenis varsa Lenis ile) ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (!t) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(t, { offset: -80, duration: 1.2 });
+      else t.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' });
+    });
+  });
+
+  /* ---------- SPLIT-TEXT: basliklari kelime kelime sar (word reveal icin) ---------- */
+  function splitWords(el) {
+    // <em> ve <br/> yapilarini koruyarak sadece text node'lari kelimelere bol
+    const wrap = (node) => {
+      Array.from(node.childNodes).forEach((child) => {
+        if (child.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          child.textContent.split(/(\s+)/).forEach((part) => {
+            if (part.trim() === '') { frag.appendChild(document.createTextNode(part)); return; }
+            const span = document.createElement('span');
+            span.className = 'word';
+            span.style.display = 'inline-block';
+            span.textContent = part;
+            frag.appendChild(span);
+          });
+          node.replaceChild(frag, child);
+        } else if (child.nodeType === 1 && child.tagName !== 'BR') {
+          // em gibi inline elementleri de tek 'word' say
+          child.classList.add('word');
+          child.style.display = 'inline-block';
+        }
+      });
+    };
+    wrap(el);
+    return el.querySelectorAll('.word');
+  }
+
+  /* ---------- REVEAL + SECTION ANIMASYONLARI ---------- */
+  if (hasGSAP && hasST && !REDUCED) {
+
+    // Genel reveal (fade + translate, stagger)
+    gsap.utils.toArray('.reveal').forEach((el) => {
+      gsap.fromTo(el, { autoAlpha: 0, y: 34 }, {
+        autoAlpha: 1, y: 0, duration: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 86%' }
+      });
+      // reveal sinifini gorunur kil (CSS opacity:0'i devre disi birak)
+      el.classList.add('in');
+    });
+
+    // Baslik split-text reveal
+    gsap.utils.toArray('[data-split]').forEach((h) => {
+      const words = splitWords(h);
+      gsap.fromTo(words, { autoAlpha: 0, y: 26, rotateX: -40 }, {
+        autoAlpha: 1, y: 0, rotateX: 0, duration: 0.9, ease: 'power3.out', stagger: 0.05,
+        scrollTrigger: { trigger: h, start: 'top 84%' }
+      });
+    });
+
+    // HERO ambiyans: vine'lar hafif yukari, baslik hafif olcek/parallax
+    gsap.to('.hero-vine.left',  { yPercent: -10, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.hero-vine.right', { yPercent: -16, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.hero-frame', { yPercent: 8, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    // Hero giris: tagline ve blurb hafif gecikmeyle
+    gsap.from('.hero h1', { autoAlpha: 0, y: 40, duration: 1.1, ease: 'power3.out', delay: 0.15 });
+    gsap.from('.hero-eyebrow', { autoAlpha: 0, y: 18, duration: 0.9, ease: 'power3.out' });
+    gsap.from('.hero-blurb', { autoAlpha: 0, y: 24, duration: 1, ease: 'power3.out', delay: 0.3 });
+    gsap.from('.hero-ctas', { autoAlpha: 0, y: 24, duration: 1, ease: 'power3.out', delay: 0.45 });
+
+    // IS VITRINI parallax (her kare farkli hizla kayar)
+    gsap.utils.toArray('.parallax-img').forEach((img, i) => {
+      gsap.fromTo(img, { yPercent: -10 }, {
+        yPercent: 10, ease: 'none',
+        scrollTrigger: { trigger: img.closest('.w-item'), start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
+    // Reel poster yumusak parallax
+    gsap.to('.reel-stage .poster', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.reel-stage', start: 'top bottom', end: 'bottom top', scrub: true } });
+
+    // MANIFESTO word reveal: scroll boyunca kelimeler sirayla aydinlanir
+    const manifesto = document.querySelector('.manifesto-text');
+    if (manifesto) {
+      const mWords = splitWords(manifesto);
+      gsap.to(mWords, {
+        opacity: 1, ease: 'none', stagger: 0.5,
+        scrollTrigger: { trigger: '.manifesto', start: 'top 70%', end: 'bottom 70%', scrub: true }
+      });
+    }
+
+    // PROCESS animated diagram: dolan cizgi + aktiflesen noktalar
+    const fill = document.querySelector('.proc-fill');
+    if (fill) {
+      gsap.to(fill, {
+        strokeDashoffset: 0, ease: 'none',
+        scrollTrigger: { trigger: '.process-list', start: 'top 70%', end: 'bottom 75%', scrub: true }
+      });
+    }
+    gsap.utils.toArray('.p-row').forEach((row) => {
+      const i = row.getAttribute('data-step');
+      const dot = document.querySelector('.proc-dot[data-i="' + i + '"]');
+      ScrollTrigger.create({
+        trigger: row, start: 'top 65%', end: 'bottom 50%',
+        onEnter: () => { if (dot) gsap.to(dot, { attr: { fill: '#b89048', r: 9 }, duration: 0.4 }); },
+        onLeaveBack: () => { if (dot) gsap.to(dot, { attr: { fill: '#f4ecda', r: 7 }, duration: 0.4 }); }
+      });
+    });
+
+    // SAYAC / ISTATISTIK animasyonu
+    gsap.utils.toArray('.count').forEach((el) => {
+      const to = parseInt(el.getAttribute('data-to'), 10) || 0;
+      const obj = { v: 0 };
+      ScrollTrigger.create({
+        trigger: el, start: 'top 88%', once: true,
+        onEnter: () => {
+          gsap.to(obj, { v: to, duration: 1.6, ease: 'power2.out', onUpdate: () => { el.textContent = Math.round(obj.v); } });
+        }
+      });
+    });
+
+    // Client isimlerini stagger ile getir
+    gsap.from('.client-name', {
+      autoAlpha: 0, y: 20, duration: 0.7, ease: 'power3.out', stagger: 0.08,
+      scrollTrigger: { trigger: '.client-row', start: 'top 82%' }
+    });
+
+  } else {
+    // REDUCED MOTION veya GSAP yok: her sey TAM gorunur. Sayaclari direkt son degere yaz.
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
+    document.querySelectorAll('.count').forEach((el) => { el.textContent = el.getAttribute('data-to'); });
+    document.querySelectorAll('.manifesto-text .word').forEach((w) => { w.style.opacity = '1'; });
+    // process cizgisini dolu goster
+    const fill = document.querySelector('.proc-fill');
+    if (fill) fill.style.strokeDashoffset = '0';
+    document.querySelectorAll('.proc-dot').forEach((d) => { d.setAttribute('fill', '#b89048'); });
+  }
+
+  /* ---------- VIDEO-HAZIR HERO: gercek <source> varsa videoyu oynat, yoksa poster kalir ---------- */
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    const hasSource = heroVideo.querySelector('source');
+    if (hasSource && !REDUCED) {
+      // Gercek mp4 swap edildiginde otomatik oynat ve posteri gizle
+      heroVideo.setAttribute('autoplay', '');
+      heroVideo.load();
+      heroVideo.play().catch(() => {});
+      const poster = document.querySelector('.hero-frame .poster');
+      if (poster) poster.style.display = 'none';
+    }
+    // source yoksa: poster + Ken Burns ambiyans devam eder (offline guvenli)
+  }
+
+  /* ---------- LIGHTBOX (tiklama + klavye) ---------- */
+  const lightbox = document.getElementById('lightbox');
+  const lbMedia = document.getElementById('lightbox-media');
+  const lbTitle = document.getElementById('lightbox-title');
+  const lbMeta = document.getElementById('lightbox-meta');
+  const lbClose = lightbox.querySelector('.lightbox-close');
+  let lastFocused = null;
+
+  function openLightbox(trigger) {
+    const img = trigger.getAttribute('data-img');
+    const title = trigger.getAttribute('data-title') || '';
+    const meta = trigger.getAttribute('data-meta') || '';
+    lbMedia.style.backgroundImage = "url('" + img + "')";
+    lbTitle.textContent = title;
+    lbMeta.textContent = meta ? '❦ ' + meta + ' ❦' : '';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    lastFocused = document.activeElement;
+    lbClose.focus();
+    if (lenis) lenis.stop();
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    if (lenis) lenis.start();
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+  document.querySelectorAll('[data-lightbox]').forEach((el) => {
+    el.addEventListener('click', (e) => { e.preventDefault(); openLightbox(el); });
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(el); }
+    });
+  });
+  lbClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox(); });
+
+  /* ---------- SCROLL PROGRESS + BACK TO TOP ---------- */
+  const progress = document.querySelector('.scroll-progress');
+  const backTop = document.querySelector('.back-top');
+  function onScroll() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const y = window.scrollY || window.pageYOffset;
+    progress.style.width = ((y / Math.max(max, 1)) * 100) + '%';
+    backTop.classList.toggle('visible', y > 600);
+  }
+  if (lenis) lenis.on('scroll', onScroll);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  backTop.addEventListener('click', () => {
+    if (lenis) lenis.scrollTo(0, { duration: 1.2 });
+    else window.scrollTo({ top: 0, behavior: REDUCED ? 'auto' : 'smooth' });
+  });
+
+  /* ---------- i18n (TR / EN) ---------- */
+  const i18n_tr = {
+    skip: 'İçeriğe geç',
+    nav_work: 'İşler', nav_services: 'Hizmetler', nav_process: 'Süreç', nav_cta: 'İletişim',
+    hero_eyebrow: '❦ Premium görsel üretim · Londra &amp; İzmir ❦',
+    hero_h1: 'İçerikten<br/><em>etkiye.</em>',
+    hero_blurb: 'Kalıcı izlenimler <em>üretiyoruz.</em> Markanızın kendi hikâyesini anlatması için: sinematik film, reklam ve özenli görsel tasarımla.',
+    hero_cta: 'İşleri gör ❦',
+    hero_cta2: 'Projeye başla',
+    hero_frame_cap: '❦ Showreel · MMXXVI · Fikirler hareket eder. Kalite kendini gösterir. ❦',
+    scroll_hint: 'KAYDIR',
+
+    sec_work_label: '❦ Seçili İşler ❦',
+    sec_work_title: 'İnsanı <em>hareket</em> ettiren kareler.',
+    sec_work_lead: 'Yakın zamanlı birkaç prodüksiyon. Her kare bir yer tutucu, gerçek montajla değiştirilmeye hazır.',
+    reel_label: '❦ Showreel · 02:14 ❦',
+
+    sec_svc_label: '❦ Altı disiplin ❦',
+    sec_svc_title: 'Ne <em>üretiyoruz.</em>',
+    svc1_t: 'Marka <em>Filmleri</em>',
+    svc1_d: 'Sinematik marka hikâyeciliği. Markanın kalbindeki duyguyu bulur, ona hatırlanmaya değer bir film veririz.',
+    svc1_tags: 'ANLATI · YÖNETİM · RENK',
+    svc2_t: 'Rek<em>lam</em>',
+    svc2_d: 'TV, dijital ve sosyal medya için içerik. Görülmek için kurulur, paylaşılmak için yapılır, bıraktığı etkiyle ölçülür.',
+    svc2_tags: 'TV · DİJİTAL · SOSYAL',
+    svc3_t: '3B <em>Görselleştirme</em>',
+    svc3_d: 'Mimari render ve ürün modelleme. Var olmadan önce, milimetre hassasiyetinde render edilen mekânlar ve nesneler.',
+    svc3_tags: 'RENDER · ÜRÜN · ARCHVIZ',
+    svc4_t: 'Kurumsal <em>Film</em>',
+    svc4_d: 'Bir şirketin sesini sakin bir vakarla taşıyan filmler. İç hikâyeler, lansmanlar ve kurumun insani yüzü.',
+    svc4_tags: 'KURUMSAL · RÖPORTAJ · ETKİNLİK',
+    svc5_t: 'Reklam <em>Prodüksiyonu</em>',
+    svc5_d: 'Uçtan uca reklam prodüksiyonu. Konsept, ekip, mekânlar ve post: tek bir bitiş standardına bağlı.',
+    svc5_tags: 'PRODÜKSİYON · EKİP · POST',
+    svc6_t: 'Drone <em>Sinematografisi</em>',
+    svc6_d: 'Bir hikâyeyi yerden kaldıran havadan perspektifler. Lisanslı, sinematik ve gerektiği yerde sabit.',
+    svc6_tags: 'HAVADAN · FPV · LİSANSLI',
+
+    sec_cli_label: '❦ Seçili Müşteriler ❦',
+    sec_cli_title: 'İyi bir <em>çevrede.</em>',
+    sec_cli_lead: 'İmajını bize emanet eden markalar ve kurumlar.',
+    stat1: 'TESLİM EDİLEN PRODÜKSİYON',
+    stat2: 'YILLIK ZANAAT',
+    stat3: 'STÜDYO · LONDRA &amp; İZMİR',
+
+    sec_man_label: '❦ Felsefe ❦',
+    manif_text: 'Fikirler <em>hareket eder.</em> Kalite kendini <em>gösterir.</em> Tasarım süsleme değildir, doğru duyguyu doğru aktarmaktır; oda onu <em>iki kez</em> hatırlayana dek.',
+    manif_attr: '❦ WORLD LONDON MEDIA · LONDRA &amp; İZMİR ❦',
+
+    sec_proc_label: '❦ Yöntem üzerine ❦',
+    sec_proc_title: 'Dört <em>hareket,</em><br/>bir ritim.',
+    p1_t: '<em>Brief</em>',
+    p1_d: 'Marka, hedef kitle ve peşinde olduğumuz duygu üzerine bir sohbet. Odayı ve insanları tanıyınca brief kendini yazar.',
+    p2_t: '<em>Konsept</em>',
+    p2_d: 'Referanslar, treatment, palet, kadro, mekânlar ve takvim duvara iğnelenir; tek bir kamera çantasından çıkmadan onaylanır.',
+    p3_t: '<em>Prodüksiyon</em>',
+    p3_d: 'Küçük ekipler, uzun ışıklar, gerçek mekânlar. Sette ya da havada niyetle hareket ederiz; çünkü hatalar post’ta pahalıya patlar.',
+    p4_t: '<em>Teslim</em>',
+    p4_d: 'Kurgu, renk, ses ve final masterlar. Ekran ve akış için kurgulanır, zamanında teslim edilir, uzun vade için arşivlenir.',
+
+    contact_label: '❦ İletişim ❦',
+    contact_h2: 'Bize hikâyenizi <em>anlatın.</em>',
+    contact_wa: 'WhatsApp',
+    contact_meta: '❦ RANDEVUYLA · LONDRA · İZMİR ❦',
+
+    foot_tag: '❦ FİKİRLER HAREKET EDER · KALİTE KENDİNİ GÖSTERİR ❦',
+    foot_left: '© MMXXVI · WORLD LONDON MEDIA · LONDRA &amp; İZMİR',
+    foot_right: 'YESEVA ONE · MARCELLUS · EB GARAMOND'
+  };
+
+  const ariaTr = { backtop: 'Başa dön' };
+  const ariaEn = { backtop: 'Back to top' };
+
+  window.setLang = function (lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key] != null) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original != null) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+      const key = el.dataset.i18nAria;
+      const map = lang === 'tr' ? ariaTr : ariaEn;
+      if (map[key]) el.setAttribute('aria-label', map[key]);
+    });
+    document.querySelectorAll('.lang-toggle button').forEach((b) => {
+      const active = b.dataset.l === lang;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    localStorage.setItem('wolo-lang', lang);
+    // Dil degisince split edilmis basliklar yeniden bolunmeli (innerHTML degisti).
+    // Basitlik icin layout'u tazele.
+    if (hasST) ScrollTrigger.refresh();
+  };
+
+  // Orijinal (EN) icerigi sakla, sonra kayitli dili uygula
+  document.querySelectorAll('[data-i18n]').forEach((el) => { el.dataset.original = el.innerHTML; });
+  const saved = localStorage.getItem('wolo-lang') || 'en';
+  // setLang innerHTML'i degistirdigi icin split'i bozmamak adina: once dil, sonra split zaten
+  // yukaridaki GSAP blogunda calisti. Dil EN ise split'i koru; TR ise innerHTML'i yenile.
+  if (saved === 'tr') {
+    window.setLang('tr');
+  } else {
+    // EN: sadece toggle durumunu isaretle (innerHTML'e dokunma, split'i koru)
+    document.querySelectorAll('.lang-toggle button').forEach((b) => {
+      const active = b.dataset.l === 'en';
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    document.documentElement.lang = 'en';
+  }
+
+})();
+</script>
+
+<!-- WoLo: galeriye don butonu (template'in kendi stilinden bagimsiz, sabit) -->
+<a href="../../index.html" class="wolo-back" aria-label="Galeriye don">
+  <span class="wolo-back__arrow" aria-hidden="true">&#8592;</span>
+  <span class="wolo-back__label">Galeri</span>
+</a>
+<style>
+  .wolo-back{position:fixed;left:20px;bottom:20px;z-index:99999;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;font-weight:500;letter-spacing:.02em;color:#fff;background:rgba(15,15,15,.78);-webkit-backdrop-filter:blur(10px) saturate(140%);backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(255,255,255,.2);border-radius:100px;text-decoration:none;box-shadow:0 6px 24px rgba(0,0,0,.28);transition:transform .25s ease,background .25s ease;mix-blend-mode:normal}
+  .wolo-back:hover{background:rgba(15,15,15,.96);transform:translateY(-2px)}
+  .wolo-back:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  .wolo-back__arrow{font-size:15px;line-height:1;transition:transform .25s ease}
+  .wolo-back:hover .wolo-back__arrow{transform:translateX(-3px)}
+  @media (max-width:480px){.wolo-back{left:14px;bottom:14px;padding:9px 14px;font-size:12px}}
+  @media (prefers-reduced-motion:reduce){.wolo-back,.wolo-back__arrow{transition:none}.wolo-back:hover{transform:none}.wolo-back:hover .wolo-back__arrow{transform:none}}
+</style>
+</body>
+</html>

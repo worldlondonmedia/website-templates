@@ -5,3 +5,9 @@ websitesi.md
 .basic-memory/
 .DS_Store
 **/.DS_Store
+
+# build araclari + yerel ekran goruntuleri (Pages'e gerek yok)
+node_modules/
+package-lock.json
+_shots/
+**/_shots/

@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%2308070a%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23d8252b%22%3EW%3C%2Ftext%3E%3C%2Fsvg%3E">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>World London Media · Cinema Reel · From Content to Impact</title>
+
+<meta name="description" content="World London Media (WoLo): premium visual production studio, London + Izmir. Brand films, advertising, 3D visualization, corporate film, commercial production, drone cinematography. Ideas move. Quality shows." />
+<meta name="theme-color" content="#08070a" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="World London Media" />
+<meta property="og:title" content="World London Media · Cinema Reel" />
+<meta property="og:description" content="From content to impact. A premium visual production studio. London + Izmir." />
+<meta property="og:url" content="https://worldlondonmedia.com/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1200&q=80" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"World London Media","alternateName":"WoLo","description":"Premium visual production studio. Brand films, advertising, 3D visualization, corporate film, commercial production and drone cinematography.","url":"https://worldlondonmedia.com","email":"info@worldlondonmedia.com","slogan":"Ideas move. Quality shows.","areaServed":["London","Izmir"],"address":[{"@type":"PostalAddress","addressLocality":"London","addressCountry":"GB"},{"@type":"PostalAddress","addressLocality":"Izmir","addressCountry":"TR"}],"makesOffer":[{"@type":"Offer","name":"Brand Films"},{"@type":"Offer","name":"Advertising"},{"@type":"Offer","name":"3D Visualization"},{"@type":"Offer","name":"Corporate Film"},{"@type":"Offer","name":"Commercial Production"},{"@type":"Offer","name":"Drone Cinematography"}]}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;700&family=Special+Elite&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:   #08070a;
+    --black-2: #18141a;
+    --cream:   #ede5d3;
+    --red:     #d8252b;
+    --red-2:   #f04848;
+    --gold:    #d4b167;
+    --condensed: 'Antonio', sans-serif;
+    --type:      'Special Elite', monospace;
+    --mono:      'DM Mono', monospace;
+
+    /* mobile-first spacing tokens */
+    --pad-x: 20px;
+    --pad-y: 72px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.55;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  ::selection { background: var(--red); color: var(--cream); }
+
+  /* Lenis smooth scroll */
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-stopped { overflow: hidden; }
+
+  /* FILM GRAIN */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: overlay;
+    animation: grain 0.4s steps(4) infinite;
+  }
+  @keyframes grain {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-1%, 1%); }
+    50% { transform: translate(1%, -1%); }
+    75% { transform: translate(-1%, -1%); }
+    100% { transform: translate(0, 0); }
+  }
+
+  /* SIDE TAB (desktop only) */
+  .sidetab {
+    display: none;
+    position: fixed; top: 50%; left: 0;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left top;
+    margin-left: 32px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    z-index: 100;
+    color: var(--cream);
+    opacity: 0.7;
+    white-space: nowrap;
+  }
+  .sidetab::before {
+    content: '';
+    display: inline-block;
+    width: 32px; height: 1px;
+    background: var(--red);
+    margin-right: 16px;
+    vertical-align: middle;
+  }
+
+  /* TOP REEL TICKER */
+  .reel-ticker {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: var(--cream);
+    color: var(--black);
+    padding: 6px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    z-index: 100;
+    border-bottom: 1px solid var(--black);
+  }
+  .reel-ticker-track { display: inline-block; animation: tickerL 50s linear infinite; will-change: transform; }
+  @keyframes tickerL {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .reel-ticker .red { color: var(--red); margin: 0 14px; font-size: 13px; vertical-align: middle; line-height: 0; }
+  .reel-ticker span:not(.red) { margin: 0 22px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 28px; left: 0; right: 0;
+    z-index: 99;
+    padding: 0 var(--pad-x);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 12px;
+  }
+  .reel-no {
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .reel-no .red { color: var(--red); }
+  .nav-center {
+    display: none;
+    gap: 26px;
+    list-style: none;
+    background: rgba(8,7,10,0.7);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    padding: 10px 24px;
+    border: 1px solid rgba(237, 229, 211, 0.25);
+    border-radius: 100px;
+  }
+  .nav-center a {
+    font-family: var(--mono);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    transition: color .25s;
+  }
+  .nav-center a:hover { color: var(--red-2); }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+  .nav-cta {
+    display: none;
+    font-family: var(--mono);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border: 1px solid var(--cream);
+    padding: 10px 16px;
+    border-radius: 100px;
+    transition: all .25s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--red); border-color: var(--red); }
+
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--cream);
+    border-radius: 100px;
+    overflow: hidden;
+    background: rgba(8,7,10,0.7);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--cream);
+    border: none;
+    padding: 6px 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: all .25s;
+  }
+  .lang-toggle button.active { background: var(--red); color: var(--cream); }
+
+  /* HERO */
+  .hero {
+    min-height: 100svh;
+    padding: 96px var(--pad-x) 28px;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 24px;
+    overflow: hidden;
+  }
+  /* video / poster backdrop layer */
+  .hero-media {
+    position: absolute; inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .hero-media .scaler {
+    position: absolute; inset: -8%;
+    width: 116%; height: 116%;
+    will-change: transform;
+  }
+  .hero-media video,
+  .hero-media .poster {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .hero-media .poster {
+    /* offline-guvenli fallback: gorsel yuklenmezse bile sinematik bir backdrop kalir */
+    background-color: var(--black-2);
+    background-image:
+      radial-gradient(120% 90% at 30% 20%, rgba(216,37,43,0.28), transparent 60%),
+      radial-gradient(100% 80% at 80% 90%, rgba(212,177,103,0.18), transparent 55%),
+      linear-gradient(160deg, #18141a 0%, #08070a 70%);
+    background-size: cover;
+    background-position: center;
+    /* Ken Burns ambient drift, disabled on reduced motion */
+    animation: kenburns 24s ease-in-out infinite alternate;
+  }
+  @keyframes kenburns {
+    from { transform: scale(1.04) translate(0, 0); }
+    to   { transform: scale(1.14) translate(-2%, -1.5%); }
+  }
+  .hero-media::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(8,7,10,0.55) 0%, rgba(8,7,10,0.35) 35%, rgba(8,7,10,0.85) 100%),
+      radial-gradient(120% 80% at 50% 30%, rgba(8,7,10,0.1), rgba(8,7,10,0.7));
+  }
+  .hero > * { position: relative; z-index: 1; }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    align-items: end;
+    font-family: var(--mono);
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    opacity: 0.85;
+  }
+  .hero-meta .left strong,
+  .hero-meta .right strong { display: block; color: var(--red-2); margin-bottom: 3px; font-weight: 500; }
+  .hero-meta .center { display: none; text-align: center; }
+  .hero-meta .center .b { color: var(--gold); display: block; font-size: 10px; letter-spacing: 0.3em; }
+  .hero-meta .right { text-align: left; }
+
+  .hero-main {
+    display: grid;
+    align-items: center;
+  }
+  .hero h1 {
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: clamp(58px, 19vw, 280px);
+    line-height: 0.84;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    text-align: left;
+  }
+  .hero h1 .line { display: block; overflow: hidden; }
+  .hero h1 .word { display: inline-block; }
+  .hero h1 .red { color: var(--red); }
+  .hero h1 .outline {
+    -webkit-text-stroke: 1.5px var(--cream);
+    color: transparent;
+  }
+  .hero h1 .small {
+    display: inline-block;
+    font-size: 0.34em;
+    vertical-align: middle;
+    color: var(--gold);
+    margin: 0 8px;
+    font-family: var(--type);
+    text-transform: none;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    align-items: end;
+    padding-top: 20px;
+    border-top: 1px solid rgba(237, 229, 211, 0.18);
+  }
+  .hero-syn {
+    font-family: var(--type);
+    font-size: 14px;
+    line-height: 1.45;
+    max-width: 480px;
+    color: rgba(237, 229, 211, 0.86);
+  }
+  .hero-syn-label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--red-2);
+    margin-bottom: 8px;
+  }
+  .hero-credits {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    line-height: 1.7;
+  }
+  .hero-credits .label { color: var(--gold); display: block; margin-top: 8px; font-size: 9px; }
+  .hero-credits .label:first-child { margin-top: 0; }
+  .hero-cta-row {
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .btn-cinema {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--red);
+    color: var(--cream);
+    padding: 14px 22px;
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    border-radius: 100px;
+    transition: all .25s;
+    border: 1px solid var(--red);
+  }
+  .btn-cinema:hover { background: transparent; }
+  .btn-cinema-out {
+    background: transparent;
+    color: var(--cream);
+    border-color: rgba(237, 229, 211, 0.4);
+  }
+  .btn-cinema-out:hover { border-color: var(--cream); background: var(--cream); color: var(--black); }
+
+  /* COUNTDOWN LEADER */
+  .leader {
+    background: var(--black-2);
+    padding: 12px 0;
+    border-top: 2px solid var(--cream);
+    border-bottom: 2px solid var(--cream);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .leader-track {
+    display: inline-block;
+    animation: tickerR 35s linear infinite;
+    will-change: transform;
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: clamp(34px, 9vw, 56px);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  @keyframes tickerR {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .leader-track .red { color: var(--red); }
+  .leader-track .stroke { -webkit-text-stroke: 1.5px var(--cream); color: transparent; }
+  .leader-track .dot { color: var(--gold); margin: 0 18px; font-size: 0.6em; vertical-align: middle; }
+
+  /* NOW SHOWING: horizontal scroll work */
+  .now-showing {
+    padding: var(--pad-y) 0 var(--pad-y) var(--pad-x);
+    background: var(--black);
+  }
+  .now-head {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: end;
+    padding-right: var(--pad-x);
+    margin-bottom: 36px;
+  }
+  .now-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--red-2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .now-label::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--red);
+    flex: none;
+  }
+  .now-title {
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: clamp(40px, 12vw, 96px);
+    line-height: 0.92;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    text-align: left;
+  }
+  .now-title .red { color: var(--red); }
+  .now-arrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--cream);
+    text-decoration: none;
+    border-bottom: 1px solid var(--cream);
+    padding-bottom: 2px;
+    transition: color .25s, border-color .25s;
+    justify-self: start;
+  }
+  .now-arrow:hover { color: var(--red); border-color: var(--red); }
+
+  .reel-track {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding-bottom: 28px;
+    padding-right: var(--pad-x);
+    scrollbar-width: thin;
+    scrollbar-color: var(--red) transparent;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .reel-track::-webkit-scrollbar { height: 4px; }
+  .reel-track::-webkit-scrollbar-track { background: rgba(237, 229, 211, 0.1); }
+  .reel-track::-webkit-scrollbar-thumb { background: var(--red); }
+  .reel-card {
+    flex: 0 0 82vw;
+    max-width: 480px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    scroll-snap-align: start;
+  }
+  .reel-poster {
+    aspect-ratio: 4/5;
+    background: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .reel-poster img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .8s cubic-bezier(.65,0,.35,1);
+  }
+  .reel-card:hover .reel-poster img { transform: scale(1.06); }
+  .reel-poster .grad {
+    content: '';
+    position: absolute; inset: 0;
+    z-index: 2;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.78));
+    pointer-events: none;
+  }
+  .reel-badge {
+    position: absolute;
+    top: 14px; left: 14px;
+    z-index: 4;
+    background: var(--red);
+    color: var(--cream);
+    font-family: var(--mono);
+    font-size: 9.5px;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .reel-badge.gold { background: var(--gold); color: var(--black); }
+  .reel-badge.cream { background: var(--cream); color: var(--black); }
+  .reel-badge.ghost { background: transparent; border: 1px solid var(--cream); }
+
+  /* hover content slide-in (alttan) */
+  .reel-slide {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    z-index: 5;
+    padding: 18px 16px 16px;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform .5s cubic-bezier(.7,0,.3,1), opacity .4s ease;
+  }
+  .reel-card:hover .reel-slide,
+  .reel-card:focus-visible .reel-slide { transform: translateY(0); opacity: 1; }
+  .reel-slide p {
+    font-family: var(--type);
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--cream);
+  }
+  .reel-slide .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .reel-play {
+    position: absolute; top: 50%; left: 50%;
+    z-index: 3;
+    transform: translate(-50%, -50%) scale(0.7);
+    width: 72px; height: 72px;
+    border: 2px solid var(--cream);
+    border-radius: 50%;
+    background: rgba(0,0,0,0.4);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    display: flex; align-items: center; justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .35s, transform .55s cubic-bezier(.5,1.4,.5,1);
+    color: var(--cream);
+  }
+  .reel-play::after {
+    content: '';
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 12px 0 12px 19px;
+    border-color: transparent transparent transparent var(--cream);
+    margin-left: 4px;
+  }
+  .reel-card:hover .reel-play,
+  .reel-card:focus-visible .reel-play { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+  .reel-credits {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    padding-top: 4px;
+  }
+  .reel-credits h3 {
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  .reel-credits .meta {
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+    opacity: 0.7;
+  }
+
+  /* GENRES (services) */
+  .genres {
+    padding: var(--pad-y) var(--pad-x);
+    background: var(--cream);
+    color: var(--black);
+    border-top: 4px solid var(--red);
+  }
+  .genres-head {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: end;
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 26px;
+  }
+  .genres-head .left {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--red);
+  }
+  .genres-head .left strong {
+    display: block;
+    color: var(--black);
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .genres-head h2 {
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: clamp(44px, 13vw, 110px);
+    line-height: 0.92;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+  .genres-head h2 .red { color: var(--red); }
+
+  .genre-list { list-style: none; }
+  .genre-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "num name arrow"
+      "num desc arrow";
+    column-gap: 16px;
+    row-gap: 4px;
+    align-items: center;
+    border-bottom: 2px solid var(--black);
+    padding: 22px 0;
+    cursor: pointer;
+    transition: padding-left .5s cubic-bezier(.7,0,.3,1), background .25s, color .25s;
+    position: relative;
+  }
+  .genre-row:hover,
+  .genre-row:focus-within {
+    background: var(--black);
+    color: var(--cream);
+    padding-left: 16px;
+  }
+  .genre-row:hover .g-num,
+  .genre-row:focus-within .g-num { color: var(--red-2); }
+  .genre-row:hover .g-name .red,
+  .genre-row:focus-within .g-name .red { color: var(--gold); }
+
+  .g-num {
+    grid-area: num;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--red);
+    align-self: start;
+    padding-top: 6px;
+  }
+  .g-name {
+    grid-area: name;
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: clamp(34px, 9vw, 56px);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+  .g-name .red { color: var(--red); transition: color .3s; }
+  .g-rated {
+    grid-area: desc;
+    font-family: var(--type);
+    font-size: 13px;
+    line-height: 1.45;
+    max-width: 520px;
+  }
+  .g-arrow {
+    grid-area: arrow;
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: 28px;
+    text-align: right;
+    transition: transform .3s, color .3s;
+  }
+  .genre-row:hover .g-arrow,
+  .genre-row:focus-within .g-arrow { transform: translateX(6px); color: var(--red-2); }
+
+  /* STATS / counters strip */
+  .stats {
+    background: var(--black);
+    color: var(--cream);
+    padding: 56px var(--pad-x);
+    border-bottom: 1px solid rgba(237, 229, 211, 0.12);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .stat .num {
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: clamp(48px, 14vw, 88px);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+  }
+  .stat .num .red { color: var(--red); }
+  .stat .lbl {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--gold);
+    margin-top: 8px;
+  }
+
+  /* DIRECTOR'S NOTE / philosophy */
+  .director {
+    padding: var(--pad-y) var(--pad-x);
+    background: var(--black);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .director::before {
+    content: 'WoLo';
+    position: absolute;
+    top: -40px;
+    left: -10px;
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: clamp(220px, 60vw, 540px);
+    line-height: 0.85;
+    color: var(--black-2);
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .director-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .director-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--red-2);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .director-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--red); flex: none; }
+  .director-q {
+    font-family: var(--condensed);
+    font-weight: 400;
+    font-size: clamp(32px, 8vw, 60px);
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  .director-q .red { color: var(--red); }
+  .director-attr {
+    margin-top: 20px;
+    font-family: var(--type);
+    font-size: 14px;
+    color: var(--gold);
+  }
+  .director-body p {
+    font-family: var(--type);
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+  .director-body p:first-of-type::first-letter {
+    font-family: var(--condensed);
+    float: left;
+    font-size: 78px;
+    line-height: 0.8;
+    padding: 6px 14px 0 0;
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  /* CREDITS (clients) */
+  .credits {
+    background: var(--cream);
+    color: var(--black);
+    padding: var(--pad-y) var(--pad-x);
+    border-top: 4px solid var(--red);
+  }
+  .credits h2 {
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: clamp(36px, 10vw, 72px);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .credits h2 .red { color: var(--red); }
+  .credits-list {
+    max-width: 900px;
+    margin: 0 auto;
+    columns: 1;
+    column-gap: 60px;
+    font-family: var(--type);
+    font-size: 16px;
+    line-height: 1.9;
+  }
+  .credits-list .row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    border-bottom: 1px dashed var(--black);
+    padding: 8px 0;
+    break-inside: avoid;
+    align-items: center;
+  }
+  .credits-list .row .title { font-size: 18px; }
+  .credits-list .role {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--red);
+    text-align: right;
+  }
+
+  /* PRODUCTION / process */
+  .production {
+    padding: var(--pad-y) var(--pad-x);
+    background: var(--black);
+    color: var(--cream);
+  }
+  .production-head {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    align-items: end;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(237, 229, 211, 0.15);
+    padding-bottom: 22px;
+  }
+  .production-head h2 {
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: clamp(44px, 13vw, 110px);
+    line-height: 0.92;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+  .production-head h2 .red { color: var(--red); }
+  .phase-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid rgba(237, 229, 211, 0.2);
+  }
+  .phase {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(237, 229, 211, 0.2);
+  }
+  .phase-num {
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: 13px;
+    background: var(--red);
+    color: var(--cream);
+    padding: 6px 12px;
+    display: inline-block;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .phase h3 {
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: clamp(30px, 8vw, 36px);
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .phase h3 .red { color: var(--red); }
+  .phase p {
+    font-family: var(--type);
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(237, 229, 211, 0.85);
+    max-width: 320px;
+  }
+
+  /* PREMIERE / contact */
+  .premiere {
+    padding: 96px var(--pad-x) 64px;
+    background: var(--red);
+    color: var(--cream);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .premiere::before, .premiere::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 44px;
+    background-image: linear-gradient(var(--cream) 50%, transparent 50%);
+    background-size: 100% 22px;
+    background-repeat: repeat-y;
+    opacity: 0.8;
+  }
+  .premiere::before { left: 0; }
+  .premiere::after { right: 0; }
+  .premiere-inner { position: relative; z-index: 1; }
+  .premiere-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 28px;
+  }
+  .premiere h2 {
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: clamp(60px, 20vw, 220px);
+    line-height: 0.85;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    margin-bottom: 36px;
+  }
+  .premiere h2 .stroke { -webkit-text-stroke: 1.5px var(--cream); color: transparent; }
+  .premiere-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+  .premiere a.big {
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: clamp(24px, 7vw, 56px);
+    color: var(--cream);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    border-bottom: 3px solid var(--cream);
+    padding-bottom: 4px;
+    transition: color .25s, border-color .25s;
+    word-break: break-word;
+  }
+  .premiere a.big:hover { color: var(--gold); border-color: var(--gold); }
+  .premiere-sub {
+    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+  .premiere-sub a {
+    color: var(--cream);
+    text-decoration: none;
+    border: 1px solid rgba(237,229,211,0.5);
+    padding: 11px 18px;
+    border-radius: 100px;
+    transition: all .25s;
+  }
+  .premiere-sub a:hover { background: var(--cream); color: var(--red); border-color: var(--cream); }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    color: var(--cream);
+    padding: 64px var(--pad-x) 28px;
+    border-top: 4px solid var(--red);
+  }
+  .foot-mega {
+    font-family: var(--condensed);
+    font-weight: 700;
+    font-size: clamp(80px, 28vw, 380px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--cream);
+    margin-bottom: 40px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(237, 229, 211, 0.15);
+  }
+  .foot-mega .red { color: var(--red); }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
+    margin-bottom: 40px;
+  }
+  .foot-grid .wide { grid-column: 1 / -1; }
+  .foot-grid h4 {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--red-2);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .foot-grid p {
+    font-family: var(--type);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .foot-grid ul { list-style: none; }
+  .foot-grid li { margin-bottom: 8px; font-family: var(--mono); font-size: 11px; }
+  .foot-grid a { color: inherit; text-decoration: none; transition: color .25s; }
+  .foot-grid a:hover { color: var(--red-2); }
+  .foot-bot {
+    border-top: 1px solid rgba(237, 229, 211, 0.15);
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    opacity: 0.6;
+  }
+
+  /* reveal base (JS adds .in) */
+  .reveal { opacity: 0; transform: translateY(28px); }
+  .reveal.in { opacity: 1; transform: translateY(0); transition: opacity .9s ease, transform .9s ease; }
+
+  /* a11y + chrome */
+  .skip-link { position: absolute; top: -100px; left: 8px; background: var(--red); color: var(--cream); padding: 8px 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--red-2); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 2px; background: var(--red); z-index: 10000; pointer-events: none; }
+  .back-top { position: fixed; bottom: 20px; right: 16px; width: 46px; height: 46px; border-radius: 50%; background: var(--cream); color: var(--black); border: 1px solid var(--red); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .35s, background .25s, color .25s, transform .35s; z-index: 999; font-family: var(--condensed); font-weight: 700; font-size: 20px; line-height: 1; }
+  .back-top.visible { opacity: 1; pointer-events: auto; }
+  .back-top:hover { background: var(--red); color: var(--cream); transform: translateY(-3px); }
+
+  /* prefers-reduced-motion: kill heavy motion, keep content fully visible */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .hero-media .poster { animation: none; transform: scale(1.04); }
+    .reel-ticker-track, .leader-track { animation: none; }
+  }
+
+  /* ===== Tablet ===== */
+  @media (min-width: 700px) {
+    :root { --pad-x: 40px; --pad-y: 96px; }
+    .hero-meta { grid-template-columns: 1fr auto 1fr; }
+    .hero-meta .center { display: block; }
+    .hero-meta .right { text-align: right; }
+    .hero-bottom { grid-template-columns: 1.4fr 1fr; gap: 40px; }
+    .hero-cta-row { grid-column: 1 / -1; }
+    .now-head { grid-template-columns: 1fr auto 1fr; align-items: end; }
+    .now-title { text-align: center; }
+    .now-arrow { justify-self: end; text-align: right; }
+    .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    .credits-list { columns: 2; }
+    .phase-grid { grid-template-columns: 1fr 1fr; gap: 0 40px; }
+    .foot-grid { grid-template-columns: 2fr 1fr 1fr; }
+    .foot-grid .wide { grid-column: auto; }
+  }
+
+  /* ===== Desktop ===== */
+  @media (min-width: 1024px) {
+    :root { --pad-x: 80px; --pad-y: 120px; }
+    body { font-size: 13px; }
+    .sidetab { display: block; }
+    .nav-center { display: flex; }
+    .nav-cta { display: inline-block; }
+    nav { top: 22px; }
+    .hero { padding: 130px 80px 40px; }
+    .hero h1 { text-align: center; line-height: 0.82; }
+    .hero-bottom { grid-template-columns: 1.4fr 1fr 1fr; }
+    .hero-cta-row { grid-column: auto; justify-content: flex-end; }
+    .genres-head { grid-template-columns: 1fr 2fr; gap: 48px; }
+    .genre-row {
+      grid-template-columns: 90px 1.1fr 1fr 70px;
+      grid-template-areas: "num name desc arrow";
+      column-gap: 32px;
+      padding: 28px 0;
+    }
+    .genre-row:hover, .genre-row:focus-within { padding-left: 24px; }
+    .g-num { padding-top: 0; align-self: center; }
+    .g-arrow { font-size: 32px; }
+    .director-grid { grid-template-columns: 1fr 1.2fr; gap: 80px; }
+    .production-head { grid-template-columns: 1fr 2fr; gap: 48px; }
+    .phase-grid { grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .phase { padding: 32px 24px 32px 0; border-right: 1px solid rgba(237,229,211,0.2); }
+    .phase:last-child { border-right: none; }
+    .reel-card { flex: 0 0 460px; }
+    .foot-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link" data-i18n="skip">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<button class="back-top" aria-label="Back to top" data-i18n-aria="back_top">&#8593;</button>
+
+<div class="reel-ticker" aria-hidden="true">
+  <div class="reel-ticker-track">
+    <span>WORLD LONDON MEDIA</span><span class="red">&#9679;</span>
+    <span>IDEAS MOVE. QUALITY SHOWS.</span><span class="red">&#9679;</span>
+    <span>LONDON / IZMIR</span><span class="red">&#9679;</span>
+    <span>NOW SCREENING</span><span class="red">&#9679;</span>
+    <span>FROM CONTENT TO IMPACT</span><span class="red">&#9679;</span>
+    <span>WORLD LONDON MEDIA</span><span class="red">&#9679;</span>
+    <span>IDEAS MOVE. QUALITY SHOWS.</span><span class="red">&#9679;</span>
+    <span>LONDON / IZMIR</span><span class="red">&#9679;</span>
+    <span>NOW SCREENING</span><span class="red">&#9679;</span>
+    <span>FROM CONTENT TO IMPACT</span><span class="red">&#9679;</span>
+  </div>
+</div>
+
+<div class="sidetab" aria-hidden="true">FILM &middot; 3D &middot; DRONE &middot; DIRECTION &middot; LONDON / IZMIR</div>
+
+<nav aria-label="Primary">
+  <a href="../../index.html" class="reel-no">WoLo<span class="red">&middot;</span>05</a>
+  <ul class="nav-center">
+    <li><a href="#now-showing" data-i18n="nav_showing">Showreel</a></li>
+    <li><a href="#genres" data-i18n="nav_genres">Services</a></li>
+    <li><a href="#director" data-i18n="nav_director">Studio</a></li>
+    <li><a href="#production" data-i18n="nav_production">Process</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#premiere" class="nav-cta" data-i18n="nav_cta">Start a project &rarr;</a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button data-l="en" onclick="setLang('en')" aria-label="English">EN</button>
+      <button data-l="tr" onclick="setLang('tr')" aria-label="Turkce">TR</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero" aria-label="Intro">
+  <!-- VIDEO-HAZIR HERO: poster + ambient Ken Burns. Gercek mp4 swap icin asagidaki
+       <video> elementine src ekleyip poster div'ini gizle (tek satir). -->
+  <div class="hero-media" aria-hidden="true">
+    <div class="scaler" data-hero-parallax>
+      <!-- Gercek showreel mp4 hazir oldugunda: poster div'ini sil, asagidaki yorumu ac.
+      <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1600&q=80">
+        <source src="showreel.mp4" type="video/mp4" />
+      </video>
+      -->
+      <div class="poster" style="background-image:url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1600&q=80'), radial-gradient(120% 90% at 30% 20%, rgba(216,37,43,0.28), transparent 60%), radial-gradient(100% 80% at 80% 90%, rgba(212,177,103,0.18), transparent 55%), linear-gradient(160deg, #18141a 0%, #08070a 70%)"></div>
+    </div>
+  </div>
+
+  <div class="hero-meta reveal">
+    <div class="left"><strong data-i18n="hm_studio">STUDIO</strong><span data-i18n="hm_studio_v">LONDON &middot; IZMIR &middot; SINCE 2018</span></div>
+    <div class="center"><span class="b">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span data-i18n="hm_rated">PREMIUM VISUAL PRODUCTION</span></div>
+    <div class="right"><strong data-i18n="hm_format">FORMAT</strong><span data-i18n="hm_format_v">FILM &middot; 3D &middot; BROADCAST &middot; DRONE</span></div>
+  </div>
+
+  <div class="hero-main">
+    <h1 data-i18n="hero_h1">
+      <span class="line"><span class="word">From</span></span>
+      <span class="line"><span class="word outline">content</span> <span class="word small" data-i18n-skip>&middot; to</span></span>
+      <span class="line"><span class="word red">impact.</span></span>
+    </h1>
+  </div>
+
+  <div class="hero-bottom reveal">
+    <p class="hero-syn">
+      <span class="hero-syn-label" data-i18n="syn_label">SYNOPSIS</span>
+      <span data-i18n="hero_syn">We craft impressions that endure. Your brand, telling its own story. A premium visual production studio working between London and Izmir, shot like cinema, finished like a feature.</span>
+    </p>
+    <div class="hero-credits">
+      <span class="label" data-i18n="hc_dir">DISCIPLINES</span>
+      <span data-i18n="hc_dir_v">Brand films &middot; Advertising<br/>3D &middot; Drone &middot; Corporate</span>
+      <span class="label" data-i18n="hc_prod">PRODUCED BY</span>
+      <span data-i18n="hc_prod_v">World London Media<br/>London &amp; Izmir</span>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#now-showing" class="btn-cinema" data-i18n="cta_watch">Watch the reel &#9658;</a>
+      <a href="#premiere" class="btn-cinema btn-cinema-out" data-i18n="cta_book">Start a project</a>
+    </div>
+  </div>
+</section>
+
+<div class="leader" aria-hidden="true">
+  <div class="leader-track">
+    <span>BRAND FILMS</span><span class="dot">&#9679;</span>
+    <span class="red">ADVERTISING</span><span class="dot">&#9679;</span>
+    <span class="stroke">3D VISUALIZATION</span><span class="dot">&#9679;</span>
+    <span>CORPORATE FILM</span><span class="dot">&#9679;</span>
+    <span class="red">COMMERCIAL</span><span class="dot">&#9679;</span>
+    <span class="stroke">DRONE</span><span class="dot">&#9679;</span>
+    <span>BRAND FILMS</span><span class="dot">&#9679;</span>
+    <span class="red">ADVERTISING</span><span class="dot">&#9679;</span>
+    <span class="stroke">3D VISUALIZATION</span><span class="dot">&#9679;</span>
+    <span>CORPORATE FILM</span><span class="dot">&#9679;</span>
+    <span class="red">COMMERCIAL</span><span class="dot">&#9679;</span>
+    <span class="stroke">DRONE</span><span class="dot">&#9679;</span>
+  </div>
+</div>
+
+<section class="now-showing" id="now-showing" aria-label="Showreel">
+  <div class="now-head">
+    <span class="now-label reveal" data-i18n="sec_now_label">Now Showing</span>
+    <h2 class="now-title reveal" data-i18n="sec_now_title">The <span class="red">Reel</span><br/>2026</h2>
+    <a href="#premiere" class="now-arrow reveal" data-i18n="now_arrow">Full archive &#8599;</a>
+  </div>
+
+  <div class="reel-track" tabindex="0" aria-label="Selected work, horizontal scroll">
+    <a href="#premiere" class="reel-card">
+      <div class="reel-poster" data-parallax-img>
+        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1000&q=80" alt="Sinematik marka filmi karesi, mutfakta sicak isikli sahne" loading="lazy" decoding="async" />
+        <span class="grad" aria-hidden="true"></span>
+        <span class="reel-badge" data-i18n="badge_now">NOW SHOWING</span>
+        <span class="reel-play" aria-hidden="true"></span>
+        <div class="reel-slide"><span class="tag" data-i18n="rs1_tag">BRAND FILM</span><p data-i18n="rs1_body">Cinematic brand storytelling for a heritage food label. Shot on location, cut to a feature rhythm.</p></div>
+      </div>
+      <div class="reel-credits">
+        <h3 data-i18n="rc1_title">Karaca Stories</h3>
+        <span class="meta" data-i18n="rc1_meta">2025 / 2:40<br/>Brand film</span>
+      </div>
+    </a>
+    <a href="#premiere" class="reel-card">
+      <div class="reel-poster" data-parallax-img>
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1000&q=80" alt="Urun reklami studuyo karesi, dramatik isiklandirma" loading="lazy" decoding="async" />
+        <span class="grad" aria-hidden="true"></span>
+        <span class="reel-badge gold" data-i18n="badge_feat">FEATURED</span>
+        <span class="reel-play" aria-hidden="true"></span>
+        <div class="reel-slide"><span class="tag" data-i18n="rs2_tag">ADVERTISING</span><p data-i18n="rs2_body">A multi-platform advertising campaign, built for TV, digital and social from a single shoot.</p></div>
+      </div>
+      <div class="reel-credits">
+        <h3 data-i18n="rc2_title">Samsung Launch</h3>
+        <span class="meta" data-i18n="rc2_meta">2024 / 0:45<br/>Advertising</span>
+      </div>
+    </a>
+    <a href="#premiere" class="reel-card">
+      <div class="reel-poster" data-parallax-img>
+        <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=1000&q=80" alt="Mimari 3D render karesi, modern ic mekan" loading="lazy" decoding="async" />
+        <span class="grad" aria-hidden="true"></span>
+        <span class="reel-badge cream" data-i18n="badge_new">NEW</span>
+        <span class="reel-play" aria-hidden="true"></span>
+        <div class="reel-slide"><span class="tag" data-i18n="rs3_tag">3D VISUALIZATION</span><p data-i18n="rs3_body">Photoreal architectural renders and product modeling, indistinguishable from camera.</p></div>
+      </div>
+      <div class="reel-credits">
+        <h3 data-i18n="rc3_title">Atelier Render</h3>
+        <span class="meta" data-i18n="rc3_meta">2025 / Series<br/>3D visualization</span>
+      </div>
+    </a>
+    <a href="#premiere" class="reel-card">
+      <div class="reel-poster" data-parallax-img>
+        <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=1000&q=80" alt="Drone ile havadan cekilmis sahil sinematografi karesi" loading="lazy" decoding="async" />
+        <span class="grad" aria-hidden="true"></span>
+        <span class="reel-badge ghost" data-i18n="badge_arch">ARCHIVE</span>
+        <span class="reel-play" aria-hidden="true"></span>
+        <div class="reel-slide"><span class="tag" data-i18n="rs4_tag">DRONE</span><p data-i18n="rs4_body">Aerial cinematography that gives the brand scale, geography and a sense of place.</p></div>
+      </div>
+      <div class="reel-credits">
+        <h3 data-i18n="rc4_title">Aegean Aerials</h3>
+        <span class="meta" data-i18n="rc4_meta">2024 / 1:20<br/>Drone</span>
+      </div>
+    </a>
+    <a href="#premiere" class="reel-card">
+      <div class="reel-poster" data-parallax-img>
+        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1000&q=80" alt="Kurumsal film roportaj karesi, sicak ofis isiklari" loading="lazy" decoding="async" />
+        <span class="grad" aria-hidden="true"></span>
+        <span class="reel-badge" data-i18n="badge_now2">NOW SHOWING</span>
+        <span class="reel-play" aria-hidden="true"></span>
+        <div class="reel-slide"><span class="tag" data-i18n="rs5_tag">CORPORATE FILM</span><p data-i18n="rs5_body">A corporate film that feels human, not corporate. People, process, and the work that matters.</p></div>
+      </div>
+      <div class="reel-credits">
+        <h3 data-i18n="rc5_title">Inside the Make</h3>
+        <span class="meta" data-i18n="rc5_meta">2025 / 3:10<br/>Corporate film</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="genres" id="genres" aria-label="Services">
+  <div class="genres-head">
+    <div class="left reveal" data-i18n="sec_gen_label">
+      <strong>&sect; Services</strong>
+      Six disciplines &middot; one studio
+    </div>
+    <h2 class="reveal" data-i18n="sec_gen_title">The <span class="red">six genres</span><br/>we shoot in.</h2>
+  </div>
+
+  <ul class="genre-list">
+    <li class="genre-row reveal" tabindex="0">
+      <span class="g-num">001</span>
+      <span class="g-name" data-i18n="g1_name">Brand <span class="red">films</span></span>
+      <span class="g-rated" data-i18n="g1_desc">Cinematic brand storytelling. We give your brand a film, not an advert, and let it earn the room.</span>
+      <span class="g-arrow" aria-hidden="true">&rarr;</span>
+    </li>
+    <li class="genre-row reveal" tabindex="0">
+      <span class="g-num">002</span>
+      <span class="g-name" data-i18n="g2_name">Adver<span class="red">tising</span></span>
+      <span class="g-rated" data-i18n="g2_desc">TV, digital and social content built from one shoot, cut for every screen it needs to live on.</span>
+      <span class="g-arrow" aria-hidden="true">&rarr;</span>
+    </li>
+    <li class="genre-row reveal" tabindex="0">
+      <span class="g-num">003</span>
+      <span class="g-name" data-i18n="g3_name">3D <span class="red">visualization</span></span>
+      <span class="g-rated" data-i18n="g3_desc">Architectural renders and product modeling, photoreal enough to ship before anything is built.</span>
+      <span class="g-arrow" aria-hidden="true">&rarr;</span>
+    </li>
+    <li class="genre-row reveal" tabindex="0">
+      <span class="g-num">004</span>
+      <span class="g-name" data-i18n="g4_name">Corporate <span class="red">film</span></span>
+      <span class="g-rated" data-i18n="g4_desc">Corporate stories told with warmth. People, process and purpose, without the corporate stiffness.</span>
+      <span class="g-arrow" aria-hidden="true">&rarr;</span>
+    </li>
+    <li class="genre-row reveal" tabindex="0">
+      <span class="g-num">005</span>
+      <span class="g-name" data-i18n="g5_name">Commercial <span class="red">production</span></span>
+      <span class="g-rated" data-i18n="g5_desc">Full commercial production, from concept and crew to delivery, handled end to end in one place.</span>
+      <span class="g-arrow" aria-hidden="true">&rarr;</span>
+    </li>
+    <li class="genre-row reveal" tabindex="0">
+      <span class="g-num">006</span>
+      <span class="g-name" data-i18n="g6_name">Drone <span class="red">cinematography</span></span>
+      <span class="g-rated" data-i18n="g6_desc">Aerial perspectives that give scale and geography, flown by licensed pilots, graded to match.</span>
+      <span class="g-arrow" aria-hidden="true">&rarr;</span>
+    </li>
+  </ul>
+</section>
+
+<section class="stats" aria-label="By the numbers">
+  <div class="stats-grid">
+    <div class="stat reveal"><div class="num" data-count="6">0</div><div class="lbl" data-i18n="st1">Disciplines under one roof</div></div>
+    <div class="stat reveal"><div class="num" data-count="2">0</div><div class="lbl" data-i18n="st2">Cities: London &amp; Izmir</div></div>
+    <div class="stat reveal"><div class="num" data-count="120" data-suffix="+">0</div><div class="lbl" data-i18n="st3">Films delivered</div></div>
+    <div class="stat reveal"><div class="num" data-count="6"><span class="red">0</span></div><div class="lbl" data-i18n="st4">Brands like Samsung &amp; Karaca</div></div>
+  </div>
+</section>
+
+<section class="director" id="director" aria-label="Studio philosophy">
+  <div class="director-grid">
+    <div>
+      <div class="director-eyebrow reveal" data-i18n="dir_label">Studio note</div>
+      <p class="director-q reveal" data-i18n="dir_quote">Ideas <span class="red">move.</span> Quality <span class="red">shows.</span></p>
+      <p class="director-attr reveal" data-i18n="dir_attr">World London Media, London &amp; Izmir</p>
+    </div>
+    <div class="director-body">
+      <p class="reveal" data-i18n="dir_p1">We are a premium visual production studio. We believe design is the act of conveying the right emotion accurately, so we treat animation as a tool, never a goal. Minimalist, cinematic, deliberate.</p>
+      <p class="reveal" data-i18n="dir_p2">From content to impact. We craft impressions that endure: your brand, telling its own story, in a language audiences feel before they read. We have made work with Samsung, Karaca, LC Waikiki, Yeni Raki, Le Cordon Bleu and Barrus London.</p>
+      <p class="reveal" data-i18n="dir_p3">Six disciplines, one studio, two cities. If you have a story worth telling well, <em>we would love to hear it.</em></p>
+    </div>
+  </div>
+</section>
+
+<section class="credits" aria-label="Selected clients">
+  <h2 class="reveal" data-i18n="cred_h2">Selected <span class="red">clients</span></h2>
+  <div class="credits-list">
+    <div class="row reveal"><span class="title">Samsung</span><span class="role" data-i18n="cl1">Advertising &middot; Film</span></div>
+    <div class="row reveal"><span class="title">Karaca</span><span class="role" data-i18n="cl2">Brand film</span></div>
+    <div class="row reveal"><span class="title">LC Waikiki</span><span class="role" data-i18n="cl3">Commercial</span></div>
+    <div class="row reveal"><span class="title">Yeni Raki</span><span class="role" data-i18n="cl4">Brand film</span></div>
+    <div class="row reveal"><span class="title">Le Cordon Bleu</span><span class="role" data-i18n="cl5">Corporate film</span></div>
+    <div class="row reveal"><span class="title">Barrus London</span><span class="role" data-i18n="cl6">3D &middot; Film</span></div>
+  </div>
+</section>
+
+<section class="production" id="production" aria-label="Process">
+  <div class="production-head">
+    <span class="now-label reveal" data-i18n="sec_prod_label">Process</span>
+    <h2 class="reveal" data-i18n="sec_prod_h2">Four <span class="red">phases.</span><br/>One picture at a time.</h2>
+  </div>
+  <div class="phase-grid">
+    <div class="phase reveal">
+      <span class="phase-num" data-i18n="ph1_num">PHASE 01</span>
+      <h3 data-i18n="ph1_title">Brief &amp; <span class="red">concept</span></h3>
+      <p data-i18n="ph1_body">We listen, then translate the brief into a concept: references, tone, a clear creative direction approved before any camera moves.</p>
+    </div>
+    <div class="phase reveal">
+      <span class="phase-num" data-i18n="ph2_num">PHASE 02</span>
+      <h3 data-i18n="ph2_title">Pre-<span class="red">production</span></h3>
+      <p data-i18n="ph2_body">Casting, locations, crew, schedule and storyboards. Everything is planned and signed off so the shoot runs clean.</p>
+    </div>
+    <div class="phase reveal">
+      <span class="phase-num" data-i18n="ph3_num">PHASE 03</span>
+      <h3 data-i18n="ph3_title">Pro<span class="red">duction</span></h3>
+      <p data-i18n="ph3_body">Film, 3D and drone, shot to a cinematic standard. Small precise crews, the right light, no wasted frames.</p>
+    </div>
+    <div class="phase reveal">
+      <span class="phase-num" data-i18n="ph4_num">PHASE 04</span>
+      <h3 data-i18n="ph4_title">Post &amp; <span class="red">delivery</span></h3>
+      <p data-i18n="ph4_body">Edit, grade, sound and titles. Delivered in every format you need, on time, ready to publish.</p>
+    </div>
+  </div>
+</section>
+
+<section class="premiere" id="premiere" aria-label="Contact">
+  <div class="premiere-inner">
+    <div class="premiere-eyebrow reveal" data-i18n="prem_eyebrow">Now booking &middot; 2026</div>
+    <h2 class="reveal" data-i18n="prem_h2">Let's make<br/><span class="stroke">something.</span></h2>
+    <div class="premiere-contact reveal">
+      <a class="big" href="mailto:info@worldlondonmedia.com">info@worldlondonmedia.com</a>
+      <div class="premiere-sub">
+        <a href="https://wa.me/447717115002" target="_blank" rel="noopener" data-i18n="prem_wa">WhatsApp +44 7717 115002</a>
+        <a href="https://worldlondonmedia.com" target="_blank" rel="noopener">worldlondonmedia.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer aria-label="Footer">
+  <div class="foot-mega">WoLo <span class="red">&middot;</span> 05</div>
+  <div class="foot-grid">
+    <div class="wide">
+      <h4 data-i18n="ft_studio">Studio</h4>
+      <p data-i18n="ft_studio_v">World London Media (WoLo)<br/>Premium visual production<br/>London, UK &amp; Izmir, Turkey</p>
+    </div>
+    <div>
+      <h4 data-i18n="ft_index">Index</h4>
+      <ul>
+        <li><a href="#now-showing" data-i18n="nav_showing">Showreel</a></li>
+        <li><a href="#genres" data-i18n="nav_genres">Services</a></li>
+        <li><a href="#director" data-i18n="nav_director">Studio</a></li>
+        <li><a href="#production" data-i18n="nav_production">Process</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="ft_contact">Contact</h4>
+      <ul>
+        <li><a href="mailto:info@worldlondonmedia.com">Email</a></li>
+        <li><a href="https://wa.me/447717115002" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://worldlondonmedia.com" target="_blank" rel="noopener">Website</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="ft_disc">Disciplines</h4>
+      <ul>
+        <li data-i18n="g1_name_plain">Brand films</li>
+        <li data-i18n="g3_name_plain">3D visualization</li>
+        <li data-i18n="g6_name_plain">Drone cinematography</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span data-i18n="ft_copy">&copy; 2026 WORLD LONDON MEDIA &middot; LONDON / IZMIR</span>
+    <span>SET IN ANTONIO &middot; SPECIAL ELITE &middot; DM MONO</span>
+  </div>
+</footer>
+
+<!-- WoLo: galeriye don butonu (template'in kendi stilinden bagimsiz, sabit) -->
+<a href="../../index.html" class="wolo-back" aria-label="Galeriye don">
+  <span class="wolo-back__arrow" aria-hidden="true">&#8592;</span>
+  <span class="wolo-back__label">Galeri</span>
+</a>
+<style>
+  .wolo-back{position:fixed;left:16px;bottom:16px;z-index:99999;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;font-weight:500;letter-spacing:.02em;color:#fff;background:rgba(15,15,15,.78);-webkit-backdrop-filter:blur(10px) saturate(140%);backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(255,255,255,.2);border-radius:100px;text-decoration:none;box-shadow:0 6px 24px rgba(0,0,0,.28);transition:transform .25s ease,background .25s ease}
+  .wolo-back:hover{background:rgba(15,15,15,.96);transform:translateY(-2px)}
+  .wolo-back:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  .wolo-back__arrow{font-size:15px;line-height:1;transition:transform .25s ease}
+  .wolo-back:hover .wolo-back__arrow{transform:translateX(-3px)}
+  @media (max-width:480px){.wolo-back{left:12px;bottom:12px;padding:9px 14px;font-size:12px}}
+  @media (prefers-reduced-motion:reduce){.wolo-back,.wolo-back__arrow{transition:none}.wolo-back:hover{transform:none}.wolo-back:hover .wolo-back__arrow{transform:none}}
+</style>
+
+<!-- ===== Libraries (CDN) ===== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  // prefers-reduced-motion kontrolu: agir hareket bu bayraga gore acilir/kapanir
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasGSAP = typeof window.gsap !== 'undefined';
+  const hasLenis = typeof window.Lenis !== 'undefined';
+
+  /* ---------- Lenis smooth scroll + ScrollTrigger senkronu ---------- */
+  let lenis = null;
+  if (hasLenis && !reduceMotion) {
+    lenis = new Lenis({
+      duration: 1.1,
+      easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+      smoothWheel: true
+    });
+
+    if (hasGSAP && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+      // lenis scroll -> ScrollTrigger guncelle
+      lenis.on('scroll', ScrollTrigger.update);
+      // gsap.ticker raf'i ile lenis.raf'i besle
+      gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+    }
+  } else if (hasGSAP && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  /* ---------- GSAP scroll animasyonlari ---------- */
+  if (hasGSAP && window.ScrollTrigger && !reduceMotion) {
+
+    // Hero baslik: kelime kelime reveal (split yerine .word elemanlari kullaniyoruz)
+    gsap.set('.hero h1 .word', { yPercent: 110, opacity: 0 });
+    gsap.to('.hero h1 .word', {
+      yPercent: 0, opacity: 1,
+      duration: 1.1, ease: 'expo.out', stagger: 0.1, delay: 0.25
+    });
+
+    // Hero arkaplan yumusak parallax (poster/video katmani)
+    gsap.to('[data-hero-parallax]', {
+      yPercent: 18,
+      ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+    });
+
+    // Genel reveal: fade + translate, stagger'li
+    gsap.utils.toArray('.reveal').forEach(function (el) {
+      // hero icindeki reveal'lar ayri ele alindi, atla
+      if (el.closest('.hero')) { el.classList.add('in'); return; }
+      gsap.fromTo(el,
+        { y: 36, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.9, ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+        }
+      );
+    });
+
+    // Now Showing poster'larina hafif parallax (gorsel ic kayma)
+    gsap.utils.toArray('[data-parallax-img] img').forEach(function (img) {
+      gsap.fromTo(img, { yPercent: -6 }, {
+        yPercent: 6, ease: 'none',
+        scrollTrigger: { trigger: img.closest('.reel-card'), start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
+
+    // Istatistik sayaclari: gorunce 0'dan hedefe say
+    gsap.utils.toArray('.stat .num').forEach(function (el) {
+      const target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      const suffix = el.getAttribute('data-suffix') || '';
+      const isRed = el.querySelector('.red') !== null;
+      const obj = { v: 0 };
+      ScrollTrigger.create({
+        trigger: el, start: 'top 90%', once: true,
+        onEnter: function () {
+          gsap.to(obj, {
+            v: target, duration: 1.6, ease: 'power2.out',
+            onUpdate: function () {
+              const val = Math.round(obj.v) + suffix;
+              el.innerHTML = isRed ? '<span class="red">' + val + '</span>' : val;
+            }
+          });
+        }
+      });
+    });
+
+    // Leader / ticker hizini scroll yonune gore hafif hizlandir (sinematik his)
+    let lastY = window.scrollY;
+    ScrollTrigger.create({
+      trigger: 'body', start: 'top top', end: 'bottom bottom', onUpdate: function () { /* placeholder */ }
+    });
+
+  } else {
+    // reduced-motion ya da GSAP yok: tum reveal'lari aninda gorunur yap
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+    // sayaclari direkt son degerine sabitle
+    document.querySelectorAll('.stat .num').forEach(function (el) {
+      const target = el.getAttribute('data-count') || '0';
+      const suffix = el.getAttribute('data-suffix') || '';
+      const isRed = el.querySelector('.red') !== null;
+      const val = target + suffix;
+      el.innerHTML = isRed ? '<span class="red">' + val + '</span>' : val;
+    });
+  }
+
+  /* ---------- Anchor smooth scroll (Lenis varsa onunla, yoksa native) ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (!t) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(t, { offset: -10 });
+      else t.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  });
+
+  /* ---------- Scroll progress + back-to-top ---------- */
+  const progress = document.querySelector('.scroll-progress');
+  const backTop = document.querySelector('.back-top');
+  function onScroll(scrollY) {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = ((scrollY / Math.max(max, 1)) * 100) + '%';
+    backTop.classList.toggle('visible', scrollY > 600);
+  }
+  if (lenis) lenis.on('scroll', function (e) { onScroll(e.scroll); });
+  else window.addEventListener('scroll', function () { onScroll(window.scrollY); }, { passive: true });
+  backTop.addEventListener('click', function () {
+    if (lenis) lenis.scrollTo(0);
+    else window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+
+  /* ---------- i18n (TR/EN) ---------- */
+  const i18n_tr = {
+    skip: 'Icerige atla',
+    back_top: 'Basa don',
+    nav_showing: 'Vitrin', nav_genres: 'Hizmetler', nav_director: 'Studyo', nav_production: 'Surec',
+    nav_cta: 'Projeye basla &rarr;',
+
+    hm_studio: 'STUDYO', hm_studio_v: 'LONDRA &middot; IZMIR &middot; 2018\'DEN BERI',
+    hm_rated: 'PREMIUM GORSEL URETIM',
+    hm_format: 'FORMAT', hm_format_v: 'FILM &middot; 3D &middot; YAYIN &middot; DRONE',
+
+    hero_h1: '<span class="line"><span class="word">Icerikten</span></span><span class="line"><span class="word small" data-i18n-skip>&middot;</span> <span class="word red">etkiye.</span></span>',
+
+    syn_label: 'KONU',
+    hero_syn: 'Kalici izlenimler uretiyoruz. Markaniz, kendi hikayesini anlatiyor. Londra ve Izmir arasinda calisan premium bir gorsel uretim studyosu: sinema gibi cekilir, bir film gibi tamamlanir.',
+    hc_dir: 'DISIPLINLER', hc_dir_v: 'Marka filmleri &middot; Reklam<br/>3D &middot; Drone &middot; Kurumsal',
+    hc_prod: 'YAPIM', hc_prod_v: 'World London Media<br/>Londra &amp; Izmir',
+    cta_watch: 'Reel\'i izle &#9658;', cta_book: 'Projeye basla',
+
+    sec_now_label: 'Vizyonda', sec_now_title: 'Vitrin<br/><span class="red">Reel</span> 2026', now_arrow: 'Tum arsiv &#8599;',
+
+    badge_now: 'VIZYONDA', badge_feat: 'ONE CIKAN', badge_new: 'YENI', badge_arch: 'ARSIV', badge_now2: 'VIZYONDA',
+    rs1_tag: 'MARKA FILMI', rs1_body: 'Koklu bir gida markasi icin sinematik marka hikayeciligi. Lokasyonda cekildi, film ritminde kurgulandi.',
+    rc1_title: 'Karaca Hikayeleri', rc1_meta: '2025 / 2:40<br/>Marka filmi',
+    rs2_tag: 'REKLAM', rs2_body: 'Tek bir cekimden TV, dijital ve sosyal medya icin kurulan cok platformlu bir reklam kampanyasi.',
+    rc2_title: 'Samsung Lansman', rc2_meta: '2024 / 0:45<br/>Reklam',
+    rs3_tag: '3D GORSELLESTIRME', rs3_body: 'Kameradan ayirt edilemeyen, fotogerceklikte mimari render ve urun modelleme.',
+    rc3_title: 'Atolye Render', rc3_meta: '2025 / Seri<br/>3D gorsellestirme',
+    rs4_tag: 'DRONE', rs4_body: 'Markaya olcek, cografya ve mekan hissi veren havadan sinematografi.',
+    rc4_title: 'Ege Havadan', rc4_meta: '2024 / 1:20<br/>Drone',
+    rs5_tag: 'KURUMSAL FILM', rs5_body: 'Kurumsal degil, insani hisseden bir kurumsal film. Insanlar, surec ve onemli olan is.',
+    rc5_title: 'Uretimin Icinde', rc5_meta: '2025 / 3:10<br/>Kurumsal film',
+
+    sec_gen_label: '<strong>&sect; Hizmetler</strong>Alti disiplin &middot; tek studyo',
+    sec_gen_title: 'Cektigimiz <span class="red">alti tur</span>.',
+    g1_name: 'Marka <span class="red">filmleri</span>', g1_desc: 'Sinematik marka hikayeciligi. Markaniza bir reklam degil, bir film veriyor ve odaya hak ettigi yeri biraktiriyoruz.',
+    g2_name: 'Rek<span class="red">lam</span>', g2_desc: 'TV, dijital ve sosyal medya icerikleri. Tek cekimden uretilir, yayinlanacagi her ekran icin ayri kurgulanir.',
+    g3_name: '3D <span class="red">gorsellestirme</span>', g3_desc: 'Mimari render ve urun modelleme. Hicbir sey insa edilmeden gonderilebilecek kadar fotogercek.',
+    g4_name: 'Kurumsal <span class="red">film</span>', g4_desc: 'Sicaklikla anlatilan kurumsal hikayeler. Insanlar, surec ve amac: kurumsal katiliktan uzak.',
+    g5_name: 'Ticari <span class="red">produksiyon</span>', g5_desc: 'Konseptten ekibe, cekimden teslime tam produksiyon. Tek elden, bastan sona.',
+    g6_name: 'Drone <span class="red">sinematografi</span>', g6_desc: 'Olcek ve cografya katan havadan perspektifler. Lisansli pilotlarla ucurulur, eslesecek sekilde renklendirilir.',
+    g1_name_plain: 'Marka filmleri', g3_name_plain: '3D gorsellestirme', g6_name_plain: 'Drone sinematografi',
+
+    st1: 'Tek catida disiplin', st2: 'Sehir: Londra &amp; Izmir', st3: 'Teslim edilen film', st4: 'Samsung &amp; Karaca gibi markalar',
+
+    dir_label: 'Studyo notu',
+    dir_quote: 'Fikirler <span class="red">hareket eder.</span> Kalite <span class="red">kendini gosterir.</span>',
+    dir_attr: 'World London Media, Londra &amp; Izmir',
+    dir_p1: 'Premium bir gorsel uretim studyosuyuz. Tasarimin, dogru duyguyu dogru aktarma eylemi olduguna inaniyoruz. Bu yuzden animasyonu bir amac degil, bir arac olarak goruyoruz. Minimalist, sinematik, bilincli.',
+    dir_p2: 'Icerikten etkiye. Kalici izlenimler uretiyoruz: markaniz, izleyicinin okumadan once hissettigi bir dille kendi hikayesini anlatiyor. Samsung, Karaca, LC Waikiki, Yeni Raki, Le Cordon Bleu ve Barrus London ile calistik.',
+    dir_p3: 'Alti disiplin, tek studyo, iki sehir. Iyi anlatilmaya deger bir hikayeniz varsa, <em>onu duymak isteriz.</em>',
+
+    cred_h2: 'Secili <span class="red">musteriler</span>',
+    cl1: 'Reklam &middot; Film', cl2: 'Marka filmi', cl3: 'Reklam', cl4: 'Marka filmi', cl5: 'Kurumsal film', cl6: '3D &middot; Film',
+
+    sec_prod_label: 'Surec', sec_prod_h2: 'Dort <span class="red">asama.</span><br/>Tek bir kare.',
+    ph1_num: 'ASAMA 01', ph1_title: 'Brief &amp; <span class="red">konsept</span>', ph1_body: 'Once dinleriz, sonra brief\'i bir konsepte ceviririz: referanslar, ton, kamera oynamadan once onaylanan net bir yaratici yon.',
+    ph2_num: 'ASAMA 02', ph2_title: 'On <span class="red">produksiyon</span>', ph2_body: 'Casting, lokasyon, ekip, takvim ve storyboard. Her sey planlanir ve onaylanir, boylece cekim temiz akar.',
+    ph3_num: 'ASAMA 03', ph3_title: 'Pro<span class="red">duksiyon</span>', ph3_body: 'Film, 3D ve drone, sinematik standartta cekilir. Kucuk ve hassas ekipler, dogru isik, bosa kare yok.',
+    ph4_num: 'ASAMA 04', ph4_title: 'Post &amp; <span class="red">teslim</span>', ph4_body: 'Kurgu, renk, ses ve jenerik. Ihtiyac duydugunuz her formatta, zamaninda, yayina hazir teslim edilir.',
+
+    prem_eyebrow: '2026 randevu acik',
+    prem_h2: 'Birlikte<br/><span class="stroke">bir sey yapalim.</span>',
+    prem_wa: 'WhatsApp +44 7717 115002',
+
+    ft_studio: 'Studyo', ft_studio_v: 'World London Media (WoLo)<br/>Premium gorsel uretim<br/>Londra, UK &amp; Izmir, Turkiye',
+    ft_index: 'Indeks', ft_contact: 'Iletisim', ft_disc: 'Disiplinler',
+    ft_copy: '&copy; 2026 WORLD LONDON MEDIA &middot; LONDRA / IZMIR'
+  };
+
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key] !== undefined) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original !== undefined) el.innerHTML = el.dataset.original;
+    });
+    // aria-label cevirileri (back-top)
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      const key = el.dataset.i18nAria;
+      if (lang === 'tr' && i18n_tr[key]) el.setAttribute('aria-label', i18n_tr[key]);
+      else if (el.dataset.originalAria) el.setAttribute('aria-label', el.dataset.originalAria);
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.l === lang);
+    });
+    try { localStorage.setItem('wolo-lang', lang); } catch (e) {}
+    // Dil degisince hero kelime spanlari yeniden uretildigi icin animasyonu sabitle
+    if (hasGSAP && !reduceMotion) gsap.set('.hero h1 .word', { yPercent: 0, opacity: 1, clearProps: 'transform,opacity' });
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
+  }
+  window.setLang = setLang;
+
+  // orijinal (EN) icerikleri sakla
+  document.querySelectorAll('[data-i18n]').forEach(function (el) { el.dataset.original = el.innerHTML; });
+  document.querySelectorAll('[data-i18n-aria]').forEach(function (el) { el.dataset.originalAria = el.getAttribute('aria-label'); });
+
+  let savedLang = 'en';
+  try { savedLang = localStorage.getItem('wolo-lang') || 'en'; } catch (e) {}
+  setLang(savedLang);
+
+})();
+</script>
+</body>
+</html>
