@@ -19,7 +19,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   background: var(--paper);
@@ -29,6 +29,15 @@ body {
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* Body scroll-lock (drawer/lightbox acikken). JS sinif ekler/cikarir. */
+body.no-scroll { overflow: hidden; }
+
+/* Guvenli global: medya viewport'u tasmasin */
+img, video, svg, canvas, iframe {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Halftone zemin noktalari sadece desktop'ta (mobilde kucuk metni bozuyordu) */
@@ -195,16 +204,20 @@ nav {
 .nav-drawer {
   position: fixed; top: 0; right: 0;
   width: min(82vw, 360px); height: 100vh;
+  height: 100dvh; /* mobil adres cubugu icin dinamik viewport (fallback: 100vh) */
   background: var(--paper);
   border-left: 2px solid var(--ink);
   box-shadow: -8px 0 0 var(--blue);
   z-index: 1200;
-  transform: translateX(110%);
-  transition: transform .5s cubic-bezier(.76,0,.24,1);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform .5s cubic-bezier(.76,0,.24,1), visibility 0s linear .5s;
   padding: 100px 32px 32px;
   display: flex; flex-direction: column;
+  overflow-y: auto; /* kucuk ekranda icerik tasarsa drawer kendi icinde kaysin */
+  -webkit-overflow-scrolling: touch;
 }
-.nav-drawer.open { transform: translateX(0); }
+.nav-drawer.open { transform: translateX(0); visibility: visible; transition: transform .5s cubic-bezier(.76,0,.24,1), visibility 0s; }
 .nav-drawer a {
   font-family: var(--display);
   font-weight: 700;
@@ -1268,7 +1281,7 @@ footer a:hover { color: var(--pink); }
 body.page-enter { animation: pageEnter .6s ease both; }
 @keyframes pageEnter {
   from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: none; }
 }
 
 /* ===================== WOLO GERI BUTONU (galeri) ===================== */
@@ -1295,6 +1308,9 @@ body.page-enter { animation: pageEnter .6s ease both; }
   .nav-right .lang-toggle { display: none; }
   .nav-right > .nav-cta { display: none; }
   .nav-burger { display: flex; }
+  /* Drawer/overlay acikken hamburger (X) overlay'in ustunde tiklanabilir kalsin.
+     Overlay z-index:1150, drawer:1200; nav'i arada tutuyoruz. */
+  nav { z-index: 1190; }
 
   .hero { padding: 100px 20px 48px; }
   .hero-bottom { grid-template-columns: 1fr; gap: 28px; }
@@ -1317,6 +1333,39 @@ body.page-enter { animation: pageEnter .6s ease both; }
   .studio-intro { grid-template-columns: 1fr; }
   .service-row { grid-template-columns: 1fr; gap: 16px; padding: 36px 0; }
   .contact-channels { grid-template-columns: 1fr; }
+
+  /* --- Tap-target >=44px (mobil dokunma alanlari) --- */
+  /* Drawer dil toggle butonlari: rahat dokunma */
+  .nav-drawer .drawer-lang button {
+    min-height: 44px;
+    min-width: 56px;
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+  /* Footer linkleri: 44px dokunma yuksekligi (gorsel ritmi bozmadan) */
+  footer li { margin-bottom: 4px; }
+  footer li a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 4px 0;
+  }
+  footer .foot-bot { gap: 8px 16px; }
+  /* Geri butonu ve back-to-top zaten >=44px; CTA'lar dokunmaya rahat */
+  .nav-cta, .drawer-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+  }
+  /* Mail linki dokunma alani */
+  .contact a.mail { display: inline-block; padding: 6px 0; }
+  /* Iletisim kanal linkleri */
+  .contact-channels .ch a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1336,12 +1385,32 @@ body.page-enter { animation: pageEnter .6s ease both; }
   .hero, .chapters, .spread, .manifesto, .pages, .stats,
   .contact, .clients, .studio-intro, .page-hero { padding-left: 16px; padding-right: 16px; }
   .page-hero { padding-top: 120px; }
+
+  /* Buyuk display tipografi: ekrana rahat sigsin, satir tasmasi/yatay kaydirma yok */
   .hero h1 { font-size: clamp(38px, 13vw, 64px); }
+  .page-hero h1 { font-size: clamp(40px, 13vw, 64px); }
+  .sec-head h2, .spread-head h2, .pages h2 { font-size: clamp(34px, 11vw, 56px); }
+  .manifesto-text { font-size: clamp(32px, 9vw, 52px); }
+  .contact h2 { font-size: clamp(44px, 14vw, 72px); }
+  .contact a.mail { font-size: clamp(20px, 6.5vw, 30px); }
+  .foot-brand { font-size: clamp(48px, 16vw, 64px); }
+  /* Cok uzun tek kelime ortak basliklarda tasmayi kir */
+  .hero h1, .page-hero h1, .contact h2, .manifesto-text { overflow-wrap: anywhere; }
+
+  /* Bolum padding'i mobilde rahat (ne cok sik ne asiri buyuk) */
+  .chapters, .pages { padding-top: 64px; padding-bottom: 64px; }
+  .spread, .stats, .clients { padding-top: 56px; padding-bottom: 56px; }
+  .manifesto { padding-top: 72px; padding-bottom: 72px; }
+  .contact { padding-top: 110px; padding-bottom: 48px; }
+
   .marquee-track { font-size: 18px; }
   .nav-drawer a { font-size: 30px; }
   .polaroid-grid { grid-template-columns: 1fr; }
   .back-top { width: 46px; height: 46px; bottom: 80px; }
   .wolo-back { left: 14px; bottom: 14px; padding: 9px 14px; font-size: 11px; }
+
+  /* Buyuk numara/istatistik display'leri tasmasin */
+  .section-label .num, .spread-head .num, .page-num, .stat-num { font-size: clamp(56px, 18vw, 80px); }
 }
 
 /* ===================== PREFERS-REDUCED-MOTION ===================== */

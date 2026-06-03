@@ -56,6 +56,10 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+/* guvenli global: yatay tasma kilidi (html + body) */
+html { overflow-x: hidden; }
+/* medya hicbir kosulda viewport'u tasmasin */
+img, video, svg, iframe { max-width: 100%; height: auto; }
 /* Lenis aktifken native smooth scroll cakismasini onle */
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -261,6 +265,8 @@ nav a.active { color: var(--terra); }
 body.drawer-open .nav-burger span { background: transparent; }
 body.drawer-open .nav-burger span::before { transform: translateY(6px) rotate(45deg); }
 body.drawer-open .nav-burger span::after  { transform: translateY(-6px) rotate(-45deg); }
+/* drawer acikken body scroll kilidi (Lenis stop'a ek native fallback) */
+body.drawer-open { overflow: hidden; touch-action: none; }
 
 .drawer {
   position: fixed; inset: 0;
@@ -1201,10 +1207,10 @@ body.drawer-open .nav-burger span::after  { transform: translateY(-6px) rotate(-
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
   display: flex; align-items: center; justify-content: center;
   padding: var(--sp-5);
-  opacity: 0; visibility: hidden;
+  opacity: 0; visibility: hidden; pointer-events: none;
   transition: opacity 0.4s var(--ease-out), visibility 0.4s;
 }
-.lightbox.open { opacity: 1; visibility: visible; }
+.lightbox.open { opacity: 1; visibility: visible; pointer-events: auto; }
 .lightbox-inner {
   position: relative; max-width: 1100px; width: 100%;
   background: var(--cobalt); border: 1px solid var(--sun);
@@ -1339,6 +1345,19 @@ html.has-anim .reveal.in { opacity: 1; transform: none; }
   .value-grid { grid-template-columns: 1fr 1fr; }
   .form-wrap { grid-template-columns: 1fr; gap: var(--sp-6); }
   .form-card { padding: var(--sp-5); }
+
+  /* --- tap-target >=44px (mobil): kucuk dokunma hedeflerini buyut --- */
+  /* lang toggle: navda gorunur kaliyor, butonlar 44px dokunma yuksekligi */
+  .lang-toggle button { min-height: 44px; min-width: 44px; padding: 6px 14px; }
+  /* footer link satirlari: 44px dokunma yuksekligi (inline-flex ile dikey ortala) */
+  footer li { margin-bottom: 4px; }
+  footer li a { display: inline-flex; align-items: center; min-height: 44px; }
+  /* footer alt satir linkleri (varsa) */
+  .foot-bot a { display: inline-flex; align-items: center; min-height: 44px; }
+  /* galeriye don + back-to-top: zaten 44px+ ama dokunma alanini netlestir */
+  .wolo-back { min-height: 44px; padding-block: 11px; }
+  /* form select/input dokunma yuksekligi */
+  .field select, .field input { min-height: 44px; }
 }
 
 @media (max-width: 480px) {
@@ -1379,7 +1398,22 @@ html.has-anim .reveal.in { opacity: 1; transform: none; }
 
   .marquee { font-size: 18px; }
   .to-top { right: 14px; bottom: 14px; }
-  .wolo-back { left: 14px; bottom: 14px; padding: 9px 14px; font-size: 12px; }
+  .wolo-back { left: 14px; bottom: 14px; padding: 11px 14px; font-size: 12px; }
+
+  /* --- <=480px: hero/display tipografi ekrana rahat sigsin, yatay tasma yok --- */
+  /* hero H1: cok dar ekranda min clamp'i biraz dusur, uzun kelimeler tasmasin */
+  .hero h1 { font-size: clamp(33px, 8.5vw, 150px); word-break: normal; overflow-wrap: anywhere; }
+  /* contact dev baslik: 480px'te min'i dusur (uzun satirlar tasmasin) */
+  .contact h2 { font-size: clamp(38px, 9vw, 150px); overflow-wrap: anywhere; }
+  .page-head h1 { overflow-wrap: anywhere; }
+  .section h2 { overflow-wrap: anywhere; }
+
+  /* --- govde metni >=15px (okunurluk) --- */
+  .svc p { font-size: 15px; }
+  .step p { font-size: 15px; }
+  footer li { font-size: 15px; }
+  .work-cap-note { font-size: 15px; }
+  .value p { font-size: 15px; }
 }
 
 /* ============================================================

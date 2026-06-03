@@ -21,7 +21,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 body {
   background: var(--ink);
   color: var(--paper);
@@ -30,6 +30,8 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 }
+/* mobil drawer / lightbox acikken govde kaydirma kilidi (shared JS .no-scroll ekler) */
+body.no-scroll { overflow: hidden; }
 /* Lenis aktifken */
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -46,6 +48,13 @@ body::before {
 }
 ::selection { background: var(--rust); color: var(--paper); }
 img { max-width: 100%; display: block; }
+/* guvenli global: hicbir medya viewport'u tasmasin */
+img, video, iframe, canvas, svg { max-width: 100%; height: auto; }
+/* aspect-ratio'lu medya kutularinin ic gorseli kutuyu doldurmali (height:auto cakismasini ez) */
+.hero-image .media,
+.work-item .frame img,
+.process-step .step-visual img,
+.lightbox-media img { height: 100%; }
 
 /* =================== NAV (sticky + blur + active state) =================== */
 .site-nav {
@@ -587,10 +596,10 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(12px);
   display: flex; align-items: center; justify-content: center;
   padding: 5vh 5vw;
-  opacity: 0; pointer-events: none;
-  transition: opacity .5s var(--ease);
+  opacity: 0; pointer-events: none; visibility: hidden;
+  transition: opacity .5s var(--ease), visibility 0s linear .5s;
 }
-.lightbox.open { opacity: 1; pointer-events: auto; }
+.lightbox.open { opacity: 1; pointer-events: auto; visibility: visible; transition: opacity .5s var(--ease), visibility 0s; }
 .lightbox-inner {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -1139,37 +1148,112 @@ button:focus-visible,
 @media (max-width: 900px) {
   .site-nav { padding: 14px 20px; }
   .site-nav.scrolled { padding: 10px 20px; }
-  .nav-toggle { display: inline-flex; }
-  .nav-right { gap: 12px; }
-  /* mobil menu paneli */
-  .nav-links {
+
+  /* ----- DIM BACKDROP (markup eklemeden ::after; drawer arkasini karartir) ----- */
+  .site-nav::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 7, 6, 0.6);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity .45s var(--ease), visibility 0s linear .45s;
+    z-index: 1000;
+  }
+  .site-nav.menu-open::after {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transition: opacity .45s var(--ease), visibility 0s;
+  }
+
+  /* ----- HAMBURGER: panelin transform'undan bagimsiz, hep ekranda ----- */
+  /* fixed: .nav-right transform: translateX() ile kayinca hamburger yerinde kalir,
+     acikken de X olarak panel ustunde tiklanabilir kalir */
+  .nav-toggle {
+    display: inline-flex;
+    position: fixed;
+    top: 12px; right: 20px;
+    width: 44px; height: 44px;
+    background: rgba(14, 13, 11, 0.55);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    z-index: 1003;   /* panelin (1002) ustunde: acikken X'e basilabilsin */
+  }
+  .site-nav.scrolled .nav-toggle { top: 8px; }
+
+  /* ----- DRAWER PANELI = tum .nav-right (icinde linkler + CTA + lang toggle) ----- */
+  .nav-right {
     position: fixed;
     top: 0; right: 0;
-    width: min(80vw, 320px);
+    width: min(86vw, 340px);
     height: 100vh;
+    height: 100dvh;
     flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
     gap: 0;
-    background: rgba(14, 13, 11, 0.97);
-    -webkit-backdrop-filter: blur(18px);
-    backdrop-filter: blur(18px);
+    background: var(--ink);   /* SOLID (yari saydam degil) */
     border-left: 1px solid rgba(239, 233, 222, 0.12);
-    padding: 100px 28px 40px;
+    box-shadow: -24px 0 60px -20px rgba(0, 0, 0, 0.7);
+    padding: 96px 26px 40px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     transform: translateX(100%);
     transition: transform .5s var(--spring);
-    z-index: 1001;
+    z-index: 1002;
   }
-  .site-nav.menu-open .nav-links { transform: translateX(0); }
+  .site-nav.menu-open .nav-right { transform: translateX(0); }
+
+  /* drawer panel ust kontrastini guclendiren ince grain katmani (kimlik) */
+  .nav-right::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: var(--grain);
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  /* nav linkleri: dikey liste, okunakli, tap-target >=44px */
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
   .nav-links a {
-    font-size: 16px;
-    letter-spacing: 0.06em;
-    padding: 18px 0;
-    min-height: 40px;
+    font-family: var(--serif);
+    font-size: 20px;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    opacity: 0.92;
+    padding: 16px 0;
+    min-height: 44px;
     display: flex; align-items: center;
-    border-bottom: 1px solid rgba(239, 233, 222, 0.08);
+    border-bottom: 1px solid rgba(239, 233, 222, 0.1);
     width: 100%;
   }
   .nav-links a::after { display: none; }
-  .nav-cta { display: none; }
+  .nav-links a.active { color: var(--rust-soft); opacity: 1; }
+
+  /* CTA drawer icinde gorunur: tam-genislik, >=44px dokunma */
+  .nav-cta {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 100%;
+    margin-top: 28px;
+    padding: 15px 22px;
+    min-height: 48px;
+    font-size: 12px;
+  }
+
+  /* lang toggle drawer icinde: buyuk dokunma hedefi */
+  .lang-toggle { align-self: flex-start; margin-top: 20px; }
+  .lang-toggle button { padding: 11px 18px; min-height: 44px; font-size: 11px; }
 
   .hero { grid-template-columns: 1fr; padding: 120px 20px 40px; gap: 32px; }
   .hero h1 { line-height: 0.95; }   /* audit: mobil ~0.95 */
@@ -1203,13 +1287,68 @@ button:focus-visible,
   .process-head { grid-template-columns: 48px 1fr; }
   .lightbox-inner { grid-template-columns: 1fr; gap: 24px; max-height: 88vh; overflow-y: auto; }
   .lightbox { padding: 4vh 6vw; }
+  .lightbox-close { top: 16px; right: 16px; width: 44px; height: 44px; }
   .site-footer { grid-template-columns: 1fr 1fr; }
+
+  /* ---- TAP-TARGET >=44px: dokunmali ogeler rahat tiklanir ---- */
+  /* footer linkleri */
+  .site-footer a { display: inline-block; padding: 8px 0; min-height: 24px; }
+  .foot-brand { padding: 0; }   /* buyuk baslik linki kendi yuksekliginde */
+  /* contact CTA bolumu kanallari */
+  .contact-channels { gap: 22px 28px; }
+  .contact-channels a { padding: 8px 0; min-height: 24px; display: inline-block; }
+  .contact-mail { padding: 10px 0 6px; display: inline-block; }
+  /* contact form: input/textarea rahat dokunma + iOS zoom engelle (>=16px deger) */
+  .field { padding: 18px 0 14px; }
+  .field input, .field textarea { font-size: 18px; min-height: 28px; }
+  .form-submit { min-height: 48px; width: 100%; justify-content: center; }
 }
 @media (max-width: 480px) {
   .process-steps { grid-template-columns: 1fr; }
   .clients-grid { grid-template-columns: 1fr; }
   .site-footer { grid-template-columns: 1fr; }
   .contact-detail { grid-template-columns: 1fr; gap: 6px; }
+
+  /* ---- DISPLAY TIPOGRAFI: 360px ekrana rahat sigsin, yatay tasma yok ---- */
+  /* clamp min degerleri dusuruldu; kelime tasmasi olursa kir, satir asmasin */
+  .hero h1 { font-size: clamp(44px, 15vw, 64px); line-height: 0.98; }
+  .page-hero h1 { font-size: clamp(38px, 12vw, 56px); }
+  .contact h2 { font-size: clamp(40px, 14vw, 64px); }
+  .index-title { font-size: clamp(30px, 9vw, 44px); }
+  .foot-brand { font-size: clamp(34px, 11vw, 44px); }
+  .marquee-track { font-size: 22px; }
+  h1, h2, .index-title, .service-name, .foot-brand, .contact h2, .hero h1 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* ---- BODY METNI okunur (>=15px) ---- */
+  .hero-blurb,
+  .service-desc,
+  .philosophy-body p,
+  .page-hero .page-lead { font-size: 15px; }
+
+  /* ---- SECTION PADDING: mobilde rahat, ne sik ne asiri ---- */
+  .hero { padding: 108px 18px 36px; }
+  .page-hero { padding: 116px 18px 40px; }
+  .index-section, .work, .clients, .stats, .process, .contact {
+    padding-left: 18px; padding-right: 18px;
+  }
+  .index-section { padding-top: 80px; padding-bottom: 48px; }
+  .work { padding-top: 48px; padding-bottom: 80px; }
+  .philosophy { padding: 80px 18px; }
+  .stats { padding: 72px 18px; }
+  .process { padding: 88px 18px; }
+  .contact { padding: 100px 18px 64px; }
+  .contact-grid { padding: 0 18px 80px; }
+
+  /* ---- FOOTER linkleri: tap-target >=44px ---- */
+  .site-footer a { display: inline-block; padding: 6px 0; min-height: 24px; }
+  .site-footer li { margin-bottom: 4px; }
+  .foot-bot { gap: 10px; }
+
+  /* back-to-top: dokunma hedefi guvenli (zaten 48px) */
+  .back-top { bottom: 18px; right: 18px; }
 }
 
 /* =================== REDUCED MOTION =================== */

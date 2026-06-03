@@ -13,6 +13,22 @@
 (function () {
   'use strict';
 
+  /* ---------------------------------------------------------
+     0) BODY SCROLL LOCK (sinif tabanli, sayacli)
+        Drawer + lightbox ayni anda acilirsa kilit bozulmasin
+        diye basit bir referans sayaci tutuyoruz. body.no-scroll
+        overflow:hidden uygular (CSS'te tanimli).
+     --------------------------------------------------------- */
+  var scrollLockCount = 0;
+  function lockBodyScroll() {
+    scrollLockCount++;
+    document.body.classList.add('no-scroll');
+  }
+  function unlockBodyScroll() {
+    scrollLockCount = Math.max(0, scrollLockCount - 1);
+    if (scrollLockCount === 0) document.body.classList.remove('no-scroll');
+  }
+
   // GSAP / Lenis var mi? (fail-safe icin)
   var hasGSAP = typeof window.gsap !== 'undefined';
   var hasST = hasGSAP && typeof window.ScrollTrigger !== 'undefined';
@@ -237,14 +253,15 @@
       drawer.classList.add('open');
       if (overlay) overlay.classList.add('open');
       burger.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
+      lockBodyScroll();
     }
     function closeDrawer() {
+      if (!drawer.classList.contains('open')) return;
       burger.classList.remove('open');
       drawer.classList.remove('open');
       if (overlay) overlay.classList.remove('open');
       burger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+      unlockBodyScroll();
     }
     burger.addEventListener('click', function () {
       if (drawer.classList.contains('open')) closeDrawer(); else openDrawer();
@@ -314,18 +331,19 @@
     document.querySelectorAll('body > *:not(.lightbox)').forEach(function (n) {
       if (n.setAttribute) n.setAttribute('inert', '');
     });
-    document.body.style.overflow = 'hidden';
+    lockBodyScroll();
     var closeBtn = lb.el.querySelector('.lightbox-close');
     if (closeBtn) closeBtn.focus();
   }
 
   function closeLightbox() {
     if (!lb.el) return;
+    if (!lb.el.classList.contains('open')) return;
     lb.el.classList.remove('open');
     document.querySelectorAll('body > *[inert]').forEach(function (n) {
       n.removeAttribute('inert');
     });
-    document.body.style.overflow = '';
+    unlockBodyScroll();
     if (lb.lastFocus && lb.lastFocus.focus) lb.lastFocus.focus();
   }
 
@@ -435,6 +453,10 @@
   function initPageTransitions() {
     // Giris animasyonu
     document.body.classList.add('page-enter');
+    // animasyon bitince page-enter'i kaldir: aksi halde body'de filling-animation
+    // kaynakli identity-transform kalir, position:fixed drawer'i body'ye baglar ve
+    // body.scrollWidth'i sismetir (kirpilan ama istenmeyen yatay layout smell).
+    setTimeout(function () { document.body.classList.remove('page-enter'); }, 700);
 
     if (prefersReduced) return; // sweep yok, native gecis
 

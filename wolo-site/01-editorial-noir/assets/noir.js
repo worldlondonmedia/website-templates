@@ -74,17 +74,62 @@
       }
     }
 
-    // mobil menu toggle
+    // mobil menu toggle (drawer): body-lock + backdrop + Esc + link/backdrop ile kapanma
     var toggle = nav.querySelector('.nav-toggle');
+    var panel = nav.querySelector('.nav-right');   // mobilde drawer paneli
     if (toggle) {
-      toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('menu-open');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      // link tiklayinca menuyu kapat (gecis JS ayri devralir)
-      for (var k = 0; k < links.length; k++) {
-        links[k].addEventListener('click', function () { nav.classList.remove('menu-open'); toggle.setAttribute('aria-expanded', 'false'); });
+      function openMenu() {
+        nav.classList.add('menu-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('no-scroll');   // govde scroll kilidi
+        if (lenis) lenis.stop();
       }
+      function closeMenu() {
+        if (!nav.classList.contains('menu-open')) return;
+        nav.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('no-scroll');
+        if (lenis) lenis.start();
+      }
+      // disariya da ac: lightbox vb. drawer'i kapatabilsin
+      nav._closeMenu = closeMenu;
+
+      toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (nav.classList.contains('menu-open')) closeMenu();
+        else openMenu();
+      });
+
+      // link tiklayinca menuyu kapat (sayfa-gecis JS navigasyonu ayri devralir)
+      for (var k = 0; k < links.length; k++) {
+        links[k].addEventListener('click', closeMenu);
+      }
+      // drawer icindeki CTA + lang toggle butonlarina basinca da kapan
+      var drawerActions = nav.querySelectorAll('.nav-cta, .lang-toggle button');
+      for (var d = 0; d < drawerActions.length; d++) {
+        drawerActions[d].addEventListener('click', closeMenu);
+      }
+
+      // BACKDROP tiklamasi: drawer acikken panel + hamburger DISINDAKI her tiklama kapatir.
+      // document seviyesinde dinleriz (.site-nav::after pseudo backdrop'un hit-test'ine
+      // guvenmek yerine, panel/toggle disindaki tum tiklamalari yakalar). pointerdown:
+      // dokunmada aninda hisli kapanis.
+      document.addEventListener('pointerdown', function (e) {
+        if (!nav.classList.contains('menu-open')) return;
+        if (toggle.contains(e.target)) return;
+        if (panel && panel.contains(e.target)) return;
+        closeMenu();
+      });
+
+      // Esc ile kapan
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('menu-open')) closeMenu();
+      });
+
+      // viewport desktop'a buyurse acik drawer'i guvenli sekilde sifirla
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 900) closeMenu();
+      });
     }
   }
 

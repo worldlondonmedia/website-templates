@@ -103,6 +103,10 @@
     burger.addEventListener('click', function () {
       if (drawer.classList.contains('open')) closeDrawer(); else openDrawer();
     });
+    // backdrop tap: drawer'in bos alanina (link/buton degil) tiklayinca kapansin
+    drawer.addEventListener('click', function (e) {
+      if (e.target === drawer) closeDrawer();
+    });
     // drawer ic linkleri (page-transition zaten navigate eder, panel kapansin)
     drawer.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () { closeDrawer(); });
