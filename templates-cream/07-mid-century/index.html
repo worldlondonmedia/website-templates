@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WLM &amp; Co. — A Mid-Century Modern Studio for Photography &amp; Film</title>
+
+<meta name="description" content="A mid-century modern London media studio. Photography, film, and direction in the Saul Bass tradition. Geometric, considered, timeless. For restaurants, hotels and brave brands." />
+<meta name="theme-color" content="#f5ebd6" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="WLM &amp; Co. — Mid-Century Modern" />
+<meta property="og:description" content="Geometric, considered, timeless." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"World London Media","url":"https://worldlondonmedia.com","email":"hello@worldlondonmedia.com","priceRange":"£££","address":{"@type":"PostalAddress","streetAddress":"Unit 4, Old Print Yard","addressLocality":"Clerkenwell","postalCode":"EC1V 9AT","addressCountry":"GB"},"foundingDate":"2021"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Albert+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream:    #f5ebd6;
+    --cream-2:  #ede0c2;
+    --tan:      #d4ad7e;
+    --brick:    #c04835;
+    --brick-2:  #9a3624;
+    --teal:     #2c5560;
+    --teal-2:   #1d3e48;
+    --mustard:  #e8b842;
+    --black:    #1a1410;
+    --display:  'Caprasimo', serif;
+    --body:     'Albert Sans', sans-serif;
+    --mono:     'DM Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--black);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.55;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--brick); color: var(--cream); }
+
+  /* Subtle paper texture */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='1' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.06 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+  }
+
+  /* SKIP / PROGRESS */
+  .skip-link { position: absolute; top: -100px; left: 12px; background: var(--brick); color: var(--cream); padding: 8px 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 12px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--brick); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 3px; background: var(--brick); z-index: 10000; transition: width .12s ease-out; pointer-events: none; }
+
+  /* SHAPES — geometric */
+  .shape { position: absolute; pointer-events: none; }
+  .circle { border-radius: 50%; }
+  .quarter-circle { border-radius: 100% 0 0 0; }
+
+  /* NAV */
+  nav {
+    background: var(--cream);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--black);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    font-family: var(--display);
+    font-size: 24px;
+    color: var(--black);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .logo .glyph {
+    width: 22px; height: 22px;
+    background: var(--brick);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    overflow: hidden;
+  }
+  .logo .glyph::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%; height: 100%;
+    background: var(--teal);
+  }
+  .logo .amp { color: var(--brick); font-style: italic; }
+  .nav-links { display: flex; gap: 6px; list-style: none; }
+  .nav-links a {
+    color: var(--black);
+    text-decoration: none;
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 13px;
+    padding: 8px 14px;
+    transition: color .25s, background .25s;
+  }
+  .nav-links a:hover { color: var(--brick); }
+  .nav-cta {
+    background: var(--black);
+    color: var(--cream) !important;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all .25s;
+  }
+  .nav-cta:hover { background: var(--brick); }
+  .lang-toggle { display: inline-flex; margin-left: 8px; }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--black);
+    border: 1.5px solid var(--black);
+    padding: 6px 10px;
+    font-family: var(--mono);
+    font-size: 10px;
+    cursor: pointer;
+    transition: all .25s;
+    margin-left: -1.5px;
+  }
+  .lang-toggle button.active { background: var(--black); color: var(--cream); }
+
+  /* HERO */
+  .hero {
+    padding: 80px 32px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: end;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brick);
+    margin-bottom: 32px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 24px; height: 24px;
+    background: var(--brick);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(64px, 11vw, 200px);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: 36px;
+  }
+  .hero h1 .brick { color: var(--brick); }
+  .hero h1 .teal { color: var(--teal); }
+  .hero h1 .pill {
+    display: inline-block;
+    background: var(--mustard);
+    border-radius: 100px;
+    padding: 0 32px;
+    line-height: 1.05;
+  }
+  .hero-blurb {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--teal-2);
+    max-width: 540px;
+    margin-bottom: 36px;
+    font-weight: 400;
+  }
+  .hero-blurb b { color: var(--brick); font-weight: 600; }
+  .hero-cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .btn-modern {
+    background: var(--black);
+    color: var(--cream);
+    padding: 16px 28px;
+    text-decoration: none;
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 14px;
+    transition: all .25s;
+    border: 2px solid var(--black);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .btn-modern:hover { background: var(--brick); border-color: var(--brick); }
+  .btn-modern-out {
+    background: transparent;
+    color: var(--black);
+    border-color: var(--black);
+  }
+  .btn-modern-out:hover { background: var(--black); color: var(--cream); }
+
+  /* HERO COMPOSITION — geometric shapes + photo */
+  .hero-comp {
+    position: relative;
+    aspect-ratio: 4/5;
+    min-height: 540px;
+  }
+  .hero-comp .frame-photo {
+    position: absolute;
+    inset: 12% 0 0 12%;
+    background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+    filter: contrast(1.05);
+  }
+  .hero-comp .shape-bg-circle {
+    position: absolute;
+    top: 0; right: 0;
+    width: 60%; aspect-ratio: 1/1;
+    background: var(--teal);
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .hero-comp .shape-bg-square {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 50%; aspect-ratio: 1/1;
+    background: var(--brick);
+    z-index: 1;
+  }
+  .hero-comp .shape-stripe {
+    position: absolute;
+    top: 24%; left: -8%;
+    width: 28%; height: 8px;
+    background: var(--mustard);
+    z-index: 3;
+  }
+  .hero-comp .shape-tri {
+    position: absolute;
+    bottom: 28%; right: -4%;
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 0 0 60px 60px;
+    border-color: transparent transparent var(--mustard) transparent;
+    z-index: 3;
+  }
+  .hero-comp .label {
+    position: absolute;
+    top: 0; right: 16%;
+    background: var(--black);
+    color: var(--cream);
+    padding: 8px 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    z-index: 4;
+  }
+
+  /* RIBBON */
+  .ribbon {
+    background: var(--black);
+    color: var(--cream);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: var(--display);
+    font-size: 32px;
+    letter-spacing: -0.01em;
+  }
+  .ribbon-track { display: inline-block; animation: ribScroll 35s linear infinite; }
+  .ribbon span { margin: 0 24px; }
+  .ribbon .brick { color: var(--brick); }
+  .ribbon .teal { color: var(--teal); }
+  .ribbon .mustard { color: var(--mustard); }
+  @keyframes ribScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* SECTION */
+  .section { padding: 120px 32px; max-width: 1500px; margin: 0 auto; position: relative; }
+  .section-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 32px;
+    align-items: end;
+    margin-bottom: 60px;
+  }
+  .section-num {
+    font-family: var(--display);
+    font-size: 96px;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--brick);
+  }
+  .section-num small { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); margin-top: 8px; }
+  .section-h2 {
+    font-family: var(--display);
+    font-size: clamp(48px, 7vw, 110px);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    color: var(--black);
+  }
+  .section-h2 .brick { color: var(--brick); }
+  .section-h2 .teal { color: var(--teal); }
+
+  /* SERVICES — geometric cards */
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .svc {
+    padding: 32px 28px;
+    background: var(--cream-2);
+    border-bottom: 4px solid var(--black);
+    transition: transform .35s cubic-bezier(.65,0,.35,1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .svc:hover { transform: translateY(-4px); }
+  .svc:nth-child(1) { background: var(--mustard); }
+  .svc:nth-child(2) { background: var(--cream-2); }
+  .svc:nth-child(3) { background: var(--teal); color: var(--cream); }
+  .svc:nth-child(4) { background: var(--brick); color: var(--cream); }
+  .svc:nth-child(5) { background: var(--cream-2); }
+  .svc:nth-child(6) { background: var(--tan); }
+  .svc-shape {
+    position: absolute;
+    top: 24px; right: 24px;
+    width: 36px; height: 36px;
+  }
+  .svc:nth-child(1) .svc-shape { background: var(--brick); border-radius: 50%; }
+  .svc:nth-child(2) .svc-shape { background: var(--teal); }
+  .svc:nth-child(3) .svc-shape { background: var(--mustard); border-radius: 50%; }
+  .svc:nth-child(4) .svc-shape {
+    background: var(--mustard);
+    border-radius: 100% 0 0 0;
+  }
+  .svc:nth-child(5) .svc-shape {
+    width: 0; height: 0;
+    border-style: solid;
+    border-width: 0 0 36px 36px;
+    border-color: transparent transparent var(--brick) transparent;
+    background: transparent;
+  }
+  .svc:nth-child(6) .svc-shape { background: var(--black); border-radius: 100% 0 0 0; }
+  .svc-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+    opacity: 0.8;
+  }
+  .svc h3 {
+    font-family: var(--display);
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .svc p { font-size: 14px; line-height: 1.55; margin-bottom: 16px; opacity: 0.9; }
+  .svc-meta { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.75; }
+
+  /* WORK */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+  .w-item { cursor: pointer; text-decoration: none; color: inherit; position: relative; }
+  .w-frame {
+    background-size: cover;
+    background-position: center;
+    transition: transform 1s cubic-bezier(.65,0,.35,1);
+    position: relative;
+    overflow: hidden;
+  }
+  .w-item:hover .w-frame { transform: scale(0.98); }
+  .w-frame::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 60px; height: 60px;
+    background: var(--mustard);
+    border-radius: 100% 0 0 0;
+    transition: transform .35s;
+  }
+  .w-item:hover .w-frame::after { transform: scale(1.4); }
+  .w-cap {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 2px solid var(--black);
+    padding-top: 12px;
+  }
+  .w-cap h4 {
+    font-family: var(--display);
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -0.015em;
+  }
+  .w-cap h4 .brick { color: var(--brick); }
+  .w-cap .meta { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; }
+  .w1 { grid-column: 1 / 7; }
+  .w1 .w-frame { aspect-ratio: 4/5; background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80'); }
+  .w2 { grid-column: 8 / 13; padding-top: 60px; }
+  .w2 .w-frame { aspect-ratio: 3/4; background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1100&q=80'); }
+  .w3 { grid-column: 1 / 5; padding-top: 30px; }
+  .w3 .w-frame { aspect-ratio: 1/1; background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1000&q=80'); }
+  .w4 { grid-column: 6 / 13; }
+  .w4 .w-frame { aspect-ratio: 16/10; background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1400&q=80'); }
+
+  /* QUOTE */
+  .quote {
+    padding: 160px 32px;
+    background: var(--brick);
+    color: var(--cream);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 360px; height: 360px;
+    background: var(--mustard);
+    border-radius: 50%;
+    opacity: 0.85;
+  }
+  .quote::after {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: -150px;
+    width: 400px; height: 400px;
+    background: var(--teal);
+    border-radius: 50%;
+    opacity: 0.85;
+  }
+  .quote-text {
+    font-family: var(--display);
+    font-size: clamp(44px, 7.5vw, 110px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .quote-text .mustard { color: var(--mustard); }
+  .quote-text .teal { color: var(--cream); -webkit-text-stroke: 2px var(--cream); -webkit-text-fill-color: transparent; }
+  .quote-attr {
+    margin-top: 32px;
+    font-family: var(--mono);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* PROCESS — vertical timeline numbered */
+  .proc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .step {
+    padding: 32px 28px;
+    background: var(--cream-2);
+    border-top: 6px solid var(--brick);
+    transition: transform .35s cubic-bezier(.65,0,.35,1);
+    cursor: pointer;
+    position: relative;
+  }
+  .step:hover { transform: translateY(-4px); }
+  .step:nth-child(2) { border-top-color: var(--teal); }
+  .step:nth-child(3) { border-top-color: var(--mustard); }
+  .step:nth-child(4) { border-top-color: var(--black); }
+  .step-num {
+    font-family: var(--display);
+    font-size: 96px;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    margin-bottom: 16px;
+  }
+  .step:nth-child(1) .step-num { color: var(--brick); }
+  .step:nth-child(2) .step-num { color: var(--teal); }
+  .step:nth-child(3) .step-num { color: var(--mustard); }
+  .step:nth-child(4) .step-num { color: var(--black); }
+  .step h3 {
+    font-family: var(--display);
+    font-size: 24px;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+  }
+  .step p { font-size: 13px; line-height: 1.5; opacity: 0.85; }
+  .step-tag { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(26,20,16,0.2); font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; }
+
+  /* CONTACT */
+  .contact {
+    padding: 160px 32px;
+    background: var(--teal);
+    color: var(--cream);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: -80px;
+    width: 280px; height: 280px;
+    background: var(--mustard);
+    border-radius: 50%;
+    opacity: 0.85;
+  }
+  .contact::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; right: -100px;
+    width: 320px; height: 320px;
+    background: var(--brick);
+    border-radius: 50%;
+  }
+  .contact h2 {
+    font-family: var(--display);
+    font-size: clamp(56px, 11vw, 200px);
+    line-height: 0.88;
+    letter-spacing: -0.025em;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+  }
+  .contact h2 .mustard { color: var(--mustard); }
+  .contact-mail {
+    background: var(--cream);
+    color: var(--black);
+    padding: 18px 32px;
+    text-decoration: none;
+    font-family: var(--display);
+    font-size: clamp(22px, 3vw, 36px);
+    transition: all .35s;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    border: 3px solid var(--cream);
+  }
+  .contact-mail:hover { background: var(--mustard); color: var(--black); }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    color: var(--cream);
+    padding: 60px 32px 24px;
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .foot-brand {
+    font-family: var(--display);
+    font-size: 56px;
+    line-height: 0.9;
+    letter-spacing: -0.025em;
+  }
+  .foot-brand .brick { color: var(--brick); }
+  .foot-brand .mustard { color: var(--mustard); }
+  footer h4 { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; color: var(--mustard); font-weight: 500; }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 6px; font-size: 14px; }
+  footer a { color: inherit; text-decoration: none; transition: color .25s; }
+  footer a:hover { color: var(--mustard); }
+  .foot-bot {
+    border-top: 1px solid rgba(245, 235, 214, 0.15);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.8;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-comp { min-height: 400px; }
+    .svc-grid { grid-template-columns: 1fr 1fr; }
+    .work-grid > * { grid-column: span 12 !important; padding-top: 0 !important; }
+    .proc-grid { grid-template-columns: 1fr 1fr; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .section-head { grid-template-columns: 1fr; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<nav>
+  <a href="../../index.html" class="logo"><span class="glyph"></span> WLM <span class="amp">&amp;</span> Co.</a>
+  <ul class="nav-links">
+    <li><a href="#services" data-i18n="nav_services">Services</a></li>
+    <li><a href="#work" data-i18n="nav_work">Work</a></li>
+    <li><a href="#process" data-i18n="nav_process">Process</a></li>
+  </ul>
+  <div style="display: flex; align-items: center; gap: 6px;">
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Begin a project</a>
+    <div class="lang-toggle">
+      <button data-l="en" onclick="setLang('en')">EN</button>
+      <button data-l="tr" onclick="setLang('tr')">TR</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="hero-eyebrow" data-i18n="hero_eyebrow">A media studio · since 1962-something</p>
+      <h1 data-i18n="hero_h1">Pictures<br/>with <span class="brick">geometry,</span><br/>made to <span class="pill teal">last.</span></h1>
+      <p class="hero-blurb" data-i18n="hero_blurb">A London media studio in the mid-century modern tradition. <b>Photography, film, and creative direction</b> with the geometric clarity of Saul Bass and the patience of Ray &amp; Charles Eames.</p>
+      <div class="hero-cta-row">
+        <a href="#work" class="btn-modern" data-i18n="cta_view">See the work →</a>
+        <a href="#contact" class="btn-modern btn-modern-out" data-i18n="cta_brief">Begin a project</a>
+      </div>
+    </div>
+    <div class="hero-comp">
+      <div class="shape-bg-circle"></div>
+      <div class="shape-bg-square"></div>
+      <div class="frame-photo"></div>
+      <div class="shape-stripe"></div>
+      <div class="shape-tri"></div>
+      <span class="label">FIG. 01 · MMXXVI</span>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon">
+  <div class="ribbon-track">
+    <span>WLM &amp; Co.</span><span class="brick">●</span>
+    <span class="teal">PHOTOGRAPHY</span><span class="brick">●</span>
+    <span>FILM</span><span class="brick">●</span>
+    <span class="mustard">DIRECTION</span><span class="brick">●</span>
+    <span>EDITORIAL</span><span class="brick">●</span>
+    <span class="teal">IDENTITY</span><span class="brick">●</span>
+    <span>WLM &amp; Co.</span><span class="brick">●</span>
+    <span class="teal">PHOTOGRAPHY</span><span class="brick">●</span>
+    <span>FILM</span><span class="brick">●</span>
+    <span class="mustard">DIRECTION</span><span class="brick">●</span>
+    <span>EDITORIAL</span><span class="brick">●</span>
+    <span class="teal">IDENTITY</span><span class="brick">●</span>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <div class="section-head">
+    <div class="section-num">02<small>/ THE PROGRAM</small></div>
+    <h2 class="section-h2" data-i18n="srv_h2">Six <span class="brick">disciplines.</span><br/>One <span class="teal">studio.</span></h2>
+  </div>
+
+  <div class="svc-grid">
+    <div class="svc reveal">
+      <div class="svc-shape"></div>
+      <div class="svc-num">01 / Photography</div>
+      <h3>Photography</h3>
+      <p>Editorial stills for hospitality, food, beauty. Lit by hand. Composed like Eames.</p>
+      <div class="svc-meta">EDITORIAL · STILLS · LOOKBOOKS</div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-shape"></div>
+      <div class="svc-num">02 / Film &amp; motion</div>
+      <h3>Film &amp; motion</h3>
+      <p>Brand films, documentary shorts, social cuts that don't smell like an advertisement.</p>
+      <div class="svc-meta">35MM · DOCUMENTARY · REELS</div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-shape"></div>
+      <div class="svc-num">03 / Direction</div>
+      <h3>Direction</h3>
+      <p>Concept, casting, locations. The cruel decisions that make a campaign feel inevitable.</p>
+      <div class="svc-meta">CONCEPT · CASTING · ART DIR</div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-shape"></div>
+      <div class="svc-num">04 / Editorial</div>
+      <h3>Editorial</h3>
+      <p>Monthly visual production for brands who treat their feed as a magazine.</p>
+      <div class="svc-meta">STRATEGY · MONTHLY · CALENDAR</div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-shape"></div>
+      <div class="svc-num">05 / Identity</div>
+      <h3>Identity</h3>
+      <p>Visual systems built to hold for a decade. Type, palette, photographic codes.</p>
+      <div class="svc-meta">IDENTITY · PRINT · DIGITAL</div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-shape"></div>
+      <div class="svc-num">06 / Studio</div>
+      <h3>Studio rental</h3>
+      <p>Our 2,000 sq ft daylight studio in Hackney. Half-day, full-day, with crew or without.</p>
+      <div class="svc-meta">DAYLIGHT · BLACKOUT · CREW</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="section-head">
+    <div class="section-num">03<small>/ SELECTED WORK</small></div>
+    <h2 class="section-h2" data-i18n="work_h2">A small but<br/><span class="brick">considered</span> archive.</h2>
+  </div>
+
+  <div class="work-grid">
+    <a href="#" class="w-item w1 reveal"><div class="w-frame"></div><div class="w-cap"><h4>Marsala &amp; <span class="brick">Smoke</span></h4><span class="meta">Restaurant · 2025</span></div></a>
+    <a href="#" class="w-item w2 reveal"><div class="w-frame"></div><div class="w-cap"><h4>Hackney <span class="brick">Plates</span></h4><span class="meta">Vogue Italia · 2025</span></div></a>
+    <a href="#" class="w-item w3 reveal"><div class="w-frame"></div><div class="w-cap"><h4>Folie Nº <span class="brick">12</span></h4><span class="meta">Beauty · 2024</span></div></a>
+    <a href="#" class="w-item w4 reveal"><div class="w-frame"></div><div class="w-cap"><h4>Atelier <span class="brick">Soho</span></h4><span class="meta">Brand film · 2024</span></div></a>
+  </div>
+</section>
+
+<section class="quote">
+  <p class="quote-text" data-i18n="q_text">Design is intelligence<br/><span class="mustard">made</span> <span class="teal">visible.</span><br/>So is a photograph.</p>
+  <p class="quote-attr">— S. Çağlayan · Founder &amp; Director</p>
+</section>
+
+<section class="section" id="process">
+  <div class="section-head">
+    <div class="section-num">05<small>/ THE METHOD</small></div>
+    <h2 class="section-h2" data-i18n="proc_h2">Four <span class="teal">phases,</span><br/>one <span class="brick">rhythm.</span></h2>
+  </div>
+
+  <div class="proc-grid">
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <h3>The first call</h3>
+      <p>30-minute first call, no slides. We meet, walk through your space, eat your food.</p>
+      <div class="step-tag">— WEEK 01 · DISCOVERY</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">02</div>
+      <h3>Direction</h3>
+      <p>References, palette, casting, locations. Pinned to the wall, approved before any camera comes out.</p>
+      <div class="step-tag">— WEEK 02 · DIRECTION</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">03</div>
+      <h3>Production</h3>
+      <p>Small crew, long lights. Real food, real people, real rooms. We move slowly.</p>
+      <div class="step-tag">— WEEK 03 · PRODUCTION</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">04</div>
+      <h3>Delivery</h3>
+      <p>Selects in 48 hours. Final master in 10 working days. Graded for paper and screen.</p>
+      <div class="step-tag">— WEEK 04 · DELIVERY</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 data-i18n="contact_h2">Tell us your<br/><span class="mustard">story.</span></h2>
+  <a href="mailto:hello@worldlondonmedia.com" class="contact-mail">hello@worldlondonmedia.com</a>
+</section>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">WLM<br/><span class="amp brick">&amp;</span> <span class="mustard">Co.</span></div>
+      <p style="margin-top: 16px; font-size: 13px; opacity: 0.8;">A mid-century modern media studio in Clerkenwell. Founded 2021.</p>
+    </div>
+    <div>
+      <h4>STUDIO</h4>
+      <ul><li>Unit 4, Old Print Yard</li><li>Clerkenwell, EC1V 9AT</li><li>London, UK</li></ul>
+    </div>
+    <div>
+      <h4>SITEMAP</h4>
+      <ul><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#process">Process</a></li></ul>
+    </div>
+    <div>
+      <h4>ELSEWHERE</h4>
+      <ul><li><a href="#">Instagram</a></li><li><a href="#">Vimeo</a></li><li><a href="#">Are.na</a></li></ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 WORLD LONDON MEDIA · CO. № 13442198</span>
+    <span>SET IN CAPRASIMO · ALBERT SANS · DM MONO</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 80); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+  const _progress = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    _progress.style.width = ((window.scrollY / Math.max(max, 1)) * 100) + '%';
+  }, { passive: true });
+
+  const i18n_tr = {
+    nav_services: 'Servisler', nav_work: 'İşler', nav_process: 'Süreç', nav_cta: 'Bir proje başlat',
+    hero_eyebrow: 'Bir medya stüdyosu · 1962-bir şeyden beri',
+    hero_h1: '<span class="brick">Geometriyle</span><br/>yapılmış,<br/><span class="pill teal">kalıcı</span> kareler.',
+    hero_blurb: 'Mid-century modern geleneğinde Londra medya stüdyosu. <b>Fotoğraf, film ve kreatif yönetim</b> — Saul Bass\'ın geometrik berraklığı ve Ray &amp; Charles Eames\'in sabrıyla.',
+    cta_view: 'İşlere bak →', cta_brief: 'Bir proje başlat',
+    srv_h2: 'Altı <span class="brick">disiplin.</span><br/>Bir <span class="teal">stüdyo.</span>',
+    work_h2: 'Küçük ama<br/><span class="brick">özenli</span> arşiv.',
+    q_text: 'Tasarım, görünür kılınmış<br/><span class="mustard">zekâdır.</span> <span class="teal">Bir fotoğraf da.</span>',
+    proc_h2: 'Dört <span class="teal">aşama,</span><br/>bir <span class="brick">ritim.</span>',
+    contact_h2: 'Bize <span class="mustard">hikâyenizi</span><br/>anlatın.'
+  };
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.original = el.innerHTML; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+</script>
+
+</body>
+</html>

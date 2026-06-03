@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WLM Blueprint — A Studio Engineered for Photography &amp; Film</title>
+
+<meta name="description" content="A London media studio drafted with engineering precision. Photography, film, and direction measured to the millimetre. Plans, sections, and details for restaurants, hotels and brave brands." />
+<meta name="theme-color" content="#0d2a4f" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="WLM Blueprint — Drafted to the millimetre" />
+<meta property="og:description" content="A media studio engineered like architecture." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"World London Media","url":"https://worldlondonmedia.com","email":"hello@worldlondonmedia.com","priceRange":"£££","address":{"@type":"PostalAddress","streetAddress":"Unit 4, Old Print Yard","addressLocality":"Clerkenwell","postalCode":"EC1V 9AT","addressCountry":"GB"},"foundingDate":"2021"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Newsreader:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:    #08193a;
+    --paper-2:  #102852;
+    --line:     #d8c280;
+    --line-2:   rgba(216, 194, 128, 0.28);
+    --line-3:   rgba(216, 194, 128, 0.12);
+    --cream:    #f4eddc;
+    --red:      #e8a82e;
+    --grid:     'JetBrains Mono', monospace;
+    --display:  'Sora', sans-serif;
+    --serif:    'Newsreader', serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--line);
+    font-family: var(--grid);
+    font-size: 13px;
+    line-height: 1.55;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--red); color: var(--cream); }
+
+  /* GRID PAPER BACKGROUND */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: -1;
+    background-image:
+      linear-gradient(var(--line-3) 1px, transparent 1px),
+      linear-gradient(to right, var(--line-3) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  body::after {
+    content: '';
+    position: fixed; inset: 0; z-index: -1;
+    background-image:
+      linear-gradient(var(--line-2) 1px, transparent 1px),
+      linear-gradient(to right, var(--line-2) 1px, transparent 1px);
+    background-size: 120px 120px;
+  }
+
+  /* SKIP / PROGRESS */
+  .skip-link { position: absolute; top: -100px; left: 12px; background: var(--red); color: var(--cream); padding: 8px 16px; font-family: var(--grid); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 12px; }
+  a:focus-visible, button:focus-visible { outline: 1px dashed var(--red); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 1px; background: var(--red); z-index: 10000; transition: width .12s ease-out; pointer-events: none; }
+
+  /* TOP BAR — drawing title block */
+  .titleblock {
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    padding: 6px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto auto;
+    gap: 24px;
+    align-items: center;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--line);
+  }
+  .titleblock .scale { color: var(--cream); }
+  .titleblock .red { color: var(--red); }
+
+  /* NAV */
+  nav {
+    border-bottom: 1px solid var(--line);
+    padding: 16px 24px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: rgba(13, 42, 79, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+  .nav-left, .nav-right { display: flex; gap: 24px; align-items: center; }
+  .nav-right { justify-content: flex-end; }
+  nav a {
+    color: var(--line);
+    text-decoration: none;
+    font-family: var(--grid);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    transition: color .25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  nav a::before { content: '/'; color: var(--red); }
+  nav a:hover { color: var(--cream); }
+  .logo {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 22px;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    text-align: center;
+    line-height: 1;
+  }
+  .logo::before { content: ''; }
+  .logo .red { color: var(--red); font-weight: 500; }
+  .logo small {
+    display: block;
+    font-family: var(--grid);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--line);
+    margin-top: 4px;
+    opacity: 0.7;
+  }
+  .nav-cta {
+    border: 1px solid var(--cream);
+    color: var(--cream) !important;
+    padding: 8px 14px;
+    transition: all .35s;
+  }
+  .nav-cta:hover { background: var(--cream); color: var(--paper) !important; }
+  .nav-cta::before { display: none; }
+  .lang-toggle { display: inline-flex; }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--line);
+    border: 1px solid var(--line);
+    padding: 6px 10px;
+    font-family: var(--grid);
+    font-size: 10px;
+    cursor: pointer;
+    transition: all .25s;
+    margin-left: -1px;
+  }
+  .lang-toggle button.active { background: var(--cream); color: var(--paper); border-color: var(--cream); }
+
+  /* HERO — like a drawing sheet */
+  .hero {
+    padding: 60px 24px;
+    position: relative;
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 220px 1fr 220px;
+    gap: 24px;
+  }
+
+  /* dimension column */
+  .dim-col {
+    border: 1px solid var(--line);
+    padding: 16px;
+    font-family: var(--grid);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--line);
+    align-self: start;
+  }
+  .dim-col h4 { color: var(--red); margin-bottom: 14px; font-weight: 500; font-size: 11px; }
+  .dim-col .row { padding: 6px 0; border-bottom: 1px dashed var(--line-2); display: flex; justify-content: space-between; }
+  .dim-col .row:last-child { border-bottom: none; }
+  .dim-col .row span:last-child { color: var(--cream); }
+
+  .hero-center {
+    text-align: center;
+    padding: 40px 0;
+    border: 1px solid var(--line);
+    position: relative;
+  }
+  .hero-center::before, .hero-center::after {
+    content: '';
+    position: absolute;
+    width: 16px; height: 16px;
+    border: 1px solid var(--red);
+    background: var(--paper);
+  }
+  .hero-center::before { top: -8px; left: -8px; }
+  .hero-center::after { bottom: -8px; right: -8px; }
+  .hero-corners-1, .hero-corners-2 {
+    position: absolute;
+    width: 16px; height: 16px;
+    border: 1px solid var(--red);
+    background: var(--paper);
+  }
+  .hero-corners-1 { top: -8px; right: -8px; }
+  .hero-corners-2 { bottom: -8px; left: -8px; }
+
+  .hero-eyebrow {
+    font-family: var(--grid);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--red);
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow::before { content: '⊕ '; }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 200;
+    font-size: clamp(56px, 9vw, 156px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--cream);
+    margin-bottom: 36px;
+  }
+  .hero h1 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--red);
+  }
+  .hero h1 .out {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--cream);
+  }
+  .hero-blurb {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto 32px;
+    color: var(--line);
+  }
+  .hero-blurb em { color: var(--red); }
+  .hero-cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; align-items: center; }
+  .btn-tech {
+    background: var(--red);
+    color: var(--cream);
+    padding: 12px 24px;
+    text-decoration: none;
+    font-family: var(--grid);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    border: 1px solid var(--red);
+    transition: all .25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .btn-tech:hover { background: transparent; }
+  .btn-tech-out {
+    background: transparent;
+    color: var(--cream);
+    border-color: var(--cream);
+  }
+  .btn-tech-out:hover { background: var(--cream); color: var(--paper); }
+
+  /* hero photo with dimension lines */
+  .hero-photo {
+    margin-top: 48px;
+    aspect-ratio: 16/8;
+    background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=2400&q=80');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--cream);
+    position: relative;
+    filter: hue-rotate(190deg) saturate(0.6) contrast(1.1);
+  }
+  .hero-photo::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom right, rgba(13,42,79,0.45), rgba(13,42,79,0.2));
+    mix-blend-mode: multiply;
+  }
+  .hero-photo::after {
+    content: 'FIG. 01 / CASA LAGO, COMO — LATITUDE 51.5279° N, LONGITUDE 0.1015° W';
+    position: absolute;
+    bottom: 8px; left: 8px;
+    font-family: var(--grid);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--cream);
+    background: var(--paper);
+    padding: 4px 8px;
+    border: 1px solid var(--line);
+  }
+
+  /* DIMENSION LINES SECTION */
+  .dim-section {
+    padding: 80px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .dim-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .dim-cell {
+    background: var(--paper);
+    padding: 36px 24px;
+  }
+  .dim-cell .num {
+    font-family: var(--display);
+    font-weight: 200;
+    font-size: 84px;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--cream);
+    margin-bottom: 16px;
+  }
+  .dim-cell .num em {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--red);
+    font-weight: 300;
+    font-size: 32px;
+  }
+  .dim-cell .label {
+    font-family: var(--grid);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--line);
+    border-top: 1px dashed var(--line-2);
+    padding-top: 12px;
+  }
+  .dim-cell .spec {
+    font-family: var(--grid);
+    font-size: 10px;
+    color: var(--red);
+    margin-top: 6px;
+  }
+
+  /* PROGRAM (services) — engineering legend */
+  .program {
+    padding: 100px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-head {
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: end;
+  }
+  .section-eyebrow {
+    font-family: var(--grid);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+  .section-eyebrow::before { content: '— § '; }
+  .section-h2 {
+    font-family: var(--display);
+    font-weight: 200;
+    font-size: clamp(40px, 5.5vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    color: var(--cream);
+  }
+  .section-h2 em { font-family: var(--serif); font-style: italic; font-weight: 300; color: var(--red); }
+  .section-meta {
+    font-family: var(--grid);
+    font-size: 11px;
+    color: var(--line);
+    text-align: right;
+    line-height: 1.6;
+  }
+  .section-meta span { display: block; }
+  .section-meta strong { color: var(--cream); font-weight: 500; }
+
+  .program-table {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-collapse: collapse;
+  }
+  .program-table th, .program-table td {
+    padding: 18px 24px;
+    text-align: left;
+    border-bottom: 1px solid var(--line-2);
+    font-family: var(--grid);
+    font-size: 13px;
+    color: var(--line);
+    vertical-align: top;
+  }
+  .program-table th {
+    background: var(--paper-2);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--cream);
+    border-bottom: 1px solid var(--line);
+    font-weight: 500;
+  }
+  .program-table tr:last-child td { border-bottom: none; }
+  .program-table tr:hover { background: rgba(175,212,255,0.04); }
+  .program-table .id {
+    color: var(--red);
+    font-weight: 500;
+    width: 80px;
+  }
+  .program-table .name {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--cream);
+    letter-spacing: -0.015em;
+    width: 280px;
+  }
+  .program-table .name em { font-family: var(--serif); font-style: italic; font-weight: 300; color: var(--red); }
+  .program-table .desc {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--line);
+  }
+  .program-table .spec {
+    color: var(--red);
+    font-size: 11px;
+    width: 140px;
+    text-align: right;
+  }
+
+  /* PLANS (work) — image plates with dimension call-outs */
+  .plans {
+    padding: 100px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .plan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 32px;
+  }
+  .plate {
+    border: 1px solid var(--line);
+    padding: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .25s;
+    background: var(--paper);
+  }
+  .plate:hover { border-color: var(--cream); }
+  .plate-frame {
+    aspect-ratio: 16/10;
+    background-size: cover;
+    background-position: center;
+    filter: hue-rotate(190deg) saturate(0.4) contrast(1.05);
+    border: 1px solid var(--line-2);
+    transition: filter 1s;
+    position: relative;
+  }
+  .plate:hover .plate-frame { filter: hue-rotate(0) saturate(1) contrast(1); }
+  .plate-frame::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(13,42,79,0.3), transparent);
+    mix-blend-mode: multiply;
+    transition: opacity .8s;
+  }
+  .plate:hover .plate-frame::after { opacity: 0; }
+  .plate-info {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+    border-top: 1px dashed var(--line-2);
+    padding-top: 12px;
+  }
+  .plate-info h4 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: -0.015em;
+    color: var(--cream);
+  }
+  .plate-info h4 em { font-family: var(--serif); font-style: italic; color: var(--red); }
+  .plate-info .meta {
+    font-family: var(--grid);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--line);
+    text-align: right;
+    line-height: 1.6;
+  }
+  .plate-info .meta .red { color: var(--red); }
+
+  .plate-1 .plate-frame { background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80'); }
+  .plate-2 .plate-frame { background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1400&q=80'); }
+  .plate-3 .plate-frame { background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1400&q=80'); }
+  .plate-4 .plate-frame { background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1400&q=80'); }
+
+  /* SECTIONS — process as construction phases */
+  .construction {
+    padding: 100px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .const-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .const-cell {
+    background: var(--paper);
+    padding: 36px 24px;
+    position: relative;
+  }
+  .const-cell::before {
+    content: attr(data-step);
+    position: absolute;
+    top: 12px; right: 16px;
+    font-family: var(--grid);
+    font-size: 10px;
+    color: var(--red);
+  }
+  .const-cell h3 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    margin: 24px 0 16px;
+  }
+  .const-cell h3 em { font-family: var(--serif); font-style: italic; color: var(--red); }
+  .const-cell p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--line);
+    margin-bottom: 16px;
+  }
+  .const-cell .duration {
+    font-family: var(--grid);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--red);
+    border-top: 1px dashed var(--line-2);
+    padding-top: 12px;
+  }
+
+  /* CONTACT — submission block */
+  .contact {
+    padding: 120px 24px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .contact-block {
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 1px solid var(--line);
+    padding: 60px 40px;
+    position: relative;
+  }
+  .contact-block::before, .contact-block::after,
+  .contact-c-1, .contact-c-2 {
+    content: '';
+    position: absolute;
+    width: 14px; height: 14px;
+    border: 1px solid var(--red);
+    background: var(--paper);
+  }
+  .contact-block::before { top: -7px; left: -7px; }
+  .contact-block::after { bottom: -7px; right: -7px; }
+  .contact-c-1 { top: -7px; right: -7px; }
+  .contact-c-2 { bottom: -7px; left: -7px; }
+  .contact-block h2 {
+    font-family: var(--display);
+    font-weight: 200;
+    font-size: clamp(48px, 7vw, 120px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--cream);
+    margin-bottom: 32px;
+  }
+  .contact-block h2 em { font-family: var(--serif); font-style: italic; font-weight: 300; color: var(--red); }
+  .contact-block p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--line);
+    max-width: 540px;
+    margin: 0 auto 40px;
+  }
+  .contact-mail {
+    background: var(--cream);
+    color: var(--paper);
+    padding: 16px 28px;
+    text-decoration: none;
+    font-family: var(--grid);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border: 1px solid var(--cream);
+    transition: all .25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .contact-mail:hover { background: var(--red); color: var(--cream); border-color: var(--red); }
+  .contact-mail::before { content: '⊕'; color: var(--red); transition: color .25s; }
+  .contact-mail:hover::before { color: var(--cream); }
+
+  /* FOOTER */
+  footer {
+    padding: 24px;
+    background: var(--paper);
+    font-family: var(--grid);
+    font-size: 11px;
+    color: var(--line);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 24px;
+  }
+  .foot-brand {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 28px;
+    color: var(--cream);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .foot-brand em { font-family: var(--serif); font-style: italic; color: var(--red); }
+  footer h4 { color: var(--red); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 12px; font-weight: 500; }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 6px; }
+  footer a { color: inherit; text-decoration: none; transition: color .25s; }
+  footer a:hover { color: var(--cream); }
+  .foot-bot {
+    border-top: 1px solid var(--line-2);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.7;
+  }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+  @media (max-width: 1100px) {
+    .hero { grid-template-columns: 1fr; }
+    .dim-col { display: none; }
+    .const-grid, .dim-row { grid-template-columns: 1fr 1fr; }
+    .titleblock { grid-template-columns: 1fr 1fr; gap: 8px; font-size: 9px; }
+  }
+  @media (max-width: 700px) {
+    .nav-left, .nav-right .nav-cta { display: none; }
+    .const-grid, .dim-row, .plan-grid { grid-template-columns: 1fr; }
+    .section-head { grid-template-columns: 1fr; gap: 16px; }
+    .section-meta { text-align: left; }
+    .program-table { display: block; overflow-x: auto; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<div class="titleblock">
+  <span class="red">DRAWING NO. 04</span>
+  <span data-i18n="tb_project">PROJECT — World London Media · Studio Identity, SS '26</span>
+  <span class="scale">SCALE 1:1</span>
+  <span data-i18n="tb_drawn">DRAWN BY: WLM STUDIO</span>
+  <span data-i18n="tb_date">REV. 04 / 04.05.2026</span>
+</div>
+
+<nav>
+  <div class="nav-left">
+    <a href="#program" data-i18n="nav_program">Program</a>
+    <a href="#plans" data-i18n="nav_plans">Plans</a>
+    <a href="#construction" data-i18n="nav_const">Phases</a>
+  </div>
+  <a href="../../index.html" class="logo">
+    WLM <span class="red">·</span> Blueprint
+    <small data-i18n="logo_sub">DRAWN TO THE MILLIMETRE — MMXXVI</small>
+  </a>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Submit a brief</a>
+    <div class="lang-toggle">
+      <button data-l="en" onclick="setLang('en')">EN</button>
+      <button data-l="tr" onclick="setLang('tr')">TR</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <aside class="dim-col">
+    <h4 data-i18n="dim1_h">SHEET — METADATA</h4>
+    <div class="row"><span>Issue</span><span>04 / SS26</span></div>
+    <div class="row"><span>Format</span><span>1500 × 980</span></div>
+    <div class="row"><span>Scale</span><span>1 : 1</span></div>
+    <div class="row"><span>Drafted</span><span>2026.05.04</span></div>
+    <div class="row"><span>Revision</span><span>R.04</span></div>
+    <div class="row"><span>Drafter</span><span>S. Ç.</span></div>
+    <div class="row"><span>Approved</span><span>M. R.</span></div>
+  </aside>
+
+  <div class="hero-center">
+    <span class="hero-corners-1"></span>
+    <span class="hero-corners-2"></span>
+
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow">DETAIL DRAWING / VOL. IV / SS MMXXVI</p>
+    <h1 data-i18n="hero_h1">A studio<br/>drawn to the<br/><em>millimetre.</em></h1>
+    <p class="hero-blurb" data-i18n="hero_blurb">A London media studio for restaurants, hotels and brave brands. Photography, film and creative direction <em>measured</em> like architecture, drafted with engineering precision.</p>
+    <div class="hero-cta-row">
+      <a href="#plans" class="btn-tech" data-i18n="cta_view">View the plans →</a>
+      <a href="#contact" class="btn-tech btn-tech-out" data-i18n="cta_brief">Submit a brief</a>
+    </div>
+    <div class="hero-photo"></div>
+  </div>
+
+  <aside class="dim-col">
+    <h4 data-i18n="dim2_h">PROGRAM — SCHEDULE</h4>
+    <div class="row"><span>SS26</span><span class="red">Open</span></div>
+    <div class="row"><span>AW26</span><span>Q3 / Q4</span></div>
+    <div class="row"><span>SS27</span><span>Reserve</span></div>
+    <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line-2);">
+      <div class="row"><span>Crew</span><span>06 humans</span></div>
+      <div class="row"><span>Cats</span><span>03</span></div>
+      <div class="row"><span>Studio</span><span>2,000 sf</span></div>
+      <div class="row"><span>Years</span><span>04</span></div>
+    </div>
+  </aside>
+</section>
+
+<section class="dim-section">
+  <div class="dim-row">
+    <div class="dim-cell">
+      <div class="num">128 <em>·</em></div>
+      <div class="label" data-i18n="m_1">EDITORIAL FEATURES PUBLISHED</div>
+      <div class="spec">+24 vs '24</div>
+    </div>
+    <div class="dim-cell">
+      <div class="num">63 <em>·</em></div>
+      <div class="label" data-i18n="m_2">BRANDS · RESTAURANTS · HOTELS</div>
+      <div class="spec">+18 vs '24</div>
+    </div>
+    <div class="dim-cell">
+      <div class="num">04 <em>yrs</em></div>
+      <div class="label" data-i18n="m_3">OF DRAFTING TO THE MILLIMETRE</div>
+      <div class="spec">SINCE 2021</div>
+    </div>
+    <div class="dim-cell">
+      <div class="num">∞ <em>·</em></div>
+      <div class="label" data-i18n="m_4">CUPS OF FLAT WHITE</div>
+      <div class="spec">UNCOUNTED</div>
+    </div>
+  </div>
+</section>
+
+<section class="program" id="program">
+  <div class="section-head">
+    <div>
+      <p class="section-eyebrow" data-i18n="prog_eyebrow">PROGRAM SCHEDULE</p>
+      <h2 class="section-h2" data-i18n="prog_h2">Six items.<br/>One <em>obsession</em> with light.</h2>
+    </div>
+    <div class="section-meta" data-i18n="prog_meta">
+      <span><strong>SHEET 02 / 06</strong></span>
+      <span>Detail · 1:50</span>
+      <span>Approved · 2026.05.04</span>
+    </div>
+  </div>
+
+  <table class="program-table">
+    <thead>
+      <tr>
+        <th data-i18n="th_id">Ref</th>
+        <th data-i18n="th_name">Discipline</th>
+        <th data-i18n="th_desc">Description</th>
+        <th data-i18n="th_spec">Spec</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="id">A.01</td>
+        <td class="name">Photo<em>graphy</em></td>
+        <td class="desc">Editorial stills for hospitality, food, beauty. Lit by hand, shot until the room remembers itself.</td>
+        <td class="spec">35mm · digital</td>
+      </tr>
+      <tr>
+        <td class="id">A.02</td>
+        <td class="name">Film &amp; <em>motion</em></td>
+        <td class="desc">Brand films, documentary shorts, the rare social cut that doesn't smell like an advertisement.</td>
+        <td class="spec">16mm · 35mm · 4K</td>
+      </tr>
+      <tr>
+        <td class="id">A.03</td>
+        <td class="name">Creative <em>direction</em></td>
+        <td class="desc">Concept, casting, locations, the small cruel decisions that make a campaign feel inevitable.</td>
+        <td class="spec">Concept · AD</td>
+      </tr>
+      <tr>
+        <td class="id">A.04</td>
+        <td class="name">Social <em>editorial</em></td>
+        <td class="desc">Monthly visual production for brands who treat their feed as a magazine.</td>
+        <td class="spec">Monthly · ongoing</td>
+      </tr>
+      <tr>
+        <td class="id">A.05</td>
+        <td class="name">Brand <em>identity</em></td>
+        <td class="desc">Visual systems built to hold for a decade. Type, palette, photographic codes — kept honest.</td>
+        <td class="spec">Identity · print</td>
+      </tr>
+      <tr>
+        <td class="id">A.06</td>
+        <td class="name">Studio <em>rental</em></td>
+        <td class="desc">Our 2,000 sq ft daylight studio in Hackney. Half-day, full-day, with crew or without.</td>
+        <td class="spec">Daylight · blackout</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="plans" id="plans">
+  <div class="section-head">
+    <div>
+      <p class="section-eyebrow" data-i18n="plans_eyebrow">SELECTED PLANS</p>
+      <h2 class="section-h2" data-i18n="plans_h2">Four <em>recent</em> drawings.</h2>
+    </div>
+    <div class="section-meta" data-i18n="plans_meta">
+      <span><strong>SHEETS 03–06 / 06</strong></span>
+      <span>Plans · Sections · Details</span>
+      <span>Issued for construction</span>
+    </div>
+  </div>
+
+  <div class="plan-grid">
+    <a href="#" class="plate plate-1 reveal">
+      <div class="plate-frame"></div>
+      <div class="plate-info">
+        <h4>Marsala &amp; <em>Smoke</em></h4>
+        <div class="meta"><span class="red">FIG. A.01</span><span>Restaurant · 2025</span></div>
+      </div>
+    </a>
+    <a href="#" class="plate plate-2 reveal">
+      <div class="plate-frame"></div>
+      <div class="plate-info">
+        <h4>Hackney <em>Plates</em></h4>
+        <div class="meta"><span class="red">FIG. A.02</span><span>Vogue Italia · 2025</span></div>
+      </div>
+    </a>
+    <a href="#" class="plate plate-3 reveal">
+      <div class="plate-frame"></div>
+      <div class="plate-info">
+        <h4>Folie Nº <em>12</em></h4>
+        <div class="meta"><span class="red">FIG. A.03</span><span>Beauty · 2024</span></div>
+      </div>
+    </a>
+    <a href="#" class="plate plate-4 reveal">
+      <div class="plate-frame"></div>
+      <div class="plate-info">
+        <h4>Atelier <em>Soho</em></h4>
+        <div class="meta"><span class="red">FIG. A.04</span><span>Brand film · 2024</span></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="construction" id="construction">
+  <div class="section-head">
+    <div>
+      <p class="section-eyebrow" data-i18n="const_eyebrow">CONSTRUCTION PHASES</p>
+      <h2 class="section-h2" data-i18n="const_h2">Four phases<br/>to <em>handover.</em></h2>
+    </div>
+    <div class="section-meta" data-i18n="const_meta">
+      <span><strong>METHOD STATEMENT</strong></span>
+      <span>Schedule · Gantt</span>
+      <span>Avg duration · 4 weeks</span>
+    </div>
+  </div>
+
+  <div class="const-grid">
+    <div class="const-cell" data-step="PHASE 01">
+      <h3>Briefing &amp; <em>discovery</em></h3>
+      <p>30-minute first call, no slides. We meet, walk through your space, eat your food, read the menus. The brief writes itself.</p>
+      <div class="duration">DURATION — WEEK 01</div>
+    </div>
+    <div class="const-cell" data-step="PHASE 02">
+      <h3>Direction &amp; <em>drafting</em></h3>
+      <p>References, palette, casting, locations, schedule. Pinned to a wall and approved before any camera comes out of its case.</p>
+      <div class="duration">DURATION — WEEK 02</div>
+    </div>
+    <div class="const-cell" data-step="PHASE 03">
+      <h3>Principal <em>photography</em></h3>
+      <p>Small crews. Long lights. Real food, real people, real rooms. We move slowly because mistakes get expensive in post.</p>
+      <div class="duration">DURATION — WEEK 03</div>
+    </div>
+    <div class="const-cell" data-step="PHASE 04">
+      <h3>Edit &amp; <em>handover</em></h3>
+      <p>Selects in 48h. Final masters within 10 working days. Graded for paper and screen separately. Archive kept indefinitely.</p>
+      <div class="duration">DURATION — WEEK 04</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-block">
+    <span class="contact-c-1"></span>
+    <span class="contact-c-2"></span>
+    <p class="section-eyebrow" data-i18n="contact_eyebrow">SUBMIT — REVIEW</p>
+    <h2 data-i18n="contact_h2">Submit your <em>brief.</em></h2>
+    <p data-i18n="contact_p">All submissions reviewed within 24 hours, weekdays. Avg response time · 4h 12m.</p>
+    <a href="mailto:hello@worldlondonmedia.com" class="contact-mail">hello@worldlondonmedia.com</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">WLM <em>·</em><br/>Blueprint</div>
+      <p style="margin-top: 12px; max-width: 240px; opacity: 0.7;">A London media studio drafted with engineering precision. Founded MMXXI.</p>
+    </div>
+    <div>
+      <h4>STUDIO</h4>
+      <ul><li>Unit 4, Old Print Yard</li><li>Clerkenwell, EC1V 9AT</li><li>London, UK</li></ul>
+    </div>
+    <div>
+      <h4>SHEETS</h4>
+      <ul><li><a href="#program">Program</a></li><li><a href="#plans">Plans</a></li><li><a href="#construction">Phases</a></li></ul>
+    </div>
+    <div>
+      <h4>ELSEWHERE</h4>
+      <ul><li><a href="#">Instagram</a></li><li><a href="#">Vimeo</a></li><li><a href="#">Are.na</a></li></ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 WORLD LONDON MEDIA · CO. № 13442198</span>
+    <span>SET IN SORA · NEWSREADER · JETBRAINS MONO</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 80); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+  const _progress = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    _progress.style.width = ((window.scrollY / Math.max(max, 1)) * 100) + '%';
+  }, { passive: true });
+
+  const i18n_tr = {
+    nav_program: 'Program', nav_plans: 'Planlar', nav_const: 'Aşamalar', nav_cta: 'Brief gönder',
+    logo_sub: 'MİLİMETREYE ÇİZİLDİ — MMXXVI',
+    tb_project: 'PROJE — World London Media · Stüdyo Kimliği, SS \'26',
+    tb_drawn: 'ÇİZEN: WLM STÜDYO',
+    tb_date: 'REV. 04 / 04.05.2026',
+    dim1_h: 'SAYFA — METADATA',
+    dim2_h: 'PROGRAM — TAKVİM',
+    hero_eyebrow: 'DETAY ÇİZİMİ / CİLT IV / SS MMXXVI',
+    hero_h1: 'Milimetreye<br/>çizilmiş bir<br/><em>stüdyo.</em>',
+    hero_blurb: 'Restoranlar, oteller ve cesur markalar için bir London medya stüdyosu. Mimari gibi <em>ölçülen,</em> mühendislik hassasiyetiyle taslaklanan fotoğraf, film ve kreatif yönetim.',
+    cta_view: 'Planlara bak →', cta_brief: 'Brief gönder',
+    m_1: 'YAYINLANMIŞ EDİTORİAL', m_2: 'MARKA · RESTORAN · OTEL', m_3: 'MİLİMETRE HASSASİYETİYLE', m_4: 'BARDAK FLAT WHITE',
+    prog_eyebrow: 'PROGRAM TAKVİMİ',
+    prog_h2: 'Altı kalem.<br/>Işığa tek <em>takıntı.</em>',
+    prog_meta: '<span><strong>SAYFA 02 / 06</strong></span><span>Detay · 1:50</span><span>Onaylandı · 2026.05.04</span>',
+    th_id: 'Ref', th_name: 'Disiplin', th_desc: 'Açıklama', th_spec: 'Şartname',
+    plans_eyebrow: 'SEÇİLMİŞ PLANLAR',
+    plans_h2: 'Dört <em>yakın</em> çizim.',
+    plans_meta: '<span><strong>SAYFALAR 03–06 / 06</strong></span><span>Planlar · Kesitler · Detaylar</span><span>Yapı için verildi</span>',
+    const_eyebrow: 'YAPI AŞAMALARI',
+    const_h2: 'Dört aşama<br/><em>teslime.</em>',
+    const_meta: '<span><strong>YÖNTEM ŞARTNAMESİ</strong></span><span>Takvim · Gantt</span><span>Ortalama · 4 hafta</span>',
+    contact_eyebrow: 'GÖNDER — İNCELE',
+    contact_h2: 'Brief\'inizi <em>gönderin.</em>',
+    contact_p: 'Tüm gönderiler 24 saat içinde incelenir, hafta içi. Ortalama yanıt süresi · 4s 12dk.'
+  };
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.original = el.innerHTML; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WLM // Terminal — A Media Studio Engineered in London</title>
+
+<meta name="description" content="A London-based media studio for hospitality, food, and the brands that read the docs. Photography, film, and direction with the patience of editorial and the precision of code." />
+<meta name="theme-color" content="#0a0e14" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="WLM Studio" />
+<meta property="og:title" content="WLM // Terminal" />
+<meta property="og:description" content="Pictures, precisely engineered. London, EC1V." />
+<meta property="og:url" content="https://worldlondonmedia.com/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1200&q=80" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"WLM Studio","description":"A media studio engineered in Clerkenwell since 2021. Photography, film, direction.","url":"https://worldlondonmedia.com","telephone":"+44-207-459-1024","email":"hello@worldlondonmedia.com","priceRange":"£££","address":{"@type":"PostalAddress","streetAddress":"Unit 4, Old Print Yard","addressLocality":"Clerkenwell","postalCode":"EC1V 9AT","addressCountry":"GB"},"foundingDate":"2021"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=VT323&family=Source+Code+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0a0e14;
+    --bg-2:      #11161e;
+    --bg-3:      #1a212c;
+    --border:    #2a3340;
+    --text:      #d8dde6;
+    --text-2:    #8a93a3;
+    --amber:     #ffb454;
+    --green:     #aad94c;
+    --pink:      #f07178;
+    --cyan:      #59c2ff;
+    --display:   'Major Mono Display', monospace;
+    --term:      'VT323', monospace;
+    --mono:      'Source Code Pro', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--amber); color: var(--bg); }
+
+  /* DOT GRID */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0);
+    background-size: 24px 24px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* SCANLINE */
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background: linear-gradient(rgba(255,255,255,0) 50%, rgba(0,0,0,0.04) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 9998;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--bg-2);
+    border-bottom: 1px solid var(--border);
+    padding: 6px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--text-2);
+    position: relative;
+    z-index: 10;
+  }
+  .topbar .left { display: flex; gap: 6px; align-items: center; }
+  .topbar .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--text-2);
+  }
+  .topbar .dot.r { background: var(--pink); }
+  .topbar .dot.y { background: var(--amber); }
+  .topbar .dot.g { background: var(--green); }
+  .topbar .center {
+    font-weight: 500;
+  }
+  .topbar .right {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .topbar .right span::before { color: var(--green); margin-right: 4px; }
+  .topbar .status::before { content: '●'; color: var(--green); margin-right: 4px; animation: blink 2s ease infinite; }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* NAV */
+  nav {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    font-family: var(--display);
+    font-size: 16px;
+    color: var(--amber);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+  .logo .text-2 { color: var(--text-2); }
+  .nav-links {
+    display: flex;
+    gap: 0;
+    list-style: none;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    padding: 4px;
+    border-radius: 6px;
+  }
+  .nav-links a {
+    color: var(--text-2);
+    text-decoration: none;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    transition: all .25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-links a::before { content: '/'; color: var(--green); }
+  .nav-links a:hover { background: var(--bg-3); color: var(--text); }
+  .nav-cta {
+    background: var(--amber);
+    color: var(--bg);
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all .25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-cta:hover { background: var(--green); }
+  .nav-cta::before { content: '$'; }
+
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-left: 8px;
+    background: var(--bg-2);
+  }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--text-2);
+    border: none;
+    padding: 6px 11px;
+    font-family: var(--mono);
+    font-size: 11px;
+    cursor: pointer;
+    transition: all .25s;
+  }
+  .lang-toggle button.active { background: var(--bg-3); color: var(--amber); }
+
+  /* HERO */
+  .hero {
+    padding: 80px 32px 60px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-prompt {
+    color: var(--green);
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  .hero-prompt .cmd { color: var(--text); }
+  .hero-prompt .arg { color: var(--cyan); }
+  .hero-prompt::before { content: '$ '; color: var(--text-2); }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(48px, 8vw, 120px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero h1 .amber { color: var(--amber); }
+  .hero h1 .green { color: var(--green); }
+  .hero h1 .pink { color: var(--pink); }
+  .hero h1 .cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1em;
+    background: var(--amber);
+    vertical-align: text-bottom;
+    animation: cursor-blink 1.1s steps(2) infinite;
+    margin-left: 8px;
+  }
+  @keyframes cursor-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  .hero-blurb {
+    font-family: var(--mono);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-2);
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+  .hero-blurb .text { color: var(--text); }
+  .hero-blurb .amber { color: var(--amber); }
+  .hero-cta-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .btn-primary {
+    background: var(--amber);
+    color: var(--bg);
+    padding: 12px 22px;
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: 1px solid var(--amber);
+    transition: all .25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn-primary:hover { background: transparent; color: var(--amber); }
+  .btn-primary::before { content: '$'; color: var(--bg); transition: color .25s; }
+  .btn-primary:hover::before { color: var(--amber); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    padding: 12px 22px;
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 13px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: all .25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn-ghost:hover { border-color: var(--text); }
+  .btn-ghost::before { content: '→'; color: var(--text-2); }
+
+  /* TERMINAL CARD */
+  .term-card {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px -8px rgba(0,0,0,0.6);
+  }
+  .term-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-3);
+  }
+  .term-head .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+  .term-head .dot.r { background: var(--pink); }
+  .term-head .dot.y { background: var(--amber); }
+  .term-head .dot.g { background: var(--green); }
+  .term-head .name {
+    margin-left: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-2);
+  }
+  .term-body {
+    padding: 16px;
+    font-family: var(--term);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .term-body .line { display: block; }
+  .term-body .green { color: var(--green); }
+  .term-body .amber { color: var(--amber); }
+  .term-body .text-2 { color: var(--text-2); }
+  .term-body .pink { color: var(--pink); }
+  .term-body .cyan { color: var(--cyan); }
+  .term-body .blink {
+    animation: blink 1s step-end infinite;
+    background: var(--text);
+    color: var(--bg);
+    padding: 0 4px;
+  }
+
+  /* MARQUEE TICKER */
+  .ticker {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-2);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 80px 0 0;
+  }
+  .ticker-track {
+    display: inline-block;
+    animation: scrollL 40s linear infinite;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-2);
+  }
+  .ticker .key { color: var(--amber); }
+  .ticker .val { color: var(--green); margin-right: 32px; }
+  .ticker .pipe { color: var(--border); margin: 0 16px; }
+  @keyframes scrollL {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* SECTION */
+  .section {
+    padding: 100px 32px;
+    position: relative;
+    z-index: 1;
+  }
+  .section-head {
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 32px;
+    align-items: end;
+  }
+  .section-head .label {
+    color: var(--green);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .section-head .label::before { content: '// '; color: var(--text-2); }
+  .section-head h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(36px, 5.5vw, 84px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    text-transform: uppercase;
+  }
+  .section-head h2 .amber { color: var(--amber); }
+  .section-head h2 .green { color: var(--green); }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .svc {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 24px;
+    transition: all .35s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .svc:hover {
+    border-color: var(--amber);
+    background: var(--bg-3);
+    transform: translateY(-2px);
+  }
+  .svc::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--amber), transparent);
+    opacity: 0;
+    transition: opacity .35s;
+  }
+  .svc:hover::before { opacity: 1; }
+
+  .svc-tag {
+    display: inline-block;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    color: var(--green);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-bottom: 16px;
+    font-family: var(--mono);
+  }
+  .svc h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .svc h3 .amber { color: var(--amber); }
+  .svc p {
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text-2);
+    margin-bottom: 16px;
+  }
+  .svc-meta {
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-2);
+  }
+  .svc-meta .green { color: var(--green); }
+
+  /* WORK / DATA TABLE */
+  .work-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+  }
+  .work-table tr {
+    border-top: 1px solid var(--border);
+    transition: background .25s;
+    cursor: pointer;
+  }
+  .work-table tr:last-child { border-bottom: 1px solid var(--border); }
+  .work-table tr:hover { background: var(--bg-2); }
+  .work-table td {
+    padding: 20px 16px;
+    vertical-align: middle;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+  .work-table .num { color: var(--text-2); width: 60px; font-size: 11px; }
+  .work-table .thumb {
+    width: 100px;
+  }
+  .work-table .thumb-img {
+    width: 88px;
+    height: 88px;
+    background: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: transform .35s;
+  }
+  .work-table tr:hover .thumb-img { transform: scale(1.05); }
+  .work-table .title {
+    font-family: var(--display);
+    font-size: 22px;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+  .work-table .desc {
+    color: var(--text-2);
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  .work-table .meta-tag {
+    display: inline-block;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    color: var(--green);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-right: 6px;
+  }
+  .work-table .year { text-align: right; color: var(--amber); width: 80px; }
+  .work-table .arrow { width: 40px; text-align: right; color: var(--text-2); }
+  .work-table tr:hover .arrow { color: var(--amber); }
+
+  /* STATS / DASHBOARD */
+  .dashboard {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+  }
+  .dash-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .dash-cell {
+    border-right: 1px solid var(--border);
+    padding-right: 24px;
+  }
+  .dash-cell:last-child { border-right: none; }
+  .dash-cell .label {
+    font-size: 11px;
+    color: var(--text-2);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .dash-cell .value {
+    font-family: var(--display);
+    font-size: 56px;
+    line-height: 1;
+    color: var(--amber);
+    letter-spacing: -0.04em;
+  }
+  .dash-cell .value .small { font-size: 24px; color: var(--text-2); }
+  .dash-cell .delta {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--green);
+  }
+  .dash-cell .delta::before { content: '↑ '; }
+
+  /* COMMAND BLOCK (process) */
+  .commands {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .cmd-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 200px;
+    gap: 16px;
+    padding: 24px;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+    transition: background .25s;
+  }
+  .cmd-row:last-child { border-bottom: none; }
+  .cmd-row:hover { background: var(--bg-3); }
+  .cmd-num {
+    font-family: var(--display);
+    font-size: 32px;
+    color: var(--amber);
+    line-height: 1;
+  }
+  .cmd-body h3 {
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .cmd-body h3::before { content: '$ '; color: var(--green); }
+  .cmd-body p {
+    font-size: 13px;
+    color: var(--text-2);
+    line-height: 1.5;
+  }
+  .cmd-output {
+    font-family: var(--term);
+    font-size: 16px;
+    color: var(--green);
+    text-align: right;
+  }
+  .cmd-output::before { content: '> '; color: var(--text-2); }
+
+  /* CONTACT */
+  .contact {
+    padding: 120px 32px 60px;
+    position: relative;
+    z-index: 1;
+  }
+  .contact-block {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--amber), var(--green), var(--cyan), transparent);
+  }
+  .contact-prompt {
+    font-family: var(--term);
+    font-size: 22px;
+    color: var(--green);
+    margin-bottom: 24px;
+  }
+  .contact h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(40px, 7vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .contact h2 .amber { color: var(--amber); }
+  .contact h2 .pink { color: var(--pink); }
+  .contact-mail {
+    font-family: var(--mono);
+    font-size: 22px;
+    color: var(--amber);
+    text-decoration: none;
+    background: var(--bg-3);
+    padding: 14px 28px;
+    border: 1px solid var(--amber);
+    border-radius: 6px;
+    transition: all .25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .contact-mail:hover { background: var(--amber); color: var(--bg); }
+  .contact-mail::before { content: '$'; }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg-2);
+    border-top: 1px solid var(--border);
+    padding: 40px 32px 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .foot-brand {
+    font-family: var(--display);
+    font-size: 32px;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+  .foot-brand .amber { color: var(--amber); }
+  footer h4 {
+    color: var(--green);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  footer h4::before { content: '// '; color: var(--text-2); }
+  footer ul { list-style: none; }
+  footer li {
+    margin-bottom: 6px;
+    color: var(--text-2);
+    font-size: 13px;
+  }
+  footer a { color: inherit; text-decoration: none; transition: color .25s; }
+  footer a:hover { color: var(--amber); }
+  .foot-bot {
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-2);
+    font-family: var(--mono);
+  }
+  .foot-bot .green { color: var(--green); }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* V2 PACK */
+  .skip-link { position: absolute; top: -100px; left: 8px; background: var(--amber); color: var(--bg); padding: 8px 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 2px; background: var(--green); z-index: 10000; transition: width .12s ease-out; pointer-events: none; box-shadow: 0 0 8px var(--green); }
+  .back-top { position: fixed; bottom: 24px; right: 24px; width: 48px; height: 48px; border-radius: 6px; background: var(--bg-2); color: var(--amber); border: 1px solid var(--border); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .35s, border-color .25s, transform .35s; z-index: 999; font-family: var(--mono); font-size: 14px; }
+  .back-top.visible { opacity: 1; pointer-events: auto; }
+  .back-top:hover { border-color: var(--amber); transform: translateY(-3px); }
+  .back-top::before { content: '$ '; color: var(--green); }
+  /* Terminal typing cursor effect */
+  .typed-cursor { display: inline-block; background: var(--amber); width: 0.5em; height: 1em; vertical-align: text-bottom; margin-left: 4px; animation: termblink 1.1s steps(2) infinite; }
+  @keyframes termblink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+  /* Help modal (?-shortcut) */
+  .help-modal { position: fixed; inset: 0; background: rgba(10,14,20,0.85); backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center; z-index: 10005; }
+  .help-modal.open { display: flex; }
+  .help-card { background: var(--bg-2); border: 1px solid var(--border); padding: 32px; border-radius: 8px; max-width: 480px; width: 90%; }
+  .help-card h3 { font-family: var(--display); font-size: 22px; color: var(--amber); margin-bottom: 16px; text-transform: uppercase; }
+  .help-card kbd { display: inline-block; padding: 3px 8px; font-family: var(--mono); font-size: 12px; background: var(--bg-3); border: 1px solid var(--border); border-radius: 4px; margin-right: 8px; color: var(--green); }
+  .help-card .row { display: flex; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .help-card .row:last-child { border-bottom: none; }
+  .help-card .row .desc { margin-left: auto; color: var(--text-2); }
+  .help-card .close { margin-top: 20px; background: var(--amber); color: var(--bg); border: none; padding: 10px 20px; font-family: var(--mono); font-size: 12px; cursor: pointer; border-radius: 4px; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .work-table .desc, .work-table .thumb { display: none; }
+    .dash-grid { grid-template-columns: 1fr 1fr; }
+    .dash-cell:nth-child(2) { border-right: none; }
+    .cmd-row { grid-template-columns: 60px 1fr; }
+    .cmd-output { display: none; }
+    .section { padding: 60px 20px; }
+    .section-head { grid-template-columns: 1fr; gap: 12px; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .contact-block { padding: 40px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<button class="back-top" aria-label="Back to top">↑</button>
+<div class="help-modal" id="helpModal" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts">
+  <div class="help-card">
+    <h3>Keyboard shortcuts</h3>
+    <div class="row"><kbd>?</kbd> <span>Toggle help</span><span class="desc">this dialog</span></div>
+    <div class="row"><kbd>g</kbd> <kbd>w</kbd> <span>Go to work</span><span class="desc">scroll to /work</span></div>
+    <div class="row"><kbd>g</kbd> <kbd>s</kbd> <span>Go to services</span><span class="desc">scroll to /services</span></div>
+    <div class="row"><kbd>g</kbd> <kbd>c</kbd> <span>Go to contact</span><span class="desc">scroll to /contact</span></div>
+    <div class="row"><kbd>g</kbd> <kbd>g</kbd> <span>Go to top</span><span class="desc">scroll home</span></div>
+    <div class="row"><kbd>esc</kbd> <span>Close</span><span class="desc">dismiss</span></div>
+    <button class="close" id="helpClose">close ↩</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="left">
+    <div class="dot r"></div>
+    <div class="dot y"></div>
+    <div class="dot g"></div>
+  </div>
+  <div class="center">~/world-london-media — bash — 80x24</div>
+  <div class="right">
+    <span class="status">SYS_OK</span>
+    <span>v04.2026.05</span>
+  </div>
+</div>
+
+<nav>
+  <a href="../../index.html" class="logo">WLM<span class="text-2">::</span>STUDIO</a>
+  <ul class="nav-links">
+    <li><a href="#services" data-i18n="nav_srv">services</a></li>
+    <li><a href="#work" data-i18n="nav_work">work</a></li>
+    <li><a href="#process" data-i18n="nav_process">process</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">contact</a></li>
+  </ul>
+  <div style="display: flex; align-items: center;">
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">init.brief</a>
+    <div class="lang-toggle">
+      <button data-l="en" onclick="setLang('en')">EN</button>
+      <button data-l="tr" onclick="setLang('tr')">TR</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <div class="hero-prompt"><span class="cmd">whoami</span> <span class="text-2">--studio</span> <span class="arg">--vol=04</span></div>
+
+  <div class="hero-grid">
+    <div>
+      <h1 data-i18n="hero_h1">Pictures, <span class="amber">precisely</span><br/>engineered<span class="cursor"></span></h1>
+      <p class="hero-blurb" data-i18n="hero_blurb">A <span class="text">London-based</span> media studio for hospitality, food, and the brands that <span class="amber">read the docs.</span> We make photography, film, and direction with the patience of editorial and the precision of code.</p>
+      <div class="hero-cta-row">
+        <a href="#work" class="btn-primary" data-i18n="cta_view">cd ./work</a>
+        <a href="#contact" class="btn-ghost" data-i18n="cta_brief">curl --help</a>
+      </div>
+    </div>
+
+    <div class="term-card">
+      <div class="term-head">
+        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+        <span class="name">~/wlm — studio.sh</span>
+      </div>
+      <div class="term-body">
+        <span class="line"><span class="text-2">$</span> <span class="green">studio --about</span></span>
+        <span class="line"><span class="text-2">→</span> <span class="amber">name:</span> world-london-media</span>
+        <span class="line"><span class="text-2">→</span> <span class="amber">est:</span> <span class="cyan">2021</span></span>
+        <span class="line"><span class="text-2">→</span> <span class="amber">crew:</span> <span class="cyan">06</span> humans + <span class="cyan">3</span> cats</span>
+        <span class="line"><span class="text-2">→</span> <span class="amber">stack:</span> <span class="pink">photo</span>, <span class="pink">film</span>, <span class="pink">direction</span></span>
+        <span class="line"><span class="text-2">→</span> <span class="amber">status:</span> <span class="green">accepting briefs Q3/Q4 2026</span></span>
+        <span class="line"><span class="text-2">→</span> <span class="amber">archive:</span> <span class="cyan">128</span> editorial features</span>
+        <span class="line"><span class="text-2">→</span> <span class="amber">clients:</span> <span class="cyan">63</span> restaurants/hotels/labels</span>
+        <span class="line"><span class="text-2">$</span> <span class="blink">_</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="key">photo:</span><span class="val">editorial</span>
+    <span class="pipe">|</span>
+    <span class="key">film:</span><span class="val">35mm</span>
+    <span class="pipe">|</span>
+    <span class="key">social:</span><span class="val">monthly</span>
+    <span class="pipe">|</span>
+    <span class="key">direction:</span><span class="val">on-set</span>
+    <span class="pipe">|</span>
+    <span class="key">identity:</span><span class="val">type+palette</span>
+    <span class="pipe">|</span>
+    <span class="key">studio:</span><span class="val">london/ec1v</span>
+    <span class="pipe">|</span>
+    <span class="key">photo:</span><span class="val">editorial</span>
+    <span class="pipe">|</span>
+    <span class="key">film:</span><span class="val">35mm</span>
+    <span class="pipe">|</span>
+    <span class="key">social:</span><span class="val">monthly</span>
+    <span class="pipe">|</span>
+    <span class="key">direction:</span><span class="val">on-set</span>
+    <span class="pipe">|</span>
+    <span class="key">identity:</span><span class="val">type+palette</span>
+    <span class="pipe">|</span>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <div class="section-head">
+    <span class="label" data-i18n="srv_label">section/services</span>
+    <h2 data-i18n="srv_h2">Six <span class="amber">disciplines.</span><br/>One <span class="green">obsession</span> with light.</h2>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc reveal">
+      <span class="svc-tag">// 01</span>
+      <h3>Photo<span class="amber">.graphy()</span></h3>
+      <p>Editorial stills for hospitality, food and product. Lit by hand, shot until the room remembers itself.</p>
+      <div class="svc-meta"><span>editorial · stills</span><span class="green">→ ./photo</span></div>
+    </div>
+    <div class="svc reveal">
+      <span class="svc-tag">// 02</span>
+      <h3>Film<span class="amber">.motion()</span></h3>
+      <p>Brand films, documentary shorts, and the rare social cut that doesn't smell like an advertisement.</p>
+      <div class="svc-meta"><span>35mm · documentary</span><span class="green">→ ./film</span></div>
+    </div>
+    <div class="svc reveal">
+      <span class="svc-tag">// 03</span>
+      <h3>Creative<span class="amber">.direction()</span></h3>
+      <p>Concept, casting, locations, and the small cruel decisions that make a campaign feel inevitable.</p>
+      <div class="svc-meta"><span>concept · casting</span><span class="green">→ ./dir</span></div>
+    </div>
+    <div class="svc reveal">
+      <span class="svc-tag">// 04</span>
+      <h3>Social<span class="amber">.editorial()</span></h3>
+      <p>Monthly visual production for brands who treat their feed as a magazine. Strategy through publishing.</p>
+      <div class="svc-meta"><span>strategy · monthly</span><span class="green">→ ./social</span></div>
+    </div>
+    <div class="svc reveal">
+      <span class="svc-tag">// 05</span>
+      <h3>Brand<span class="amber">.identity()</span></h3>
+      <p>Visual systems built to hold for a decade. Type, palette, photographic codes — kept honest.</p>
+      <div class="svc-meta"><span>identity · print</span><span class="green">→ ./identity</span></div>
+    </div>
+    <div class="svc reveal">
+      <span class="svc-tag">// 06</span>
+      <h3>Studio<span class="amber">.rental()</span></h3>
+      <p>Our 2,000 sq ft daylight studio in Hackney. Half-day, full-day, with crew or without. Coffee included.</p>
+      <div class="svc-meta"><span>daylight · blackout</span><span class="green">→ ./studio</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="section-head">
+    <span class="label" data-i18n="work_label">section/recent_work</span>
+    <h2 data-i18n="work_h2">Recent <span class="amber">commits.</span></h2>
+  </div>
+
+  <div style="background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden;">
+    <table class="work-table">
+      <tr>
+        <td class="num">001</td>
+        <td class="thumb"><div class="thumb-img" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=80');"></div></td>
+        <td>
+          <div class="title">marsala_&_smoke</div>
+          <div class="desc">Six-month editorial residency · 35mm + digital · 48-page printed book</div>
+          <div style="margin-top: 6px;">
+            <span class="meta-tag">photo</span>
+            <span class="meta-tag">film</span>
+            <span class="meta-tag">print</span>
+          </div>
+        </td>
+        <td class="year">2025</td>
+        <td class="arrow">→</td>
+      </tr>
+      <tr>
+        <td class="num">002</td>
+        <td class="thumb"><div class="thumb-img" style="background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=400&q=80');"></div></td>
+        <td>
+          <div class="title">hackney_plates</div>
+          <div class="desc">8-page editorial spread for Vogue Italia · documentary stills + 16-min film</div>
+          <div style="margin-top: 6px;">
+            <span class="meta-tag">editorial</span>
+            <span class="meta-tag">documentary</span>
+          </div>
+        </td>
+        <td class="year">2025</td>
+        <td class="arrow">→</td>
+      </tr>
+      <tr>
+        <td class="num">003</td>
+        <td class="thumb"><div class="thumb-img" style="background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=400&q=80');"></div></td>
+        <td>
+          <div class="title">folie_no_12</div>
+          <div class="desc">AW24 product launch · packshots, lookbook, social cuts · 14 markets</div>
+          <div style="margin-top: 6px;">
+            <span class="meta-tag">beauty</span>
+            <span class="meta-tag">stills</span>
+            <span class="meta-tag">campaign</span>
+          </div>
+        </td>
+        <td class="year">2024</td>
+        <td class="arrow">→</td>
+      </tr>
+      <tr>
+        <td class="num">004</td>
+        <td class="thumb"><div class="thumb-img" style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=400&q=80');"></div></td>
+        <td>
+          <div class="title">atelier_floral_soho</div>
+          <div class="desc">Brand film + 12-month social rhythm · 16mm · Vimeo + Are.na</div>
+          <div style="margin-top: 6px;">
+            <span class="meta-tag">brand</span>
+            <span class="meta-tag">film</span>
+            <span class="meta-tag">social</span>
+          </div>
+        </td>
+        <td class="year">2024</td>
+        <td class="arrow">→</td>
+      </tr>
+      <tr>
+        <td class="num">005</td>
+        <td class="thumb"><div class="thumb-img" style="background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80');"></div></td>
+        <td>
+          <div class="title">casa_lago_como</div>
+          <div class="desc">Hotel brand film + opening campaign · 3-min film · 80 stills</div>
+          <div style="margin-top: 6px;">
+            <span class="meta-tag">hotel</span>
+            <span class="meta-tag">film</span>
+            <span class="meta-tag">campaign</span>
+          </div>
+        </td>
+        <td class="year">2025</td>
+        <td class="arrow">→</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <span class="label" data-i18n="dash_label">section/dashboard</span>
+    <h2 data-i18n="dash_h2"><span class="amber">04 yrs.</span> By the numbers.</h2>
+  </div>
+  <div class="dashboard">
+    <div class="dash-grid">
+      <div class="dash-cell">
+        <div class="label">EDITORIAL_FEATURES</div>
+        <div class="value">128</div>
+        <div class="delta">+24 vs 2024</div>
+      </div>
+      <div class="dash-cell">
+        <div class="label">CLIENTS_TOTAL</div>
+        <div class="value">63</div>
+        <div class="delta">+18 vs 2024</div>
+      </div>
+      <div class="dash-cell">
+        <div class="label">YEARS_RUNNING</div>
+        <div class="value">04<span class="small">yrs</span></div>
+        <div class="delta">since v01.2021</div>
+      </div>
+      <div class="dash-cell">
+        <div class="label">CREW_SIZE</div>
+        <div class="value">06<span class="small">+3🐈</span></div>
+        <div class="delta">stable since 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="section-head">
+    <span class="label" data-i18n="proc_label">section/process</span>
+    <h2 data-i18n="proc_h2">Four <span class="amber">steps</span> to a final<br/>master <span class="green">commit.</span></h2>
+  </div>
+
+  <div class="commands">
+    <div class="cmd-row">
+      <div class="cmd-num">01.</div>
+      <div class="cmd-body">
+        <h3>discovery --listen</h3>
+        <p>30-min first call, no slides. We meet, walk through your space, eat your food. The brief writes itself once we know the room.</p>
+      </div>
+      <div class="cmd-output">→ status: ok / 1 week</div>
+    </div>
+    <div class="cmd-row">
+      <div class="cmd-num">02.</div>
+      <div class="cmd-body">
+        <h3>direction --pin-to-wall</h3>
+        <p>References, palette, casting, locations, schedule. Pinned to the wall. Approved before any camera comes out of its bag.</p>
+      </div>
+      <div class="cmd-output">→ status: ok / 2 weeks</div>
+    </div>
+    <div class="cmd-row">
+      <div class="cmd-num">03.</div>
+      <div class="cmd-body">
+        <h3>shoot --slowly --on-purpose</h3>
+        <p>Small crew, long lights. Real food, real people, real rooms. We move slowly because mistakes get expensive in post.</p>
+      </div>
+      <div class="cmd-output">→ status: ok / 1–2 weeks</div>
+    </div>
+    <div class="cmd-row">
+      <div class="cmd-num">04.</div>
+      <div class="cmd-body">
+        <h3>deploy --grade --archive</h3>
+        <p>Selects in 48h. Final delivery within 10 working days. Graded for paper and screen separately. Archive kept indefinitely.</p>
+      </div>
+      <div class="cmd-output">→ status: shipped / 10 days</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-block">
+    <p class="contact-prompt">$ ./connect.sh</p>
+    <h2 data-i18n="contact_h2">Send a brief.<br/>We <span class="amber">return</span> a <span class="pink">200_ok</span>.</h2>
+    <a href="mailto:hello@worldlondonmedia.com" class="contact-mail">hello@worldlondonmedia.com</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">WLM<span class="amber">::</span>STUDIO</div>
+      <p style="margin-top: 12px; color: var(--text-2); font-size: 13px; max-width: 280px;">A media studio engineered in Clerkenwell since 2021. Photography, film, direction.</p>
+    </div>
+    <div>
+      <h4>studio</h4>
+      <ul>
+        <li>Unit 4, Old Print Yard</li>
+        <li>Clerkenwell, EC1V 9AT</li>
+        <li>London, UK</li>
+      </ul>
+    </div>
+    <div>
+      <h4>endpoints</h4>
+      <ul>
+        <li><a href="#services">/services</a></li>
+        <li><a href="#work">/work</a></li>
+        <li><a href="#process">/process</a></li>
+        <li><a href="#contact">/contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>elsewhere</h4>
+      <ul>
+        <li><a href="#">@wlm-studio</a></li>
+        <li><a href="#">vimeo.com/wlm</a></li>
+        <li><a href="#">are.na/wlm</a></li>
+        <li><a href="#">github (soon)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>// © 2026 World London Media · co.no=13442198 · <span class="green">build_ok</span></span>
+    <span>set in major mono · vt323 · source code pro</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 70);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  // V2 scroll + back
+  const _progress = document.querySelector('.scroll-progress');
+  const _backTop = document.querySelector('.back-top');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    _progress.style.width = ((window.scrollY / Math.max(max, 1)) * 100) + '%';
+    _backTop.classList.toggle('visible', window.scrollY > 600);
+  }, { passive: true });
+  _backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // help modal + keyboard shortcuts
+  const helpModal = document.getElementById('helpModal');
+  const helpClose = document.getElementById('helpClose');
+  function toggleHelp(open) { helpModal.classList.toggle('open', open ?? !helpModal.classList.contains('open')); }
+  helpClose.addEventListener('click', () => toggleHelp(false));
+  helpModal.addEventListener('click', e => { if (e.target === helpModal) toggleHelp(false); });
+  let _kbBuffer = '';
+  let _kbTimer;
+  document.addEventListener('keydown', e => {
+    if (e.key === '?' && !e.metaKey && !e.ctrlKey) { e.preventDefault(); toggleHelp(); return; }
+    if (e.key === 'Escape') { toggleHelp(false); return; }
+    if (helpModal.classList.contains('open')) return;
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    _kbBuffer += e.key.toLowerCase();
+    clearTimeout(_kbTimer);
+    _kbTimer = setTimeout(() => { _kbBuffer = ''; }, 800);
+    const targets = { gw: '#work', gs: '#services', gc: '#contact', gp: '#process', gg: '__top' };
+    if (targets[_kbBuffer]) {
+      if (targets[_kbBuffer] === '__top') window.scrollTo({ top: 0, behavior: 'smooth' });
+      else document.querySelector(targets[_kbBuffer])?.scrollIntoView({ behavior: 'smooth' });
+      _kbBuffer = '';
+    }
+  });
+
+  /* i18n */
+  const i18n_tr = {
+    nav_srv: 'servisler', nav_work: 'isler', nav_process: 'surec', nav_contact: 'iletisim', nav_cta: 'init.brief',
+    hero_h1: 'Kareler, <span class="amber">titizlikle</span><br/>üretildi<span class="cursor"></span>',
+    hero_blurb: '<span class="text">Londra merkezli</span> bir medya stüdyosu — otelcilik, yemek ve <span class="amber">dokümanı okuyan</span> markalar için. Editorial sabrıyla, kod hassasiyetiyle fotoğraf, film ve yönetim üretiyoruz.',
+    cta_view: 'cd ./isler', cta_brief: 'curl --help',
+    srv_label: 'section/servisler',
+    srv_h2: 'Altı <span class="amber">disiplin.</span><br/>Işığa tek <span class="green">takıntı.</span>',
+    work_label: 'section/yakin_isler',
+    work_h2: 'Yakın <span class="amber">commit\'ler.</span>',
+    dash_label: 'section/dashboard',
+    dash_h2: '<span class="amber">04 yıl.</span> Sayılarla.',
+    proc_label: 'section/surec',
+    proc_h2: 'Final <span class="green">commit\'e</span><br/>dört <span class="amber">adım.</span>',
+    contact_h2: 'Brief gönder.<br/><span class="amber">200_ok</span> <span class="pink">döndürürüz.</span>'
+  };
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.original = el.innerHTML; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+</script>
+
+</body>
+</html>

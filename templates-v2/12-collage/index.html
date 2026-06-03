@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WLM Press — A Loud Little Media Studio · Cut &amp; Paste Since 2021</title>
+
+<meta name="description" content="A small loud media studio in London, cutting and pasting photography, film and social content for restaurants, beauty, hospitality, and the brands who don't want to look like everyone else." />
+<meta name="theme-color" content="#f0e9d8" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="WLM Press" />
+<meta property="og:title" content="WLM // Collage" />
+<meta property="og:description" content="We make pictures, films, and other small things that last." />
+<meta property="og:url" content="https://worldlondonmedia.com/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1200&q=80" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"WLM Press","description":"A small loud media studio in London. Photography, film, social.","url":"https://worldlondonmedia.com","email":"hello@worldlondonmedia.com","priceRange":"££","address":{"@type":"PostalAddress","streetAddress":"Unit 4, Old Print Yard","addressLocality":"Clerkenwell","postalCode":"EC1V 9AT","addressCountry":"GB"},"foundingDate":"2021"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Yeseva+One&family=Permanent+Marker&family=Press+Start+2P&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:    #f0e9d8;
+    --paper-2:  #ddd1b4;
+    --news:     #c8c0a8;
+    --ink:      #0c0c0c;
+    --red:      #d4322f;
+    --blue:     #1d4e8a;
+    --yellow:   #f4d03e;
+    --pink:     #e88ba8;
+    --anton:    'Anton', sans-serif;
+    --yeseva:   'Yeseva One', serif;
+    --marker:   'Permanent Marker', cursive;
+    --pixel:    'Press Start 2P', monospace;
+    --mono:     'DM Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--red); color: var(--paper); }
+
+  /* PAPER NOISE */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.04 0 0 0 0 0.03 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+  }
+
+  /* TORN-PAPER NEWSPAPER STRIP */
+  .news-strip {
+    background: var(--news);
+    color: var(--ink);
+    padding: 4px 0;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    transform: rotate(-0.5deg);
+    margin-bottom: -2px;
+  }
+  .news-track { display: inline-block; animation: tickerL 50s linear infinite; }
+  .news-strip span { margin: 0 24px; }
+  .news-strip .red { color: var(--red); }
+  @keyframes tickerL {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* NAV */
+  nav {
+    background: var(--paper);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 4px solid var(--ink);
+  }
+  .logo {
+    font-family: var(--anton);
+    font-size: 28px;
+    color: var(--ink);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    transform: rotate(-1deg);
+    display: inline-block;
+  }
+  .logo .yeseva { font-family: var(--yeseva); font-style: italic; color: var(--red); text-transform: none; font-size: 24px; }
+  .logo .marker { font-family: var(--marker); color: var(--blue); font-size: 22px; transform: rotate(2deg); display: inline-block; }
+  .nav-links { display: flex; gap: 22px; list-style: none; align-items: center; }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    position: relative;
+    transition: color .25s;
+  }
+  .nav-links a:nth-child(2) { font-family: var(--marker); font-size: 18px; letter-spacing: 0; transform: rotate(-3deg); display: inline-block; }
+  .nav-links a:nth-child(4) { font-family: var(--yeseva); font-style: italic; font-size: 18px; letter-spacing: 0; text-transform: none; }
+  .nav-links a:hover { color: var(--red); }
+  .nav-cta {
+    background: var(--yellow);
+    color: var(--ink);
+    padding: 10px 18px;
+    text-decoration: none;
+    font-family: var(--anton);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 3px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--ink);
+    transform: rotate(2deg);
+    transition: transform .25s, box-shadow .25s;
+  }
+  .nav-cta:hover { transform: rotate(-1deg) translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+  .lang-toggle {
+    display: inline-flex;
+    border: 2px solid var(--ink);
+    overflow: hidden;
+    margin-left: 8px;
+    transform: rotate(-1deg);
+  }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--ink);
+    border: none;
+    padding: 5px 11px;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+  }
+  .lang-toggle button.active { background: var(--red); color: var(--paper); }
+
+  /* HERO */
+  .hero {
+    padding: 60px 24px 80px;
+    position: relative;
+    min-height: 88vh;
+  }
+
+  .hero-words {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .hero-w {
+    display: inline-block;
+    line-height: 0.9;
+    margin: 0 8px 4px;
+  }
+  .w-anton-big {
+    font-family: var(--anton);
+    font-size: clamp(80px, 16vw, 220px);
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .w-yeseva {
+    font-family: var(--yeseva);
+    font-size: clamp(64px, 13vw, 180px);
+    color: var(--red);
+    font-style: italic;
+    line-height: 0.9;
+  }
+  .w-marker {
+    font-family: var(--marker);
+    font-size: clamp(56px, 11vw, 140px);
+    color: var(--blue);
+    transform: rotate(-3deg);
+    display: inline-block;
+  }
+  .w-pixel {
+    font-family: var(--pixel);
+    font-size: clamp(28px, 5vw, 64px);
+    color: var(--ink);
+    background: var(--yellow);
+    padding: 12px 18px;
+    display: inline-block;
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+    text-transform: uppercase;
+    transform: rotate(2deg);
+    margin: 0 8px;
+    line-height: 1;
+  }
+  .w-out {
+    font-family: var(--anton);
+    font-size: clamp(80px, 16vw, 220px);
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    -webkit-text-stroke: 2px var(--ink);
+    color: transparent;
+  }
+  .w-strike {
+    font-family: var(--anton);
+    font-size: clamp(64px, 12vw, 160px);
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    text-decoration: line-through;
+    text-decoration-thickness: 6px;
+    text-decoration-color: var(--red);
+    color: var(--ink);
+    opacity: 0.7;
+  }
+  .hero-line { display: block; margin-bottom: 8px; }
+
+  /* CUTOUT IMAGES */
+  .hero-cut {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .hero-cut img, .hero-cut .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    border: 4px solid var(--ink);
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+  .cut-1 {
+    top: 18%; right: 4%;
+    width: 220px; height: 280px;
+    transform: rotate(6deg);
+  }
+  .cut-1 .img { background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=600&q=80'); filter: grayscale(0.3); }
+  .cut-2 {
+    bottom: 8%; left: 6%;
+    width: 200px; height: 240px;
+    transform: rotate(-4deg);
+  }
+  .cut-2 .img { background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80'); filter: sepia(0.3); }
+
+  /* HERO STICKERS */
+  .splat {
+    position: absolute;
+    font-family: var(--marker);
+    color: var(--red);
+    font-size: 32px;
+    transform: rotate(-12deg);
+    line-height: 1;
+    z-index: 3;
+  }
+  .splat-1 { top: 8%; left: 5%; transform: rotate(-8deg); }
+  .splat-2 { top: 38%; right: 18%; color: var(--blue); transform: rotate(6deg); font-size: 28px; }
+  .splat-3 { bottom: 28%; left: 38%; color: var(--ink); transform: rotate(-2deg); }
+
+  .stamp-circle {
+    position: absolute;
+    width: 140px; height: 140px;
+    border: 3px solid var(--red);
+    border-radius: 50%;
+    color: var(--red);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-12deg);
+    background: rgba(212, 50, 47, 0.05);
+    font-family: var(--mono);
+    text-align: center;
+    line-height: 1.1;
+    text-transform: uppercase;
+    z-index: 4;
+    bottom: 30%;
+    right: 32%;
+    padding: 12px;
+  }
+  .stamp-circle .top { font-size: 9px; letter-spacing: 0.2em; margin-bottom: 6px; }
+  .stamp-circle .big { font-family: var(--anton); font-size: 32px; line-height: 0.9; }
+  .stamp-circle .bot { font-size: 9px; letter-spacing: 0.15em; margin-top: 6px; }
+
+  .scribble-arrow {
+    position: absolute;
+    width: 100px; height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 40 Q 30 5 70 30 Q 50 50 75 60 L 70 50 M 75 60 L 65 60' stroke='%231d4e8a' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  /* HERO SUB BLOCK */
+  .hero-sub-block {
+    position: relative;
+    z-index: 5;
+    margin-top: 80px;
+    max-width: 720px;
+    background: var(--paper-2);
+    border: 3px solid var(--ink);
+    padding: 24px 28px;
+    box-shadow: 8px 8px 0 var(--ink);
+    transform: rotate(-1deg);
+  }
+  .hero-sub-block::before {
+    content: '↳ a brief introduction →';
+    position: absolute;
+    top: -34px;
+    left: -8px;
+    font-family: var(--marker);
+    color: var(--red);
+    font-size: 22px;
+    transform: rotate(-2deg);
+  }
+  .hero-sub-block p {
+    font-family: var(--mono);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .hero-sub-block p .marker { font-family: var(--marker); color: var(--red); font-size: 20px; line-height: 1; }
+  .hero-sub-block p .yeseva { font-family: var(--yeseva); font-style: italic; color: var(--blue); font-size: 24px; }
+  .hero-sub-block p .pixel { font-family: var(--pixel); font-size: 11px; background: var(--yellow); padding: 2px 6px; margin: 0 4px; }
+
+  /* TICKER */
+  .ticker-collage {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 18px 0;
+    border-top: 4px solid var(--ink);
+    border-bottom: 4px solid var(--ink);
+    overflow: hidden;
+    white-space: nowrap;
+    transform: rotate(0.5deg);
+    margin: 40px -8px;
+  }
+  .ticker-collage-track {
+    display: inline-block;
+    animation: tickerL 35s linear infinite;
+    font-family: var(--anton);
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  .ticker-collage .red { color: var(--red); margin: 0 16px; }
+  .ticker-collage .yellow { color: var(--yellow); margin: 0 16px; font-family: var(--yeseva); font-style: italic; text-transform: none; }
+  .ticker-collage .pixel { color: var(--paper); font-family: var(--pixel); font-size: 16px; margin: 0 16px; vertical-align: middle; }
+
+  /* SECTIONS */
+  .section {
+    padding: 100px 24px;
+    border-bottom: 4px solid var(--ink);
+    position: relative;
+  }
+  .section-tag {
+    display: inline-block;
+    font-family: var(--marker);
+    color: var(--red);
+    font-size: 28px;
+    margin-bottom: 16px;
+    transform: rotate(-2deg);
+  }
+  .section h2 {
+    font-family: var(--anton);
+    font-size: clamp(56px, 11vw, 180px);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    max-width: 1500px;
+  }
+  .section h2 em {
+    font-family: var(--yeseva);
+    font-style: italic;
+    color: var(--red);
+    font-weight: 400;
+    text-transform: none;
+  }
+  .section h2 .marker {
+    font-family: var(--marker);
+    color: var(--blue);
+    text-transform: none;
+    font-size: 0.85em;
+    display: inline-block;
+    transform: rotate(-3deg);
+  }
+  .section h2 .out { -webkit-text-stroke: 3px var(--ink); color: transparent; }
+  .section h2 .strike { text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 6px; opacity: 0.6; }
+
+  /* WORKS — newspaper-style cards */
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    position: relative;
+  }
+  .work {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+  }
+  .work .frame {
+    background: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+    aspect-ratio: 4/5;
+    transition: transform .35s cubic-bezier(.5,1.4,.5,1);
+  }
+  .work:hover .frame { transform: rotate(0deg) translate(-2px, -2px); box-shadow: 9px 9px 0 var(--ink); }
+  .work-cap {
+    margin-top: 16px;
+    background: var(--paper-2);
+    border: 2px solid var(--ink);
+    padding: 12px 14px;
+    transform: rotate(-1deg);
+    display: inline-block;
+  }
+  .work-cap h3 {
+    font-family: var(--anton);
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .work-cap h3 em { font-family: var(--yeseva); font-style: italic; color: var(--red); font-weight: 400; text-transform: none; }
+  .work-cap .meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: 4px;
+    color: var(--blue);
+  }
+  .w-1 { grid-column: 1 / 5; transform: rotate(-2deg); }
+  .w-2 { grid-column: 6 / 10; transform: rotate(1.5deg); margin-top: 60px; }
+  .w-3 { grid-column: 11 / 13; transform: rotate(-1deg); margin-top: 30px; }
+  .w-4 { grid-column: 1 / 4; transform: rotate(2deg); margin-top: 20px; }
+  .w-5 { grid-column: 5 / 9; transform: rotate(-1.5deg); margin-top: 40px; }
+  .w-6 { grid-column: 10 / 13; transform: rotate(2deg); margin-top: -10px; }
+  .w-1 .frame { background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80'); }
+  .w-2 .frame { background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=900&q=80'); }
+  .w-3 .frame { background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=900&q=80'); aspect-ratio: 3/4; }
+  .w-4 .frame { background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=900&q=80'); }
+  .w-5 .frame { background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=900&q=80'); aspect-ratio: 16/10; }
+  .w-6 .frame { background-image: url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?w=900&q=80'); aspect-ratio: 3/4; }
+
+  /* SERVICES — torn paper notes */
+  .services-collage {
+    background: var(--paper-2);
+  }
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .svc {
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    padding: 24px;
+    box-shadow: 6px 6px 0 var(--ink);
+    transition: transform .35s cubic-bezier(.5,1.4,.5,1);
+    cursor: pointer;
+    position: relative;
+  }
+  .svc:nth-child(1) { transform: rotate(-2deg); }
+  .svc:nth-child(2) { transform: rotate(1deg); margin-top: 24px; }
+  .svc:nth-child(3) { transform: rotate(-1deg); margin-top: 8px; }
+  .svc:nth-child(4) { transform: rotate(1.5deg); }
+  .svc:nth-child(5) { transform: rotate(-1.5deg); margin-top: 32px; }
+  .svc:nth-child(6) { transform: rotate(2deg); margin-top: 16px; }
+  .svc:hover { transform: rotate(0) translate(-3px, -3px); box-shadow: 9px 9px 0 var(--ink); }
+
+  .svc-num {
+    font-family: var(--pixel);
+    font-size: 14px;
+    background: var(--ink);
+    color: var(--yellow);
+    padding: 4px 8px;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+  .svc:nth-child(2) .svc-num { background: var(--red); color: var(--paper); }
+  .svc:nth-child(3) .svc-num { background: var(--blue); color: var(--paper); }
+  .svc:nth-child(4) .svc-num { background: var(--yellow); color: var(--ink); }
+  .svc:nth-child(5) .svc-num { background: var(--pink); color: var(--ink); }
+  .svc:nth-child(6) .svc-num { background: var(--ink); color: var(--paper); }
+
+  .svc h3 {
+    font-family: var(--anton);
+    font-size: 32px;
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+  }
+  .svc h3 em { font-family: var(--yeseva); font-style: italic; color: var(--red); font-weight: 400; text-transform: none; }
+  .svc h3 .marker { font-family: var(--marker); color: var(--blue); text-transform: none; font-size: 0.85em; display: inline-block; transform: rotate(-3deg); }
+  .svc p {
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .svc-tag {
+    font-family: var(--marker);
+    color: var(--red);
+    font-size: 18px;
+    line-height: 1;
+    transform: rotate(-1deg);
+    display: inline-block;
+  }
+
+  /* MANIFESTO */
+  .manifesto {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 140px 24px;
+    border-top: 4px solid var(--red);
+    border-bottom: 4px solid var(--red);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+  .manifesto::before, .manifesto::after {
+    content: '';
+    position: absolute;
+    width: 200px; height: 200px;
+    background: var(--yellow);
+    border-radius: 50%;
+    opacity: 0.85;
+  }
+  .manifesto::before { top: -80px; right: -80px; }
+  .manifesto::after { bottom: -80px; left: -80px; background: var(--red); }
+  .manifesto-text {
+    font-family: var(--anton);
+    font-size: clamp(40px, 6.5vw, 110px);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    max-width: 1500px;
+    position: relative;
+    z-index: 2;
+    color: var(--paper);
+  }
+  .manifesto-text em {
+    font-family: var(--yeseva);
+    font-style: italic;
+    color: var(--yellow);
+    font-weight: 400;
+    text-transform: none;
+  }
+  .manifesto-text .marker {
+    font-family: var(--marker);
+    color: var(--pink);
+    text-transform: none;
+    font-size: 0.9em;
+    display: inline-block;
+    transform: rotate(-2deg);
+  }
+  .manifesto-text .pixel {
+    font-family: var(--pixel);
+    font-size: 0.4em;
+    background: var(--red);
+    padding: 12px 16px;
+    display: inline-block;
+    color: var(--paper);
+    margin: 0 8px;
+    line-height: 1;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+  .manifesto-text .strike { text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 6px; opacity: 0.5; }
+  .manifesto-attr {
+    margin-top: 60px;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--yellow);
+    position: relative;
+    z-index: 2;
+  }
+
+  /* PROCESS */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .step {
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    padding: 24px;
+    box-shadow: 5px 5px 0 var(--ink);
+    cursor: pointer;
+    transition: transform .35s cubic-bezier(.5,1.4,.5,1);
+  }
+  .step:nth-child(1) { transform: rotate(-1deg); }
+  .step:nth-child(2) { transform: rotate(1.5deg); margin-top: 16px; }
+  .step:nth-child(3) { transform: rotate(-2deg); }
+  .step:nth-child(4) { transform: rotate(1deg); margin-top: 24px; }
+  .step:hover { transform: rotate(0) translate(-3px, -3px); box-shadow: 8px 8px 0 var(--ink); }
+
+  .step-num {
+    font-family: var(--anton);
+    font-size: 88px;
+    line-height: 0.85;
+    text-transform: uppercase;
+    color: var(--red);
+    letter-spacing: -0.05em;
+    margin-bottom: 8px;
+  }
+  .step-num em { font-family: var(--yeseva); font-style: italic; color: var(--blue); }
+  .step h3 {
+    font-family: var(--anton);
+    font-size: 24px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .step h3 em { font-family: var(--yeseva); font-style: italic; color: var(--red); font-weight: 400; text-transform: none; }
+  .step p {
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .step-tag {
+    font-family: var(--pixel);
+    font-size: 9px;
+    background: var(--yellow);
+    padding: 3px 6px;
+    display: inline-block;
+    border: 2px solid var(--ink);
+    text-transform: uppercase;
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 140px 24px 80px;
+    text-align: center;
+    background: var(--yellow);
+    border-bottom: 4px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before {
+    content: '✿';
+    position: absolute;
+    top: -40px; left: -40px;
+    font-size: 240px;
+    color: var(--red);
+    opacity: 0.15;
+    transform: rotate(-15deg);
+  }
+  .contact-tag {
+    font-family: var(--marker);
+    color: var(--red);
+    font-size: 32px;
+    margin-bottom: 16px;
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+  .contact h2 {
+    font-family: var(--anton);
+    font-size: clamp(56px, 11vw, 180px);
+    line-height: 0.88;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    margin-bottom: 32px;
+  }
+  .contact h2 em { font-family: var(--yeseva); font-style: italic; color: var(--red); font-weight: 400; text-transform: none; }
+  .contact h2 .marker { font-family: var(--marker); color: var(--blue); text-transform: none; font-size: 0.85em; transform: rotate(-3deg); display: inline-block; }
+  .contact-mail {
+    font-family: var(--anton);
+    font-size: clamp(28px, 4vw, 56px);
+    color: var(--ink);
+    text-decoration: none;
+    background: var(--paper);
+    padding: 14px 28px;
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    transition: all .25s;
+    display: inline-block;
+    transform: rotate(-1deg);
+  }
+  .contact-mail:hover { background: var(--red); color: var(--paper); transform: rotate(1deg) translate(-2px, -2px); box-shadow: 9px 9px 0 var(--ink); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 50px 24px 20px;
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  .foot-brand {
+    font-family: var(--anton);
+    font-size: 64px;
+    line-height: 0.9;
+    color: var(--paper);
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+  }
+  .foot-brand .yeseva { font-family: var(--yeseva); font-style: italic; color: var(--yellow); text-transform: none; }
+  footer h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 6px; font-size: 13px; opacity: 0.85; }
+  footer a { color: inherit; text-decoration: none; transition: color .25s; }
+  footer a:hover { color: var(--yellow); }
+  .foot-bot {
+    border-top: 1px solid rgba(240, 233, 216, 0.2);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.7;
+  }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* V2 PACK */
+  .skip-link { position: absolute; top: -100px; left: 8px; background: var(--ink); color: var(--yellow); padding: 8px 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 4px; background: var(--red); z-index: 10000; transition: width .12s ease-out; pointer-events: none; }
+  .back-top { position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; background: var(--yellow); color: var(--ink); border: 3px solid var(--ink); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .35s, background .25s, transform .35s; z-index: 999; font-family: var(--anton); font-size: 26px; box-shadow: 5px 5px 0 var(--ink); transform: rotate(-3deg); }
+  .back-top.visible { opacity: 1; pointer-events: auto; }
+  .back-top:hover { background: var(--red); color: var(--paper); transform: rotate(2deg) translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+  /* polaroid cards lift on hover */
+  .work, .step, .svc { will-change: transform; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hero-cut { display: none; }
+    .splat, .stamp-circle, .scribble-arrow { display: none; }
+    .hero { padding: 40px 16px 60px; min-height: auto; }
+    .hero-w { display: block; margin: 0 0 8px; }
+    .w-anton-big, .w-out { font-size: 56px; }
+    .w-yeseva { font-size: 56px; }
+    .w-marker { font-size: 44px; }
+    .w-pixel { font-size: 22px; }
+    .section { padding: 60px 20px; }
+    .works-grid > *, .svc-grid, .process-grid { grid-template-columns: 1fr; }
+    .works-grid > * { grid-column: 1 / -1 !important; transform: rotate(0) !important; margin-top: 0 !important; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<button class="back-top" aria-label="Back to top">↑</button>
+
+<div class="news-strip">
+  <div class="news-track">
+    <span>VOL. IV — ISSUE 04</span>
+    <span class="red">★</span>
+    <span>WORLD LONDON MEDIA PRESS</span>
+    <span class="red">★</span>
+    <span>SS 2026 / SPRING — SUMMER</span>
+    <span class="red">★</span>
+    <span>PRINTED IN LONDON, EC1V</span>
+    <span class="red">★</span>
+    <span>VOL. IV — ISSUE 04</span>
+    <span class="red">★</span>
+    <span>WORLD LONDON MEDIA PRESS</span>
+    <span class="red">★</span>
+    <span>SS 2026 / SPRING — SUMMER</span>
+    <span class="red">★</span>
+    <span>PRINTED IN LONDON, EC1V</span>
+    <span class="red">★</span>
+  </div>
+</div>
+
+<nav>
+  <a href="../../index.html" class="logo">WORLD<br/><span class="yeseva">London</span> <span class="marker">Media!</span></a>
+  <ul class="nav-links">
+    <li><a href="#works" data-i18n="nav_works">Works</a></li>
+    <li><a href="#services" data-i18n="nav_services">stuff</a></li>
+    <li><a href="#process" data-i18n="nav_process">Process</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">say hi</a></li>
+    <li>
+      <a href="#contact" class="nav-cta" data-i18n="nav_cta">SEND BRIEF →</a>
+    </li>
+    <li>
+      <div class="lang-toggle">
+        <button data-l="en" onclick="setLang('en')">EN</button>
+        <button data-l="tr" onclick="setLang('tr')">TR</button>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <span class="splat splat-1" data-i18n="splat_1">↳ since 2021 ✿</span>
+  <span class="splat splat-2" data-i18n="splat_2">photo / film / direction!</span>
+  <span class="splat splat-3" data-i18n="splat_3">no corporate vibes ✿</span>
+
+  <div class="scribble-arrow" style="top: 26%; left: 28%;"></div>
+  <div class="scribble-arrow" style="bottom: 36%; right: 28%; transform: scaleX(-1);"></div>
+
+  <div class="hero-cut cut-1"><div class="img"></div></div>
+  <div class="hero-cut cut-2"><div class="img"></div></div>
+
+  <div class="stamp-circle">
+    <span class="top">★ Open ★</span>
+    <span class="big">SS<br/>26</span>
+    <span class="bot">— Booking —</span>
+  </div>
+
+  <div class="hero-words">
+    <h1 data-i18n="hero_h1">
+      <span class="hero-line"><span class="hero-w w-anton-big">WE MAKE</span></span>
+      <span class="hero-line">
+        <span class="hero-w w-yeseva">pictures,</span>
+        <span class="hero-w w-marker">films,</span>
+      </span>
+      <span class="hero-line">
+        <span class="hero-w w-strike">advertising</span>
+        <span class="hero-w w-anton-big">&amp; other</span>
+      </span>
+      <span class="hero-line">
+        <span class="hero-w w-pixel">small things</span>
+        <span class="hero-w w-yeseva">that last.</span>
+      </span>
+    </h1>
+  </div>
+
+  <div class="hero-sub-block">
+    <p data-i18n="hero_blurb">A <span class="marker">small loud</span> media studio in London, cutting and pasting photography, film and social content for restaurants, beauty, hospitality, and the brands who don't want to look like <span class="yeseva">everyone else.</span> Booking <span class="pixel">SS26</span> now.</p>
+  </div>
+</section>
+
+<div class="ticker-collage">
+  <div class="ticker-collage-track">
+    <span>EDITORIAL</span> <span class="red">×</span>
+    <span class="yellow">film &amp; motion</span> <span class="red">×</span>
+    <span class="pixel">DIRECTION</span> <span class="red">×</span>
+    <span>SOCIAL</span> <span class="red">×</span>
+    <span class="yellow">identity</span> <span class="red">×</span>
+    <span class="pixel">PRINT</span> <span class="red">×</span>
+    <span>EDITORIAL</span> <span class="red">×</span>
+    <span class="yellow">film &amp; motion</span> <span class="red">×</span>
+    <span class="pixel">DIRECTION</span> <span class="red">×</span>
+    <span>SOCIAL</span> <span class="red">×</span>
+    <span class="yellow">identity</span> <span class="red">×</span>
+    <span class="pixel">PRINT</span> <span class="red">×</span>
+  </div>
+</div>
+
+<section class="section" id="works">
+  <span class="section-tag" data-i18n="works_tag">↳ recent works !</span>
+  <h2 data-i18n="works_h2"><span class="out">SIX</span> <em>obsessions,</em><br/><span class="marker">loosely</span> ARRANGED.</h2>
+
+  <div class="works-grid">
+    <a href="#" class="work w-1 reveal">
+      <div class="frame"></div>
+      <div class="work-cap">
+        <h3>Marsala &amp; <em>Smoke</em></h3>
+        <div class="meta">RESTAURANT · 2025</div>
+      </div>
+    </a>
+    <a href="#" class="work w-2 reveal">
+      <div class="frame"></div>
+      <div class="work-cap">
+        <h3>Hackney <em>Plates</em></h3>
+        <div class="meta">VOGUE ITALIA · 2025</div>
+      </div>
+    </a>
+    <a href="#" class="work w-3 reveal">
+      <div class="frame"></div>
+      <div class="work-cap">
+        <h3>Folie <em>Nº 12</em></h3>
+        <div class="meta">BEAUTY · 2024</div>
+      </div>
+    </a>
+    <a href="#" class="work w-4 reveal">
+      <div class="frame"></div>
+      <div class="work-cap">
+        <h3>Atelier <em>Soho</em></h3>
+        <div class="meta">BRAND FILM · 2024</div>
+      </div>
+    </a>
+    <a href="#" class="work w-5 reveal">
+      <div class="frame"></div>
+      <div class="work-cap">
+        <h3>Casa <em>Lago</em></h3>
+        <div class="meta">HOTEL · 2025</div>
+      </div>
+    </a>
+    <a href="#" class="work w-6 reveal">
+      <div class="frame"></div>
+      <div class="work-cap">
+        <h3>Cervo <em>Bay</em></h3>
+        <div class="meta">HOSPITALITY · 2025</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="section services-collage" id="services">
+  <span class="section-tag" data-i18n="svc_tag">↳ what we make ✿</span>
+  <h2 data-i18n="svc_h2"><span class="marker">six</span> things, <em>roughly,</em><br/>WE'RE GOOD <span class="out">AT.</span></h2>
+
+  <div class="svc-grid">
+    <div class="svc reveal">
+      <span class="svc-num">01.PHOTO</span>
+      <h3>Photo<em>graphy</em></h3>
+      <p>Editorial stills for hospitality, food, fashion. Shot until the room remembers itself.</p>
+      <span class="svc-tag">↳ stills + lookbooks</span>
+    </div>
+    <div class="svc reveal">
+      <span class="svc-num">02.FILM</span>
+      <h3>Film &amp; <em>motion</em></h3>
+      <p>Brand films, documentary shorts, social cuts that don't smell like an ad.</p>
+      <span class="svc-tag">↳ 35mm + reels</span>
+    </div>
+    <div class="svc reveal">
+      <span class="svc-num">03.DIR</span>
+      <h3>Creative <span class="marker">direction</span></h3>
+      <p>Concept, casting, locations. The small cruel decisions that make a campaign inevitable.</p>
+      <span class="svc-tag">↳ concept + casting</span>
+    </div>
+    <div class="svc reveal">
+      <span class="svc-num">04.SOC</span>
+      <h3>Social <em>editorial</em></h3>
+      <p>Monthly visual production for brands who treat their feed as a magazine.</p>
+      <span class="svc-tag">↳ strategy + monthly</span>
+    </div>
+    <div class="svc reveal">
+      <span class="svc-num">05.ID</span>
+      <h3>Brand <em>identity</em></h3>
+      <p>Visual systems built to hold for a decade. Type, palette, photographic codes.</p>
+      <span class="svc-tag">↳ identity + print</span>
+    </div>
+    <div class="svc reveal">
+      <span class="svc-num">06.STD</span>
+      <h3>Studio <span class="marker">rental</span></h3>
+      <p>Our 2,000 sq ft daylight studio in Hackney. Half-day, full-day, with crew or without.</p>
+      <span class="svc-tag">↳ daylight + blackout</span>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto">
+  <p class="manifesto-text" data-i18n="manif_text">We <span class="strike">don't</span> believe in <em>brand workshops,</em> <span class="pixel">growth hacks</span>, OR <span class="marker">100-page decks.</span> We BELIEVE in <em>light</em> and <span class="marker">long takes</span> and the <em>quiet</em> patience of <span class="strike">advertising</span> editorial that earns the page it sits on.</p>
+  <p class="manifesto-attr">— § STUDIO MANIFESTO · S. ÇAĞLAYAN — FOUNDER</p>
+</section>
+
+<section class="section" id="process">
+  <span class="section-tag" data-i18n="proc_tag">↳ how we work !</span>
+  <h2 data-i18n="proc_h2"><em>FOUR</em> STEPS,<br/>ONE <span class="marker">very loose</span> RHYTHM.</h2>
+
+  <div class="process-grid">
+    <div class="step reveal">
+      <div class="step-num">01<em>.</em></div>
+      <h3>Listen, <em>mostly</em></h3>
+      <p>30-min first call. We meet, walk the space, eat the food. Brief writes itself.</p>
+      <span class="step-tag">WEEK 01</span>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">02<em>.</em></div>
+      <h3>Pin to <em>wall</em></h3>
+      <p>References, palette, casting, locations. Pinned to the cork board. Approved.</p>
+      <span class="step-tag">WEEK 02</span>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">03<em>.</em></div>
+      <h3>Shoot <em>slowly</em></h3>
+      <p>Small crew, long lights. Real food, real people, real rooms. No shortcuts.</p>
+      <span class="step-tag">WEEK 03</span>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">04<em>.</em></div>
+      <h3>Edit &amp; <em>send</em></h3>
+      <p>Selects in 48h. Final master in 10 working days. Archive kept indefinitely.</p>
+      <span class="step-tag">WEEK 04</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <span class="contact-tag" data-i18n="contact_tag">↳ say hello ✿</span>
+  <h2 data-i18n="contact_h2">SEND US A <em>weird</em><br/><span class="marker">little</span> BRIEF.</h2>
+  <a href="mailto:hello@worldlondonmedia.com" class="contact-mail">hello@worldlondonmedia.com →</a>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">WORLD<br/><span class="yeseva">London</span> Media</div>
+      <p style="margin-top: 12px; font-family: var(--mono); font-size: 12px; opacity: 0.7; max-width: 260px;">A loud little media press, printed in London since 2021. Cut + paste + light.</p>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <ul>
+        <li>Unit 4, Old Print Yard</li>
+        <li>Clerkenwell, EC1V 9AT</li>
+        <li>London, UK</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Sitemap</h4>
+      <ul>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Elsewhere</h4>
+      <ul>
+        <li><a href="#">@wlm.studio</a></li>
+        <li><a href="#">Vimeo</a></li>
+        <li><a href="#">Are.na</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 WLM PRESS · CO. № 13442198</span>
+    <span>SET IN ANTON · YESEVA · MARKER · PIXEL · DM MONO</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 90);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  // V2
+  const _progress = document.querySelector('.scroll-progress');
+  const _backTop = document.querySelector('.back-top');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    _progress.style.width = ((window.scrollY / Math.max(max, 1)) * 100) + '%';
+    _backTop.classList.toggle('visible', window.scrollY > 600);
+  }, { passive: true });
+  _backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // collage cards: cursor proximity randomized rotation
+  document.querySelectorAll('.work, .step, .svc').forEach(p => {
+    const baseRotate = parseFloat((p.style.transform || '').match(/rotate\((-?[\d.]+)deg\)/)?.[1] || '0');
+    p.addEventListener('mousemove', e => {
+      const r = p.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+      const dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+      p.style.transform = `rotate(${baseRotate + dx * 3}deg) translate(${dx * 6}px, ${dy * 6}px) scale(1.03)`;
+    });
+    p.addEventListener('mouseleave', () => { p.style.transform = ''; });
+  });
+
+  /* i18n */
+  const i18n_tr = {
+    nav_works: 'İşler', nav_services: 'şeyler', nav_process: 'Süreç', nav_contact: 'selam', nav_cta: 'BRIEF GÖNDER →',
+    splat_1: '↳ 2021\'den beri ✿',
+    splat_2: 'foto / film / yönetim!',
+    splat_3: 'korporat kokmaz ✿',
+    hero_h1: '<span class="hero-line"><span class="hero-w w-anton-big">BİZ ÜRETİYORUZ</span></span><span class="hero-line"><span class="hero-w w-yeseva">kareler,</span> <span class="hero-w w-marker">filmler,</span></span><span class="hero-line"><span class="hero-w w-strike">reklam</span> <span class="hero-w w-anton-big">&amp; diğer</span></span><span class="hero-line"><span class="hero-w w-pixel">küçük şeyler</span> <span class="hero-w w-yeseva">kalıcı olan.</span></span>',
+    hero_blurb: 'Londra\'da <span class="marker">küçük yüksek sesli</span> bir medya stüdyosu — restoranlar, güzellik, otelcilik ve <span class="yeseva">herkese benzemek</span> istemeyen markalar için fotoğraf, film ve sosyal içerik kesip yapıştırıyoruz. <span class="pixel">SS26</span> randevuları açık.',
+    works_tag: '↳ yakın işler !',
+    works_h2: '<span class="out">ALTI</span> <em>takıntı,</em><br/><span class="marker">gevşek</span> DİZİLDİ.',
+    svc_tag: '↳ ne üretiyoruz ✿',
+    svc_h2: '<span class="marker">altı</span> şey, <em>kabaca,</em><br/>İYİ OLDUĞUMUZ <span class="out">ŞEYLER.</span>',
+    manif_text: '<em>Marka workshop\'larına,</em> <span class="pixel">growth hack</span>\'lere ve <span class="marker">100 sayfalık deck\'lere</span> <span class="strike">inanmıyoruz.</span> <em>Işığa,</em> <span class="marker">uzun çekimlere</span> ve oturduğu sayfayı hak eden <em>sessiz</em> sabırlı <span class="strike">reklama</span> editorial\'a İNANIYORUZ.',
+    proc_tag: '↳ nasıl çalışıyoruz !',
+    proc_h2: '<em>DÖRT</em> ADIM,<br/>BİR <span class="marker">çok gevşek</span> RİTİM.',
+    contact_tag: '↳ selam de ✿',
+    contact_h2: 'BİZE <em>tuhaf</em><br/><span class="marker">küçük</span> BİR BRIEF GÖNDER.'
+  };
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.original = el.innerHTML; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+</script>
+
+</body>
+</html>

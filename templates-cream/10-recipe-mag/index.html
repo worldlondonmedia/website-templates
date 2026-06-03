@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WLM Cookbook — A Food-First Media Studio for Restaurants &amp; Hotels</title>
+
+<meta name="description" content="A food-first London media studio. Photography, film and direction for restaurants, hotels and the kitchens worth remembering. Recipe-card precision. Cookbook patience." />
+<meta name="theme-color" content="#f5ebd6" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="WLM Cookbook — Recipe Magazine" />
+<meta property="og:description" content="A food-first studio. Cookbook precision." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"WLM Cookbook","url":"https://worldlondonmedia.com","email":"hello@worldlondonmedia.com","priceRange":"£££","address":{"@type":"PostalAddress","streetAddress":"Unit 4, Old Print Yard","addressLocality":"Clerkenwell","postalCode":"EC1V 9AT","addressCountry":"GB"},"foundingDate":"2021"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:    #f5ebd6;
+    --paper-2:  #ebdec1;
+    --wood:     #b08560;
+    --wood-2:   #8b6543;
+    --tomato:   #c84d2e;
+    --tomato-2: #9d3a20;
+    --sage:     #7a8a55;
+    --sage-2:   #5d6b3e;
+    --ink:      #2a1810;
+    --ink-2:    #4a2f20;
+    --cream:    #fef7e6;
+    --display:  'DM Serif Display', serif;
+    --serif:    'Lora', serif;
+    --mono:     'DM Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--tomato); color: var(--cream); }
+
+  /* Subtle paper texture */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.09 0 0 0 0 0.06 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+  }
+
+  /* SKIP / PROGRESS */
+  .skip-link { position: absolute; top: -100px; left: 12px; background: var(--tomato); color: var(--cream); padding: 8px 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 12px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--tomato); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 2px; background: var(--tomato); z-index: 10000; transition: width .12s ease-out; pointer-events: none; }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--paper);
+    padding: 8px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--ink);
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-2);
+  }
+  .masthead .red { color: var(--tomato); }
+
+  /* NAV */
+  nav {
+    background: var(--paper);
+    padding: 24px 32px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    border-bottom: 2px solid var(--ink);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-left, .nav-right { display: flex; gap: 28px; align-items: center; }
+  .nav-right { justify-content: flex-end; }
+  nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color .25s;
+  }
+  nav a:hover { color: var(--tomato); }
+  .logo {
+    font-family: var(--display);
+    font-size: 32px;
+    color: var(--ink);
+    text-decoration: none;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+  .logo .tomato { color: var(--tomato); font-style: italic; }
+  .logo small {
+    display: block;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    color: var(--wood);
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+  .nav-cta {
+    background: var(--tomato);
+    color: var(--cream) !important;
+    padding: 8px 16px;
+    font-style: normal !important;
+    font-family: var(--display);
+    font-size: 14px;
+    transition: background .25s;
+    border-radius: 100px;
+  }
+  .nav-cta:hover { background: var(--tomato-2); }
+  .lang-toggle { display: inline-flex; margin-left: 8px; }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 5px 10px;
+    font-family: var(--mono);
+    font-size: 10px;
+    cursor: pointer;
+    margin-left: -1px;
+  }
+  .lang-toggle button.active { background: var(--ink); color: var(--paper); }
+
+  /* HERO */
+  .hero {
+    padding: 60px 32px 60px;
+    max-width: 1500px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-issue {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: 40px;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-2);
+  }
+  .hero-issue .red { color: var(--tomato); }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+    align-items: end;
+  }
+
+  .hero-left { padding-right: 12px; }
+  .hero-eyebrow {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--wood-2);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--tomato);
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(64px, 9vw, 156px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  .hero h1 em {
+    font-family: var(--display);
+    font-style: italic;
+    color: var(--tomato);
+  }
+  .hero h1 .sage { color: var(--sage); font-style: italic; }
+  .hero-blurb {
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    max-width: 560px;
+    margin-bottom: 24px;
+  }
+  .hero-blurb b { color: var(--tomato); font-weight: 500; }
+
+  /* DROP CAP intro */
+  .dropcap-intro {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 560px;
+    margin-bottom: 32px;
+  }
+  .dropcap-intro::first-letter {
+    font-family: var(--display);
+    float: left;
+    font-size: 88px;
+    line-height: 0.85;
+    padding: 8px 14px 0 0;
+    color: var(--tomato);
+    font-weight: 400;
+  }
+
+  .hero-cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .btn-recipe {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 16px 28px;
+    text-decoration: none;
+    font-family: var(--display);
+    font-size: 15px;
+    transition: all .25s;
+    border-radius: 100px;
+  }
+  .btn-recipe:hover { background: var(--tomato); }
+  .btn-recipe-out {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+  }
+  .btn-recipe-out:hover { background: var(--ink); color: var(--cream); }
+
+  /* Recipe card hero illustration */
+  .recipe-card {
+    background: var(--cream);
+    border: 1px solid var(--ink);
+    padding: 24px;
+    box-shadow: 0 12px 40px -10px rgba(42, 24, 16, 0.2);
+    position: relative;
+  }
+  .recipe-card::before {
+    content: '';
+    position: absolute;
+    top: 12px; left: 12px; right: 12px; bottom: 12px;
+    border: 1px solid var(--wood);
+    pointer-events: none;
+  }
+  .recipe-card .photo {
+    aspect-ratio: 4/5;
+    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    border: 4px solid var(--paper);
+    box-shadow: 0 0 0 1px var(--ink);
+    margin-bottom: 18px;
+  }
+  .recipe-card h3 {
+    font-family: var(--display);
+    font-size: 32px;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .recipe-card h3 em { font-style: italic; color: var(--tomato); }
+  .recipe-card .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    text-align: center;
+    border-top: 1px dashed var(--ink);
+    border-bottom: 1px dashed var(--ink);
+    padding: 12px 0;
+    margin-bottom: 14px;
+  }
+  .recipe-card .stat {
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-2);
+  }
+  .recipe-card .stat strong {
+    display: block;
+    font-family: var(--display);
+    font-size: 22px;
+    color: var(--tomato);
+    margin-bottom: 4px;
+    font-style: italic;
+  }
+  .recipe-card .ingredients {
+    font-family: var(--serif);
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .recipe-card .ingredients strong {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--tomato);
+    margin-bottom: 8px;
+  }
+  .recipe-card .ingredients ul {
+    list-style: none;
+  }
+  .recipe-card .ingredients li {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px dotted var(--wood);
+  }
+  .recipe-card .ingredients li:last-child { border-bottom: none; }
+  .recipe-card .ingredients li span:last-child { font-style: italic; color: var(--tomato); }
+
+  /* MARQUEE */
+  .marquee {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: var(--display);
+    font-size: 28px;
+    border-top: 4px solid var(--tomato);
+    border-bottom: 4px solid var(--tomato);
+  }
+  .marquee-track { display: inline-block; animation: mqScroll 36s linear infinite; }
+  .marquee span { margin: 0 22px; }
+  .marquee .red { color: var(--tomato); font-style: italic; }
+  .marquee .sage { color: var(--sage); }
+  @keyframes mqScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* SECTION */
+  .section { padding: 100px 32px; max-width: 1500px; margin: 0 auto; }
+  .section-eyebrow {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--tomato);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-eyebrow::before { content: '— Chapter ·'; color: var(--wood-2); }
+  .section h2 {
+    font-family: var(--display);
+    font-size: clamp(48px, 7vw, 110px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 60px;
+    max-width: 1200px;
+  }
+  .section h2 em { font-family: var(--display); font-style: italic; color: var(--tomato); }
+  .section h2 .sage { color: var(--sage); font-style: italic; }
+
+  /* SERVICES — recipe cards */
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .svc {
+    background: var(--cream);
+    border: 1px solid var(--ink);
+    padding: 24px;
+    cursor: pointer;
+    transition: transform .35s, box-shadow .35s;
+    position: relative;
+    box-shadow: 0 6px 24px -8px rgba(42, 24, 16, 0.15);
+  }
+  .svc:hover { transform: translateY(-4px); box-shadow: 0 12px 32px -8px rgba(42, 24, 16, 0.25); }
+  .svc::before {
+    content: '';
+    position: absolute;
+    top: 10px; left: 10px; right: 10px; bottom: 10px;
+    border: 1px solid var(--wood);
+    pointer-events: none;
+  }
+  .svc-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--tomato);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .svc h3 {
+    font-family: var(--display);
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+    color: var(--ink);
+    position: relative;
+    z-index: 2;
+  }
+  .svc h3 em { font-style: italic; color: var(--tomato); }
+  .svc p {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .svc-ingredients {
+    border-top: 1px dashed var(--ink);
+    padding-top: 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--wood-2);
+    position: relative;
+    z-index: 2;
+  }
+  .svc-ingredients strong { color: var(--tomato); }
+
+  /* WORK / SELECTED RECIPES */
+  .recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .featured-recipe {
+    background: var(--cream);
+    border: 1px solid var(--ink);
+    padding: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .35s, box-shadow .35s;
+    position: relative;
+  }
+  .featured-recipe:hover { transform: translateY(-4px); }
+  .featured-recipe .frame {
+    aspect-ratio: 16/10;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 18px;
+    border: 1px solid var(--wood);
+    transition: filter .8s;
+  }
+  .featured-recipe .frame::after {
+    content: '';
+    position: absolute;
+    width: 12px; height: 12px;
+  }
+  .featured-recipe .recipe-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--tomato);
+    color: var(--cream);
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+  .featured-recipe h4 {
+    font-family: var(--display);
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .featured-recipe h4 em { font-style: italic; color: var(--tomato); }
+  .featured-recipe .desc {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    margin-bottom: 14px;
+  }
+  .featured-recipe .meta {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px dashed var(--ink);
+    padding-top: 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--wood-2);
+  }
+  .featured-recipe .meta span:last-child { color: var(--tomato); }
+  .featured-recipe:nth-child(1) .frame { background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80'); }
+  .featured-recipe:nth-child(2) .frame { background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1400&q=80'); }
+  .featured-recipe:nth-child(3) .frame { background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1400&q=80'); }
+  .featured-recipe:nth-child(4) .frame { background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1400&q=80'); }
+
+  /* QUOTE */
+  .quote {
+    padding: 160px 32px;
+    background: var(--sage);
+    color: var(--cream);
+    text-align: center;
+    border-top: 4px solid var(--ink);
+    border-bottom: 4px solid var(--ink);
+    position: relative;
+  }
+  .quote::before {
+    content: '"';
+    font-family: var(--display);
+    font-size: 240px;
+    color: var(--cream);
+    opacity: 0.2;
+    position: absolute;
+    top: 60px; left: 50%; transform: translateX(-50%);
+    line-height: 0.7;
+  }
+  .quote-text {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: clamp(36px, 5.5vw, 80px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .quote-attr {
+    margin-top: 32px;
+    font-family: var(--mono);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--cream);
+    opacity: 0.85;
+  }
+
+  /* PROCESS — recipe steps */
+  .recipe-steps {
+    background: var(--cream);
+    border: 1px solid var(--ink);
+    padding: 36px;
+    position: relative;
+  }
+  .recipe-steps::before {
+    content: '';
+    position: absolute;
+    top: 18px; left: 18px; right: 18px; bottom: 18px;
+    border: 1px solid var(--wood);
+    pointer-events: none;
+  }
+  .recipe-steps-head {
+    text-align: center;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+  }
+  .recipe-steps-head h3 {
+    font-family: var(--display);
+    font-size: 44px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .recipe-steps-head h3 em { font-style: italic; color: var(--tomato); }
+  .recipe-steps-head .stats {
+    display: inline-flex;
+    gap: 32px;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--wood-2);
+  }
+  .recipe-steps-head .stats strong { color: var(--tomato); }
+  .step-list {
+    list-style: none;
+    position: relative;
+    z-index: 2;
+  }
+  .step-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 1.6fr;
+    gap: 32px;
+    padding: 24px 0;
+    border-bottom: 1px dashed var(--ink);
+    align-items: baseline;
+  }
+  .step-row:last-child { border-bottom: none; }
+  .step-row .num {
+    font-family: var(--display);
+    font-size: 56px;
+    color: var(--tomato);
+    line-height: 0.85;
+    font-style: italic;
+  }
+  .step-row h4 {
+    font-family: var(--display);
+    font-size: 24px;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+  }
+  .step-row h4 em { font-style: italic; color: var(--tomato); }
+  .step-row p {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 140px 32px;
+    text-align: center;
+    background: var(--tomato);
+    color: var(--cream);
+    border-top: 4px solid var(--ink);
+    position: relative;
+  }
+  .contact h2 {
+    font-family: var(--display);
+    font-size: clamp(56px, 9vw, 160px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    margin-bottom: 32px;
+  }
+  .contact h2 em { font-style: italic; color: var(--paper); }
+  .contact-mail {
+    background: var(--cream);
+    color: var(--ink);
+    padding: 18px 32px;
+    text-decoration: none;
+    font-family: var(--display);
+    font-size: clamp(22px, 3vw, 36px);
+    border: 1px solid var(--ink);
+    border-radius: 100px;
+    transition: all .25s;
+    display: inline-block;
+  }
+  .contact-mail:hover { background: var(--ink); color: var(--cream); }
+
+  /* FOOTER */
+  footer {
+    background: var(--paper-2);
+    color: var(--ink);
+    padding: 60px 32px 24px;
+    border-top: 4px solid var(--ink);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .foot-brand {
+    font-family: var(--display);
+    font-size: 56px;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+  }
+  .foot-brand em { font-style: italic; color: var(--tomato); }
+  footer h4 { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; color: var(--tomato); font-weight: 500; }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 6px; font-size: 14px; }
+  footer a { color: inherit; text-decoration: none; transition: color .25s; }
+  footer a:hover { color: var(--tomato); }
+  .foot-bot {
+    border-top: 1px solid var(--ink);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--wood-2);
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+  @media (max-width: 900px) {
+    .nav-left, .nav-right .nav-cta { display: none; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .svc-grid { grid-template-columns: 1fr; }
+    .recipe-grid { grid-template-columns: 1fr; }
+    .step-row { grid-template-columns: 1fr; gap: 12px; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<div class="masthead">
+  <span>VOL. IV / SS '26 <span class="red">·</span> THE WLM COOKBOOK <span class="red">·</span> ISSUE Nº 04 <span class="red">·</span> EST. MMXXI</span>
+</div>
+
+<nav>
+  <div class="nav-left">
+    <a href="#services" data-i18n="nav_services">Services</a>
+    <a href="#work" data-i18n="nav_work">Recipes</a>
+    <a href="#process" data-i18n="nav_process">Method</a>
+  </div>
+  <a href="../../index.html" class="logo">
+    The WLM <span class="tomato">Cookbook</span>
+    <small data-i18n="logo_sub">A FOOD-FIRST MEDIA STUDIO · MMXXVI</small>
+  </a>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Reserve a table</a>
+    <div class="lang-toggle">
+      <button data-l="en" onclick="setLang('en')">EN</button>
+      <button data-l="tr" onclick="setLang('tr')">TR</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <div class="hero-issue">
+    <span>VOL. IV / ISSUE Nº 04</span>
+    <span class="red" data-i18n="hi_c">— FROM THE LONDON KITCHEN —</span>
+    <span>SS '26 — £6.50</span>
+  </div>
+
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-eyebrow" data-i18n="hero_eyebrow">— A food-first media studio</div>
+      <h1 data-i18n="hero_h1">Pictures<br/>that <em>taste</em><br/>of <span class="sage">the room.</span></h1>
+      <p class="dropcap-intro" data-i18n="hero_dropcap">A London media studio for restaurants, hotels, and the kitchens worth remembering. We shoot like cookbook authors edit — slowly, carefully, with one ingredient at a time. No retainers. No agency markups. Just photography that smells right.</p>
+      <div class="hero-cta-row">
+        <a href="#work" class="btn-recipe" data-i18n="cta_view">View recipes →</a>
+        <a href="#contact" class="btn-recipe btn-recipe-out" data-i18n="cta_brief">Reserve a table</a>
+      </div>
+    </div>
+
+    <div class="recipe-card">
+      <div class="photo"></div>
+      <h3>Featured · <em>Marsala &amp; Smoke</em></h3>
+      <div class="stats">
+        <div class="stat"><strong>04</strong>weeks</div>
+        <div class="stat"><strong>06</strong>shoots</div>
+        <div class="stat"><strong>48p</strong>book</div>
+      </div>
+      <div class="ingredients">
+        <strong>— Ingredients</strong>
+        <ul>
+          <li><span>Editorial photography</span><span>120 hrs</span></li>
+          <li><span>Brand film, 35mm</span><span>14 hrs</span></li>
+          <li><span>Casting + direction</span><span>40 hrs</span></li>
+          <li><span>Print book design</span><span>32 hrs</span></li>
+          <li><span>Patience &amp; tea</span><span>∞</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>SHOT IN LONDON</span><span class="red">●</span>
+    <span class="sage">REAL FOOD</span><span class="red">●</span>
+    <span>REAL ROOMS</span><span class="red">●</span>
+    <span class="sage">NO STOCK PHOTOS</span><span class="red">●</span>
+    <span>EAT WHAT YOU SHOOT</span><span class="red">●</span>
+    <span class="sage">SLOW &amp; CAREFUL</span><span class="red">●</span>
+    <span>SHOT IN LONDON</span><span class="red">●</span>
+    <span class="sage">REAL FOOD</span><span class="red">●</span>
+    <span>REAL ROOMS</span><span class="red">●</span>
+    <span class="sage">NO STOCK PHOTOS</span><span class="red">●</span>
+    <span>EAT WHAT YOU SHOOT</span><span class="red">●</span>
+    <span class="sage">SLOW &amp; CAREFUL</span><span class="red">●</span>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <p class="section-eyebrow" data-i18n="srv_eyebrow">02 · The pantry</p>
+  <h2 data-i18n="srv_h2">Six <em>ingredients,</em><br/>one <span class="sage">obsession</span> with light.</h2>
+
+  <div class="svc-grid">
+    <div class="svc reveal">
+      <div class="svc-num">— Recipe 01</div>
+      <h3>Photo<em>graphy</em></h3>
+      <p>Editorial stills for hospitality, food, beauty. Lit by hand. Shot until the room remembers itself, until the plate looks edible from across the room.</p>
+      <div class="svc-ingredients">EDITORIAL · STILLS · <strong>SIGNATURE</strong></div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-num">— Recipe 02</div>
+      <h3>Film &amp; <em>motion</em></h3>
+      <p>Brand films, documentary shorts, social cuts. Shot on cinema, edited like jazz. The kind of film that makes you hungry.</p>
+      <div class="svc-ingredients">35MM · DOCUMENTARY · <strong>REELS</strong></div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-num">— Recipe 03</div>
+      <h3>Creative <em>direction</em></h3>
+      <p>Concept, casting, locations. The cruel decisions that make a campaign feel inevitable. We start with the why, end with the print.</p>
+      <div class="svc-ingredients">CONCEPT · CASTING · <strong>ART DIR</strong></div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-num">— Recipe 04</div>
+      <h3>Social <em>editorial</em></h3>
+      <p>Monthly visual production for brands who treat their feed as a magazine. Strategy through publishing, with weekly portion control.</p>
+      <div class="svc-ingredients">STRATEGY · MONTHLY · <strong>CALENDAR</strong></div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-num">— Recipe 05</div>
+      <h3>Brand <em>identity</em></h3>
+      <p>Visual systems built to hold for a decade. Type, palette, photographic codes — kept honest by very small revisions.</p>
+      <div class="svc-ingredients">IDENTITY · PRINT · <strong>DIGITAL</strong></div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-num">— Recipe 06</div>
+      <h3>Studio <em>rental</em></h3>
+      <p>Our 2,000 sq ft daylight studio in Hackney. Half-day, full-day, with crew or without. Coffee &amp; sourdough included.</p>
+      <div class="svc-ingredients">DAYLIGHT · BLACKOUT · <strong>CREW</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <p class="section-eyebrow" data-i18n="work_eyebrow">03 · Selected recipes</p>
+  <h2 data-i18n="work_h2">A small but <em>considered</em><br/>cookbook of <span class="sage">recent work.</span></h2>
+
+  <div class="recipe-grid">
+    <a href="#" class="featured-recipe reveal">
+      <div class="frame"></div>
+      <span class="recipe-tag">★ Featured · Restaurant</span>
+      <h4>Marsala &amp; <em>Smoke</em></h4>
+      <p class="desc">A six-month editorial residency with one of London's most-talked-about Lebanese kitchens. Stills, film, and a 48-page printed book.</p>
+      <div class="meta"><span>2025 · 6 months</span><span>READ →</span></div>
+    </a>
+    <a href="#" class="featured-recipe reveal">
+      <div class="frame"></div>
+      <span class="recipe-tag">★ Editorial · Vogue Italia</span>
+      <h4>Hackney <em>Plates</em></h4>
+      <p class="desc">Eight chefs. Eight kitchens. One August. Documentary stills and a 16-minute long-form film for the Food &amp; Light issue.</p>
+      <div class="meta"><span>2025 · 8 chefs</span><span>READ →</span></div>
+    </a>
+    <a href="#" class="featured-recipe reveal">
+      <div class="frame"></div>
+      <span class="recipe-tag">★ Beauty · Stills</span>
+      <h4>Folie Nº <em>12</em></h4>
+      <p class="desc">An entire AW24 product launch — packshots, lookbook, social cuts and the print campaign across 14 markets.</p>
+      <div class="meta"><span>2024 · 14 markets</span><span>READ →</span></div>
+    </a>
+    <a href="#" class="featured-recipe reveal">
+      <div class="frame"></div>
+      <span class="recipe-tag">★ Brand film · 16mm</span>
+      <h4>Atelier <em>Soho</em></h4>
+      <p class="desc">A three-minute brand film and twelve-month social system for a Soho atelier. Shot on 16mm in two days.</p>
+      <div class="meta"><span>2024 · 3 minutes</span><span>READ →</span></div>
+    </a>
+  </div>
+</section>
+
+<section class="quote">
+  <p class="quote-text" data-i18n="q_text">A photograph,<br/>like a good loaf,<br/>is mostly <span style="color: var(--paper);">patience.</span></p>
+  <p class="quote-attr">— S. ÇAĞLAYAN · FOUNDER &amp; DIRECTOR</p>
+</section>
+
+<section class="section" id="process">
+  <p class="section-eyebrow" data-i18n="proc_eyebrow">05 · The method</p>
+  <h2 data-i18n="proc_h2">Four <em>steps,</em><br/>one good <span class="sage">stew.</span></h2>
+
+  <div class="recipe-steps">
+    <div class="recipe-steps-head">
+      <h3>How we <em>cook</em> a project</h3>
+      <div class="stats">
+        <span><strong>4 weeks</strong> avg</span>
+        <span><strong>06</strong> humans + 3 cats</span>
+        <span><strong>1 brief</strong> at a time</span>
+      </div>
+    </div>
+    <ol class="step-list">
+      <li class="step-row">
+        <span class="num">i.</span>
+        <h4>The first <em>conversation</em></h4>
+        <p>30-min call, no slides. We meet, walk through your space, eat your food, read the menus. The brief writes itself once we know the room.</p>
+      </li>
+      <li class="step-row">
+        <span class="num">ii.</span>
+        <h4>Direction &amp; <em>preparation</em></h4>
+        <p>References, palette, casting, locations, schedule. Pinned to a wall, approved before any camera comes out of its case.</p>
+      </li>
+      <li class="step-row">
+        <span class="num">iii.</span>
+        <h4>Principal <em>photography</em></h4>
+        <p>Small crews. Long lights. Real food, real people, real rooms. We move slowly because mistakes get expensive in post.</p>
+      </li>
+      <li class="step-row">
+        <span class="num">iv.</span>
+        <h4>Edit &amp; <em>delivery</em></h4>
+        <p>Selects in 48 hours. Final masters within 10 working days. Graded for paper and screen separately, archived indefinitely.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 data-i18n="contact_h2">Bring us<br/>your <em>kitchen.</em></h2>
+  <a href="mailto:hello@worldlondonmedia.com" class="contact-mail">hello@worldlondonmedia.com →</a>
+</section>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">The WLM<br/><em>Cookbook</em></div>
+      <p style="margin-top: 16px; font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--ink-2); max-width: 240px;">A food-first media studio in Clerkenwell. Photo · film · direction · since 2021.</p>
+    </div>
+    <div>
+      <h4>STUDIO</h4>
+      <ul><li>Unit 4, Old Print Yard</li><li>Clerkenwell, EC1V 9AT</li><li>London, UK</li></ul>
+    </div>
+    <div>
+      <h4>CONTENTS</h4>
+      <ul><li><a href="#services">Pantry</a></li><li><a href="#work">Recipes</a></li><li><a href="#process">Method</a></li></ul>
+    </div>
+    <div>
+      <h4>ELSEWHERE</h4>
+      <ul><li><a href="#">Instagram</a></li><li><a href="#">Vimeo</a></li><li><a href="#">Newsletter</a></li></ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 WORLD LONDON MEDIA · CO. № 13442198</span>
+    <span>SET IN DM SERIF DISPLAY · LORA · DM MONO</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 80); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+  const _progress = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    _progress.style.width = ((window.scrollY / Math.max(max, 1)) * 100) + '%';
+  }, { passive: true });
+
+  const i18n_tr = {
+    nav_services: 'Servisler', nav_work: 'Tarifler', nav_process: 'Yöntem', nav_cta: 'Masa ayır',
+    logo_sub: 'YEMEK ÖNCELIKLI MEDYA STÜDYOSU · MMXXVI',
+    hi_c: '— LONDRA MUTFAĞINDAN —',
+    hero_eyebrow: '— Yemek-öncelikli bir medya stüdyosu',
+    hero_h1: 'Odanın <em>tadı</em><br/>olan <span class="sage">kareler.</span>',
+    hero_dropcap: 'Restoranlar, oteller ve hatırlanmaya değer mutfaklar için bir Londra medya stüdyosu. Yemek kitabı yazarlarının düzenlediği gibi çekiyoruz — yavaş, dikkatle, her seferinde tek malzemeyle. Retainer yok, ajans markup\'ı yok. Sadece doğru kokan fotoğraflar.',
+    cta_view: 'Tariflere bak →', cta_brief: 'Masa ayır',
+    srv_eyebrow: '02 · Kiler',
+    srv_h2: 'Altı <em>malzeme,</em><br/>ışığa tek <span class="sage">takıntı.</span>',
+    work_eyebrow: '03 · Seçili tarifler',
+    work_h2: 'Küçük ama <em>özenli</em><br/>bir <span class="sage">yakın iş</span> kitabı.',
+    q_text: 'Bir fotoğraf,<br/>iyi bir ekmek gibi,<br/>çoğunlukla <span style="color: var(--paper);">sabırdır.</span>',
+    proc_eyebrow: '05 · Yöntem',
+    proc_h2: 'Dört <em>adım,</em><br/>iyi bir <span class="sage">yahni.</span>',
+    contact_h2: 'Bize <em>mutfağınızı</em><br/>getirin.'
+  };
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.original = el.innerHTML; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+</script>
+
+</body>
+</html>

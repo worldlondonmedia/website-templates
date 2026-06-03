@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WLM Mediterranea — A Sun-Bright Studio for Hotels &amp; Hospitality</title>
+
+<meta name="description" content="A Mediterranean-bright London media studio. Photography, film, and direction for hotels, restaurants and the brands that travel south. Cobalt tile, terracotta light." />
+<meta name="theme-color" content="#f3e8cd" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="WLM Mediterranea" />
+<meta property="og:description" content="Cobalt tile, terracotta light." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"WLM Mediterranea","url":"https://worldlondonmedia.com","email":"hello@worldlondonmedia.com","priceRange":"£££","address":{"@type":"PostalAddress","streetAddress":"Unit 4, Old Print Yard","addressLocality":"Clerkenwell","postalCode":"EC1V 9AT","addressCountry":"GB"},"foundingDate":"2021"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@200;300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream:    #f3e8cd;
+    --cream-2:  #ebdbb6;
+    --cobalt:   #2e5d8a;
+    --cobalt-2: #1f4366;
+    --terra:    #c2613e;
+    --terra-2:  #9d4828;
+    --sun:      #f0c850;
+    --sea:      #5b8579;
+    --sea-2:    #3e6358;
+    --ink:      #1a2536;
+    --display:  'Cormorant Infant', serif;
+    --body:     'Manrope', sans-serif;
+    --mono:     'DM Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--terra); color: var(--cream); }
+
+  /* Mediterranean tile pattern background — subtle */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: -1;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232e5d8a' stroke-width='0.5' opacity='0.18'%3E%3Cpath d='M30 0 L 60 30 L 30 60 L 0 30 Z'/%3E%3Ccircle cx='30' cy='30' r='12'/%3E%3Cpath d='M30 18 L 30 42 M 18 30 L 42 30'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 60px 60px;
+  }
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.13 0 0 0 0 0.08 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+  }
+
+  /* SKIP / PROGRESS */
+  .skip-link { position: absolute; top: -100px; left: 12px; background: var(--cobalt); color: var(--cream); padding: 8px 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 12px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--terra); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 2px; background: var(--terra); z-index: 10000; transition: width .12s ease-out; pointer-events: none; }
+
+  /* TILE DECORATION ELEMENTS */
+  .tile-decor {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--cobalt);
+    color: var(--cream);
+    padding: 8px 0;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    text-align: center;
+    border-bottom: 1px solid var(--ink);
+  }
+  .topbar .terra { color: var(--sun); }
+
+  /* NAV */
+  nav {
+    background: var(--cream);
+    padding: 24px 32px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    border-bottom: 1px solid var(--ink);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-left, .nav-right { display: flex; gap: 28px; align-items: center; }
+  .nav-right { justify-content: flex-end; }
+  nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    transition: color .25s;
+  }
+  nav a:hover { color: var(--terra); }
+  .logo {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--ink);
+    text-decoration: none;
+    line-height: 0.95;
+    letter-spacing: -0.005em;
+    text-align: center;
+  }
+  .logo .it { font-style: italic; color: var(--terra); }
+  .logo small {
+    display: block;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    color: var(--cobalt);
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+  .nav-cta {
+    background: var(--terra);
+    color: var(--cream) !important;
+    padding: 10px 18px;
+    border-radius: 100px;
+    font-family: var(--body);
+    font-weight: 500;
+    transition: all .25s;
+  }
+  .nav-cta:hover { background: var(--cobalt); }
+  .lang-toggle { display: inline-flex; margin-left: 8px; border: 1px solid var(--ink); border-radius: 100px; overflow: hidden; }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--ink);
+    border: none;
+    padding: 6px 11px;
+    font-family: var(--mono);
+    font-size: 10px;
+    cursor: pointer;
+    transition: all .25s;
+  }
+  .lang-toggle button.active { background: var(--ink); color: var(--cream); }
+
+  /* HERO */
+  .hero {
+    padding: 80px 32px 60px;
+    max-width: 1500px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--terra);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-eyebrow::before {
+    content: '✺';
+    color: var(--sun);
+    font-size: 24px;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(60px, 9vw, 156px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  .hero h1 em {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--terra);
+  }
+  .hero h1 .cobalt { color: var(--cobalt); font-style: italic; font-weight: 300; }
+  .hero h1 .sun {
+    background: var(--sun);
+    color: var(--ink);
+    padding: 0 18px;
+    border-radius: 100px;
+    line-height: 0.92;
+    display: inline-block;
+  }
+  .hero-blurb {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 560px;
+    margin-bottom: 32px;
+  }
+  .hero-blurb em { color: var(--terra); font-style: italic; }
+  .hero-cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .btn-tile {
+    background: var(--cobalt);
+    color: var(--cream);
+    padding: 16px 28px;
+    text-decoration: none;
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 100px;
+    transition: all .25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 2px solid var(--cobalt);
+  }
+  .btn-tile:hover { background: var(--terra); border-color: var(--terra); }
+  .btn-tile-out {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .btn-tile-out:hover { background: var(--sun); border-color: var(--ink); color: var(--ink); }
+
+  /* HERO COMPOSITION — Mediterranean tile arrangement */
+  .hero-tile-comp {
+    position: relative;
+    aspect-ratio: 4/5;
+    min-height: 540px;
+  }
+  .hero-tile-comp .tile-photo {
+    position: absolute;
+    inset: 12% 12% 12% 12%;
+    background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1400&q=85');
+    background-size: cover;
+    background-position: center;
+    border: 6px solid var(--cobalt);
+    box-shadow: 0 30px 80px -10px rgba(46, 93, 138, 0.3);
+    z-index: 2;
+    filter: contrast(1.05) saturate(1.05);
+  }
+  .hero-tile-comp .tile-corner {
+    position: absolute;
+    width: 80px; height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232e5d8a' stroke-width='1.5'%3E%3Cpath d='M40 0 L 80 40 L 40 80 L 0 40 Z' fill='%23f3e8cd'/%3E%3Ccircle cx='40' cy='40' r='20'/%3E%3Cpath d='M40 20 L 40 60 M 20 40 L 60 40'/%3E%3Cpath d='M25 25 L 55 55 M 55 25 L 25 55'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 3;
+  }
+  .tc-1 { top: 0; left: 0; }
+  .tc-2 { top: 0; right: 0; transform: rotate(90deg); }
+  .tc-3 { bottom: 0; left: 0; transform: rotate(-90deg); }
+  .tc-4 { bottom: 0; right: 0; transform: rotate(180deg); }
+  .hero-tile-comp .stamp {
+    position: absolute;
+    bottom: 18%; left: 0;
+    background: var(--terra);
+    color: var(--cream);
+    padding: 10px 18px;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    z-index: 4;
+    border-radius: 100px;
+  }
+  .hero-tile-comp .sun-badge {
+    position: absolute;
+    top: 18%; right: -8px;
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    background: var(--sun);
+    border: 4px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+    font-family: var(--display);
+    font-weight: 500;
+    z-index: 5;
+    text-align: center;
+    line-height: 1;
+  }
+  .hero-tile-comp .sun-badge .num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 28px;
+    color: var(--terra);
+  }
+  .hero-tile-comp .sun-badge .lbl {
+    font-family: var(--mono);
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-top: 4px;
+  }
+
+  /* MARQUEE */
+  .marquee {
+    background: var(--terra);
+    color: var(--cream);
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 32px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .marquee-track { display: inline-block; animation: medScroll 35s linear infinite; }
+  .marquee span { margin: 0 20px; }
+  .marquee .sun { color: var(--sun); font-style: normal; }
+  .marquee .cream { color: var(--cream); }
+  @keyframes medScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* SECTION */
+  .section { padding: 100px 32px; max-width: 1500px; margin: 0 auto; }
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--terra);
+    margin-bottom: 20px;
+  }
+  .section-eyebrow::before { content: '✺'; color: var(--sun); }
+  .section h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(48px, 7.5vw, 130px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 60px;
+    max-width: 1200px;
+  }
+  .section h2 em { font-style: italic; font-weight: 300; color: var(--terra); }
+  .section h2 .cobalt { color: var(--cobalt); font-style: italic; font-weight: 300; }
+  .section h2 .sun { background: var(--sun); padding: 0 16px; border-radius: 100px; display: inline-block; line-height: 0.95; }
+
+  /* SERVICES — tile cards */
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .svc {
+    background: var(--cream);
+    border: 1px solid var(--ink);
+    padding: 32px 28px;
+    cursor: pointer;
+    transition: all .35s;
+    position: relative;
+    overflow: hidden;
+  }
+  .svc::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 8px;
+    background: var(--terra);
+  }
+  .svc:nth-child(2)::before { background: var(--cobalt); }
+  .svc:nth-child(3)::before { background: var(--sun); }
+  .svc:nth-child(4)::before { background: var(--sea); }
+  .svc:nth-child(5)::before { background: var(--terra); }
+  .svc:nth-child(6)::before { background: var(--cobalt); }
+  .svc:hover { transform: translateY(-4px); box-shadow: 0 12px 32px -8px rgba(26, 37, 54, 0.2); }
+  .svc-tile {
+    width: 60px; height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232e5d8a' stroke-width='1.5'%3E%3Cpath d='M30 0 L 60 30 L 30 60 L 0 30 Z'/%3E%3Ccircle cx='30' cy='30' r='14'/%3E%3Cpath d='M30 16 L 30 44 M 16 30 L 44 30'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 18px;
+  }
+  .svc-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--cobalt);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .svc h3 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+  }
+  .svc h3 em { font-family: var(--display); font-style: italic; font-weight: 300; color: var(--terra); }
+  .svc p {
+    font-family: var(--body);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink);
+    opacity: 0.85;
+    margin-bottom: 16px;
+  }
+  .svc-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--cobalt);
+    border-top: 1px dashed var(--ink);
+    padding-top: 12px;
+  }
+
+  /* WORK / DESTINATIONS */
+  .destinations {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+  .dest { cursor: pointer; text-decoration: none; color: inherit; position: relative; }
+  .dest .frame {
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--ink);
+    transition: transform 1s cubic-bezier(.65,0,.35,1);
+    position: relative;
+    overflow: hidden;
+  }
+  .dest:hover .frame { transform: scale(0.99); }
+  .dest .frame::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(26, 37, 54, 0.45));
+  }
+  .dest .badge {
+    position: absolute;
+    top: 14px; left: 14px;
+    background: var(--sun);
+    color: var(--ink);
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    z-index: 2;
+  }
+  .dest-cap {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 1px dashed var(--ink);
+    padding-top: 12px;
+  }
+  .dest-cap h4 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .dest-cap h4 em { font-style: italic; font-weight: 300; color: var(--terra); }
+  .dest-cap .meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--cobalt);
+  }
+  .d1 { grid-column: 1 / 7; }
+  .d1 .frame { aspect-ratio: 4/5; background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80'); }
+  .d2 { grid-column: 8 / 13; padding-top: 60px; }
+  .d2 .frame { aspect-ratio: 3/4; background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1100&q=80'); }
+  .d3 { grid-column: 1 / 5; padding-top: 30px; }
+  .d3 .frame { aspect-ratio: 1/1; background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1000&q=80'); }
+  .d4 { grid-column: 6 / 13; }
+  .d4 .frame { aspect-ratio: 16/10; background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1400&q=80'); }
+
+  /* QUOTE */
+  .quote {
+    padding: 160px 32px;
+    background: var(--cobalt);
+    color: var(--cream);
+    text-align: center;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .quote::before, .quote::after {
+    content: '✺';
+    position: absolute;
+    color: var(--sun);
+    font-size: 120px;
+    opacity: 0.3;
+  }
+  .quote::before { top: 60px; left: 60px; }
+  .quote::after { bottom: 60px; right: 60px; }
+  .quote-text {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(36px, 5.5vw, 84px);
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .quote-text strong {
+    color: var(--sun);
+    font-weight: 400;
+    font-style: normal;
+    font-family: var(--display);
+  }
+  .quote-attr {
+    margin-top: 32px;
+    font-family: var(--mono);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--sun);
+    position: relative;
+    z-index: 2;
+  }
+
+  /* PROCESS */
+  .proc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .step {
+    background: var(--cream);
+    border: 1px solid var(--ink);
+    padding: 28px 24px;
+    cursor: pointer;
+    transition: transform .35s;
+    position: relative;
+    overflow: hidden;
+  }
+  .step::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 60px; height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232e5d8a' opacity='0.18'%3E%3Cpath d='M60 0 L 60 60 L 0 60 Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+  }
+  .step:hover { transform: translateY(-4px); }
+  .step-num {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 88px;
+    line-height: 0.85;
+    color: var(--terra);
+    margin-bottom: 16px;
+  }
+  .step h3 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+  }
+  .step h3 em { font-style: italic; font-weight: 300; color: var(--terra); }
+  .step p { font-size: 13px; line-height: 1.5; color: var(--ink); opacity: 0.85; }
+  .step-tag { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--ink); font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--cobalt); }
+
+  /* CONTACT */
+  .contact {
+    padding: 160px 32px;
+    text-align: center;
+    background: var(--terra);
+    color: var(--cream);
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before, .contact::after {
+    content: '';
+    position: absolute;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: var(--sun);
+    opacity: 0.85;
+  }
+  .contact::before { top: -120px; left: -100px; }
+  .contact::after { bottom: -120px; right: -100px; background: var(--cobalt); }
+  .contact h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(56px, 9vw, 160px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+  }
+  .contact h2 em { font-style: italic; font-weight: 300; color: var(--sun); }
+  .contact-mail {
+    background: var(--cream);
+    color: var(--ink);
+    padding: 18px 32px;
+    text-decoration: none;
+    font-family: var(--display);
+    font-size: clamp(22px, 3vw, 36px);
+    border-radius: 100px;
+    transition: all .25s;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    border: 1px solid var(--ink);
+  }
+  .contact-mail:hover { background: var(--sun); }
+
+  /* FOOTER */
+  footer {
+    background: var(--cream);
+    color: var(--ink);
+    padding: 60px 32px 24px;
+    border-top: 1px solid var(--ink);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .foot-brand {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -0.005em;
+  }
+  .foot-brand em { font-style: italic; color: var(--terra); }
+  footer h4 { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; color: var(--terra); font-weight: 500; }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 6px; font-size: 14px; }
+  footer a { color: inherit; text-decoration: none; transition: color .25s; }
+  footer a:hover { color: var(--terra); }
+  .foot-bot {
+    border-top: 1px solid var(--ink);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--cobalt);
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+  @media (max-width: 900px) {
+    .nav-left, .nav-right .nav-cta { display: none; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-tile-comp { min-height: 400px; }
+    .svc-grid { grid-template-columns: 1fr; }
+    .destinations > * { grid-column: span 12 !important; padding-top: 0 !important; }
+    .proc-grid { grid-template-columns: 1fr 1fr; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<div class="topbar">
+  <span>WLM MEDITERRANEA <span class="terra">✺</span> A SUN-BRIGHT MEDIA STUDIO <span class="terra">✺</span> EST. LONDON 2021 <span class="terra">✺</span> SS '26</span>
+</div>
+
+<nav>
+  <div class="nav-left">
+    <a href="#services" data-i18n="nav_services">Services</a>
+    <a href="#work" data-i18n="nav_work">Destinations</a>
+    <a href="#process" data-i18n="nav_process">Method</a>
+  </div>
+  <a href="../../index.html" class="logo">
+    WLM <span class="it">Mediterranea</span>
+    <small data-i18n="logo_sub">SUN-BRIGHT MEDIA · MMXXVI</small>
+  </a>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Begin a project</a>
+    <div class="lang-toggle">
+      <button data-l="en" onclick="setLang('en')">EN</button>
+      <button data-l="tr" onclick="setLang('tr')">TR</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="hero-eyebrow" data-i18n="hero_eyebrow">A sun-bright media studio · since 2021</p>
+      <h1 data-i18n="hero_h1">Pictures<br/>that <em>travel</em><br/><span class="cobalt">south</span> for the<br/><span class="sun">summer.</span></h1>
+      <p class="hero-blurb" data-i18n="hero_blurb">A Mediterranean-bright London media studio. <em>Photography, film, and direction</em> for hotels, restaurants, and the brands that travel south. Cobalt tile, terracotta light.</p>
+      <div class="hero-cta-row">
+        <a href="#work" class="btn-tile" data-i18n="cta_view">View destinations →</a>
+        <a href="#contact" class="btn-tile btn-tile-out" data-i18n="cta_brief">Begin a project</a>
+      </div>
+    </div>
+    <div class="hero-tile-comp">
+      <div class="tile-corner tc-1"></div>
+      <div class="tile-corner tc-2"></div>
+      <div class="tile-corner tc-3"></div>
+      <div class="tile-corner tc-4"></div>
+      <div class="tile-photo"></div>
+      <div class="stamp">CASA LAGO · COMO · '25</div>
+      <div class="sun-badge">
+        <span class="num">04</span>
+        <span class="lbl">SS '26</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Como</span><span class="sun">✺</span>
+    <span class="cream">Mallorca</span><span class="sun">✺</span>
+    <span>Sicily</span><span class="sun">✺</span>
+    <span class="cream">Hydra</span><span class="sun">✺</span>
+    <span>Mykonos</span><span class="sun">✺</span>
+    <span class="cream">Cap Ferrat</span><span class="sun">✺</span>
+    <span>Como</span><span class="sun">✺</span>
+    <span class="cream">Mallorca</span><span class="sun">✺</span>
+    <span>Sicily</span><span class="sun">✺</span>
+    <span class="cream">Hydra</span><span class="sun">✺</span>
+    <span>Mykonos</span><span class="sun">✺</span>
+    <span class="cream">Cap Ferrat</span><span class="sun">✺</span>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <p class="section-eyebrow" data-i18n="srv_eyebrow">— What we make · Six rooms</p>
+  <h2 data-i18n="srv_h2">Six <em>rooms,</em><br/>one <span class="cobalt">obsession</span> with light.</h2>
+
+  <div class="svc-grid">
+    <div class="svc reveal">
+      <div class="svc-tile"></div>
+      <p class="svc-num">— 01 / Photography</p>
+      <h3>Photo<em>graphy</em></h3>
+      <p>Editorial stills for hospitality, food, beauty. Lit by hand, shot until the room remembers itself.</p>
+      <div class="svc-meta">EDITORIAL · STILLS · LOOKBOOKS</div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-tile"></div>
+      <p class="svc-num">— 02 / Film</p>
+      <h3>Film &amp; <em>motion</em></h3>
+      <p>Brand films, documentary shorts, and the rare social cut that doesn't smell like an advertisement.</p>
+      <div class="svc-meta">35MM · DOCUMENTARY · REELS</div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-tile"></div>
+      <p class="svc-num">— 03 / Direction</p>
+      <h3>Creative <em>direction</em></h3>
+      <p>Concept, casting, locations, the small cruel decisions that make a campaign feel inevitable.</p>
+      <div class="svc-meta">CONCEPT · CASTING · ART DIR</div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-tile"></div>
+      <p class="svc-num">— 04 / Editorial</p>
+      <h3>Social <em>editorial</em></h3>
+      <p>Monthly visual production for brands who treat their feed as a magazine — strategy through publishing.</p>
+      <div class="svc-meta">STRATEGY · MONTHLY · CALENDAR</div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-tile"></div>
+      <p class="svc-num">— 05 / Identity</p>
+      <h3>Brand <em>identity</em></h3>
+      <p>Visual systems built to hold for a decade — typography, palette, photographic codes — kept honest.</p>
+      <div class="svc-meta">IDENTITY · PRINT · DIGITAL</div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-tile"></div>
+      <p class="svc-num">— 06 / Studio</p>
+      <h3>Studio <em>rental</em></h3>
+      <p>Our 2,000 sq ft daylight studio in Hackney. Half-day, full-day, with crew or without. Coffee included.</p>
+      <div class="svc-meta">DAYLIGHT · BLACKOUT · CREW</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <p class="section-eyebrow" data-i18n="work_eyebrow">— Recent destinations</p>
+  <h2 data-i18n="work_h2">A small but <em>considered</em><br/><span class="cobalt">archive</span> from the south.</h2>
+
+  <div class="destinations">
+    <a href="#" class="dest d1 reveal">
+      <span class="badge">★ Como '25</span>
+      <div class="frame"></div>
+      <div class="dest-cap"><h4>Casa <em>Lago</em></h4><span class="meta">Hotel · 2025</span></div>
+    </a>
+    <a href="#" class="dest d2 reveal">
+      <span class="badge">★ Mallorca '24</span>
+      <div class="frame"></div>
+      <div class="dest-cap"><h4>Cap <em>Ferrat</em></h4><span class="meta">Hospitality · 2024</span></div>
+    </a>
+    <a href="#" class="dest d3 reveal">
+      <span class="badge">★ Hydra '25</span>
+      <div class="frame"></div>
+      <div class="dest-cap"><h4>Hydra <em>Notes</em></h4><span class="meta">Editorial · 2025</span></div>
+    </a>
+    <a href="#" class="dest d4 reveal">
+      <span class="badge">★ Sicily '24</span>
+      <div class="frame"></div>
+      <div class="dest-cap"><h4>Atelier <em>Soho</em></h4><span class="meta">Brand film · 2024</span></div>
+    </a>
+  </div>
+</section>
+
+<section class="quote">
+  <p class="quote-text" data-i18n="q_text">A photograph is a <strong>postcard</strong><br/>from the room you've already <em>left,</em><br/>and the one you're <strong>going back to.</strong></p>
+  <p class="quote-attr">— S. ÇAĞLAYAN · FOUNDER &amp; DIRECTOR</p>
+</section>
+
+<section class="section" id="process">
+  <p class="section-eyebrow" data-i18n="proc_eyebrow">— Method · Four movements</p>
+  <h2 data-i18n="proc_h2">Four <em>movements,</em><br/>one <span class="cobalt">rhythm.</span></h2>
+
+  <div class="proc-grid">
+    <div class="step reveal">
+      <div class="step-num">i.</div>
+      <h3>The first <em>conversation</em></h3>
+      <p>30-min call. We meet, walk through your space, eat your food. The brief writes itself.</p>
+      <div class="step-tag">— WEEK 01</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">ii.</div>
+      <h3>Direction &amp; <em>preparation</em></h3>
+      <p>References, palette, casting, locations. Pinned to a wall, approved before any camera comes out.</p>
+      <div class="step-tag">— WEEK 02</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">iii.</div>
+      <h3>Principal <em>photography</em></h3>
+      <p>Small crews. Long lights. Real food, real people, real rooms. We move slowly because mistakes cost.</p>
+      <div class="step-tag">— WEEK 03</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">iv.</div>
+      <h3>Edit &amp; <em>delivery</em></h3>
+      <p>Selects in 48h. Final masters within 10 working days. Archived indefinitely.</p>
+      <div class="step-tag">— WEEK 04</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 data-i18n="contact_h2">Send us a <em>postcard.</em></h2>
+  <a href="mailto:hello@worldlondonmedia.com" class="contact-mail">hello@worldlondonmedia.com →</a>
+</section>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">WLM<br/><em>Mediterranea</em></div>
+      <p style="margin-top: 16px; font-size: 13px; opacity: 0.85; max-width: 240px;">A sun-bright London media studio. Photo · film · direction · since 2021.</p>
+    </div>
+    <div>
+      <h4>STUDIO</h4>
+      <ul><li>Unit 4, Old Print Yard</li><li>Clerkenwell, EC1V 9AT</li><li>London, UK</li></ul>
+    </div>
+    <div>
+      <h4>SITEMAP</h4>
+      <ul><li><a href="#services">Services</a></li><li><a href="#work">Destinations</a></li><li><a href="#process">Method</a></li></ul>
+    </div>
+    <div>
+      <h4>ELSEWHERE</h4>
+      <ul><li><a href="#">Instagram</a></li><li><a href="#">Vimeo</a></li><li><a href="#">Are.na</a></li></ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 WORLD LONDON MEDIA · CO. № 13442198</span>
+    <span>SET IN CORMORANT INFANT · MANROPE · DM MONO</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 80); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+  const _progress = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    _progress.style.width = ((window.scrollY / Math.max(max, 1)) * 100) + '%';
+  }, { passive: true });
+
+  const i18n_tr = {
+    nav_services: 'Servisler', nav_work: 'Destinasyonlar', nav_process: 'Yöntem', nav_cta: 'Bir proje başlat',
+    logo_sub: 'GÜNEŞ-PARLAK MEDYA · MMXXVI',
+    hero_eyebrow: 'Güneş-parlak medya stüdyosu · 2021\'den beri',
+    hero_h1: '<em>Yaza</em><br/><span class="cobalt">güneye</span><br/>seyahat eden<br/><span class="sun">kareler.</span>',
+    hero_blurb: 'Akdeniz-parlak Londra medya stüdyosu. <em>Fotoğraf, film ve yönetim</em> — oteller, restoranlar ve güneye seyahat eden markalar için. Kobalt karo, kiremit ışığı.',
+    cta_view: 'Destinasyonlar →', cta_brief: 'Bir proje başlat',
+    srv_eyebrow: '— Yaptıklarımız · Altı oda',
+    srv_h2: 'Altı <em>oda,</em><br/>ışığa tek <span class="cobalt">takıntı.</span>',
+    work_eyebrow: '— Yakın destinasyonlar',
+    work_h2: 'Güneyden küçük ama <em>özenli</em><br/>bir <span class="cobalt">arşiv.</span>',
+    q_text: 'Bir fotoğraf, çoktan ayrıldığın odadan bir <strong>kartpostal,</strong><br/>ve <em>geri döneceğin</em><br/><strong>oda.</strong>',
+    proc_eyebrow: '— Yöntem · Dört hareket',
+    proc_h2: 'Dört <em>hareket,</em><br/>bir <span class="cobalt">ritim.</span>',
+    contact_h2: 'Bize bir <em>kartpostal</em> gönderin.'
+  };
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.original = el.innerHTML; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+</script>
+
+</body>
+</html>

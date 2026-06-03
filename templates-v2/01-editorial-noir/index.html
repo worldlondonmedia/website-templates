@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>World London Media — A Visual Production Studio in Clerkenwell</title>
+
+<!-- SEO -->
+<meta name="description" content="A London-based media studio crafting still and moving images for restaurants, hotels, and the brands that defy the algorithm. Quiet craft, loud results. Booking SS/AW 2026." />
+<meta name="theme-color" content="#0e0d0b" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="World London Media" />
+<meta property="og:title" content="World London Media — Editorial Noir" />
+<meta property="og:description" content="A London-based media studio crafting still and moving images for restaurants, hotels and the brands worth remembering." />
+<meta property="og:url" content="https://worldlondonmedia.com/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:locale:alternate" content="tr_TR" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="World London Media — Editorial Noir" />
+<meta name="twitter:description" content="The art of seeing things twice. A London-based media studio for editorial photography, film, and direction." />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?w=1200&q=80" />
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "World London Media",
+  "alternateName": "WLM Studio",
+  "description": "A London-based media studio crafting still and moving images for restaurants, hotels, and the brands that defy the algorithm.",
+  "url": "https://worldlondonmedia.com",
+  "image": "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?w=1200&q=80",
+  "telephone": "+44-207-459-1024",
+  "email": "hello@worldlondonmedia.com",
+  "priceRange": "££££",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Unit 4, Old Print Yard",
+    "addressLocality": "Clerkenwell",
+    "addressRegion": "London",
+    "postalCode": "EC1V 9AT",
+    "addressCountry": "GB"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 51.5279, "longitude": -0.1015 },
+  "foundingDate": "2021",
+  "founder": { "@type": "Person", "name": "Selin Çağlayan" },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:30", "closes": "18:00"
+  }],
+  "sameAs": ["https://instagram.com/worldlondonmedia","https://vimeo.com/worldlondonmedia","https://are.na/worldlondonmedia"],
+  "areaServed": ["London","United Kingdom","Europe"],
+  "knowsAbout": ["Photography","Film","Creative Direction","Brand Identity","Social Editorial"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:        #0e0d0b;
+    --paper:      #efe9de;
+    --paper-2:    #e1d8c6;
+    --rust:       #c0451e;
+    --rust-soft:  #e07549;
+    --serif:      'Fraunces', Georgia, serif;
+    --mono:       'JetBrains Mono', ui-monospace, monospace;
+    --grain:      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: var(--grain);
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: overlay;
+  }
+  ::selection { background: var(--rust); color: var(--paper); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    padding: 22px 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 1000;
+    mix-blend-mode: difference;
+  }
+  .logo {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--paper);
+    font-style: italic;
+  }
+  .logo sup { font-size: 9px; font-style: normal; font-family: var(--mono); margin-left: 4px; vertical-align: super; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--paper);
+    transition: width .4s cubic-bezier(.7,0,.3,1);
+  }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    color: var(--paper);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    padding: 8px 16px;
+    border: 1px solid var(--paper);
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all .3s;
+  }
+  .nav-cta:hover { background: var(--paper); color: var(--ink); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding: 140px 32px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: end;
+    position: relative;
+  }
+  .hero-meta {
+    position: absolute;
+    top: 120px; left: 32px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.5;
+  }
+  .hero-meta span { display: block; margin-bottom: 4px; }
+  .hero-issue {
+    position: absolute;
+    top: 120px; right: 32px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.5;
+    text-align: right;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(80px, 13vw, 220px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--rust-soft);
+  }
+  .hero-line { display: block; }
+  .hero-line:nth-child(2) { padding-left: 18%; }
+  .hero-line:nth-child(3) { padding-left: 8%; }
+
+  .hero-right {
+    display: flex; flex-direction: column;
+    gap: 32px;
+    padding-bottom: 12px;
+  }
+  .hero-image {
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, #2a1f1a 0%, #4a2a1a 60%, #c0451e 110%);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    background-image: url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?w=900&q=80');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 20px 60px -20px rgba(192, 69, 30, 0.3);
+  }
+  .hero-image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(14,13,11,0.6) 100%);
+  }
+  .hero-image-caption {
+    position: absolute;
+    bottom: 16px; left: 16px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    z-index: 2;
+  }
+  .hero-image-caption .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 28px;
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .hero-blurb {
+    max-width: 360px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--paper-2);
+    opacity: 0.85;
+  }
+  .hero-blurb-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.5;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 32px; right: 32px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.5;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .scroll-cue::before {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--paper);
+    opacity: 0.5;
+  }
+
+  /* MARQUEE */
+  .marquee {
+    border-top: 1px solid rgba(239, 233, 222, 0.15);
+    border-bottom: 1px solid rgba(239, 233, 222, 0.15);
+    padding: 24px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-flex;
+    gap: 80px;
+    animation: marquee 40s linear infinite;
+    font-family: var(--serif);
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 300;
+  }
+  .marquee-track span { display: inline-flex; align-items: center; gap: 80px; }
+  .marquee-track .dot::before {
+    content: '◉';
+    font-size: 12px;
+    color: var(--rust-soft);
+    margin-right: 80px;
+    font-style: normal;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* INDEX (TABLE OF CONTENTS) */
+  .index-section {
+    padding: 120px 32px 60px;
+    border-bottom: 1px solid rgba(239, 233, 222, 0.1);
+  }
+  .index-head {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    gap: 32px;
+    align-items: baseline;
+    margin-bottom: 60px;
+  }
+  .index-num {
+    font-family: var(--serif);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--rust-soft);
+  }
+  .index-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    opacity: 0.5;
+  }
+  .index-title {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    grid-column: 2 / -1;
+  }
+  .index-title em { font-style: italic; color: var(--rust-soft); }
+
+  .services-list {
+    list-style: none;
+  }
+  .service-row {
+    display: grid;
+    grid-template-columns: 80px 320px 1fr 80px;
+    gap: 32px;
+    padding: 32px 0;
+    border-top: 1px solid rgba(239, 233, 222, 0.1);
+    align-items: baseline;
+    cursor: pointer;
+    transition: padding-left .5s cubic-bezier(.7,0,.3,1);
+    position: relative;
+  }
+  .service-row:last-child { border-bottom: 1px solid rgba(239, 233, 222, 0.1); }
+  .service-row:hover { padding-left: 24px; background: linear-gradient(90deg, rgba(192,69,30,0.06), transparent 60%); }
+  .service-row:hover .service-name em { color: var(--rust-soft); }
+  .service-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    opacity: 0.5;
+  }
+  .service-name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .service-name em { font-style: italic; font-weight: 300; transition: color .4s; }
+  .service-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.7;
+    max-width: 480px;
+  }
+  .service-tags {
+    text-align: right;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    opacity: 0.5;
+    line-height: 1.7;
+  }
+
+  /* WORK GRID */
+  .work {
+    padding: 60px 32px 120px;
+  }
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+  .work-item {
+    cursor: pointer;
+    position: relative;
+  }
+  .work-item .frame {
+    aspect-ratio: 4/5;
+    background: #1a1815;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: transform .8s cubic-bezier(.7,0,.3,1);
+  }
+  .work-item:hover .frame { transform: scale(1.02); }
+  .work-item .frame::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);
+  }
+  .work-cap {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .work-cap h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.1;
+  }
+  .work-cap .meta {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.6;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .work-1 { grid-column: 1 / 7; }
+  .work-2 { grid-column: 8 / 13; padding-top: 80px; }
+  .work-3 { grid-column: 1 / 5; padding-top: 40px; }
+  .work-4 { grid-column: 6 / 13; }
+  .work-1 .frame { aspect-ratio: 4/5; background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&q=80'); }
+  .work-2 .frame { aspect-ratio: 3/4; background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80'); }
+  .work-3 .frame { aspect-ratio: 1/1; background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=900&q=80'); }
+  .work-4 .frame { aspect-ratio: 16/10; background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1400&q=80'); }
+
+  /* PHILOSOPHY */
+  .philosophy {
+    padding: 140px 32px;
+    background: var(--paper);
+    color: var(--ink);
+    position: relative;
+  }
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .philosophy-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    opacity: 0.5;
+    margin-bottom: 24px;
+  }
+  .philosophy-quote {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+  .philosophy-quote em { font-style: italic; color: var(--rust); }
+  .philosophy-attr {
+    margin-top: 32px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--rust);
+  }
+  .philosophy-body p {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+  .philosophy-body p:first-child::first-letter {
+    font-family: var(--serif);
+    float: left;
+    font-size: 84px;
+    line-height: 0.85;
+    padding: 8px 12px 0 0;
+    font-style: italic;
+    color: var(--rust);
+  }
+
+  /* STATS */
+  .stats {
+    padding: 100px 32px;
+    background: var(--paper);
+    color: var(--ink);
+    border-top: 1px solid rgba(14,13,11,0.1);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .stat {
+    border-top: 1px solid rgba(14,13,11,0.2);
+    padding-top: 24px;
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 96px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+  .stat-num em { font-style: italic; color: var(--rust); }
+  .stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-top: 12px;
+    opacity: 0.7;
+  }
+
+  /* PROCESS */
+  .process {
+    padding: 140px 32px;
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .process-head {
+    margin-bottom: 80px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    align-items: baseline;
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(239,233,222,0.15);
+  }
+  .process-step {
+    padding: 32px 24px 32px 0;
+    border-right: 1px solid rgba(239,233,222,0.15);
+    position: relative;
+  }
+  .process-step:last-child { border-right: none; }
+  .process-step .step-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--rust-soft);
+    margin-bottom: 24px;
+  }
+  .process-step h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 28px;
+    font-style: italic;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .process-step p {
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.7;
+    max-width: 240px;
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 160px 32px 80px;
+    background: var(--ink);
+    border-top: 1px solid rgba(239,233,222,0.1);
+    text-align: center;
+  }
+  .contact-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    opacity: 0.5;
+    margin-bottom: 32px;
+  }
+  .contact h2 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(64px, 10vw, 180px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    margin-bottom: 48px;
+  }
+  .contact h2 em { font-style: italic; color: var(--rust-soft); }
+  .contact-mail {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 28px;
+    color: var(--paper);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rust-soft);
+    padding-bottom: 4px;
+    transition: color .3s;
+  }
+  .contact-mail:hover { color: var(--rust-soft); }
+
+  /* FOOTER */
+  footer {
+    padding: 60px 32px 32px;
+    background: var(--ink);
+    border-top: 1px solid rgba(239,233,222,0.1);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 32px;
+    font-size: 12px;
+  }
+  footer h4 {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    opacity: 0.5;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 8px; opacity: 0.85; }
+  footer a { color: inherit; text-decoration: none; }
+  footer a:hover { color: var(--rust-soft); }
+  .foot-brand {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .foot-brand sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-style: normal;
+    vertical-align: super;
+    margin-left: 4px;
+    opacity: 0.5;
+  }
+  .foot-bot {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(239,233,222,0.1);
+    padding-top: 24px;
+    margin-top: 40px;
+    display: flex; justify-content: space-between;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    opacity: 0.5;
+  }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity .9s cubic-bezier(.7,0,.3,1), transform .9s cubic-bezier(.7,0,.3,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* SKIP LINK */
+  .skip-link {
+    position: absolute;
+    top: -100px; left: 8px;
+    background: var(--rust);
+    color: var(--paper);
+    padding: 8px 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    z-index: 10001;
+    transition: top .25s;
+    text-decoration: none;
+  }
+  .skip-link:focus { top: 8px; }
+
+  /* FOCUS STATES */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--rust-soft);
+    outline-offset: 4px;
+  }
+
+  /* SCROLL PROGRESS */
+  .scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--rust);
+    z-index: 10000;
+    transition: width .12s ease-out;
+    pointer-events: none;
+  }
+
+  /* BACK TO TOP */
+  .back-top {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--rust);
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s, transform .35s;
+    z-index: 999;
+    font-family: var(--serif);
+    font-size: 18px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .back-top.visible { opacity: 1; pointer-events: auto; }
+  .back-top:hover { background: var(--rust); color: var(--paper); transform: translateY(-3px); }
+
+  /* CUSTOM CURSOR */
+  .cursor-noir {
+    position: fixed;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--rust);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width .35s cubic-bezier(.7,0,.3,1), height .35s cubic-bezier(.7,0,.3,1), background .35s;
+    mix-blend-mode: difference;
+  }
+  .cursor-noir.expand {
+    width: 100px; height: 100px;
+    background: var(--rust-soft);
+  }
+  .cursor-noir-label {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--paper);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity .25s;
+    mix-blend-mode: difference;
+  }
+  .cursor-noir-label.visible { opacity: 1; }
+  @media (hover: none) { .cursor-noir, .cursor-noir-label { display: none; } }
+
+  /* REDUCED MOTION */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* LANG TOGGLE */
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--paper);
+    border-radius: 100px;
+    overflow: hidden;
+    margin-left: 12px;
+  }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--paper);
+    border: none;
+    padding: 5px 11px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    cursor: pointer;
+    transition: all .25s;
+  }
+  .lang-toggle button.active { background: var(--paper); color: var(--ink); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 120px 20px 40px; }
+    .hero-line:nth-child(2), .hero-line:nth-child(3) { padding-left: 0; }
+    .hero-issue { position: static; text-align: left; margin-top: 8px; }
+    .hero-meta { position: static; margin-bottom: 24px; }
+    .hero h1 { font-size: 64px; }
+    .work-grid > * { grid-column: 1 / -1 !important; padding-top: 0 !important; }
+    .philosophy-grid { grid-template-columns: 1fr; gap: 40px; }
+    .stats-grid, .process-steps { grid-template-columns: 1fr 1fr; }
+    .process-step { border-right: none; border-bottom: 1px solid rgba(239,233,222,0.15); }
+    footer { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-noir" aria-hidden="true"></div>
+<div class="cursor-noir-label" aria-hidden="true">View →</div>
+<button class="back-top" aria-label="Back to top">↑</button>
+
+<nav>
+  <a href="../../index.html" class="logo">World London Media<sup>®</sup></a>
+  <ul class="nav-links">
+    <li><a href="#index" data-i18n="nav_index">Index</a></li>
+    <li><a href="#work" data-i18n="nav_work">Work</a></li>
+    <li><a href="#about" data-i18n="nav_studio">Studio</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta" data-i18n="nav_cta">Start a project</a>
+  <div class="lang-toggle">
+    <button data-l="en" onclick="setLang('en')">EN</button>
+    <button data-l="tr" onclick="setLang('tr')">TR</button>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <div class="hero-meta">
+    <span data-i18n="hero_issue">Issue Nº 04</span>
+    <span data-i18n="hero_season">Spring / Summer 2026</span>
+    <span>London, EC1V</span>
+  </div>
+  <div class="hero-issue">
+    <span data-i18n="hero_studio_label">Visual production studio</span>
+    <span data-i18n="hero_disciplines">Photography · Film · Direction</span>
+  </div>
+
+  <div class="hero-left">
+    <h1 data-i18n="hero_h1">
+      <span class="hero-line">The art</span>
+      <span class="hero-line">of <em>seeing</em></span>
+      <span class="hero-line">things twice.</span>
+    </h1>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-image">
+      <div class="hero-image-caption">
+        <span class="num">№ 47</span>
+        <span data-i18n="hero_caption">Editorial · Vogue Italia · 2025</span>
+      </div>
+    </div>
+    <div class="hero-blurb">
+      <span class="hero-blurb-label" data-i18n="hero_note_label">— A studio note</span>
+      <span data-i18n="hero_blurb">We are a London-based media studio crafting still and moving images for restaurants, hotels, and the brands that defy the algorithm. Quiet craft. Loud results.</span>
+    </div>
+  </div>
+
+  <div class="scroll-cue" data-i18n="scroll_cue">Scroll · Index follows</div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="dot">Photography</span>
+    <span class="dot">Film &amp; Motion</span>
+    <span class="dot">Creative Direction</span>
+    <span class="dot">Social Editorial</span>
+    <span class="dot">Brand Identity</span>
+    <span class="dot">Photography</span>
+    <span class="dot">Film &amp; Motion</span>
+    <span class="dot">Creative Direction</span>
+    <span class="dot">Social Editorial</span>
+    <span class="dot">Brand Identity</span>
+  </div>
+</div>
+
+<section class="index-section" id="index">
+  <div class="index-head">
+    <div>
+      <div class="index-num">01.</div>
+      <div class="index-label" data-i18n="sec_index_label">Index</div>
+    </div>
+    <h2 class="index-title" data-i18n="sec_index_title">A studio of <em>five disciplines,</em> one obsession with light.</h2>
+  </div>
+
+  <ul class="services-list">
+    <li class="service-row reveal">
+      <span class="service-num">i.</span>
+      <span class="service-name" data-i18n="srv_1_name">Photography <em>·</em> Stills</span>
+      <span class="service-desc" data-i18n="srv_1_desc">From hospitality interiors to plate-up portraiture. We light a room before we shoot it, and we shoot until the room remembers itself.</span>
+      <span class="service-tags" data-i18n="srv_1_tags">Editorial<br/>Product<br/>Hospitality</span>
+    </li>
+    <li class="service-row reveal">
+      <span class="service-num">ii.</span>
+      <span class="service-name" data-i18n="srv_2_name">Film <em>·</em> Motion</span>
+      <span class="service-desc" data-i18n="srv_2_desc">Short films, brand pieces, and the kind of social cuts that don't feel like advertising. Shot on cinema, edited like jazz.</span>
+      <span class="service-tags" data-i18n="srv_2_tags">35mm Look<br/>Documentary<br/>Reels</span>
+    </li>
+    <li class="service-row reveal">
+      <span class="service-num">iii.</span>
+      <span class="service-name" data-i18n="srv_3_name">Creative <em>direction</em></span>
+      <span class="service-desc" data-i18n="srv_3_desc">Concept, casting, locations, and the small cruel decisions that make a campaign feel inevitable. We start with the why.</span>
+      <span class="service-tags" data-i18n="srv_3_tags">Concept<br/>Art Direction<br/>Casting</span>
+    </li>
+    <li class="service-row reveal">
+      <span class="service-num">iv.</span>
+      <span class="service-name" data-i18n="srv_4_name">Social <em>editorial</em></span>
+      <span class="service-desc" data-i18n="srv_4_desc">Monthly creative for brands who think of their feed as a magazine — because it is. Strategy, shooting, posting, the entire rhythm.</span>
+      <span class="service-tags" data-i18n="srv_4_tags">Strategy<br/>Production<br/>Calendar</span>
+    </li>
+    <li class="service-row reveal">
+      <span class="service-num">v.</span>
+      <span class="service-name" data-i18n="srv_5_name">Brand <em>identity</em></span>
+      <span class="service-desc" data-i18n="srv_5_desc">Visual systems built to hold for a decade — typography, palette, photographic codes — and the discipline to keep them honest.</span>
+      <span class="service-tags" data-i18n="srv_5_tags">Identity<br/>Print<br/>Digital</span>
+    </li>
+  </ul>
+</section>
+
+<section class="work" id="work">
+  <div class="index-head">
+    <div>
+      <div class="index-num">02.</div>
+      <div class="index-label" data-i18n="sec_work_label">Selected Work</div>
+    </div>
+    <h2 class="index-title" data-i18n="sec_work_title">A handful of <em>recent obsessions.</em></h2>
+  </div>
+
+  <div class="work-grid">
+    <div class="work-item work-1 reveal">
+      <div class="frame"></div>
+      <div class="work-cap">
+        <h3>Marsala &amp; Smoke</h3>
+        <span class="meta">Restaurant · 35mm · 2025</span>
+      </div>
+    </div>
+    <div class="work-item work-2 reveal">
+      <div class="frame"></div>
+      <div class="work-cap">
+        <h3>Ottolenghi Hackney</h3>
+        <span class="meta">Hospitality · Editorial · 2025</span>
+      </div>
+    </div>
+    <div class="work-item work-3 reveal">
+      <div class="frame"></div>
+      <div class="work-cap">
+        <h3>Folie · No 12</h3>
+        <span class="meta">Product · Stills · 2024</span>
+      </div>
+    </div>
+    <div class="work-item work-4 reveal">
+      <div class="frame"></div>
+      <div class="work-cap">
+        <h3>Atelier Floral, Soho</h3>
+        <span class="meta">Brand · Film · 2024</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy" id="about">
+  <div class="philosophy-grid">
+    <div>
+      <div class="philosophy-label" data-i18n="phil_label">— On craft</div>
+      <p class="philosophy-quote" data-i18n="phil_quote">A photograph is the <em>quietest</em> sound a brand can make. We make it well.</p>
+      <p class="philosophy-attr" data-i18n="phil_attr">Selin Çağlayan, Founder</p>
+    </div>
+    <div class="philosophy-body">
+      <p data-i18n="phil_p1">The studio was founded in 2021 in a small room above a print shop in Clerkenwell, with a single ambition: to bring the patience of editorial photography to the impatience of brand work. We work slowly, mostly. We light carefully. We cast for character before glamour.</p>
+      <p data-i18n="phil_p2">Today we work with restaurants, hotels, fashion houses, and the rare independent brand who still believes images should look like something. We are six people, three cats, and a studio that is, finally, large enough to stand back from the lens.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat reveal">
+      <div class="stat-num">04<em data-i18n="stat_1_unit">yrs</em></div>
+      <div class="stat-label" data-i18n="stat_1_label">Of patient craft</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">128</div>
+      <div class="stat-label" data-i18n="stat_2_label">Editorial features</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">63</div>
+      <div class="stat-label" data-i18n="stat_3_label">Brands · Restaurants · Hotels</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">∞</div>
+      <div class="stat-label" data-i18n="stat_4_label">Cups of tea</div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="process-head">
+    <div>
+      <div class="index-num" style="color: var(--rust-soft);">03.</div>
+      <div class="index-label" data-i18n="sec_method_label">Method</div>
+    </div>
+    <h2 class="index-title" data-i18n="sec_method_title">Four <em>movements,</em> one rhythm.</h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-num" data-i18n="step_1_num">i. Discovery</div>
+      <h3 data-i18n="step_1_title">Listening,<br/>mostly.</h3>
+      <p data-i18n="step_1_body">We meet, we walk through your space, we eat your food, we read your old menus. The brief writes itself once we know the room.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num" data-i18n="step_2_num">ii. Direction</div>
+      <h3 data-i18n="step_2_title">The mood<br/>before the move.</h3>
+      <p data-i18n="step_2_body">We build a visual world — references, palettes, casting, locations — and pin it to the wall before any camera comes out of its bag.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num" data-i18n="step_3_num">iii. Production</div>
+      <h3 data-i18n="step_3_title">Shoot days,<br/>quietly intense.</h3>
+      <p data-i18n="step_3_body">Small crews. Long lights. Real food, real people, real rooms. We move slowly because mistakes get expensive in post.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num" data-i18n="step_4_num">iv. Delivery</div>
+      <h3 data-i18n="step_4_title">The edit<br/>is the work.</h3>
+      <p data-i18n="step_4_body">We grade for paper and screen separately. We deliver everything you need, nothing you don't, and we keep your archive forever.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-label" data-i18n="contact_label">— Begin</div>
+  <h2 data-i18n="contact_title">Tell us your <em>story.</em><br/>We'll bring the light.</h2>
+  <a href="mailto:hello@worldlondonmedia.com" class="contact-mail">hello@worldlondonmedia.com →</a>
+</section>
+
+</main>
+
+<footer>
+  <div>
+    <div class="foot-brand">World <em>London</em><br/>Media<sub>®</sub></div>
+  </div>
+  <div>
+    <h4>Studio</h4>
+    <ul>
+      <li>Unit 4, Old Print Yard</li>
+      <li>Clerkenwell, EC1V 9AT</li>
+      <li>London, United Kingdom</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Index</h4>
+    <ul>
+      <li><a href="#">Photography</a></li>
+      <li><a href="#">Film &amp; motion</a></li>
+      <li><a href="#">Direction</a></li>
+      <li><a href="#">Editorial</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Elsewhere</h4>
+    <ul>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Vimeo</a></li>
+      <li><a href="#">Are.na</a></li>
+      <li><a href="#">Newsletter</a></li>
+    </ul>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 World London Media Ltd · Companies House № 13442198</span>
+    <span>Designed in-house · Set in Fraunces &amp; JetBrains Mono</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 80);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  /* SCROLL PROGRESS + BACK TO TOP */
+  const progress = document.querySelector('.scroll-progress');
+  const backTop = document.querySelector('.back-top');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = (window.scrollY / Math.max(max, 1)) * 100;
+    progress.style.width = pct + '%';
+    backTop.classList.toggle('visible', window.scrollY > 600);
+  }, { passive: true });
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* CURSOR FOLLOW */
+  const cursor = document.querySelector('.cursor-noir');
+  const cursorLabel = document.querySelector('.cursor-noir-label');
+  let cx = innerWidth / 2, cy = innerHeight / 2, tx = cx, ty = cy;
+  document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
+  function tickCursor() {
+    cx += (tx - cx) * 0.18;
+    cy += (ty - cy) * 0.18;
+    cursor.style.left = cx + 'px';
+    cursor.style.top = cy + 'px';
+    cursorLabel.style.left = cx + 'px';
+    cursorLabel.style.top = (cy + 28) + 'px';
+    requestAnimationFrame(tickCursor);
+  }
+  tickCursor();
+  document.querySelectorAll('.work-item, .service-row, .contact-mail, .nav-cta').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.classList.add('expand');
+      if (el.classList.contains('work-item') || el.classList.contains('service-row')) {
+        cursorLabel.classList.add('visible');
+      }
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.classList.remove('expand');
+      cursorLabel.classList.remove('visible');
+    });
+  });
+
+  /* i18n */
+  const i18n_tr = {
+    nav_index: 'İndeks', nav_work: 'İşler', nav_studio: 'Stüdyo', nav_contact: 'İletişim', nav_cta: 'Bir proje başlat',
+    hero_issue: 'Sayı Nº 04', hero_season: 'İlkbahar / Yaz 2026',
+    hero_studio_label: 'Görsel üretim stüdyosu', hero_disciplines: 'Fotoğraf · Film · Yönetim',
+    hero_h1: '<span class="hero-line">Görmenin</span><span class="hero-line">iki kez <em>tekrar</em></span><span class="hero-line">edilen sanatı.</span>',
+    hero_caption: 'Editorial · Vogue Italia · 2025', hero_note_label: '— Stüdyodan bir not',
+    hero_blurb: 'Restoranlar, oteller ve algoritmaya boyun eğmeyen markalar için sabit ve hareketli görüntüler üreten London merkezli bir medya stüdyosuyuz. Sessiz zanaat. Yüksek sonuç.',
+    scroll_cue: 'Aşağı kaydır · İndeks devamda',
+    sec_index_label: 'İndeks', sec_index_title: 'Beş <em>disiplin,</em> ışığa tek takıntılı bir stüdyo.',
+    srv_1_name: 'Fotoğraf <em>·</em> Stills', srv_1_desc: 'Otelcilik içleri, yemek portreleri. Önce odayı aydınlatırız, oda kendini hatırlayana kadar çekeriz.', srv_1_tags: 'Editorial<br/>Ürün<br/>Otelcilik',
+    srv_2_name: 'Film <em>·</em> Hareket', srv_2_desc: 'Kısa filmler, marka filmleri ve reklam gibi kokmayan sosyal kesimler. Sinema gözüyle çekilir, caz gibi kurgulanır.', srv_2_tags: '35mm görünüm<br/>Belgesel<br/>Reels',
+    srv_3_name: 'Kreatif <em>yönetim</em>', srv_3_desc: 'Konsept, casting, lokasyonlar ve bir kampanyayı kaçınılmaz hissettiren küçük zalim kararlar. Hep "neden" sorusuyla başlarız.', srv_3_tags: 'Konsept<br/>Sanat yönetimi<br/>Casting',
+    srv_4_name: 'Sosyal <em>editorial</em>', srv_4_desc: 'Feed\'ini bir dergi gibi gören markalar için aylık görsel üretim — çünkü öyle. Strateji, çekim, paylaşım, tüm ritim.', srv_4_tags: 'Strateji<br/>Üretim<br/>Takvim',
+    srv_5_name: 'Marka <em>kimliği</em>', srv_5_desc: 'On yıl ayakta duracak görsel sistemler — tipografi, palet, fotoğraf kodları — ve onları dürüst tutacak disiplin.', srv_5_tags: 'Kimlik<br/>Baskı<br/>Dijital',
+    sec_work_label: 'Seçili İşler', sec_work_title: 'Birkaç <em>yakın takıntı.</em>',
+    phil_label: '— Zanaat üzerine',
+    phil_quote: 'Bir fotoğraf, bir markanın çıkarabileceği <em>en sessiz</em> sestir. Biz onu iyi yaparız.',
+    phil_attr: 'Selin Çağlayan, Kurucu',
+    phil_p1: 'Stüdyo 2021\'de Clerkenwell\'deki bir matbaanın üstündeki küçük bir odada kuruldu. Tek bir hırsla: editorial fotoğrafın sabrını marka işinin sabırsızlığına taşımak. Yavaş çalışırız çoğu zaman. Dikkatle aydınlatırız. Glamour\'dan önce karaktere casting yaparız.',
+    phil_p2: 'Bugün restoranlar, oteller, moda evleri ve görsellerin hâlâ bir şeylere benzemesi gerektiğine inanan ender bağımsız markalarla çalışıyoruz. Altı kişiyiz, üç kediyiz ve sonunda lensten geri çekilebilecek kadar büyük bir stüdyomuz var.',
+    stat_1_unit: 'yıl', stat_1_label: 'Sabırlı zanaat', stat_2_label: 'Editorial yayın', stat_3_label: 'Marka · Restoran · Otel', stat_4_label: 'Bardak çay',
+    sec_method_label: 'Yöntem', sec_method_title: 'Dört <em>hareket,</em> bir ritim.',
+    step_1_num: 'i. Keşif', step_1_title: 'Çoğunlukla<br/>dinlemek.', step_1_body: 'Tanışırız, mekânınızda yürürüz, yemeğinizi yeriz, eski menülerinizi okuruz. Odayı tanıdıktan sonra brief kendini yazar.',
+    step_2_num: 'ii. Yönetim', step_2_title: 'Hamleden önce<br/>ruh hali.', step_2_body: 'Bir görsel dünya kurarız — referanslar, paletler, casting, lokasyonlar — ve hiçbir kamera çıkmadan önce duvara asarız.',
+    step_3_num: 'iii. Üretim', step_3_title: 'Çekim günleri,<br/>sessiz yoğunluk.', step_3_body: 'Küçük ekipler. Uzun ışıklar. Gerçek yemek, gerçek insanlar, gerçek mekânlar. Yavaş hareket ederiz çünkü hatalar post\'ta pahalıdır.',
+    step_4_num: 'iv. Teslim', step_4_title: 'Kurgu<br/>işin kendisidir.', step_4_body: 'Kâğıt ve ekran için ayrı renk düzenlemesi yaparız. İhtiyacınız olanı teslim ederiz, fazlasını değil; arşivinizi sonsuza kadar saklarız.',
+    contact_label: '— Başlayalım',
+    contact_title: 'Bize hikâyenizi <em>anlatın.</em><br/>Işığı biz getiririz.'
+  };
+
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.original = el.innerHTML; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WLM Press — An Editorial Media Studio for Photography &amp; Film</title>
+
+<meta name="description" content="An editorial London media studio. Photography, film, and direction with the patience of long-form journalism. For restaurants, hotels, and brands worth a column inch." />
+<meta name="theme-color" content="#1a3d6e" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="WLM Press — News Press" />
+<meta property="og:description" content="Pictures filed like long-form, edited like Vogue Italia." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1200&q=80" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"WLM Press","url":"https://worldlondonmedia.com","email":"hello@worldlondonmedia.com","priceRange":"£££","address":{"@type":"PostalAddress","streetAddress":"Unit 4, Old Print Yard","addressLocality":"Clerkenwell","postalCode":"EC1V 9AT","addressCountry":"GB"},"foundingDate":"2021"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:    #f3eddd;
+    --paper-2:  #e8e0c8;
+    --cobalt:   #1a3d6e;
+    --cobalt-2: #0e2548;
+    --saffron:  #d8a830;
+    --saffron-2:#b88820;
+    --rule:     #1a3d6e;
+    --ink:      #0d1a30;
+    --ink-2:    #2a3850;
+    --display:  'Playfair Display', serif;
+    --serif:    'Source Serif 4', serif;
+    --mono:     'DM Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--saffron); color: var(--ink); }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.18 0 0 0 0 0.32 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+  }
+
+  /* SKIP / PROGRESS */
+  .skip-link { position: absolute; top: -100px; left: 12px; background: var(--cobalt); color: var(--paper); padding: 8px 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 12px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--saffron); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 2px; background: var(--saffron); z-index: 10000; transition: width .12s ease-out; pointer-events: none; }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--paper);
+    border-bottom: 4px double var(--cobalt);
+    padding: 8px 0;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    color: var(--cobalt);
+    text-transform: uppercase;
+  }
+
+  /* NAV (newspaper title block) */
+  nav {
+    background: var(--paper);
+    padding: 32px 32px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--cobalt);
+  }
+  .logo {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(48px, 6vw, 88px);
+    color: var(--ink);
+    text-decoration: none;
+    line-height: 0.95;
+    letter-spacing: -0.015em;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .logo em { font-family: var(--display); font-style: italic; font-weight: 500; color: var(--cobalt); }
+  .logo .saffron { color: var(--saffron-2); }
+  .nav-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--cobalt);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-top: 1px solid var(--cobalt);
+    border-bottom: 3px solid var(--cobalt);
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 12px auto 0;
+    max-width: 1500px;
+  }
+  .nav-meta .center { display: flex; gap: 20px; }
+  .nav-meta a {
+    color: var(--cobalt);
+    text-decoration: none;
+    transition: color .25s;
+  }
+  .nav-meta a:hover { color: var(--saffron-2); }
+  .nav-meta .right { display: flex; gap: 12px; align-items: center; }
+  .lang-toggle { display: inline-flex; }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--cobalt);
+    border: 1px solid var(--cobalt);
+    padding: 4px 8px;
+    font-family: var(--mono);
+    font-size: 9px;
+    cursor: pointer;
+    margin-left: -1px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .lang-toggle button.active { background: var(--cobalt); color: var(--paper); }
+
+  /* HERO — newspaper front page */
+  .hero {
+    padding: 60px 32px 40px;
+    max-width: 1500px;
+    margin: 0 auto;
+    border-bottom: 4px double var(--cobalt);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: stretch;
+  }
+  .hero-left { padding-right: 20px; border-right: 1px solid var(--cobalt); }
+  .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--saffron-2);
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--cobalt);
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(60px, 8vw, 130px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .hero h1 em { font-family: var(--display); font-style: italic; font-weight: 500; color: var(--cobalt); }
+  .hero h1 .saffron { color: var(--saffron-2); }
+  .hero-deck {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--cobalt);
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--cobalt);
+  }
+  .hero-byline {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-2);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .hero-byline strong { color: var(--cobalt); }
+  .hero-cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .btn-press {
+    background: var(--cobalt);
+    color: var(--paper);
+    padding: 14px 26px;
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    border: 1px solid var(--cobalt);
+    transition: all .25s;
+  }
+  .btn-press:hover { background: var(--saffron-2); border-color: var(--saffron-2); }
+  .btn-press-out {
+    background: transparent;
+    color: var(--cobalt);
+  }
+  .btn-press-out:hover { background: var(--cobalt); color: var(--paper); }
+
+  /* HERO RIGHT — column with photo + caption */
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-photo {
+    aspect-ratio: 4/5;
+    background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--cobalt);
+    filter: contrast(1.05) saturate(0.9);
+    margin-bottom: 16px;
+  }
+  .hero-photo-cap {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.4;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--cobalt);
+    padding-bottom: 12px;
+  }
+  .hero-photo-cap::before { content: '↳ '; color: var(--saffron-2); }
+  .hero-side-story {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .hero-side-story strong { color: var(--cobalt); }
+  .hero-side-story::first-letter {
+    font-family: var(--display);
+    font-weight: 700;
+    float: left;
+    font-size: 56px;
+    line-height: 0.85;
+    padding: 6px 10px 0 0;
+    color: var(--saffron-2);
+  }
+
+  /* SECTION RULER */
+  .section-ruler {
+    text-align: center;
+    margin: 60px 0 0;
+    padding: 8px 32px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    color: var(--saffron-2);
+    text-transform: uppercase;
+    border-top: 1px solid var(--cobalt);
+    border-bottom: 4px double var(--cobalt);
+  }
+
+  /* SECTION */
+  .section { padding: 80px 32px; max-width: 1500px; margin: 0 auto; }
+  .section-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--saffron-2);
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--cobalt);
+    padding-bottom: 8px;
+  }
+  .section h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(48px, 7vw, 110px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 60px;
+    max-width: 1200px;
+  }
+  .section h2 em { font-family: var(--display); font-style: italic; font-weight: 500; color: var(--cobalt); }
+  .section h2 .saffron { color: var(--saffron-2); }
+
+  /* DEPARTMENTS (services) — newspaper sections */
+  .departments {
+    border-top: 4px double var(--cobalt);
+    border-bottom: 4px double var(--cobalt);
+  }
+  .dept-row {
+    display: grid;
+    grid-template-columns: 80px 1.2fr 2fr 80px;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--cobalt);
+    align-items: baseline;
+    cursor: pointer;
+    transition: padding-left .55s cubic-bezier(.65,0,.35,1), background .35s;
+  }
+  .dept-row:last-child { border-bottom: none; }
+  .dept-row:hover { padding-left: 24px; background: rgba(216, 168, 48, 0.05); }
+  .dept-no {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--saffron-2);
+  }
+  .dept-row h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .dept-row h3 em { font-family: var(--display); font-style: italic; font-weight: 500; color: var(--cobalt); }
+  .dept-row p {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .dept-row .arrow {
+    text-align: right;
+    font-family: var(--display);
+    font-size: 22px;
+    color: var(--cobalt);
+    transition: transform .35s, color .35s;
+  }
+  .dept-row:hover .arrow { transform: translateX(8px); color: var(--saffron-2); }
+
+  /* FEATURED STORIES (work) */
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+    border-top: 1px solid var(--cobalt);
+    padding-top: 40px;
+  }
+  .story { cursor: pointer; text-decoration: none; color: inherit; }
+  .story-frame {
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--cobalt);
+    transition: filter .8s;
+    filter: contrast(1.05) saturate(0.9);
+  }
+  .story:hover .story-frame { filter: contrast(1.05) saturate(1); }
+  .story-cap {
+    margin-top: 16px;
+    border-top: 1px solid var(--cobalt);
+    padding-top: 12px;
+  }
+  .story-cap .kicker {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--saffron-2);
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    border: none;
+    padding: 0;
+    margin-bottom: 6px;
+  }
+  .story-cap h4 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin-bottom: 6px;
+  }
+  .story-cap h4 em { font-family: var(--display); font-style: italic; font-weight: 500; color: var(--cobalt); }
+  .story-cap .byline {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-2);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .s1 { grid-column: 1 / 7; }
+  .s1 .story-frame { aspect-ratio: 4/5; background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80'); }
+  .s2 { grid-column: 8 / 13; padding-top: 60px; }
+  .s2 .story-frame { aspect-ratio: 3/4; background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1100&q=80'); }
+  .s3 { grid-column: 1 / 5; padding-top: 30px; }
+  .s3 .story-frame { aspect-ratio: 1/1; background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1000&q=80'); }
+  .s4 { grid-column: 6 / 13; }
+  .s4 .story-frame { aspect-ratio: 16/10; background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1400&q=80'); }
+
+  /* OPINION (quote) */
+  .opinion {
+    padding: 140px 32px;
+    background: var(--cobalt);
+    color: var(--paper);
+    text-align: center;
+    border-top: 4px double var(--paper);
+    border-bottom: 4px double var(--paper);
+  }
+  .opinion-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--saffron);
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    margin-bottom: 24px;
+  }
+  .opinion-text {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(32px, 5vw, 72px);
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .opinion-text strong { font-style: normal; color: var(--saffron); }
+  .opinion-attr {
+    margin-top: 32px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--saffron);
+  }
+
+  /* PROCESS (editorial timeline) */
+  .timeline {
+    border-top: 4px double var(--cobalt);
+  }
+  .timeline-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 1.5fr 120px;
+    gap: 40px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--cobalt);
+    align-items: baseline;
+  }
+  .timeline-row.head {
+    background: var(--cobalt);
+    color: var(--paper);
+    padding: 14px 24px;
+    margin: 0 -24px 0;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+  }
+  .tl-num {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 48px;
+    color: var(--saffron-2);
+    line-height: 0.85;
+  }
+  .tl-row h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+  }
+  .tl-row h3 em { font-style: italic; font-weight: 500; color: var(--cobalt); }
+  .timeline-row p {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .tl-week {
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--saffron-2);
+  }
+
+  /* CONTACT (LETTER TO THE EDITOR) */
+  .contact {
+    padding: 160px 32px 100px;
+    text-align: center;
+    border-top: 4px double var(--cobalt);
+  }
+  .contact-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: var(--saffron-2);
+    margin-bottom: 24px;
+  }
+  .contact h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(56px, 9vw, 160px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+  .contact h2 em { font-family: var(--display); font-style: italic; font-weight: 500; color: var(--cobalt); }
+  .contact-mail {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(28px, 4vw, 56px);
+    color: var(--cobalt);
+    text-decoration: none;
+    border-bottom: 2px solid var(--saffron-2);
+    padding-bottom: 4px;
+    transition: color .25s;
+  }
+  .contact-mail:hover { color: var(--saffron-2); }
+
+  /* FOOTER */
+  footer {
+    background: var(--cobalt);
+    color: var(--paper);
+    padding: 60px 32px 24px;
+    border-top: 4px double var(--saffron);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .foot-brand {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 0.95;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+  }
+  .foot-brand em { font-style: italic; font-weight: 500; color: var(--saffron); }
+  footer h4 { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.32em; margin-bottom: 12px; color: var(--saffron); font-weight: 500; }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 6px; font-size: 14px; opacity: 0.9; }
+  footer a { color: inherit; text-decoration: none; transition: color .25s; }
+  footer a:hover { color: var(--saffron); }
+  .foot-bot {
+    border-top: 1px solid rgba(243, 237, 221, 0.2);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .hero-left { border-right: none; padding-right: 0; }
+    .stories-grid > * { grid-column: span 12 !important; padding-top: 0 !important; }
+    .dept-row { grid-template-columns: 50px 1fr 30px; gap: 16px; }
+    .dept-row p { display: none; }
+    .timeline-row { grid-template-columns: 1fr; gap: 12px; }
+    .tl-week { display: none; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .nav-meta { flex-direction: column; gap: 8px; }
+    .nav-meta .center { flex-wrap: wrap; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<div class="masthead">
+  VOL. IV · ISSUE Nº 04 · LONDON, MAYIS 2026 · PRICE: £6.50
+</div>
+
+<nav>
+  <a href="../../index.html" class="logo">The <em>WLM</em> <span class="saffron">Press</span></a>
+  <div class="nav-meta">
+    <span data-i18n="nm_l">— Mon. — Sun. · open by appointment —</span>
+    <div class="center">
+      <a href="#departments" data-i18n="nav_departments">Departments</a>
+      <a href="#stories" data-i18n="nav_stories">Front Page</a>
+      <a href="#process" data-i18n="nav_process">Method</a>
+      <a href="#contact" data-i18n="nav_contact">Letters</a>
+    </div>
+    <div class="right">
+      <span data-i18n="nm_r">EST. 2021</span>
+      <div class="lang-toggle">
+        <button data-l="en" onclick="setLang('en')">EN</button>
+        <button data-l="tr" onclick="setLang('tr')">TR</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <p class="kicker" data-i18n="hero_kicker">— THE FRONT PAGE — VOL. IV · ISSUE Nº 04</p>
+      <h1 data-i18n="hero_h1">A studio that<br/><em>reads</em> the room<br/>before it <span class="saffron">shoots</span> it.</h1>
+      <p class="hero-deck" data-i18n="hero_deck">A London media studio in the long-form tradition. Photography, film, and creative direction filed like Vogue Italia, edited like a novel.</p>
+      <p class="hero-byline" data-i18n="hero_byline"><strong>BY S. ÇAĞLAYAN</strong> · STAFF EDITOR · <strong>4 MAY 2026</strong> · CLERKENWELL, LONDON</p>
+      <div class="hero-cta-row">
+        <a href="#stories" class="btn-press" data-i18n="cta_view">Read the issue →</a>
+        <a href="#contact" class="btn-press btn-press-out" data-i18n="cta_brief">Submit a letter</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo"></div>
+      <p class="hero-photo-cap" data-i18n="hero_photo_cap">A six-month residency at Marsala &amp; Smoke, Borough — photographed in the long evenings of last September.</p>
+      <p class="hero-side-story" data-i18n="hero_side"><strong>This is a small media press,</strong> founded in 2021 above a print shop in Clerkenwell. We work with restaurants, hotels, fashion houses, and the rare independent brand who still believes pictures should be read, not scrolled.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="departments">
+  <p class="section-eyebrow" data-i18n="dep_label">DEPARTMENTS · SIX BEATS</p>
+  <h2 data-i18n="dep_title">Six <em>departments,</em><br/>one <span class="saffron">obsession</span> with light.</h2>
+
+  <div class="departments">
+    <div class="dept-row">
+      <span class="dept-no">i.</span>
+      <h3>Photo<em>graphy</em></h3>
+      <p>Editorial stills for hospitality, food, beauty. Lit by hand, shot until the room remembers itself.</p>
+      <span class="arrow">→</span>
+    </div>
+    <div class="dept-row">
+      <span class="dept-no">ii.</span>
+      <h3>Film &amp; <em>motion</em></h3>
+      <p>Brand films, documentary shorts, the rare social cut that doesn't smell like advertisement.</p>
+      <span class="arrow">→</span>
+    </div>
+    <div class="dept-row">
+      <span class="dept-no">iii.</span>
+      <h3>Creative <em>direction</em></h3>
+      <p>Concept, casting, locations, the small cruel decisions that make a campaign feel inevitable.</p>
+      <span class="arrow">→</span>
+    </div>
+    <div class="dept-row">
+      <span class="dept-no">iv.</span>
+      <h3>Social <em>editorial</em></h3>
+      <p>Monthly visual production for brands who treat their feed as a magazine — strategy through publishing.</p>
+      <span class="arrow">→</span>
+    </div>
+    <div class="dept-row">
+      <span class="dept-no">v.</span>
+      <h3>Brand <em>identity</em></h3>
+      <p>Visual systems built to hold for a decade — typography, palette, photographic codes — kept honest.</p>
+      <span class="arrow">→</span>
+    </div>
+    <div class="dept-row">
+      <span class="dept-no">vi.</span>
+      <h3>Studio <em>rental</em></h3>
+      <p>Our 2,000 sq ft daylight studio in Hackney. Half-day, full-day, with crew or without. Coffee included.</p>
+      <span class="arrow">→</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-ruler" data-i18n="ruler_1">— Front page · Selected stories ·</div>
+
+<section class="section" id="stories">
+  <p class="section-eyebrow" data-i18n="story_label">FRONT PAGE · SELECTED STORIES</p>
+  <h2 data-i18n="story_title">Four <em>recent</em><br/>filings.</h2>
+
+  <div class="stories-grid">
+    <a href="#" class="story s1 reveal">
+      <div class="story-frame"></div>
+      <div class="story-cap">
+        <p class="kicker">RESTAURANT · LONG-FORM '25</p>
+        <h4>Marsala &amp; <em>Smoke</em></h4>
+        <p class="byline">By S. ÇAĞLAYAN · 6-MONTH RESIDENCY</p>
+      </div>
+    </a>
+    <a href="#" class="story s2 reveal">
+      <div class="story-frame"></div>
+      <div class="story-cap">
+        <p class="kicker">VOGUE ITALIA · 8-PAGE EDITORIAL '25</p>
+        <h4>Hackney <em>Plates</em></h4>
+        <p class="byline">By S. ÇAĞLAYAN &amp; M. REIS · AUG 2025</p>
+      </div>
+    </a>
+    <a href="#" class="story s3 reveal">
+      <div class="story-frame"></div>
+      <div class="story-cap">
+        <p class="kicker">BEAUTY · 14-MARKET CAMPAIGN '24</p>
+        <h4>Folie Nº <em>12</em></h4>
+        <p class="byline">By WLM STUDIO · NOV 2024</p>
+      </div>
+    </a>
+    <a href="#" class="story s4 reveal">
+      <div class="story-frame"></div>
+      <div class="story-cap">
+        <p class="kicker">BRAND FILM · 16MM · SOHO '24</p>
+        <h4>Atelier <em>Soho</em></h4>
+        <p class="byline">By M. REIS · 3-MIN FILM</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="opinion">
+  <p class="opinion-eyebrow">— OPINION · STAFF EDITOR —</p>
+  <p class="opinion-text" data-i18n="op_text">A photograph that <strong>survives the algorithm</strong> isn't louder than the others. It's <em>quieter</em>, and it knows when to stop.</p>
+  <p class="opinion-attr">— S. ÇAĞLAYAN · FOUNDER &amp; DIRECTOR · MAY 2026</p>
+</section>
+
+<section class="section" id="process">
+  <p class="section-eyebrow" data-i18n="proc_label">METHOD · FROM PITCH TO PRINT</p>
+  <h2 data-i18n="proc_title">Four <em>movements,</em><br/>one rhythm.</h2>
+
+  <div class="timeline">
+    <div class="timeline-row">
+      <span class="tl-num">i.</span>
+      <div class="tl-row"><h3>The first <em>conversation</em></h3></div>
+      <p>30-min, no slides. We meet, walk the space, eat the food, read the menus. The brief writes itself once we know the room.</p>
+      <span class="tl-week">— WK 01</span>
+    </div>
+    <div class="timeline-row">
+      <span class="tl-num">ii.</span>
+      <div class="tl-row"><h3>Direction &amp; <em>preparation</em></h3></div>
+      <p>References, palette, casting, locations, schedule. Pinned to a wall, approved before any camera comes out.</p>
+      <span class="tl-week">— WK 02</span>
+    </div>
+    <div class="timeline-row">
+      <span class="tl-num">iii.</span>
+      <div class="tl-row"><h3>Principal <em>photography</em></h3></div>
+      <p>Small crews. Long lights. Real food, real people, real rooms. We move slowly because mistakes get expensive in post.</p>
+      <span class="tl-week">— WK 03</span>
+    </div>
+    <div class="timeline-row">
+      <span class="tl-num">iv.</span>
+      <div class="tl-row"><h3>Edit &amp; <em>delivery</em></h3></div>
+      <p>Selects in 48 hours. Final masters within 10 working days. Graded for paper and screen, archived indefinitely.</p>
+      <span class="tl-week">— WK 04</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <p class="contact-eyebrow" data-i18n="contact_label">— LETTERS TO THE EDITOR —</p>
+  <h2 data-i18n="contact_h2">Submit a <em>letter.</em></h2>
+  <a href="mailto:hello@worldlondonmedia.com" class="contact-mail">hello@worldlondonmedia.com</a>
+</section>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">The WLM<br/><em>Press</em></div>
+      <p style="margin-top: 12px; font-family: var(--display); font-style: italic; font-size: 14px; max-width: 260px; opacity: 0.9;">An editorial media studio in Clerkenwell. Founded MMXXI. Independent &amp; family-owned.</p>
+    </div>
+    <div>
+      <h4>STUDIO</h4>
+      <ul><li>Unit 4, Old Print Yard</li><li>Clerkenwell, EC1V 9AT</li><li>London, UK</li></ul>
+    </div>
+    <div>
+      <h4>SECTIONS</h4>
+      <ul><li><a href="#departments">Departments</a></li><li><a href="#stories">Front Page</a></li><li><a href="#process">Method</a></li></ul>
+    </div>
+    <div>
+      <h4>SYNDICATION</h4>
+      <ul><li><a href="#">Newsletter</a></li><li><a href="#">Instagram</a></li><li><a href="#">Vimeo</a></li></ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© MMXXVI · WORLD LONDON MEDIA · CO. № 13442198</span>
+    <span>SET IN PLAYFAIR DISPLAY · SOURCE SERIF · DM MONO</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 80); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+  const _progress = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    _progress.style.width = ((window.scrollY / Math.max(max, 1)) * 100) + '%';
+  }, { passive: true });
+
+  const i18n_tr = {
+    nav_departments: 'Bölümler', nav_stories: 'Manşet', nav_process: 'Yöntem', nav_contact: 'Mektuplar',
+    nm_l: '— Pzt. — Paz. · randevuyla açık —', nm_r: 'EST. 2021',
+    hero_kicker: '— MANŞET — CİLT IV · SAYI Nº 04',
+    hero_h1: 'Çekmeden önce<br/>odayı <em>okuyan</em><br/>bir <span class="saffron">stüdyo.</span>',
+    hero_deck: 'Long-form geleneğinde Londra medya stüdyosu. Vogue Italia gibi dosyalanan, bir roman gibi düzenlenen fotoğraf, film ve kreatif yönetim.',
+    hero_byline: '<strong>S. ÇAĞLAYAN TARAFINDAN</strong> · STAFF EDİTÖR · <strong>4 MAYIS 2026</strong> · CLERKENWELL, LONDRA',
+    cta_view: 'Sayıyı oku →', cta_brief: 'Mektup gönder',
+    hero_photo_cap: 'Marsala &amp; Smoke\'ta, Borough\'da altı aylık bir ikamet — geçen Eylül\'ün uzun akşamlarında fotoğraflandı.',
+    hero_side: '<strong>Bu küçük bir medya basını,</strong> 2021\'de Clerkenwell\'deki bir matbaanın üstünde kuruldu. Restoranlar, oteller, moda evleri ve görsellerin scroll edilmek değil okunmak için olduğuna inanan ender markalarla çalışıyoruz.',
+    dep_label: 'BÖLÜMLER · ALTI ATIM',
+    dep_title: 'Altı <em>bölüm,</em><br/>ışığa tek <span class="saffron">takıntı.</span>',
+    ruler_1: '— MANŞET · SEÇİLİ HİKAYELER ·',
+    story_label: 'MANŞET · SEÇİLİ HİKAYELER',
+    story_title: 'Dört <em>yakın</em><br/>dosya.',
+    op_text: 'Algoritmadan <strong>sağ çıkan</strong> bir fotoğraf diğerlerinden daha gürültülü değildir. <em>Daha sessizdir,</em> ve ne zaman duracağını bilir.',
+    proc_label: 'YÖNTEM · PİTCH\'TEN BASKIYA',
+    proc_title: 'Dört <em>hareket,</em><br/>bir ritim.',
+    contact_label: '— EDİTÖRE MEKTUPLAR —',
+    contact_h2: 'Bir <em>mektup</em> gönderin.'
+  };
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.original = el.innerHTML; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+</script>
+
+</body>
+</html>

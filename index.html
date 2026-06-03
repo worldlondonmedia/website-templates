@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WOLO · Demo Templates Index</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #0d0d0d; --paper: #f4f0e8; --acc: #c84d2e; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; line-height: 1.5; min-height: 100vh;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.08; pointer-events: none; z-index: 9999; mix-blend-mode: multiply;
+  }
+
+  .topbar { padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(13,13,13,0.15); font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; gap: 16px; }
+  .brand { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 22px; letter-spacing: -0.01em; text-transform: none; text-decoration: none; color: var(--ink); }
+  .brand sup { font-family: 'JetBrains Mono', monospace; font-style: normal; font-size: 9px; margin-left: 4px; vertical-align: super; }
+  .meta { display: flex; gap: 32px; opacity: 0.7; align-items: center; }
+
+  .lang-toggle, .ver-toggle { display: inline-flex; border: 1px solid var(--ink); border-radius: 100px; overflow: hidden; }
+  .lang-toggle { margin-left: auto; }
+  .ver-toggle { margin-left: 12px; }
+  .lang-toggle button, .ver-toggle button { background: transparent; color: var(--ink); border: none; padding: 6px 14px; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; cursor: pointer; transition: all .25s; }
+  .lang-toggle button.active, .ver-toggle button.active { background: var(--ink); color: var(--paper); }
+  .ver-toggle button.active { background: var(--acc); color: var(--paper); }
+
+  .v2-banner { background: var(--acc); color: var(--paper); padding: 14px 32px; border-bottom: 1px solid rgba(244,240,232,0.15); display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; transition: background .25s; }
+  .v2-banner.v1-mode { background: var(--ink); }
+  .v2-banner em { font-family: 'Fraunces', serif; font-style: italic; font-size: 13px; text-transform: none; letter-spacing: 0; }
+  .v2-banner span:nth-child(2) { opacity: 0.7; }
+
+  .hero { padding: 100px 32px 60px; border-bottom: 1px solid rgba(13,13,13,0.15); }
+  .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--acc); margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--acc); }
+  .hero h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(56px, 8vw, 120px); line-height: 0.95; letter-spacing: -0.03em; max-width: 1300px; margin-bottom: 32px; }
+  .hero h1 em { font-style: italic; color: var(--acc); }
+  .hero-sub { max-width: 760px; font-family: 'Fraunces', serif; font-size: 22px; line-height: 1.5; font-weight: 300; opacity: 0.85; }
+  .hero-sub em { font-style: italic; color: var(--acc); }
+
+  .idx-head { padding: 60px 32px 0; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid rgba(13,13,13,0.15); padding-bottom: 24px; }
+  .idx-head .left, .idx-head .right { font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; opacity: 0.7; }
+
+  .tpl-list { list-style: none; }
+  .tpl-row {
+    display: grid; grid-template-columns: 80px 1.4fr 1fr 320px 100px;
+    gap: 32px; padding: 36px 32px;
+    border-bottom: 1px solid rgba(13,13,13,0.15);
+    align-items: center; text-decoration: none; color: inherit;
+    transition: padding-left .55s cubic-bezier(.65,0,.35,1), background .35s;
+    position: relative; cursor: pointer;
+  }
+  .tpl-row.coming { opacity: 0.4; cursor: not-allowed; }
+  .tpl-row.coming::after { content: 'YAPILACAK'; position: absolute; top: 50%; right: 24px; transform: translateY(-50%); font-size: 9px; letter-spacing: 0.2em; background: var(--ink); color: var(--paper); padding: 4px 8px; }
+  .tpl-row.coming:hover { padding-left: 32px; }
+  .tpl-row.coming:hover::before { transform: scaleY(0); }
+
+  .tpl-row::before {
+    content: ''; position: absolute; top: 0; left: 0; bottom: 0;
+    width: 4px; background: var(--acc);
+    transform: scaleY(0); transform-origin: top;
+    transition: transform .55s cubic-bezier(.65,0,.35,1);
+  }
+  .tpl-row:not(.coming):hover { padding-left: 60px; }
+  .tpl-row:not(.coming):hover::before { transform: scaleY(1); }
+  .tpl-row:not(.coming):hover .tpl-name em { color: var(--acc); }
+  .tpl-row:not(.coming):hover .tpl-arrow { transform: translateX(8px); color: var(--acc); }
+
+  .tpl-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--acc); letter-spacing: 0.05em; }
+  .tpl-name { font-family: 'Fraunces', serif; font-weight: 400; font-size: 48px; line-height: 1; letter-spacing: -0.025em; }
+  .tpl-name em { font-style: italic; font-weight: 300; transition: color .35s; }
+  .tpl-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; line-height: 1.6; opacity: 0.75; }
+  .tpl-tag .label { display: block; font-family: 'Fraunces', serif; font-style: italic; font-size: 16px; color: var(--acc); text-transform: none; letter-spacing: 0; margin-bottom: 4px; }
+  .tpl-desc { font-family: 'Fraunces', serif; font-size: 16px; line-height: 1.45; font-weight: 300; }
+  .tpl-arrow { font-family: 'Fraunces', serif; font-size: 28px; text-align: right; transition: transform .4s, color .35s; }
+
+  .preview-strip { display: flex; gap: 6px; margin-top: 12px; }
+  .preview-strip span { width: 36px; height: 8px; border-radius: 2px; }
+  /* New v1 colors — BOLD PALETTES */
+  .pn1 span:nth-child(1){background:#0f0e0c}.pn1 span:nth-child(2){background:#c08a3d}.pn1 span:nth-child(3){background:#6e3a2c}.pn1 span:nth-child(4){background:#ece4d2}
+  .pn2 span:nth-child(1){background:#1f3a2c}.pn2 span:nth-child(2){background:#d4a13a}.pn2 span:nth-child(3){background:#ddc8a8}.pn2 span:nth-child(4){background:#ede4cd}
+  .pn3 span:nth-child(1){background:#0e0c08}.pn3 span:nth-child(2){background:#ebe2c9}.pn3 span:nth-child(3){background:#d96b3c}.pn3 span:nth-child(4){background:#d4a755}
+  .pn4 span:nth-child(1){background:#08193a}.pn4 span:nth-child(2){background:#d8c280}.pn4 span:nth-child(3){background:#e8a82e}.pn4 span:nth-child(4){background:#f4eddc}
+  /* Old polished v2 colors */
+  .p1 span:nth-child(1){background:#0e0d0b}.p1 span:nth-child(2){background:#efe9de;border:1px solid rgba(13,13,13,0.2)}.p1 span:nth-child(3){background:#c0451e}
+  .p2 span:nth-child(1){background:#D6F500}.p2 span:nth-child(2){background:#FF2C8B}.p2 span:nth-child(3){background:#6E3FF3}.p2 span:nth-child(4){background:#0A0A0A}
+  .p3 span:nth-child(1){background:#EFECE3;border:1px solid rgba(13,13,13,0.2)}.p3 span:nth-child(2){background:#0B0B0A}.p3 span:nth-child(3){background:#ED4F1C}.p3 span:nth-child(4){background:#F5FF00}
+  .p4 span:nth-child(1){background:#F2EBDD;border:1px solid rgba(13,13,13,0.2)}.p4 span:nth-child(2){background:#B85447}.p4 span:nth-child(3){background:#6B7B5C}.p4 span:nth-child(4){background:#2A2118}
+  .p5 span:nth-child(1){background:#08070a}.p5 span:nth-child(2){background:#ede5d3}.p5 span:nth-child(3){background:#d8252b}.p5 span:nth-child(4){background:#d4b167}
+  .p6 span:nth-child(1){background:#f3ead2}.p6 span:nth-child(2){background:#2c52bd}.p6 span:nth-child(3){background:#ff3d8b}.p6 span:nth-child(4){background:#1c1c1c}
+  .p7 span:nth-child(1){background:#0c2e23}.p7 span:nth-child(2){background:#f5f0e3;border:1px solid rgba(13,13,13,0.2)}.p7 span:nth-child(3){background:#b8915a}.p7 span:nth-child(4){background:#0a0a0a}
+  .p8 span:nth-child(1){background:#efe7d3}.p8 span:nth-child(2){background:#c83a32}.p8 span:nth-child(3){background:#2e3754}.p8 span:nth-child(4){background:#f1d77c}
+  .p9 span:nth-child(1){background:#1f3326}.p9 span:nth-child(2){background:#c89c97}.p9 span:nth-child(3){background:#b89048}.p9 span:nth-child(4){background:#f4ecda;border:1px solid rgba(13,13,13,0.2)}
+  .p10 span:nth-child(1){background:#0a0e14}.p10 span:nth-child(2){background:#ffb454}.p10 span:nth-child(3){background:#aad94c}.p10 span:nth-child(4){background:#59c2ff}
+  .p11 span:nth-child(1){background:#f5f1ea;border:1px solid rgba(13,13,13,0.2)}.p11 span:nth-child(2){background:#0a0a0a}.p11 span:nth-child(3){background:#ff2200}
+  .p12 span:nth-child(1){background:#f0e9d8}.p12 span:nth-child(2){background:#d4322f}.p12 span:nth-child(3){background:#1d4e8a}.p12 span:nth-child(4){background:#f4d03e}.p12 span:nth-child(5){background:#0c0c0c}
+
+  .notes { padding: 80px 32px; background: var(--ink); color: var(--paper); margin-top: 80px; }
+  .notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1400px; margin: 0 auto; }
+  .notes h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: 40px; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 24px; }
+  .notes h2 em { font-style: italic; color: var(--acc); }
+  .notes p { font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.55; font-weight: 300; margin-bottom: 16px; opacity: 0.9; }
+  .notes ul { list-style: none; margin-top: 16px; }
+  .notes li { padding: 12px 0; border-top: 1px solid rgba(244, 240, 232, 0.15); font-size: 13px; line-height: 1.5; display: grid; grid-template-columns: 24px 1fr; gap: 12px; }
+  .notes li::before { content: '◌'; color: var(--acc); }
+  .notes-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--acc); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+  .notes-label::before { content: ''; width: 32px; height: 1px; background: var(--acc); }
+
+  footer { padding: 32px; background: var(--ink); color: var(--paper); border-top: 1px solid rgba(244, 240, 232, 0.15); display: flex; justify-content: space-between; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; opacity: 0.7; }
+
+  @media (max-width: 1100px) {
+    .tpl-row { grid-template-columns: 60px 1fr 60px; }
+    .tpl-tag, .tpl-desc { display: none; }
+    .tpl-name { font-size: 32px; }
+    .hero h1 { font-size: 48px; }
+    .topbar .meta { display: none; }
+    .notes-grid { grid-template-columns: 1fr; }
+    .idx-head { flex-direction: column; gap: 8px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="#" class="brand">World London Media<sup>®</sup></a>
+  <div class="meta">
+    <span>Demo Index</span>
+    <span>Mayıs 2026</span>
+    <span id="ver-count">12 templates</span>
+  </div>
+  <div class="lang-toggle">
+    <button data-l="tr" onclick="setLang('tr')">TR</button>
+    <button data-l="en" onclick="setLang('en')">EN</button>
+  </div>
+  <div class="ver-toggle">
+    <button data-v="v1" onclick="setVersion('v1')">v1 yeni</button>
+    <button data-v="v2" onclick="setVersion('v2')">v2 polish</button>
+  </div>
+</header>
+
+<div class="v2-banner" id="verBanner">
+  <span><strong id="verLabel">v1 · 12 bold yön (final)</strong> — <em id="verNote">Tamamı bold-palette + medya stüdyosu brand-fit. 12'sinin de production'ı tamam.</em></span>
+  <span id="verHint">v2'ye geçmek için sağ üst toggle.</span>
+</div>
+
+<section class="hero">
+  <div class="eyebrow">Bir not, ekibe</div>
+  <h1>Yepyeni 12 yön. <em>Önceki 12'den tamamen farklı estetikler.</em></h1>
+  <p class="hero-sub">12'sinin de bold-palette versiyonu hazır, hepsi medya stüdyosuna brand-fit. Hiçbiri "kıyafet satıyor" hissi vermiyor. <em>Editorial Noir, Forest Maison, Sumi Black, Deep Cobalt, Burgundy Cellar, Vapor, Ochre Atelier, News Press, Olive Saffron, Sage Editorial, Black Champagne, Indigo Bronze.</em> Önceki krem versiyonu <code>/templates-cream/</code> içinde duruyor; v2 polished orijinaller v2 toggle'da.</p>
+</section>
+
+<div class="idx-head">
+  <span class="left"><span id="listLabel">— Index · Yeni 12 yön (v1)</span></span>
+  <span class="right">Hover · click to open ↗</span>
+</div>
+
+<!-- V1 — NEW DESIGNS -->
+<ul class="tpl-list" id="list-v1">
+  <a href="templates/01-glass-atelier/index.html" class="tpl-row">
+    <span class="tpl-num">01.</span>
+    <span class="tpl-name">Editorial <em>Noir</em></span>
+    <span class="tpl-tag">
+      <span class="label">— Sinematik koyu editorial</span>
+      Charcoal + ochre + ivory<br/>Funnel Display · Funnel Sans<br/>Glass cards on dark mesh
+      <div class="preview-strip pn1"><span></span><span></span><span></span><span></span></div>
+    </span>
+    <span class="tpl-desc">Sinema gibi aydınlatılmış kareler. Koyu charcoal zemin + ochre ve rust mesh + cream tipografi. Vogue Italia editor hissi. Cinematic ve refined.</span>
+    <span class="tpl-arrow">→</span>
+  </a>
+
+  <a href="templates/02-memphis-pop/index.html" class="tpl-row">
+    <span class="tpl-num">02.</span>
+    <span class="tpl-name">Forest <em>Maison</em></span>
+    <span class="tpl-tag">
+      <span class="label">— Aman otel hospitality</span>
+      Forest green + amber + sand<br/>Fraunces · Outfit<br/>Refined hospitality typography
+      <div class="preview-strip pn2"><span></span><span></span><span></span><span></span></div>
+    </span>
+    <span class="tpl-desc">Aman / Faena hissi. Derin orman yeşili + amber altın + sand. Klasik italic Fraunces tipografi, "maison" estetiği. Otel ve restoran için ideal.</span>
+    <span class="tpl-arrow">→</span>
+  </a>
+
+  <a href="templates/03-wabi-sabi/index.html" class="tpl-row">
+    <span class="tpl-num">03.</span>
+    <span class="tpl-name">Sumi <em>Black 墨</em></span>
+    <span class="tpl-tag">
+      <span class="label">— Japon minimal · ters siyah</span>
+      Sumi black + persimmon + sand<br/>Shippori Mincho · Noto Serif JP<br/>Asimetrik vertical Japonca
+      <div class="preview-strip pn3"><span></span><span></span><span></span><span></span></div>
+    </span>
+    <span class="tpl-desc">Wabi-sabi'nin koyu versiyonu. Pure siyah zemin + persimmon turuncu + sand sarı. Vertical Japonca yazı, asimetrik, çok zen, çok cinematic.</span>
+    <span class="tpl-arrow">→</span>
+  </a>
+
+  <a href="templates/04-blueprint/index.html" class="tpl-row">
+    <span class="tpl-num">04.</span>
+    <span class="tpl-name">Deep <em>Cobalt</em></span>
+    <span class="tpl-tag">
+      <span class="label">— Lüks teknik çizim</span>
+      Deep cobalt + saffron + ivory<br/>Sora · Newsreader · JetBrains Mono<br/>Drawing sheet + saffron accents
+      <div class="preview-strip pn4"><span></span><span></span><span></span><span></span></div>
+    </span>
+    <span class="tpl-desc">Mimari teknik çizimden lüks editör'e. Daha koyu cobalt + saffron sarısı altın aksanlar. Premium teknik estetik, hospitality client'lar için.</span>
+    <span class="tpl-arrow">→</span>
+  </a>
+
+  <a href="templates/05-earth-70s/index.html" class="tpl-row">
+    <span class="tpl-num">05.</span>
+    <span class="tpl-name">Burgundy <em>Cellar</em></span>
+    <span class="tpl-tag">
+      <span class="label">— Wine cellar boutique</span>
+      Burgundy + brass + ivory<br/>Bowlby One SC · Outfit · DM Mono<br/>Tab divider + Pantone fişler
+    </span>
+    <span class="tpl-desc">Wine cellar boutique estetiği. Derin bordo + pirinç altın + ivory. Bowlby chunky display, hospitality refined, restaurant/hotel için ideal.</span>
+    <span class="tpl-arrow">→</span>
+  </a>
+
+  <a href="templates/06-vapor-chrome/index.html" class="tpl-row">
+    <span class="tpl-num">06.</span>
+    <span class="tpl-name">Vapor <em>Chrome</em></span>
+    <span class="tpl-tag">
+      <span class="label">— Y2K metallic / glassmorphic</span>
+      Dark indigo + chrome + aurora<br/>Anybody · DM Sans · Geist Mono<br/>Liquid blob + animated mesh
+    </span>
+    <span class="tpl-desc">Y2K vapor chrome. Koyu indigo zemin, chrome metallic gradient text, aurora-shifting renkler, liquid blob shapes, glass morfizm kartlar, chrome sphere hero orb. Futurist edgy.</span>
+    <span class="tpl-arrow">→</span>
+  </a>
+
+  <a href="templates/07-mid-century/index.html" class="tpl-row">
+    <span class="tpl-num">07.</span>
+    <span class="tpl-name">Ochre <em>Atelier</em></span>
+    <span class="tpl-tag">
+      <span class="label">— Saul Bass mid-century</span>
+      Deep ochre + ink + warm linen<br/>Caprasimo · Albert Sans · DM Mono<br/>Geometric şekil illüstrasyon
+    </span>
+    <span class="tpl-desc">Saul Bass / Bauhaus refined. Deep ochre + ink + warm linen + brick aksent. Geometric şekil illüstrasyonlar, sophisticated, timeless mid-century.</span>
+    <span class="tpl-arrow">→</span>
+  </a>
+
+  <a href="templates/08-punk-zine/index.html" class="tpl-row">
+    <span class="tpl-num">08.</span>
+    <span class="tpl-name">News <em>Press</em></span>
+    <span class="tpl-tag">
+      <span class="label">— Editorial gazete</span>
+      Cobalt + saffron + ivory<br/>Playfair Display · Source Serif · DM Mono<br/>Newspaper masthead + columns
+    </span>
+    <span class="tpl-desc">Long-form editorial dergi/gazete hissi. Cobalt mavi + saffron sarısı + ivory. Playfair masthead, byline'lar, column-driven hero, "letters to the editor". Vogue Italia editor.</span>
+    <span class="tpl-arrow">→</span>
+  </a>
+
+  <a href="templates/09-travel-poster/index.html" class="tpl-row">
+    <span class="tpl-num">09.</span>
+    <span class="tpl-name">Olive <em>Saffron</em></span>
+    <span class="tpl-tag">
+      <span class="label">— Refined Mediterranean</span>
+      Deep olive + saffron + sand<br/>Bowlby One · Domine · DM Mono<br/>SVG sun + palm + horizon
+    </span>
+    <span class="tpl-desc">Vintage travel poster, ama daha refined ve bold. Deep olive yeşil + saffron sarı + sand. Cassandre estetiği, hotel/hospitality için ideal.</span>
+    <span class="tpl-arrow">→</span>
+  </a>
+
+  <a href="templates/10-recipe-mag/index.html" class="tpl-row">
+    <span class="tpl-num">10.</span>
+    <span class="tpl-name">Sage <em>Editorial</em></span>
+    <span class="tpl-tag">
+      <span class="label">— Sakin uzun-duraklama</span>
+      Deep sage + dusty rose + ivory<br/>DM Serif Display · Lora · DM Mono<br/>Long-pause editorial
+    </span>
+    <span class="tpl-desc">Sakin Japon-esque editorial. Deep sage yeşili + dusty rose + ivory. "Long-pause tradition", DM Serif Display didone, çok zen ve premium.</span>
+    <span class="tpl-arrow">→</span>
+  </a>
+
+  <a href="templates/11-streetwear/index.html" class="tpl-row">
+    <span class="tpl-num">11.</span>
+    <span class="tpl-name">Black <em>Champagne</em></span>
+    <span class="tpl-tag">
+      <span class="label">— Couture luxe</span>
+      Pure black + champagne metallic + ivory<br/>Cormorant Garamond · Albert Sans · DM Mono<br/>By appointment only
+    </span>
+    <span class="tpl-desc">Ultra-luxe couture media studio. Pure siyah + champagne metallic gradient text + ivory. "By appointment only" framing, Cormorant Garamond italic. Fashion houses ve premium hotel'ler için.</span>
+    <span class="tpl-arrow">→</span>
+  </a>
+
+  <a href="templates/12-mediterranean/index.html" class="tpl-row">
+    <span class="tpl-num">12.</span>
+    <span class="tpl-name">Indigo <em>Bronze</em></span>
+    <span class="tpl-tag">
+      <span class="label">— Boutique hotel suite</span>
+      Deep indigo + bronze + ivory<br/>Cormorant Infant · Manrope · DM Mono<br/>Mosaic tile + sun badge
+    </span>
+    <span class="tpl-desc">Akdeniz'den boutique hotel suite hissi'ne. Deep indigo + bronze altın + ivory. Mozaik tile süslemeleri ama daha refined ve premium. Premium hospitality için.</span>
+    <span class="tpl-arrow">→</span>
+  </a>
+</ul>
+
+<!-- V2 — POLISHED ORIGINALS -->
+<ul class="tpl-list" id="list-v2" style="display: none;">
+  <a href="templates-v2/01-editorial-noir/index.html" class="tpl-row"><span class="tpl-num">01.</span><span class="tpl-name">Editorial <em>Noir</em></span><span class="tpl-tag"><span class="label">— Sinematik magazin</span>Koyu / Lüks<br/>Fraunces · JetBrains Mono<br/>Asimetrik magazin grid<div class="preview-strip p1"><span></span><span></span><span></span></div></span><span class="tpl-desc">Koyu, sessiz, lüks. Vogue Italia x Wes Anderson hissi.</span><span class="tpl-arrow">→</span></a>
+  <a href="templates-v2/02-kinetic-pop/index.html" class="tpl-row"><span class="tpl-num">02.</span><span class="tpl-name">Kinetic <em>Pop</em></span><span class="tpl-tag"><span class="label">— Eğlenceli, sticker'lı</span>Y2K / Maksimalist<br/>Bagel Fat One · DM Mono<br/>Sticker + custom cursor<div class="preview-strip p2"><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">Kinetik tipografi, sticker'lar, dönen yıldızlar.</span><span class="tpl-arrow">→</span></a>
+  <a href="templates-v2/03-brutalist-press/index.html" class="tpl-row"><span class="tpl-num">03.</span><span class="tpl-name">Brutalist <em>Press</em></span><span class="tpl-tag"><span class="label">— Editorial / Swiss</span>Açık / Bold<br/>Archivo Black · Plex Mono<br/>Gazete masthead<div class="preview-strip p3"><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">Devasa tipografi, gazete masthead'i, ticker bantları.</span><span class="tpl-arrow">→</span></a>
+  <a href="templates-v2/04-soft-atelier/index.html" class="tpl-row"><span class="tpl-num">04.</span><span class="tpl-name">Soft <em>Atelier</em></span><span class="tpl-tag"><span class="label">— Organik sıcak lüks</span>Krem / Toprak<br/>Italiana · Cormorant<br/>Yumuşak hareket<div class="preview-strip p4"><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">Aman x Aesop hissi. Italyan didone tipografi, refined.</span><span class="tpl-arrow">→</span></a>
+  <a href="templates-v2/05-cinema-reel/index.html" class="tpl-row"><span class="tpl-num">05.</span><span class="tpl-name">Cinema <em>Reel</em></span><span class="tpl-tag"><span class="label">— Bağımsız sinema / festival</span>Koyu / film grain<br/>Antonio · Special Elite<br/>Yatay reel + countdown<div class="preview-strip p5"><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">A24 / MUBI hissi. Sinema posteri tipografi.</span><span class="tpl-arrow">→</span></a>
+  <a href="templates-v2/06-riso-zine/index.html" class="tpl-row"><span class="tpl-num">06.</span><span class="tpl-name">Riso <em>Zine</em></span><span class="tpl-tag"><span class="label">— Risograph print zine</span>Krem + mavi + pembe<br/>Big Shoulders · Newsreader<br/>Halftone + masking tape<div class="preview-strip p6"><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">Risograf baskı estetiği. Halftone + multiply blend.</span><span class="tpl-arrow">→</span></a>
+  <a href="templates-v2/07-maison-suite/index.html" class="tpl-row"><span class="tpl-num">07.</span><span class="tpl-name">Maison <em>Suite</em></span><span class="tpl-tag"><span class="label">— 5-yıldızlı otel</span>Koyu yeşil + altın<br/>Bodoni Moda · Forum<br/>Klasik mimari<div class="preview-strip p7"><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">Aman / Faena hissi. Zümrüt + altın, Bodoni didone.</span><span class="tpl-arrow">→</span></a>
+  <a href="templates-v2/08-studio-diary/index.html" class="tpl-row"><span class="tpl-num">08.</span><span class="tpl-name">Studio <em>Diary</em></span><span class="tpl-tag"><span class="label">— El yazısı sketchbook</span>Krem kağıt + el yazısı<br/>Caveat · Crimson · Special Elite<br/>Polaroid + tape<div class="preview-strip p8"><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">Sketchbook günlüğü hissi. Polaroid'ler, masking tape.</span><span class="tpl-arrow">→</span></a>
+  <a href="templates-v2/09-atelier-vert/index.html" class="tpl-row"><span class="tpl-num">09.</span><span class="tpl-name">Atelier <em>Vert</em></span><span class="tpl-tag"><span class="label">— Art Nouveau / Mucha</span>Forest + dusty rose + altın<br/>Yeseva One · Marcellus<br/>SVG vines + ornamental<div class="preview-strip p9"><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">Art Nouveau / Mucha. Ornamental SVG vines, calligraphic.</span><span class="tpl-arrow">→</span></a>
+  <a href="templates-v2/10-terminal/index.html" class="tpl-row"><span class="tpl-num">10.</span><span class="tpl-name"><em>Terminal</em></span><span class="tpl-tag"><span class="label">— IDE / cyberpunk</span>Dark indigo + amber<br/>Major Mono · VT323<br/>Dot grid + scanlines<div class="preview-strip p10"><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">Linear / Stripe Press estetiği. Terminal/IDE tema.</span><span class="tpl-arrow">→</span></a>
+  <a href="templates-v2/11-runway/index.html" class="tpl-row"><span class="tpl-num">11.</span><span class="tpl-name"><em>Runway</em></span><span class="tpl-tag"><span class="label">— Fashion lookbook</span>Bone + ink + red<br/>Bricolage Grotesque · Manrope<br/>Full-bleed B&W foto<div class="preview-strip p11"><span></span><span></span><span></span></div></span><span class="tpl-desc">High-fashion lookbook. Tam ekran B&W foto hero.</span><span class="tpl-arrow">→</span></a>
+  <a href="templates-v2/12-collage/index.html" class="tpl-row"><span class="tpl-num">12.</span><span class="tpl-name"><em>Collage</em></span><span class="tpl-tag"><span class="label">— Dada / cut-and-paste</span>Krem + 5 renk<br/>Anton · Yeseva · Marker · Pixel<br/>Çatışan tipografi<div class="preview-strip p12"><span></span><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">Dada / cut-and-paste. 5 farklı font karışık.</span><span class="tpl-arrow">→</span></a>
+</ul>
+
+<section class="notes">
+  <div class="notes-grid">
+    <div>
+      <div class="notes-label">— Şu an</div>
+      <h2>12 yön <em>final.</em> Hepsi bold + medya brand-fit.</h2>
+      <p><strong>v1 (bu klasör):</strong> Editorial Noir, Forest Maison, Sumi Black, Deep Cobalt, Burgundy Cellar, Vapor, Ochre Atelier, News Press, Olive Saffron, Sage Editorial, Black Champagne, Indigo Bronze. Hiçbiri krem-tabanlı değil; hepsi distinct bold palette ile.</p>
+      <p><strong>Brand-fit:</strong> "Kıyafet satıyor" hissi veren 4 template (Memphis Pop, Punk Zine, Recipe Mag, Streetwear) tamamen rebuild edildi — şimdi sırasıyla Forest Maison (Aman otel), News Press (Vogue Italia editör), Sage Editorial (sakin), Black Champagne (couture). Premium hospitality + editorial photography client'larına uygun.</p>
+    </div>
+    <div>
+      <div class="notes-label">— Şu an dahil olanlar</div>
+      <ul>
+        <li>v1 (yeni 12 yön): 12'si de hazır, bold-palette + medya brand-fit</li>
+        <li>v2 (önceki polished): 12 yön tamamen hazır, SEO + accessibility paketiyle</li>
+        <li>Sağ üst toggle ile v1 ↔ v2 anlık geçiş, localStorage'da saklanıyor</li>
+        <li>TR/EN dil toggle her template ve index'te</li>
+        <li>Tüm v1 yeni yönler: full SEO + accessibility + scroll progress + reduced-motion baked in</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>WOLO Demo Templates · v3.0 · 2026</span>
+  <span>v1 yeni · v2 polished · 24 template toplam</span>
+</footer>
+
+<script>
+  const i18n = {
+    en: {
+      verBanner_v1_label: 'v1 · 12 bold directions (final)',
+      verBanner_v1_note: 'All 12 with bold palettes and media-studio brand fit. Production complete.',
+      verBanner_v1_hint: 'Switch to v2 from the toggle on top right.',
+      verBanner_v2_label: 'v2 · Polished originals',
+      verBanner_v2_note: 'Full SEO + accessibility + scroll progress + back-to-top + per-template polish on the original 12 directions.',
+      verBanner_v2_hint: 'Switch back to v1 to see the new designs.',
+      list_label_v1: '— Index · 12 fresh directions (v1)',
+      list_label_v2: '— Index · 12 polished originals (v2)'
+    },
+    tr: {
+      verBanner_v1_label: 'v1 · Yeni 12 yön',
+      verBanner_v1_note: 'Tamamen yeni estetik yönler. İlk 4\'ü tamam, T5-T12 yapılıyor.',
+      verBanner_v1_hint: 'v2\'ye geçmek için sağ üst toggle.',
+      verBanner_v2_label: 'v2 · Polished originals',
+      verBanner_v2_note: 'Önceki 12 yönde tam SEO + accessibility + scroll progress + back-to-top paketi.',
+      verBanner_v2_hint: 'v1\'e dönmek için sağ üstten değiştir.'
+    }
+  };
+
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+    updateBanner();
+  }
+
+  const verLabel = document.getElementById('verLabel');
+  const verNote = document.getElementById('verNote');
+  const verHint = document.getElementById('verHint');
+  const listLabel = document.getElementById('listLabel');
+  const verBanner = document.getElementById('verBanner');
+  const verCount = document.getElementById('ver-count');
+
+  function updateBanner() {
+    const lang = localStorage.getItem('wolo-lang') || 'tr';
+    const ver = localStorage.getItem('wolo-version') || 'v1';
+    const t = i18n[lang === 'en' ? 'en' : 'tr'];
+    verLabel.textContent = t['verBanner_' + ver + '_label'];
+    verNote.textContent = t['verBanner_' + ver + '_note'];
+    verHint.textContent = t['verBanner_' + ver + '_hint'];
+    if (lang === 'en') {
+      listLabel.textContent = ver === 'v1' ? i18n.en.list_label_v1 : i18n.en.list_label_v2;
+    } else {
+      listLabel.textContent = ver === 'v1' ? '— Index · Yeni 12 yön (v1)' : '— Index · 12 polished orijinal (v2)';
+    }
+    verCount.textContent = ver === 'v1' ? (lang === 'en' ? '12 fresh + 12 polished' : '12 yeni + 12 polished') : '12 polished originals';
+  }
+
+  function setVersion(v) {
+    document.getElementById('list-v1').style.display = v === 'v1' ? '' : 'none';
+    document.getElementById('list-v2').style.display = v === 'v2' ? '' : 'none';
+    document.querySelectorAll('.ver-toggle button').forEach(b => b.classList.toggle('active', b.dataset.v === v));
+    verBanner.classList.toggle('v1-mode', v === 'v1');
+    localStorage.setItem('wolo-version', v);
+    updateBanner();
+  }
+
+  setLang(localStorage.getItem('wolo-lang') || 'tr');
+  setVersion(localStorage.getItem('wolo-version') || 'v1');
+
+  // prevent click on coming-soon rows
+  document.querySelectorAll('.tpl-row.coming').forEach(r => r.addEventListener('click', e => e.preventDefault()));
+</script>
+
+</body>
+</html>

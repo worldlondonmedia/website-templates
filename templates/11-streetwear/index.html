@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WLM Atelier — A Couture Media Studio for Photography &amp; Film</title>
+
+<meta name="description" content="A couture-level London media studio. Photography, film, and direction for hotels, fashion houses, and the brands that move slowly. Pure black, champagne light." />
+<meta name="theme-color" content="#0a0a0a" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="WLM Atelier — Black Champagne" />
+<meta property="og:description" content="Pictures lit like couture, edited like opera." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1200&q=80" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"WLM Atelier","url":"https://worldlondonmedia.com","email":"hello@worldlondonmedia.com","priceRange":"££££","address":{"@type":"PostalAddress","streetAddress":"Unit 4, Old Print Yard","addressLocality":"Clerkenwell","postalCode":"EC1V 9AT","addressCountry":"GB"},"foundingDate":"2021"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Albert+Sans:wght@200;300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --black:    #0a0a0a;
+    --black-2:  #15130f;
+    --black-3:  #211e18;
+    --champagne:#c9a875;
+    --champagne-2:#a08652;
+    --champagne-3:#e0c895;
+    --ivory:    #ede4d2;
+    --ivory-2:  #c9bea3;
+    --display:  'Cormorant Garamond', serif;
+    --body:     'Albert Sans', sans-serif;
+    --mono:     'DM Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--ivory);
+    font-family: var(--body);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--champagne); color: var(--black); }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='1'/%3E%3CfeColorMatrix values='0 0 0 0 0.79 0 0 0 0 0.66 0 0 0 0 0.46 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: screen;
+  }
+
+  /* SKIP / PROGRESS */
+  .skip-link { position: absolute; top: -100px; left: 12px; background: var(--champagne); color: var(--black); padding: 8px 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.32em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 12px; }
+  a:focus-visible, button:focus-visible { outline: 1px solid var(--champagne); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 1px; background: var(--champagne); z-index: 10000; transition: width .12s ease-out; pointer-events: none; }
+
+  /* CHAMPAGNE GRADIENT TEXT */
+  .champagne-text {
+    background: linear-gradient(180deg, var(--champagne-3) 0%, var(--champagne) 50%, var(--champagne-2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* TOP BAND */
+  .topband {
+    background: var(--black-2);
+    color: var(--champagne);
+    padding: 8px 0;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(201, 168, 117, 0.2);
+  }
+
+  /* NAV */
+  nav {
+    background: rgba(10, 10, 10, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 32px 48px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    border-bottom: 1px solid rgba(201, 168, 117, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-left, .nav-right { display: flex; gap: 36px; align-items: center; }
+  .nav-right { justify-content: flex-end; }
+  nav a {
+    color: var(--ivory);
+    text-decoration: none;
+    font-family: var(--body);
+    font-weight: 300;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    transition: color .35s;
+  }
+  nav a:hover { color: var(--champagne); }
+  .logo {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 32px;
+    color: var(--ivory);
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+  .logo em { font-style: italic; color: var(--champagne); }
+  .logo small {
+    display: block;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.5em;
+    color: var(--champagne);
+    margin-top: 8px;
+  }
+  .nav-cta {
+    border: 1px solid var(--champagne);
+    color: var(--champagne) !important;
+    padding: 10px 22px;
+    font-size: 11px !important;
+    transition: all .35s;
+  }
+  .nav-cta:hover { background: var(--champagne); color: var(--black) !important; }
+  .lang-toggle { display: inline-flex; gap: 0; }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--ivory);
+    border: 1px solid var(--ivory);
+    padding: 6px 11px;
+    font-family: var(--mono);
+    font-size: 10px;
+    cursor: pointer;
+    margin-left: -1px;
+  }
+  .lang-toggle button.active { background: var(--ivory); color: var(--black); }
+
+  /* HERO */
+  .hero {
+    min-height: 90vh;
+    padding: 100px 48px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--champagne);
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: '';
+    width: 60px; height: 1px;
+    background: var(--champagne);
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(64px, 11vw, 200px);
+    line-height: 0.95;
+    letter-spacing: -0.005em;
+    color: var(--ivory);
+    max-width: 1400px;
+    margin-bottom: 36px;
+  }
+  .hero h1 em { font-family: var(--display); font-style: italic; font-weight: 300; }
+  .hero-rule {
+    width: 1px; height: 60px;
+    background: var(--champagne);
+    margin: 32px auto;
+  }
+  .hero-blurb {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--ivory-2);
+    max-width: 680px;
+    margin-bottom: 40px;
+  }
+  .hero-cta-row { display: flex; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap; }
+  .btn-couture {
+    background: var(--champagne);
+    color: var(--black);
+    padding: 16px 32px;
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    border: 1px solid var(--champagne);
+    transition: all .35s;
+  }
+  .btn-couture:hover { background: transparent; color: var(--champagne); }
+  .btn-couture-out {
+    background: transparent;
+    color: var(--ivory);
+    border-color: var(--ivory);
+  }
+  .btn-couture-out:hover { background: var(--ivory); color: var(--black); }
+
+  /* HERO META */
+  .hero-meta {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    width: 100%;
+    max-width: 1100px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(201, 168, 117, 0.3);
+  }
+  .hero-meta-item .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: var(--champagne);
+    margin-bottom: 8px;
+  }
+  .hero-meta-item .value {
+    font-family: var(--display);
+    font-size: 24px;
+    color: var(--ivory);
+  }
+  .hero-meta-item .value em { font-style: italic; color: var(--champagne); }
+
+  /* INTRO IMAGE */
+  .intro-image-wrap {
+    padding: 0 48px 100px;
+    text-align: center;
+  }
+  .intro-image {
+    aspect-ratio: 21/9;
+    background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    border: 1px solid rgba(201, 168, 117, 0.4);
+    filter: contrast(1.1) saturate(0.7) brightness(0.9);
+    position: relative;
+  }
+  .intro-image::after {
+    content: '— FIG. 01 / VOGUE ITALIA · SS \'26 —';
+    position: absolute;
+    bottom: -36px;
+    left: 0; right: 0;
+    text-align: center;
+    font-family: var(--mono);
+    color: var(--champagne);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+  }
+
+  /* SECTION */
+  .section { padding: 140px 48px; max-width: 1500px; margin: 0 auto; }
+  .section-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--champagne);
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .section-eyebrow::before, .section-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--champagne);
+  }
+  .section h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(56px, 8vw, 132px);
+    line-height: 1;
+    letter-spacing: -0.005em;
+    color: var(--ivory);
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .section h2 em { font-family: var(--display); font-style: italic; font-weight: 300; }
+
+  /* COUTURE LIST (services) */
+  .couture-grid {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+  }
+  .couture-item {
+    border-top: 1px solid var(--champagne);
+    padding-top: 32px;
+    cursor: pointer;
+    transition: padding-left .55s cubic-bezier(.65,0,.35,1);
+  }
+  .couture-item:hover { padding-left: 24px; }
+  .c-no {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--champagne);
+    margin-bottom: 16px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+  }
+  .couture-item h3 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: -0.005em;
+    margin-bottom: 16px;
+    transition: color .35s;
+    color: var(--ivory);
+  }
+  .couture-item h3 em { font-family: var(--display); font-style: italic; color: var(--champagne); }
+  .couture-item:hover h3 { color: var(--champagne); }
+  .couture-item p {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ivory-2);
+    margin-bottom: 20px;
+  }
+  .couture-tags {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: var(--champagne);
+  }
+
+  /* COMMISSIONS (work) */
+  .commissions {
+    padding: 140px 48px;
+    background: var(--black-2);
+    border-top: 1px solid rgba(201, 168, 117, 0.2);
+    border-bottom: 1px solid rgba(201, 168, 117, 0.2);
+  }
+  .com-grid {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+  }
+  .com { cursor: pointer; text-decoration: none; color: inherit; }
+  .com .frame {
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(201, 168, 117, 0.3);
+    filter: contrast(1.1) saturate(0.7) brightness(0.92);
+    transition: transform 1s cubic-bezier(.65,0,.35,1), filter .8s;
+  }
+  .com:hover .frame { transform: scale(0.98); filter: contrast(1.1) saturate(1) brightness(1); }
+  .com-cap {
+    margin-top: 24px;
+    border-top: 1px solid rgba(201, 168, 117, 0.3);
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .com-cap h4 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 28px;
+    color: var(--ivory);
+    letter-spacing: -0.005em;
+  }
+  .com-cap h4 em { font-style: italic; color: var(--champagne); }
+  .com-cap .meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: var(--champagne);
+  }
+  .com-1 { grid-column: 1 / 7; }
+  .com-1 .frame { aspect-ratio: 4/5; background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80'); }
+  .com-2 { grid-column: 8 / 13; padding-top: 100px; }
+  .com-2 .frame { aspect-ratio: 3/4; background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1100&q=80'); }
+  .com-3 { grid-column: 1 / 5; padding-top: 60px; }
+  .com-3 .frame { aspect-ratio: 1/1; background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1000&q=80'); }
+  .com-4 { grid-column: 6 / 13; }
+  .com-4 .frame { aspect-ratio: 16/10; background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1400&q=80'); }
+
+  /* QUOTE */
+  .quote {
+    padding: 200px 48px;
+    text-align: center;
+  }
+  .quote-text {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(40px, 5.5vw, 88px);
+    line-height: 1.15;
+    letter-spacing: -0.005em;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--ivory);
+  }
+  .quote-text em { color: var(--champagne); }
+  .quote-attr {
+    margin-top: 36px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--champagne);
+  }
+
+  /* PROCESS */
+  .process {
+    padding: 140px 48px;
+    background: var(--black-2);
+    border-top: 1px solid rgba(201, 168, 117, 0.2);
+  }
+  .process-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .step-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 1.5fr;
+    gap: 60px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(201, 168, 117, 0.3);
+    align-items: baseline;
+    transition: padding-left .55s cubic-bezier(.65,0,.35,1);
+    cursor: pointer;
+  }
+  .step-row:last-child { border-bottom: 1px solid rgba(201, 168, 117, 0.3); }
+  .step-row:hover { padding-left: 24px; }
+  .step-num {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 56px;
+    color: var(--champagne);
+    line-height: 1;
+  }
+  .step-row h3 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 1.05;
+    color: var(--ivory);
+    transition: color .35s;
+    letter-spacing: -0.005em;
+  }
+  .step-row:hover h3 { color: var(--champagne); }
+  .step-row h3 em { font-style: italic; color: var(--champagne); }
+  .step-row p {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ivory-2);
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 200px 48px 100px;
+    text-align: center;
+  }
+  .contact h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(64px, 10vw, 180px);
+    line-height: 1;
+    letter-spacing: -0.005em;
+    color: var(--ivory);
+    margin-bottom: 60px;
+  }
+  .contact h2 em { font-style: italic; color: var(--champagne); }
+  .contact-mail {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(28px, 4vw, 56px);
+    color: var(--ivory);
+    text-decoration: none;
+    border-bottom: 1px solid var(--champagne);
+    padding-bottom: 4px;
+    transition: color .35s;
+  }
+  .contact-mail:hover { color: var(--champagne); }
+
+  /* FOOTER */
+  footer {
+    padding: 60px 48px 24px;
+    background: var(--black-2);
+    border-top: 1px solid rgba(201, 168, 117, 0.3);
+    text-align: center;
+  }
+  .foot-mono {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(80px, 13vw, 220px);
+    line-height: 0.95;
+    color: var(--ivory);
+    margin-bottom: 32px;
+    letter-spacing: -0.005em;
+  }
+  .foot-mono em { font-style: italic; color: var(--champagne); }
+  .foot-bot {
+    border-top: 1px solid rgba(201, 168, 117, 0.2);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--champagne);
+  }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+  @media (max-width: 900px) {
+    .topband, nav { padding-left: 20px; padding-right: 20px; }
+    .nav-left, .nav-right { display: none; }
+    .hero, .intro-image-wrap, .section, .commissions, .quote, .process, .contact, footer { padding-left: 20px; padding-right: 20px; }
+    .couture-grid { grid-template-columns: 1fr; gap: 32px; }
+    .com-grid > * { grid-column: 1 / -1 !important; padding-top: 0 !important; }
+    .step-row { grid-template-columns: 1fr; gap: 16px; padding: 24px 0; }
+    .hero-meta { grid-template-columns: 1fr; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<div class="topband">
+  WLM ATELIER · COUTURE MEDIA STUDIO · MMXXVI
+</div>
+
+<nav>
+  <div class="nav-left">
+    <a href="#collection" data-i18n="nav_collection">Couture</a>
+    <a href="#commissions" data-i18n="nav_commissions">Commissions</a>
+    <a href="#process" data-i18n="nav_process">Method</a>
+  </div>
+  <a href="../../index.html" class="logo">
+    WLM <em>Atelier</em>
+    <small data-i18n="logo_sub">— BY APPOINTMENT · LONDON · MMXXVI —</small>
+  </a>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Reservations</a>
+    <div class="lang-toggle">
+      <button data-l="en" onclick="setLang('en')">EN</button>
+      <button data-l="tr" onclick="setLang('tr')">TR</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <div class="hero-eyebrow">A Couture Media Studio</div>
+  <h1 data-i18n="hero_h1">Pictures lit<br/>like <em>couture,</em><br/>edited like <span class="champagne-text">opera.</span></h1>
+  <div class="hero-rule"></div>
+  <p class="hero-blurb" data-i18n="hero_blurb">A London couture media studio for fashion houses, hotels, and the brands that move slowly. Photography, film and creative direction, by appointment only.</p>
+  <div class="hero-cta-row">
+    <a href="#commissions" class="btn-couture" data-i18n="cta_view">View commissions →</a>
+    <a href="#contact" class="btn-couture btn-couture-out" data-i18n="cta_brief">Reservations</a>
+  </div>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="label">— Established</div>
+      <div class="value">London, <em>2021</em></div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="label">— Disciplines</div>
+      <div class="value">Photography · Film · <em>Direction</em></div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="label">— Booking</div>
+      <div class="value">Q3 / Q4 <em>2026</em></div>
+    </div>
+  </div>
+</section>
+
+<div class="intro-image-wrap">
+  <div class="intro-image"></div>
+</div>
+
+<section class="section" id="collection">
+  <div class="section-eyebrow">— THE COUTURE COLLECTION —</div>
+  <h2 data-i18n="sec_col_title">Six <em>disciplines,</em><br/>one obsession with light.</h2>
+
+  <div class="couture-grid">
+    <div class="couture-item reveal">
+      <div class="c-no">— Nº I —</div>
+      <h3>Photo<em>graphy</em></h3>
+      <p>Editorial stills for fashion houses, hospitality, beauty. Lit by hand, shot until the room remembers itself.</p>
+      <div class="couture-tags">EDITORIAL · STILLS · COUTURE</div>
+    </div>
+    <div class="couture-item reveal">
+      <div class="c-no">— Nº II —</div>
+      <h3>Film &amp; <em>motion</em></h3>
+      <p>Brand films, documentary shorts, runway films, and the rare social cut that doesn't smell like an advertisement.</p>
+      <div class="couture-tags">35MM · DOCUMENTARY · RUNWAY</div>
+    </div>
+    <div class="couture-item reveal">
+      <div class="c-no">— Nº III —</div>
+      <h3>Creative <em>direction</em></h3>
+      <p>Concept, casting, locations, and the small cruel decisions that make a campaign feel inevitable.</p>
+      <div class="couture-tags">CONCEPT · CASTING · ART DIR</div>
+    </div>
+    <div class="couture-item reveal">
+      <div class="c-no">— Nº IV —</div>
+      <h3>Editorial <em>·</em> social</h3>
+      <p>Monthly visual production for fashion houses and hotels who treat their feed as a private magazine.</p>
+      <div class="couture-tags">STRATEGY · MONTHLY · CALENDAR</div>
+    </div>
+    <div class="couture-item reveal">
+      <div class="c-no">— Nº V —</div>
+      <h3>Identity &amp; <em>print</em></h3>
+      <p>Visual systems built to hold for a decade — typography, palette, photographic codes — kept honest.</p>
+      <div class="couture-tags">IDENTITY · PRINT · DIGITAL</div>
+    </div>
+    <div class="couture-item reveal">
+      <div class="c-no">— Nº VI —</div>
+      <h3>Bespoke <em>commissions</em></h3>
+      <p>For private clients, residences, and one-off projects — discreet, considered, and held closely.</p>
+      <div class="couture-tags">PRIVATE · BY APPOINTMENT</div>
+    </div>
+  </div>
+</section>
+
+<section class="commissions" id="commissions">
+  <div class="section-eyebrow">— RECENT COMMISSIONS —</div>
+  <h2 data-i18n="sec_com_title">A small but <em>considered</em><br/>archive.</h2>
+
+  <div class="com-grid">
+    <a href="#" class="com com-1 reveal"><div class="frame"></div><div class="com-cap"><h4>Marsala &amp; <em>Smoke</em></h4><span class="meta">RESTAURANT '25</span></div></a>
+    <a href="#" class="com com-2 reveal"><div class="frame"></div><div class="com-cap"><h4>Hackney <em>Plates</em></h4><span class="meta">VOGUE ITALIA '25</span></div></a>
+    <a href="#" class="com com-3 reveal"><div class="frame"></div><div class="com-cap"><h4>Folie Nº <em>12</em></h4><span class="meta">BEAUTY '24</span></div></a>
+    <a href="#" class="com com-4 reveal"><div class="frame"></div><div class="com-cap"><h4>Atelier <em>Soho</em></h4><span class="meta">BRAND FILM '24</span></div></a>
+  </div>
+</section>
+
+<section class="quote">
+  <p class="quote-text" data-i18n="q_text">A couture photograph<br/>is not made of <em>fabric</em><br/>but of <em>light, time,</em> and <em>intention.</em></p>
+  <p class="quote-attr">— S. ÇAĞLAYAN · FOUNDER &amp; DIRECTOR</p>
+</section>
+
+<section class="process" id="process">
+  <div class="section-eyebrow">— METHOD · FOUR MOVEMENTS —</div>
+  <h2 data-i18n="sec_proc_title">Four <em>movements,</em><br/>one rhythm.</h2>
+
+  <div class="process-grid">
+    <div class="step-row">
+      <span class="step-num">i.</span>
+      <h3>The first <em>conversation</em></h3>
+      <p>A meeting, a walk through your atelier, a meal. The brief writes itself once we know the room and the people.</p>
+    </div>
+    <div class="step-row">
+      <span class="step-num">ii.</span>
+      <h3>Direction &amp; <em>preparation</em></h3>
+      <p>References, palette, casting, locations. Pinned to a wall, approved before any camera comes out of its case.</p>
+    </div>
+    <div class="step-row">
+      <span class="step-num">iii.</span>
+      <h3>Principal <em>photography</em></h3>
+      <p>Small crews. Long lights. Real fabric, real people, real rooms. We move slowly because mistakes get expensive in post.</p>
+    </div>
+    <div class="step-row">
+      <span class="step-num">iv.</span>
+      <h3>Edit &amp; <em>delivery</em></h3>
+      <p>Selects in 48 hours. Final masters within 10 working days. Graded for paper and screen, archived indefinitely.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-eyebrow">— RESERVATIONS · BY APPOINTMENT —</div>
+  <h2 data-i18n="contact_h2">By <em>appointment</em><br/>only.</h2>
+  <a href="mailto:hello@worldlondonmedia.com" class="contact-mail">hello@worldlondonmedia.com</a>
+</section>
+</main>
+
+<footer>
+  <div class="foot-mono">WLM <em>Atelier</em></div>
+  <div class="foot-bot">
+    <span>© MMXXVI · WORLD LONDON MEDIA · CO. № 13442198</span>
+    <span>SET IN CORMORANT GARAMOND · ALBERT SANS · DM MONO</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 90); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+  const _progress = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    _progress.style.width = ((window.scrollY / Math.max(max, 1)) * 100) + '%';
+  }, { passive: true });
+
+  const i18n_tr = {
+    nav_collection: 'Couture', nav_commissions: 'Komisyonlar', nav_process: 'Yöntem', nav_cta: 'Randevu',
+    logo_sub: '— RANDEVUYLA · LONDRA · MMXXVI —',
+    hero_h1: 'Couture gibi<br/>aydınlatılmış,<br/><em>opera</em> gibi<br/>kurgulanmış <span class="champagne-text">kareler.</span>',
+    hero_blurb: 'Moda evleri, oteller ve yavaş hareket eden markalar için bir Londra couture medya stüdyosu. Fotoğraf, film ve kreatif yönetim — yalnızca randevuyla.',
+    cta_view: 'Komisyonlara bak →', cta_brief: 'Randevu al',
+    sec_col_title: 'Altı <em>disiplin,</em><br/>ışığa tek takıntı.',
+    sec_com_title: 'Küçük ama <em>özenli</em><br/>bir arşiv.',
+    q_text: 'Bir couture fotoğraf<br/><em>kumaştan</em> yapılmaz,<br/><em>ışıktan, zamandan</em> ve <em>niyetten</em> yapılır.',
+    sec_proc_title: 'Dört <em>hareket,</em><br/>bir ritim.',
+    contact_h2: 'Yalnızca <em>randevuyla.</em>'
+  };
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.original = el.innerHTML; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+</script>
+
+</body>
+</html>

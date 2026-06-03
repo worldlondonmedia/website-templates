@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WLM Voyages — A Vintage Travel Poster Studio for Hotels &amp; Hospitality</title>
+
+<meta name="description" content="A travel-poster London media studio. Photography, film, and direction in the Cassandre tradition — sun-bleached, geometric, golden. For hotels, restaurants and the brave brands who travel well." />
+<meta name="theme-color" content="#f5e8d4" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="WLM Voyages — Travel Poster" />
+<meta property="og:description" content="A studio that travels light, but lights well." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"WLM Voyages","url":"https://worldlondonmedia.com","email":"hello@worldlondonmedia.com","priceRange":"£££","address":{"@type":"PostalAddress","streetAddress":"Unit 4, Old Print Yard","addressLocality":"Clerkenwell","postalCode":"EC1V 9AT","addressCountry":"GB"},"foundingDate":"2021"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Domine:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream:    #f5e8d4;
+    --cream-2:  #ebd9b6;
+    --terra:    #d4a374;
+    --terra-2:  #b88052;
+    --rust:     #b85d3a;
+    --ocean:    #4a6f8a;
+    --ocean-2:  #2c4d63;
+    --sun:      #f0c850;
+    --sun-2:    #d8a832;
+    --black:    #1f1612;
+    --display:  'Bowlby One', sans-serif;
+    --serif:    'Domine', serif;
+    --mono:     'DM Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--black);
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--rust); color: var(--cream); }
+
+  /* Sun-bleached paper texture */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.12 0 0 0 0 0.07 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+  }
+
+  /* SKIP / PROGRESS */
+  .skip-link { position: absolute; top: -100px; left: 12px; background: var(--rust); color: var(--cream); padding: 8px 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 12px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--sun); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 3px; background: var(--rust); z-index: 10000; transition: width .12s ease-out; pointer-events: none; }
+
+  /* NAV */
+  nav {
+    background: var(--cream);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--black);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    font-family: var(--display);
+    font-size: 26px;
+    color: var(--black);
+    text-decoration: none;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+  .logo .sun { color: var(--rust); }
+  .nav-links { display: flex; gap: 24px; list-style: none; }
+  .nav-links a {
+    color: var(--black);
+    text-decoration: none;
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+    transition: all .25s;
+  }
+  .nav-links a:hover { color: var(--rust); border-color: var(--rust); }
+  .nav-cta {
+    background: var(--rust);
+    color: var(--cream) !important;
+    padding: 10px 18px;
+    font-family: var(--display);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: all .25s;
+  }
+  .nav-cta:hover { background: var(--ocean); }
+  .lang-toggle { display: inline-flex; margin-left: 8px; }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--black);
+    border: 2px solid var(--black);
+    padding: 6px 10px;
+    font-family: var(--mono);
+    font-size: 10px;
+    cursor: pointer;
+    margin-left: -2px;
+  }
+  .lang-toggle button.active { background: var(--black); color: var(--cream); }
+
+  /* HERO — like a poster */
+  .hero {
+    padding: 60px 32px 0;
+    position: relative;
+  }
+  .poster {
+    max-width: 1500px;
+    margin: 0 auto;
+    background: var(--cream-2);
+    border: 4px solid var(--black);
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .poster::before {
+    content: '';
+    position: absolute;
+    top: 16px; left: 16px; right: 16px; bottom: 16px;
+    border: 1px solid var(--black);
+    pointer-events: none;
+  }
+  .poster-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--rust);
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+  }
+  .poster-meta .black { color: var(--black); }
+
+  .poster-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Sun illustration */
+  .sun-illustration {
+    position: relative;
+    aspect-ratio: 1/1;
+    max-width: 540px;
+  }
+  .sun-illustration .sun-disc {
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 60%; aspect-ratio: 2/1;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    background: var(--sun);
+  }
+  .sun-illustration .horizon {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 8px;
+    background: var(--black);
+    z-index: 4;
+  }
+  .sun-illustration .ocean-stripes {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 30%;
+    background:
+      repeating-linear-gradient(
+        180deg,
+        var(--ocean) 0px,
+        var(--ocean) 8px,
+        transparent 8px,
+        transparent 18px
+      );
+    opacity: 0.55;
+    z-index: 3;
+  }
+  .sun-illustration .palm {
+    position: absolute;
+    bottom: 28%;
+    width: 60px; height: 90px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 60 90' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 90 L 30 50' stroke='%231f1612' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M30 50 Q 5 30 0 10 M 30 50 Q 50 30 56 8 M 30 50 Q 10 50 0 38 M 30 50 Q 50 50 60 38 M 30 50 Q 28 30 18 14' stroke='%231f1612' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 5;
+  }
+  .palm-1 { left: 8%; }
+  .palm-2 { right: 14%; transform: scaleX(-1); }
+  .sun-illustration .photo-circle {
+    position: absolute;
+    top: 12%; left: 50%;
+    transform: translateX(-50%);
+    width: 65%; aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    border: 6px solid var(--black);
+    box-shadow: inset 0 0 60px rgba(31, 22, 18, 0.3);
+    filter: contrast(1.1) saturate(0.85) sepia(0.15);
+    z-index: 2;
+  }
+  .sun-illustration .ray {
+    position: absolute;
+    top: 12%; left: 50%;
+    width: 4px; height: 60px;
+    background: var(--rust);
+    transform-origin: top center;
+    z-index: 1;
+  }
+  .ray-1 { transform: translateX(-50%) rotate(-30deg); top: 4%; }
+  .ray-2 { transform: translateX(-50%) rotate(30deg); top: 4%; }
+  .ray-3 { transform: translateX(-50%) rotate(-60deg); top: 6%; }
+  .ray-4 { transform: translateX(-50%) rotate(60deg); top: 6%; }
+  .ray-5 { transform: translateX(-50%) rotate(-90deg); top: 12%; }
+  .ray-6 { transform: translateX(-50%) rotate(90deg); top: 12%; }
+
+  .poster-text {
+    text-align: left;
+  }
+  .poster-text .destination {
+    font-family: var(--mono);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--rust);
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .poster-text .destination::before {
+    content: '✈';
+    font-size: 18px;
+    color: var(--ocean);
+  }
+  .poster-text h1 {
+    font-family: var(--display);
+    font-size: clamp(56px, 9.5vw, 168px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--black);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .poster-text h1 .rust { color: var(--rust); }
+  .poster-text h1 .ocean { color: var(--ocean); }
+  .poster-text h1 .sun { color: var(--sun-2); -webkit-text-stroke: 3px var(--black); }
+  .poster-text .blurb {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 560px;
+    margin-bottom: 28px;
+    color: var(--black);
+  }
+  .poster-text .price-row {
+    display: flex;
+    gap: 32px;
+    align-items: baseline;
+    margin-bottom: 28px;
+    border-top: 2px dashed var(--black);
+    border-bottom: 2px dashed var(--black);
+    padding: 14px 0;
+  }
+  .poster-text .price-row .item {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .poster-text .price-row .item strong {
+    display: block;
+    font-family: var(--display);
+    font-size: 24px;
+    color: var(--rust);
+    margin-bottom: 2px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .poster-cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .btn-board {
+    background: var(--black);
+    color: var(--cream);
+    padding: 16px 28px;
+    text-decoration: none;
+    font-family: var(--display);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 3px solid var(--black);
+    transition: all .25s;
+  }
+  .btn-board:hover { background: var(--rust); border-color: var(--rust); }
+  .btn-board-out {
+    background: transparent;
+    color: var(--black);
+  }
+  .btn-board-out:hover { background: var(--sun); border-color: var(--black); color: var(--black); }
+
+  /* RIBBON */
+  .ribbon {
+    background: var(--black);
+    color: var(--cream);
+    padding: 12px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 60px 0;
+    border-top: 4px solid var(--rust);
+    border-bottom: 4px solid var(--rust);
+  }
+  .ribbon-track {
+    display: inline-block;
+    animation: ribScroll 35s linear infinite;
+    font-family: var(--display);
+    font-size: 28px;
+    letter-spacing: -0.01em;
+  }
+  .ribbon span { margin: 0 20px; }
+  .ribbon .sun { color: var(--sun); }
+  .ribbon .rust { color: var(--rust); }
+  @keyframes ribScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* SECTION */
+  .section { padding: 100px 32px; max-width: 1500px; margin: 0 auto; }
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--black);
+    color: var(--sun);
+    padding: 8px 18px;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 24px;
+  }
+  .section-eyebrow::before { content: '✈'; color: var(--rust); }
+  .section h2 {
+    font-family: var(--display);
+    font-size: clamp(56px, 9vw, 144px);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    color: var(--black);
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    max-width: 1300px;
+  }
+  .section h2 .rust { color: var(--rust); }
+  .section h2 .ocean { color: var(--ocean); }
+  .section h2 .sun { color: var(--sun-2); -webkit-text-stroke: 2px var(--black); }
+
+  /* SERVICES — destination cards */
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .svc {
+    border: 3px solid var(--black);
+    background: var(--cream-2);
+    padding: 0;
+    cursor: pointer;
+    transition: transform .35s cubic-bezier(.5,1.5,.5,1);
+    overflow: hidden;
+  }
+  .svc:hover { transform: translateY(-4px); }
+  .svc-banner {
+    background: var(--rust);
+    color: var(--cream);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--display);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .svc:nth-child(2) .svc-banner { background: var(--ocean); }
+  .svc:nth-child(3) .svc-banner { background: var(--sun-2); color: var(--black); }
+  .svc:nth-child(4) .svc-banner { background: var(--terra-2); }
+  .svc:nth-child(5) .svc-banner { background: var(--ocean-2); }
+  .svc:nth-child(6) .svc-banner { background: var(--rust); }
+  .svc-body { padding: 24px 20px; }
+  .svc-body h3 {
+    font-family: var(--display);
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .svc-body h3 .rust { color: var(--rust); }
+  .svc-body p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .svc-body .meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ocean);
+    border-top: 2px dashed var(--black);
+    padding-top: 12px;
+  }
+
+  /* WORK — destinations grid */
+  .destinations {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .destination {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    border: 3px solid var(--black);
+    background: var(--cream-2);
+    overflow: hidden;
+    transition: transform .35s cubic-bezier(.5,1.5,.5,1);
+  }
+  .destination:hover { transform: translateY(-4px); }
+  .dest-frame {
+    aspect-ratio: 16/10;
+    background-size: cover;
+    background-position: center;
+    filter: contrast(1.05) saturate(0.85) sepia(0.18);
+    border-bottom: 3px solid var(--black);
+    transition: filter .8s;
+    position: relative;
+  }
+  .destination:hover .dest-frame { filter: contrast(1) saturate(1) sepia(0); }
+  .dest-frame::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 30%;
+    background: linear-gradient(to top, rgba(31,22,18,0.4), transparent);
+  }
+  .dest-info {
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: end;
+  }
+  .dest-info h3 {
+    font-family: var(--display);
+    font-size: 36px;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+  }
+  .dest-info h3 .rust { color: var(--rust); }
+  .dest-info .stamp {
+    background: var(--rust);
+    color: var(--cream);
+    padding: 6px 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    transform: rotate(-3deg);
+  }
+  .dest-info .meta {
+    grid-column: 1 / -1;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ocean);
+    margin-top: 12px;
+    border-top: 2px dashed var(--black);
+    padding-top: 12px;
+  }
+  .destination:nth-child(1) .dest-frame { background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80'); }
+  .destination:nth-child(2) .dest-frame { background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1400&q=80'); }
+  .destination:nth-child(3) .dest-frame { background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=1400&q=80'); }
+  .destination:nth-child(4) .dest-frame { background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1400&q=80'); }
+
+  /* TIMETABLE — process */
+  .timetable {
+    background: var(--cream-2);
+    border: 3px solid var(--black);
+  }
+  .timetable-row {
+    display: grid;
+    grid-template-columns: 100px 80px 1fr 1fr 100px;
+    gap: 24px;
+    padding: 24px;
+    align-items: center;
+    border-bottom: 2px dashed var(--black);
+  }
+  .timetable-row:last-child { border-bottom: none; }
+  .timetable-row.head {
+    background: var(--black);
+    color: var(--cream);
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    padding: 14px 24px;
+  }
+  .tt-num {
+    font-family: var(--display);
+    font-size: 48px;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--rust);
+  }
+  .tt-flight {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ocean);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .tt-name {
+    font-family: var(--display);
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .tt-name .rust { color: var(--rust); }
+  .tt-desc {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .tt-week {
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--rust);
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 140px 32px;
+    text-align: center;
+    background: var(--rust);
+    color: var(--cream);
+    border-top: 6px solid var(--black);
+    border-bottom: 6px solid var(--black);
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before, .contact::after {
+    content: '';
+    position: absolute;
+    width: 240px; height: 240px;
+    background: var(--sun);
+    border-radius: 50%;
+    opacity: 0.85;
+  }
+  .contact::before { top: -100px; left: -100px; }
+  .contact::after { bottom: -120px; right: -120px; background: var(--ocean); }
+  .contact h2 {
+    font-family: var(--display);
+    font-size: clamp(56px, 11vw, 200px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+  }
+  .contact h2 .sun { color: var(--sun); }
+  .contact h2 .ocean { color: var(--ocean-2); }
+  .contact-mail {
+    background: var(--cream);
+    color: var(--black);
+    padding: 18px 32px;
+    text-decoration: none;
+    font-family: var(--display);
+    font-size: clamp(20px, 3vw, 36px);
+    text-transform: uppercase;
+    border: 4px solid var(--black);
+    transition: all .25s;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+  }
+  .contact-mail:hover { background: var(--sun); }
+
+  /* FOOTER */
+  footer {
+    background: var(--cream);
+    color: var(--black);
+    padding: 60px 32px 24px;
+    border-top: 4px solid var(--black);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .foot-brand {
+    font-family: var(--display);
+    font-size: 56px;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+  .foot-brand .rust { color: var(--rust); }
+  footer h4 { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; color: var(--rust); font-weight: 500; }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 6px; font-size: 14px; }
+  footer a { color: inherit; text-decoration: none; transition: color .25s; }
+  footer a:hover { color: var(--rust); }
+  .foot-bot {
+    border-top: 2px dashed var(--black);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .poster-grid { grid-template-columns: 1fr; gap: 32px; }
+    .svc-grid { grid-template-columns: 1fr; }
+    .destinations { grid-template-columns: 1fr; }
+    .timetable-row { grid-template-columns: 60px 1fr; gap: 12px; }
+    .timetable-row.head, .tt-flight, .tt-desc, .tt-week { display: none; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<nav>
+  <a href="../../index.html" class="logo">WLM <span class="sun">VOYAGES</span></a>
+  <ul class="nav-links">
+    <li><a href="#services" data-i18n="nav_services">Services</a></li>
+    <li><a href="#work" data-i18n="nav_work">Destinations</a></li>
+    <li><a href="#process" data-i18n="nav_process">Itinerary</a></li>
+  </ul>
+  <div style="display: flex; align-items: center; gap: 6px;">
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Book passage</a>
+    <div class="lang-toggle">
+      <button data-l="en" onclick="setLang('en')">EN</button>
+      <button data-l="tr" onclick="setLang('tr')">TR</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <div class="poster">
+    <div class="poster-meta">
+      <span class="black">VOL. IV / SS '26</span>
+      <span data-i18n="poster_meta_c">— TRAVEL POSTER · ED. 04 —</span>
+      <span>LON · 51.5279° N</span>
+    </div>
+
+    <div class="poster-grid">
+      <div class="sun-illustration">
+        <div class="ray ray-1"></div>
+        <div class="ray ray-2"></div>
+        <div class="ray ray-3"></div>
+        <div class="ray ray-4"></div>
+        <div class="ray ray-5"></div>
+        <div class="ray ray-6"></div>
+        <div class="sun-disc"></div>
+        <div class="photo-circle"></div>
+        <div class="ocean-stripes"></div>
+        <div class="palm palm-1"></div>
+        <div class="palm palm-2"></div>
+        <div class="horizon"></div>
+      </div>
+
+      <div class="poster-text">
+        <div class="destination" data-i18n="dest">VIA LONDON · TO ANYWHERE</div>
+        <h1 data-i18n="hero_h1">FLY <span class="sun">LIGHT,</span><br/>LAND <span class="rust">SLOWLY,</span><br/>STAY <span class="ocean">A WHILE.</span></h1>
+        <p class="blurb" data-i18n="hero_blurb">A travel-poster London media studio. Photography, film and direction in the Cassandre tradition — sun-bleached, geometric, golden. We travel light, but we light well.</p>
+
+        <div class="price-row">
+          <div class="item"><strong>04 yrs</strong>est. London</div>
+          <div class="item"><strong>63</strong>destinations</div>
+          <div class="item"><strong>128</strong>features</div>
+          <div class="item"><strong>5★</strong>flat white</div>
+        </div>
+
+        <div class="poster-cta-row">
+          <a href="#work" class="btn-board" data-i18n="cta_view">View destinations →</a>
+          <a href="#contact" class="btn-board btn-board-out" data-i18n="cta_brief">Book a passage</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon">
+  <div class="ribbon-track">
+    <span>LONDON</span><span class="sun">✈</span>
+    <span class="rust">COMO</span><span class="sun">✈</span>
+    <span>LISBON</span><span class="rust">✈</span>
+    <span class="sun">PARIS</span><span class="rust">✈</span>
+    <span>MALLORCA</span><span class="sun">✈</span>
+    <span class="rust">ISTANBUL</span><span class="sun">✈</span>
+    <span>LONDON</span><span class="sun">✈</span>
+    <span class="rust">COMO</span><span class="sun">✈</span>
+    <span>LISBON</span><span class="rust">✈</span>
+    <span class="sun">PARIS</span><span class="rust">✈</span>
+    <span>MALLORCA</span><span class="sun">✈</span>
+    <span class="rust">ISTANBUL</span><span class="sun">✈</span>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <span class="section-eyebrow" data-i18n="srv_eyebrow">CABIN CLASSES · SIX OFFERINGS</span>
+  <h2 data-i18n="srv_h2">SIX <span class="rust">CLASSES</span><br/>OF <span class="ocean">PASSAGE.</span></h2>
+
+  <div class="svc-grid">
+    <div class="svc reveal">
+      <div class="svc-banner"><span>FIRST CLASS</span><span>01.PHOTO</span></div>
+      <div class="svc-body">
+        <h3>PHOTO<span class="rust">GRAPHY</span></h3>
+        <p>Editorial stills for hospitality, food, beauty, fashion. Lit by hand, shot until the room remembers itself.</p>
+        <div class="meta">EDITORIAL · STILLS · LOOKBOOKS</div>
+      </div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-banner"><span>BUSINESS</span><span>02.FILM</span></div>
+      <div class="svc-body">
+        <h3>FILM &amp; <span class="rust">MOTION</span></h3>
+        <p>Brand films, documentary shorts, social cuts that don't smell like an advertisement.</p>
+        <div class="meta">35MM · DOCUMENTARY · REELS</div>
+      </div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-banner"><span>PREMIUM</span><span>03.DIR</span></div>
+      <div class="svc-body">
+        <h3>CREATIVE <span class="rust">DIRECTION</span></h3>
+        <p>Concept, casting, locations. The cruel decisions that make a campaign inevitable.</p>
+        <div class="meta">CONCEPT · CASTING · ART DIR</div>
+      </div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-banner"><span>ECONOMY+</span><span>04.SOC</span></div>
+      <div class="svc-body">
+        <h3>SOCIAL <span class="rust">EDITORIAL</span></h3>
+        <p>Monthly visual production for brands who treat their feed as a magazine.</p>
+        <div class="meta">STRATEGY · MONTHLY · CALENDAR</div>
+      </div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-banner"><span>CHARTER</span><span>05.ID</span></div>
+      <div class="svc-body">
+        <h3>BRAND <span class="rust">IDENTITY</span></h3>
+        <p>Visual systems built to hold for a decade. Type, palette, photographic codes.</p>
+        <div class="meta">IDENTITY · PRINT · DIGITAL</div>
+      </div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-banner"><span>LAYOVER</span><span>06.STD</span></div>
+      <div class="svc-body">
+        <h3>STUDIO <span class="rust">RENTAL</span></h3>
+        <p>Our 2,000 sq ft daylight studio in Hackney. Half-day, full-day, with crew or without.</p>
+        <div class="meta">DAYLIGHT · BLACKOUT · CREW</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <span class="section-eyebrow" data-i18n="work_eyebrow">RECENT DEPARTURES · 2024–2025</span>
+  <h2 data-i18n="work_h2">FOUR <span class="rust">DESTINATIONS,</span><br/>RECENTLY <span class="ocean">VISITED.</span></h2>
+
+  <div class="destinations">
+    <a href="#" class="destination reveal">
+      <div class="dest-frame"></div>
+      <div class="dest-info">
+        <h3>MARSALA &amp;<br/><span class="rust">SMOKE</span></h3>
+        <span class="stamp">★ FEATURED</span>
+        <span class="meta">RESTAURANT · LONDON · 2025</span>
+      </div>
+    </a>
+    <a href="#" class="destination reveal">
+      <div class="dest-frame"></div>
+      <div class="dest-info">
+        <h3>HACKNEY<br/><span class="rust">PLATES</span></h3>
+        <span class="stamp">★ EDITORIAL</span>
+        <span class="meta">VOGUE ITALIA · 2025</span>
+      </div>
+    </a>
+    <a href="#" class="destination reveal">
+      <div class="dest-frame"></div>
+      <div class="dest-info">
+        <h3>FOLIE<br/>Nº <span class="rust">12</span></h3>
+        <span class="stamp">★ BEAUTY</span>
+        <span class="meta">14 MARKETS · 2024</span>
+      </div>
+    </a>
+    <a href="#" class="destination reveal">
+      <div class="dest-frame"></div>
+      <div class="dest-info">
+        <h3>ATELIER<br/><span class="rust">SOHO</span></h3>
+        <span class="stamp">★ BRAND FILM</span>
+        <span class="meta">16MM · 2024</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <span class="section-eyebrow" data-i18n="proc_eyebrow">ITINERARY · FROM BRIEF TO MASTER</span>
+  <h2 data-i18n="proc_h2">FOUR <span class="rust">STOPS</span><br/>ON THE ROUTE.</h2>
+
+  <div class="timetable">
+    <div class="timetable-row head">
+      <span data-i18n="tt_h_1">No.</span>
+      <span data-i18n="tt_h_2">Flight</span>
+      <span data-i18n="tt_h_3">Stop</span>
+      <span data-i18n="tt_h_4">Description</span>
+      <span data-i18n="tt_h_5">Duration</span>
+    </div>
+    <div class="timetable-row">
+      <span class="tt-num">01</span>
+      <span class="tt-flight">WLM-101</span>
+      <span class="tt-name">FIRST <span class="rust">CALL</span></span>
+      <span class="tt-desc">30-min, no slides. We meet, walk through your space, eat your food.</span>
+      <span class="tt-week">WK 01</span>
+    </div>
+    <div class="timetable-row">
+      <span class="tt-num">02</span>
+      <span class="tt-flight">WLM-202</span>
+      <span class="tt-name">DIRECTION</span>
+      <span class="tt-desc">References, palette, casting, locations. Pinned to the wall, approved.</span>
+      <span class="tt-week">WK 02</span>
+    </div>
+    <div class="timetable-row">
+      <span class="tt-num">03</span>
+      <span class="tt-flight">WLM-303</span>
+      <span class="tt-name">SHOOT<span class="rust">DOWN</span></span>
+      <span class="tt-desc">Small crew, long lights. Real food, real people, real rooms. Slow on purpose.</span>
+      <span class="tt-week">WK 03</span>
+    </div>
+    <div class="timetable-row">
+      <span class="tt-num">04</span>
+      <span class="tt-flight">WLM-404</span>
+      <span class="tt-name">ARRIVAL</span>
+      <span class="tt-desc">Selects in 48h. Final master in 10 working days. Archived forever.</span>
+      <span class="tt-week">WK 04</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 data-i18n="contact_h2">PACK YOUR<br/><span class="sun">BRIEF</span> AND<br/><span class="ocean">TRAVEL</span> WELL.</h2>
+  <a href="mailto:hello@worldlondonmedia.com" class="contact-mail">hello@worldlondonmedia.com →</a>
+</section>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">WLM<br/><span class="rust">VOYAGES</span></div>
+      <p style="margin-top: 16px; font-size: 13px;">A travel-poster media studio in London. Photo · film · direction · since 2021.</p>
+    </div>
+    <div>
+      <h4>STUDIO</h4>
+      <ul><li>Unit 4, Old Print Yard</li><li>Clerkenwell, EC1V 9AT</li><li>London, UK</li></ul>
+    </div>
+    <div>
+      <h4>SITEMAP</h4>
+      <ul><li><a href="#services">Services</a></li><li><a href="#work">Destinations</a></li><li><a href="#process">Itinerary</a></li></ul>
+    </div>
+    <div>
+      <h4>ELSEWHERE</h4>
+      <ul><li><a href="#">Instagram</a></li><li><a href="#">Vimeo</a></li><li><a href="#">Are.na</a></li></ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 WORLD LONDON MEDIA · CO. № 13442198</span>
+    <span>SET IN BOWLBY ONE · DOMINE · DM MONO</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), i * 80); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+  const _progress = document.querySelector('.scroll-progress');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    _progress.style.width = ((window.scrollY / Math.max(max, 1)) * 100) + '%';
+  }, { passive: true });
+
+  const i18n_tr = {
+    nav_services: 'Servisler', nav_work: 'Destinasyonlar', nav_process: 'Güzergâh', nav_cta: 'Yer ayır',
+    poster_meta_c: '— SEYAHAT POSTERİ · ED. 04 —',
+    dest: 'LONDRA\'DAN HER YERE',
+    hero_h1: '<span class="sun">HAFİF</span> UÇ,<br/><span class="rust">YAVAŞ</span> İN,<br/><span class="ocean">BİR SÜRE</span> KAL.',
+    hero_blurb: 'Seyahat-posteri Londra medya stüdyosu. Cassandre geleneğinde fotoğraf, film ve yönetim — güneşle kararmış, geometrik, altın. Hafif seyahat ederiz, ama iyi aydınlatırız.',
+    cta_view: 'Destinasyonlar →', cta_brief: 'Yer ayır',
+    srv_eyebrow: 'KABİN SINIFLARI · ALTI HİZMET',
+    srv_h2: 'ALTI <span class="rust">SINIF</span><br/><span class="ocean">YOLCULUK.</span>',
+    work_eyebrow: 'YAKIN KALKIŞLAR · 2024–2025',
+    work_h2: 'DÖRT <span class="rust">DESTİNASYON,</span><br/>YAKINDA <span class="ocean">ZİYARET EDİLEN.</span>',
+    proc_eyebrow: 'GÜZERGÂH · BRIEF\'TEN MASTER\'A',
+    proc_h2: 'ROTADA<br/>DÖRT <span class="rust">DURAK.</span>',
+    tt_h_1: 'No.', tt_h_2: 'Sefer', tt_h_3: 'Durak', tt_h_4: 'Açıklama', tt_h_5: 'Süre',
+    contact_h2: 'BRIEF\'İNİZİ<br/><span class="sun">TOPLAYIN</span> VE<br/>İYİ <span class="ocean">YOLCULUKLAR.</span>'
+  };
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.original = el.innerHTML; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+</script>
+
+</body>
+</html>

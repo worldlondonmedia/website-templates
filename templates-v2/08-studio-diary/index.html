@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>World London Media — Studio Diary, Vol. 04</title>
+
+<meta name="description" content="A small studio of photographers, directors and editors documenting restaurants, hotels, and the quietly brave brands of London. Open Tuesday to Friday." />
+<meta name="theme-color" content="#efe7d3" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="World London Media" />
+<meta property="og:title" content="WLM — Studio Diary" />
+<meta property="og:description" content="We make pictures, quietly, in the corner of a London print shop." />
+<meta property="og:url" content="https://worldlondonmedia.com/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1200&q=80" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"World London Media","description":"A small studio of photographers, directors and editors documenting restaurants, hotels, and the quietly brave brands of London.","url":"https://worldlondonmedia.com","telephone":"+44-207-459-1024","email":"hello@worldlondonmedia.com","priceRange":"££","address":{"@type":"PostalAddress","streetAddress":"Unit 4, Old Print Yard","addressLocality":"Clerkenwell","postalCode":"EC1V 9AT","addressCountry":"GB"},"foundingDate":"2021"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:    #efe7d3;
+    --paper-2:  #e6dcc1;
+    --paper-3:  #f7f2e2;
+    --ink:      #1d1a18;
+    --ink-blue: #2e3754;
+    --red:      #c83a32;
+    --tape:     #f1d77c;
+    --tape-2:   #c8e0b4;
+    --olive:    #7a8047;
+    --hand:     'Caveat', cursive;
+    --serif:    'Crimson Pro', serif;
+    --type:     'Special Elite', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--red); color: var(--paper); }
+
+  /* PAPER NOISE */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.13 0 0 0 0 0.09 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.16;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+  }
+
+  /* RULED LINES BG (subtle) */
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(to bottom, transparent 31px, rgba(46, 55, 84, 0.07) 32px);
+    background-size: 100% 32px;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* TAPE */
+  .tape {
+    position: absolute;
+    width: 100px; height: 28px;
+    background: var(--tape);
+    opacity: 0.9;
+    transform: rotate(-4deg);
+    box-shadow: 1px 2px 6px rgba(0,0,0,0.1);
+    z-index: 5;
+  }
+  .tape::before, .tape::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .tape::before { left: 8px; }
+  .tape::after { right: 8px; }
+  .tape.green { background: var(--tape-2); }
+  .tape.red { background: var(--red); opacity: 0.8; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 16px; left: 16px; right: 16px;
+    z-index: 1000;
+    background: var(--paper-3);
+    border: 1px solid var(--ink);
+    padding: 12px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transform: rotate(-0.2deg);
+  }
+  .logo {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--ink-blue);
+    text-decoration: none;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .logo .red { color: var(--red); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--type);
+    font-size: 13px;
+    transition: color .25s;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--red); }
+  .nav-links a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 100%; height: 2px;
+    background: var(--red);
+    border-radius: 50%;
+    transform: skewX(-12deg);
+  }
+  .nav-cta {
+    font-family: var(--hand);
+    color: var(--red);
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--red);
+    padding-bottom: 1px;
+    line-height: 1;
+    transform: rotate(-1deg);
+    display: inline-block;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding: 110px 48px 60px;
+    position: relative;
+  }
+  .hero-date {
+    font-family: var(--type);
+    font-size: 13px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-date::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--ink);
+  }
+  .hero-date .red { color: var(--red); }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+    align-items: end;
+  }
+
+  .hero-headline {
+    position: relative;
+  }
+  .hero-headline h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(64px, 9vw, 156px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .hero-headline h1 em {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--red);
+    transform: rotate(-2deg);
+    display: inline-block;
+    line-height: 0.9;
+  }
+  .hero-headline h1 .blue {
+    color: var(--ink-blue);
+    font-style: italic;
+    font-weight: 500;
+  }
+  .hero-headline h1 .underline {
+    position: relative;
+    display: inline-block;
+  }
+  .hero-headline h1 .underline::after {
+    content: '';
+    position: absolute;
+    bottom: 4%; left: -2%;
+    width: 104%; height: 8px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 8' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q 50 0 100 4 T 200 4' stroke='%23c83a32' stroke-width='3' fill='none'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .hero-headline .scribble {
+    position: absolute;
+    font-family: var(--hand);
+    font-size: 28px;
+    color: var(--ink-blue);
+    transform: rotate(-6deg);
+    line-height: 1.1;
+  }
+  .hero-headline .arrow-doodle {
+    width: 80px; height: 60px;
+    position: absolute;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 80 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 50 Q 30 10 60 25 L 55 18 M 60 25 L 50 22' stroke='%232e3754' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .hero-blurb {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-top: 36px;
+    max-width: 580px;
+  }
+  .hero-blurb em { color: var(--red); font-style: italic; }
+  .hero-blurb .hand {
+    font-family: var(--hand);
+    font-weight: 600;
+    color: var(--ink-blue);
+    font-size: 26px;
+    font-style: normal;
+  }
+
+  /* HERO POLAROID */
+  .hero-polaroid {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    margin-left: auto;
+    background: var(--paper-3);
+    padding: 14px 14px 60px;
+    border: 1px solid rgba(29,26,24,0.2);
+    box-shadow: 4px 8px 32px -10px rgba(29,26,24,0.4);
+    transform: rotate(2.5deg);
+    transition: transform .4s cubic-bezier(.5,1.4,.5,1);
+  }
+  .hero-polaroid:hover { transform: rotate(0) scale(1.02); }
+  .hero-polaroid .img {
+    aspect-ratio: 1/1;
+    background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=900&q=80');
+    background-size: cover;
+    background-position: center;
+    filter: contrast(0.95) sepia(0.08);
+  }
+  .hero-polaroid .caption {
+    margin-top: 14px;
+    font-family: var(--hand);
+    font-size: 22px;
+    text-align: center;
+    color: var(--ink);
+    line-height: 1;
+    font-weight: 600;
+  }
+  .hero-polaroid .caption .date {
+    display: block;
+    font-family: var(--type);
+    font-size: 11px;
+    margin-top: 4px;
+    color: var(--ink-blue);
+  }
+
+  .hero-stamp {
+    position: absolute;
+    top: 16%; right: -32px;
+    width: 110px; height: 110px;
+    border: 2px solid var(--red);
+    border-radius: 50%;
+    color: var(--red);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    transform: rotate(-12deg);
+    background: rgba(200, 58, 50, 0.04);
+    font-family: var(--type);
+    text-align: center;
+    line-height: 1.1;
+    z-index: 10;
+  }
+  .hero-stamp .top { font-size: 9px; letter-spacing: 0.15em; margin-bottom: 4px; text-transform: uppercase; }
+  .hero-stamp .big { font-family: var(--hand); font-size: 36px; font-weight: 700; line-height: 0.85; }
+  .hero-stamp .bot { font-size: 9px; letter-spacing: 0.1em; margin-top: 4px; text-transform: uppercase; }
+
+  /* SECTION TEMPLATE */
+  .section {
+    padding: 100px 48px;
+    position: relative;
+  }
+  .section-head {
+    margin-bottom: 60px;
+    position: relative;
+  }
+  .section-head .label {
+    display: inline-block;
+    font-family: var(--type);
+    font-size: 13px;
+    color: var(--red);
+    border: 1px solid var(--red);
+    padding: 4px 12px;
+    transform: rotate(-1deg);
+    margin-bottom: 16px;
+  }
+  .section-head h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 110px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    max-width: 1300px;
+  }
+  .section-head h2 em {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--red);
+    display: inline-block;
+    transform: rotate(-1deg);
+    line-height: 0.9;
+  }
+  .section-head h2 .blue { color: var(--ink-blue); font-style: italic; font-weight: 500; }
+
+  /* RECENT ENTRIES — work as journal pages */
+  .entries {
+    background: var(--paper);
+    border-bottom: 1px dashed rgba(29,26,24,0.3);
+  }
+  .entries-list {
+    list-style: none;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  .entry {
+    display: grid;
+    grid-template-columns: 140px 1fr 1.4fr;
+    gap: 40px;
+    padding: 40px 0;
+    border-top: 1px dashed rgba(29,26,24,0.3);
+    align-items: start;
+    cursor: pointer;
+    transition: padding-left .55s cubic-bezier(.65,0,.35,1);
+    position: relative;
+  }
+  .entry:hover { padding-left: 24px; }
+  .entry:hover .entry-img { transform: rotate(-2deg) scale(1.05); }
+  .entry:last-child { border-bottom: 1px dashed rgba(29,26,24,0.3); }
+  .entry-date {
+    font-family: var(--type);
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: right;
+    color: var(--ink);
+  }
+  .entry-date strong {
+    display: block;
+    font-family: var(--serif);
+    font-weight: 500;
+    color: var(--red);
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .entry-img-wrap { position: relative; }
+  .entry-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+    border: 8px solid var(--paper-3);
+    box-shadow: 4px 6px 24px -8px rgba(29,26,24,0.35);
+    transition: transform .55s cubic-bezier(.5,1.4,.5,1);
+    transform: rotate(-1deg);
+    filter: sepia(0.05);
+  }
+  .entry:nth-child(2n) .entry-img { transform: rotate(1.5deg); }
+  .entry-1 .entry-img { background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80'); }
+  .entry-2 .entry-img { background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=900&q=80'); }
+  .entry-3 .entry-img { background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=900&q=80'); }
+  .entry-4 .entry-img { background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=900&q=80'); }
+
+  .entry-body h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+  .entry-body h3 em {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--red);
+    display: inline-block;
+    transform: rotate(-1.5deg);
+  }
+  .entry-body .meta {
+    font-family: var(--type);
+    font-size: 12px;
+    margin-bottom: 18px;
+    color: var(--ink-blue);
+  }
+  .entry-body p {
+    font-size: 17px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+    max-width: 540px;
+  }
+  .entry-body .read-more {
+    font-family: var(--hand);
+    color: var(--red);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1;
+    border-bottom: 2px solid var(--red);
+    padding-bottom: 1px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  .entry-tape-1 { top: -12px; left: 30%; }
+  .entry-tape-2 { top: -10px; right: 14%; transform: rotate(6deg); }
+
+  /* PINNED NOTES (services) */
+  .pinned {
+    background: var(--paper-2);
+    border-top: 1px dashed rgba(29,26,24,0.3);
+    border-bottom: 1px dashed rgba(29,26,24,0.3);
+  }
+  .pinned-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .note {
+    background: var(--paper-3);
+    padding: 36px 28px 32px;
+    position: relative;
+    box-shadow: 4px 8px 32px -8px rgba(29,26,24,0.18);
+    transition: transform .4s cubic-bezier(.5,1.4,.5,1);
+    cursor: pointer;
+  }
+  .note:nth-child(1) { transform: rotate(-2deg); }
+  .note:nth-child(2) { transform: rotate(1deg); margin-top: 24px; }
+  .note:nth-child(3) { transform: rotate(-1deg); }
+  .note:nth-child(4) { transform: rotate(2deg); margin-top: 32px; }
+  .note:nth-child(5) { transform: rotate(-1.5deg); }
+  .note:nth-child(6) { transform: rotate(1.5deg); margin-top: 16px; }
+  .note:hover { transform: rotate(0) scale(1.04); z-index: 5; }
+  .note .pin {
+    position: absolute;
+    top: -10px; left: 50%;
+    transform: translateX(-50%);
+    width: 18px; height: 18px;
+    background: var(--red);
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3), inset -2px -3px 0 rgba(0,0,0,0.2);
+  }
+  .note:nth-child(2) .pin { background: var(--ink-blue); }
+  .note:nth-child(3) .pin { background: var(--olive); }
+  .note:nth-child(5) .pin { background: var(--olive); }
+  .note:nth-child(6) .pin { background: var(--ink-blue); }
+
+  .note-num {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 0.85;
+    color: var(--red);
+    margin-bottom: 8px;
+    transform: rotate(-3deg);
+    display: inline-block;
+  }
+  .note h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .note h3 em {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--ink-blue);
+    display: inline-block;
+    transform: rotate(-1deg);
+  }
+  .note p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .note .doodle {
+    font-family: var(--hand);
+    color: var(--ink-blue);
+    font-size: 20px;
+    border-top: 1px dashed var(--ink);
+    padding-top: 8px;
+  }
+
+  /* MARGINALIA QUOTE */
+  .marginalia {
+    padding: 100px 48px;
+    background: var(--paper);
+    text-align: center;
+    border-top: 1px dashed rgba(29,26,24,0.3);
+    border-bottom: 1px dashed rgba(29,26,24,0.3);
+    position: relative;
+  }
+  .marginalia .quote-mark {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-size: 220px;
+    line-height: 0.4;
+    color: var(--red);
+    opacity: 0.4;
+  }
+  .marginalia .body {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.2;
+    max-width: 1100px;
+    margin: 0 auto;
+    color: var(--ink);
+  }
+  .marginalia .body .hand {
+    font-family: var(--hand);
+    font-weight: 700;
+    color: var(--red);
+    font-style: normal;
+    display: inline-block;
+    transform: rotate(-1deg);
+  }
+  .marginalia .body .underline {
+    position: relative;
+    display: inline-block;
+  }
+  .marginalia .body .underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: -2%;
+    width: 104%; height: 6px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 6' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath d='M0 3 Q 50 0 100 3 T 200 3' stroke='%23c83a32' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+  }
+  .marginalia .attr {
+    margin-top: 32px;
+    font-family: var(--hand);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--ink-blue);
+    transform: rotate(-1deg);
+    display: inline-block;
+  }
+
+  /* ON SET (process) */
+  .onset {
+    background: var(--paper);
+  }
+  .checklist {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .check-item {
+    display: grid;
+    grid-template-columns: 60px 100px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-top: 1px dashed rgba(29,26,24,0.35);
+    align-items: start;
+    cursor: pointer;
+    transition: padding-left .35s ease;
+  }
+  .check-item:hover { padding-left: 16px; }
+  .check-item:last-child { border-bottom: 1px dashed rgba(29,26,24,0.35); }
+  .check-box {
+    width: 36px; height: 36px;
+    border: 2px solid var(--ink);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--paper-3);
+    transform: rotate(-2deg);
+    transition: background .25s;
+  }
+  .check-item:hover .check-box { background: var(--red); }
+  .check-item:hover .check-box::after {
+    content: '✓';
+    color: var(--paper);
+    font-family: var(--hand);
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1;
+    transform: rotate(2deg) translate(2px, -2px);
+  }
+  .check-num {
+    font-family: var(--type);
+    font-size: 13px;
+    color: var(--red);
+    padding-top: 6px;
+  }
+  .check-body h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .check-body h3 em {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--red);
+    display: inline-block;
+    transform: rotate(-1.5deg);
+  }
+  .check-body p {
+    font-size: 17px;
+    line-height: 1.5;
+    max-width: 720px;
+  }
+  .check-body .doodle-tag {
+    margin-top: 8px;
+    font-family: var(--hand);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink-blue);
+  }
+
+  /* ARCHIVE */
+  .archive {
+    background: var(--paper-2);
+    border-top: 1px dashed rgba(29,26,24,0.35);
+    padding: 80px 48px;
+  }
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1300px;
+    margin: 0 auto;
+    border-top: 1px solid var(--ink);
+  }
+  .arch-stat {
+    border-right: 1px dashed rgba(29,26,24,0.35);
+    padding: 28px 16px;
+  }
+  .arch-stat:last-child { border-right: none; }
+  .arch-stat .num {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-size: 88px;
+    line-height: 0.85;
+    color: var(--red);
+    margin-bottom: 4px;
+  }
+  .arch-stat .num em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--ink-blue);
+    font-size: 28px;
+  }
+  .arch-stat .label {
+    font-family: var(--type);
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  /* SAY HELLO (contact) */
+  .hello {
+    background: var(--paper);
+    padding: 140px 48px 80px;
+    position: relative;
+    text-align: center;
+  }
+  .hello-letter {
+    background: var(--paper-3);
+    border: 1px solid rgba(29,26,24,0.2);
+    padding: 60px 40px 50px;
+    max-width: 740px;
+    margin: 0 auto;
+    box-shadow: 4px 12px 40px -10px rgba(29,26,24,0.2);
+    position: relative;
+  }
+  .hello-letter::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0; width: 4px;
+    background-image: linear-gradient(var(--red) 50%, transparent 50%);
+    background-size: 100% 16px;
+  }
+  .hello-letter::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; width: 4px;
+    background-image: linear-gradient(var(--ink-blue) 50%, transparent 50%);
+    background-size: 100% 16px;
+  }
+  .hello-stamp-tape {
+    position: absolute;
+    top: -16px; left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 140px; height: 32px;
+    background: var(--tape);
+    box-shadow: 1px 2px 8px rgba(0,0,0,0.1);
+  }
+  .hello-letter .date {
+    font-family: var(--type);
+    font-size: 13px;
+    text-align: right;
+    color: var(--ink-blue);
+    margin-bottom: 24px;
+  }
+  .hello-letter .greeting {
+    font-family: var(--hand);
+    font-weight: 600;
+    font-size: 32px;
+    color: var(--ink-blue);
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  .hello-letter h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(40px, 5.5vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  .hello-letter h2 em {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--red);
+    display: inline-block;
+    transform: rotate(-1deg);
+  }
+  .hello-letter p {
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .hello-letter p em { font-style: italic; color: var(--red); }
+  .hello-letter .sign-off {
+    margin-top: 28px;
+    text-align: left;
+  }
+  .hello-letter .sign-off p { margin-bottom: 4px; font-style: italic; }
+  .hello-letter .sign {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-size: 36px;
+    color: var(--ink-blue);
+    transform: rotate(-3deg);
+    display: inline-block;
+    line-height: 1;
+    margin-top: 8px;
+  }
+  .hello-letter .mail {
+    display: inline-block;
+    margin-top: 24px;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--red);
+    text-decoration: none;
+    border-bottom: 2px solid var(--red);
+    padding-bottom: 2px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--paper-2);
+    border-top: 1px dashed rgba(29,26,24,0.35);
+    padding: 60px 48px 24px;
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .foot-brand {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 0.95;
+    color: var(--ink-blue);
+    transform: rotate(-1deg);
+    display: inline-block;
+  }
+  .foot-brand .red { color: var(--red); }
+  footer h4 {
+    font-family: var(--type);
+    font-size: 13px;
+    margin-bottom: 12px;
+    color: var(--red);
+    font-weight: 400;
+  }
+  footer ul { list-style: none; }
+  footer li {
+    margin-bottom: 6px;
+    font-family: var(--serif);
+    font-size: 16px;
+  }
+  footer a { color: inherit; text-decoration: none; }
+  footer a:hover { color: var(--red); border-bottom: 1px solid var(--red); }
+  .foot-bot {
+    border-top: 1px dashed rgba(29,26,24,0.35);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--type);
+    font-size: 11px;
+    color: var(--ink-blue);
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* V2 PACK */
+  .skip-link { position: absolute; top: -100px; left: 8px; background: var(--red); color: var(--paper-3); padding: 8px 16px; font-family: var(--type); font-size: 12px; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 3px; background: var(--red); z-index: 10000; transition: width .12s ease-out; pointer-events: none; }
+  .back-top { position: fixed; bottom: 24px; right: 24px; width: 50px; height: 50px; background: var(--paper-3); color: var(--ink); border: 1px solid var(--ink); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .35s, transform .35s, background .25s; z-index: 999; font-family: var(--hand); font-weight: 700; font-size: 22px; box-shadow: 3px 3px 0 var(--ink); transform: rotate(-3deg); }
+  .back-top.visible { opacity: 1; pointer-events: auto; }
+  .back-top:hover { background: var(--red); color: var(--paper-3); transform: rotate(0deg) translateY(-3px); }
+  /* polaroid cursor proximity rotation */
+  .polaroid-touch { transition: transform .8s cubic-bezier(.5,1.4,.5,1); }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--ink);
+    overflow: hidden;
+    margin-left: 8px;
+    transform: rotate(0.5deg);
+  }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--ink);
+    border: none;
+    padding: 5px 10px;
+    font-family: var(--type);
+    font-size: 11px;
+    cursor: pointer;
+    transition: all .25s;
+  }
+  .lang-toggle button.active { background: var(--red); color: var(--paper-3); }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    nav { padding: 8px 16px; }
+    .logo { font-size: 24px; }
+    .hero, .section { padding-left: 20px; padding-right: 20px; padding-top: 100px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-headline h1 { font-size: 56px; }
+    .pinned-grid { grid-template-columns: 1fr; }
+    .entry { grid-template-columns: 1fr; gap: 16px; }
+    .entry-date { text-align: left; }
+    .archive-grid { grid-template-columns: 1fr 1fr; }
+    .arch-stat:nth-child(2) { border-right: none; }
+    .check-item { grid-template-columns: 36px 80px 1fr; gap: 12px; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .hello-letter { padding: 40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<button class="back-top" aria-label="Back to top">↑</button>
+
+<nav>
+  <a href="../../index.html" class="logo">World London <span class="red">Media</span></a>
+  <ul class="nav-links">
+    <li><a href="#entries" data-i18n="nav_entries">Entries</a></li>
+    <li><a href="#pinned" data-i18n="nav_notes">Notes</a></li>
+    <li><a href="#onset" data-i18n="nav_onset">On set</a></li>
+    <li><a href="#hello" data-i18n="nav_hi">Say hi</a></li>
+  </ul>
+  <a href="#hello" class="nav-cta" data-i18n="nav_cta">say hello →</a>
+  <div class="lang-toggle">
+    <button data-l="en" onclick="setLang('en')">EN</button>
+    <button data-l="tr" onclick="setLang('tr')">TR</button>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <div class="hero-date" data-i18n="hero_date">Studio diary <span class="red">·</span> Vol. 04 / SS 2026 <span class="red">·</span> entry 047</div>
+
+  <div class="hero-grid">
+    <div class="hero-headline">
+      <span class="arrow-doodle" style="top: 22%; right: 8%;"></span>
+      <span class="scribble" style="top: -12px; left: 8%;" data-i18n="hero_scribble">↳ since 2021</span>
+      <h1 data-i18n="hero_h1">
+        We make<br/>
+        <span class="underline">pictures,</span> <em>quietly,</em><br/>
+        in the corner of <span class="blue">a London</span><br/>
+        print shop.
+      </h1>
+      <p class="hero-blurb" data-i18n="hero_blurb">
+        A small studio of <em>photographers, directors and editors</em> documenting restaurants, hotels, and the quietly brave brands of London. <span class="hand">↪ this is our diary.</span>
+      </p>
+    </div>
+
+    <div style="position: relative;">
+      <span class="tape" style="top: -16px; left: 30%;"></span>
+      <div class="hero-polaroid">
+        <div class="img"></div>
+        <p class="caption">on set with Lila ✿<br/><span class="date">tuesday · 14.04.2026</span></p>
+      </div>
+      <div class="hero-stamp">
+        <span class="top">★ open</span>
+        <span class="big">04</span>
+        <span class="bot">SS / 26</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section entries" id="entries">
+  <div class="section-head">
+    <span class="label" data-i18n="ent_label">§ Recent entries</span>
+    <h2 data-i18n="ent_h2">Things we shot <em>recently,</em><br/>still <span class="blue">obsessing</span> over.</h2>
+  </div>
+
+  <ul class="entries-list">
+    <li class="entry entry-1">
+      <div class="entry-date">
+        <strong>Apr 2025</strong>
+        Restaurant<br/>· 35mm
+      </div>
+      <div class="entry-img-wrap">
+        <span class="tape entry-tape-1"></span>
+        <div class="entry-img"></div>
+      </div>
+      <div class="entry-body">
+        <h3>Marsala &amp; <em>Smoke</em></h3>
+        <div class="meta">A SIX-MONTH RESIDENCY · LONDON · COMMISSIONED BY THE KITCHEN</div>
+        <p>Six months of Tuesday lunches and Wednesday late shifts at one of London's most-talked-about Lebanese kitchens. Stills, film, and a 48-page printed book at the end of it. Difficult, perfect, would do again.</p>
+        <a href="#" class="read-more">read the entry →</a>
+      </div>
+    </li>
+    <li class="entry entry-2">
+      <div class="entry-date">
+        <strong>Aug 2025</strong>
+        Brand film<br/>· 16mm
+      </div>
+      <div class="entry-img-wrap">
+        <span class="tape green entry-tape-2"></span>
+        <div class="entry-img"></div>
+      </div>
+      <div class="entry-body">
+        <h3>Atelier <em>Floral,</em> Soho</h3>
+        <div class="meta">A 3-MINUTE FILM · 12-MONTH SOCIAL · 16MM &amp; DIGITAL</div>
+        <p>A meditation on flowers, hands, and the small obsessions of a Soho atelier. We shot the film on 16mm in two days, and the year of social content followed. Available on Vimeo &amp; Are.na.</p>
+        <a href="#" class="read-more">read the entry →</a>
+      </div>
+    </li>
+    <li class="entry entry-3">
+      <div class="entry-date">
+        <strong>Sep 2025</strong>
+        Editorial<br/>· Vogue Italia
+      </div>
+      <div class="entry-img-wrap">
+        <span class="tape red entry-tape-1"></span>
+        <div class="entry-img"></div>
+      </div>
+      <div class="entry-body">
+        <h3>Hackney <em>Plates</em></h3>
+        <div class="meta">8-PAGE EDITORIAL · VOGUE ITALIA · CASTING IN-HOUSE</div>
+        <p>Eight chefs. Eight kitchens. One August. Documentary stills and a 16-minute long-form film for Vogue Italia's Food &amp; Light issue. The cover is one of ours.</p>
+        <a href="#" class="read-more">read the entry →</a>
+      </div>
+    </li>
+    <li class="entry entry-4">
+      <div class="entry-date">
+        <strong>Nov 2024</strong>
+        Beauty<br/>· stills
+      </div>
+      <div class="entry-img-wrap">
+        <span class="tape entry-tape-2"></span>
+        <div class="entry-img"></div>
+      </div>
+      <div class="entry-body">
+        <h3>Folie <em>Nº 12</em></h3>
+        <div class="meta">FULL AW24 LAUNCH · 14 MARKETS · STILLS, MOTION, PRINT</div>
+        <p>An entire AW24 product launch — packshots, lookbook, social cuts and the print campaign across 14 markets. Shot on a single Tuesday afternoon. Worth it.</p>
+        <a href="#" class="read-more">read the entry →</a>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section class="section pinned" id="pinned">
+  <div class="section-head">
+    <span class="label" data-i18n="pin_label">§ What we make</span>
+    <h2 data-i18n="pin_h2">Six things <em>pinned</em> to<br/>the wall above the desk.</h2>
+  </div>
+
+  <div class="pinned-grid">
+    <div class="note reveal">
+      <span class="pin"></span>
+      <div class="note-num">01.</div>
+      <h3>Photography <em>(stills)</em></h3>
+      <p>Editorial photography for hospitality, food, beauty and fashion. Shot until the room remembers itself.</p>
+      <div class="doodle">↳ tags: editorial / lookbooks</div>
+    </div>
+    <div class="note reveal">
+      <span class="pin"></span>
+      <div class="note-num">02.</div>
+      <h3>Film &amp; <em>motion</em></h3>
+      <p>Brand films, documentary shorts, the rare social cut that doesn't smell like an ad. 35mm or digital, depending.</p>
+      <div class="doodle">↳ tags: brand / docs / reels</div>
+    </div>
+    <div class="note reveal">
+      <span class="pin"></span>
+      <div class="note-num">03.</div>
+      <h3>Creative <em>direction</em></h3>
+      <p>Concept, casting, locations and the small cruel decisions. We start with the why, end with the print.</p>
+      <div class="doodle">↳ tags: concept / casting</div>
+    </div>
+    <div class="note reveal">
+      <span class="pin"></span>
+      <div class="note-num">04.</div>
+      <h3>Social <em>editorial</em></h3>
+      <p>Monthly visual production for brands who treat their feed like a magazine. Strategy through publishing.</p>
+      <div class="doodle">↳ tags: monthly / calendar</div>
+    </div>
+    <div class="note reveal">
+      <span class="pin"></span>
+      <div class="note-num">05.</div>
+      <h3>Brand <em>identity</em></h3>
+      <p>Visual systems built to hold for a decade — type, palette, photographic codes — kept honest by tiny revisions.</p>
+      <div class="doodle">↳ tags: identity / print</div>
+    </div>
+    <div class="note reveal">
+      <span class="pin"></span>
+      <div class="note-num">06.</div>
+      <h3>Studio <em>rental</em></h3>
+      <p>Our 2,000 sq ft daylight studio in Hackney. Half-day, full-day, with crew or without. Coffee included.</p>
+      <div class="doodle">↳ tags: daylight / blackout</div>
+    </div>
+  </div>
+</section>
+
+<section class="marginalia">
+  <div class="quote-mark">"</div>
+  <p class="body" data-i18n="marg_body">A photograph is the <span class="hand">quietest</span> sound a brand<br/>can make. We make it <span class="underline">well,</span> and we<br/>make it <span class="hand">last.</span></p>
+  <p class="attr" data-i18n="marg_attr">— Selin, founder &amp; director ✿</p>
+</section>
+
+<section class="section onset" id="onset">
+  <div class="section-head">
+    <span class="label" data-i18n="set_label">§ How we work · on set</span>
+    <h2 data-i18n="set_h2">Our checklist, <em>roughly,</em><br/>before the camera <span class="blue">comes out.</span></h2>
+  </div>
+
+  <ul class="checklist">
+    <li class="check-item">
+      <div class="check-box"></div>
+      <div class="check-num">WEEK 01</div>
+      <div class="check-body">
+        <h3>Listen, <em>mostly</em></h3>
+        <p>30-minute first call, no slides. We meet, walk through your space, eat your food, read the old menus. The brief writes itself once we know the room.</p>
+        <div class="doodle-tag">↳ no agenda. no slides. tea.</div>
+      </div>
+    </li>
+    <li class="check-item">
+      <div class="check-box"></div>
+      <div class="check-num">WEEK 02</div>
+      <div class="check-body">
+        <h3>Pin everything to <em>the wall</em></h3>
+        <p>References, palette, casting, locations, schedule. Pinned to a literal cork board. Approved before any camera comes out of its bag.</p>
+        <div class="doodle-tag">↳ moodboards on actual paper.</div>
+      </div>
+    </li>
+    <li class="check-item">
+      <div class="check-box"></div>
+      <div class="check-num">WEEK 03</div>
+      <div class="check-body">
+        <h3>Shoot <em>slowly,</em> on purpose</h3>
+        <p>Small crew, long lights. Real food, real people, real rooms. We move slowly because mistakes get expensive in post. Bring snacks, leave nervous.</p>
+        <div class="doodle-tag">↳ avg crew size: 4 people.</div>
+      </div>
+    </li>
+    <li class="check-item">
+      <div class="check-box"></div>
+      <div class="check-num">WEEK 04</div>
+      <div class="check-body">
+        <h3>Edit, grade, <em>deliver</em></h3>
+        <p>Selects in 48 hours. Final delivery within 10 working days. Graded for paper and screen separately. Archive kept indefinitely.</p>
+        <div class="doodle-tag">↳ archive lives forever.</div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section class="archive">
+  <div class="section-head" style="text-align: center;">
+    <span class="label" style="margin-bottom: 8px;">§ The archive · in numbers</span>
+  </div>
+  <div class="archive-grid">
+    <div class="arch-stat">
+      <div class="num">128 <em>features</em></div>
+      <div class="label">EDITORIAL FEATURES PUBLISHED, '21–'25</div>
+    </div>
+    <div class="arch-stat">
+      <div class="num">63 <em>brands</em></div>
+      <div class="label">RESTAURANTS · HOTELS · LABELS · SHOPS</div>
+    </div>
+    <div class="arch-stat">
+      <div class="num">04 <em>years</em></div>
+      <div class="label">OF SHOWING UP, EVERY TUESDAY</div>
+    </div>
+    <div class="arch-stat">
+      <div class="num">∞ <em>cups</em></div>
+      <div class="label">FLAT WHITES (UNCOUNTED, BUT MANY)</div>
+    </div>
+  </div>
+</section>
+
+<section class="hello" id="hello">
+  <div class="hello-letter">
+    <span class="hello-stamp-tape"></span>
+    <p class="date" data-i18n="letter_date">London, 04 / 05 / 26</p>
+    <p class="greeting" data-i18n="letter_greeting">dear friend,</p>
+    <h2 data-i18n="letter_h2">If you've read this <em>far,</em> you might be one of us.</h2>
+    <p data-i18n="letter_p1">We'd love to hear from you — about a restaurant you're opening, a hotel you've just bought, a small label you've started in your kitchen. Even just to say <em>hello.</em></p>
+    <p data-i18n="letter_p2">We answer every email within a day. We send a calendar invite within two. We don't bite.</p>
+    <div class="sign-off">
+      <p data-i18n="letter_yours">yours,</p>
+      <span class="sign" data-i18n="letter_sign">— Selin &amp; the studio ✿</span>
+    </div>
+    <a href="mailto:hello@worldlondonmedia.com" class="mail">hello@worldlondonmedia.com →</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <span class="foot-brand">World London <span class="red">Media</span></span>
+      <p style="margin-top: 16px; font-family: var(--type); font-size: 13px; color: var(--ink-blue);">a small media studio in clerkenwell · est. 2021 · we open the door tuesday to friday.</p>
+    </div>
+    <div>
+      <h4>STUDIO</h4>
+      <ul>
+        <li>Unit 4, Old Print Yard</li>
+        <li>Clerkenwell, EC1V 9AT</li>
+        <li>London, UK</li>
+      </ul>
+    </div>
+    <div>
+      <h4>DIARY</h4>
+      <ul>
+        <li><a href="#entries">Recent entries</a></li>
+        <li><a href="#pinned">What we make</a></li>
+        <li><a href="#onset">On set</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>ELSEWHERE</h4>
+      <ul>
+        <li><a href="#">@worldlondonmedia</a></li>
+        <li><a href="#">Vimeo</a></li>
+        <li><a href="#">Are.na</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 World London Media · Co. № 13442198</span>
+    <span>set in caveat · crimson pro · special elite</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 90);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  // V2
+  const _progress = document.querySelector('.scroll-progress');
+  const _backTop = document.querySelector('.back-top');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    _progress.style.width = ((window.scrollY / Math.max(max, 1)) * 100) + '%';
+    _backTop.classList.toggle('visible', window.scrollY > 600);
+  }, { passive: true });
+  _backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // polaroid cursor proximity — items lift slightly when cursor near
+  document.querySelectorAll('.polaroid, .note').forEach(p => {
+    p.addEventListener('mousemove', e => {
+      const r = p.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+      const dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+      p.style.transform = `rotate(${dx * 4}deg) translate(${dx * 4}px, ${dy * 4}px) scale(1.02)`;
+    });
+    p.addEventListener('mouseleave', () => { p.style.transform = ''; });
+  });
+
+  /* i18n */
+  const i18n_tr = {
+    nav_entries: 'Girişler', nav_notes: 'Notlar', nav_onset: 'Sette', nav_hi: 'Selam', nav_cta: 'selam de →',
+    hero_date: 'Stüdyo günlüğü <span class="red">·</span> Cilt 04 / İlkbahar 2026 <span class="red">·</span> giriş 047',
+    hero_scribble: '↳ 2021\'den beri',
+    hero_h1: '<span class="underline">Kareler</span> <em>sessizce</em><br/>üretiyoruz, <span class="blue">Londra\'daki</span><br/>bir matbaanın köşesinde.',
+    hero_blurb: 'Restoranları, otelleri ve Londra\'nın sessizce cesur markalarını belgeleyen <em>fotoğrafçılar, yönetmenler ve editörlerden</em> oluşan küçük bir stüdyo. <span class="hand">↪ bu bizim günlüğümüz.</span>',
+    ent_label: '§ Yakın girişler',
+    ent_h2: '<em>Yakın zamanda</em> çektiğimiz,<br/>hâlâ <span class="blue">takıntılı olduğumuz</span> şeyler.',
+    pin_label: '§ Ne üretiyoruz',
+    pin_h2: 'Masanın üstündeki duvara<br/><em>iğnelenmiş</em> altı şey.',
+    marg_body: 'Bir fotoğraf, bir markanın çıkarabileceği <span class="hand">en sessiz</span> sestir.<br/>Onu <span class="underline">iyi yaparız,</span> ve<br/><span class="hand">kalıcı</span> yaparız.',
+    marg_attr: '— Selin, kurucu ve yönetmen ✿',
+    set_label: '§ Nasıl çalışıyoruz · sette',
+    set_h2: 'Kamera <span class="blue">çıkmadan önce,</span><br/><em>kabaca</em> kontrol listesi.',
+    letter_date: 'Londra, 04 / 05 / 26',
+    letter_greeting: 'sevgili dost,',
+    letter_h2: 'Buraya <em>kadar</em> okuduysan, bizden olabilirsin.',
+    letter_p1: 'Senden haber almak isteriz — açacağın bir restoran, satın aldığın bir otel, mutfağında başlattığın küçük bir marka hakkında. Sadece <em>selam</em> demek için bile.',
+    letter_p2: 'Her e-postaya bir gün içinde cevap veririz. İki gün içinde takvim daveti gönderiririz. Isırmıyoruz.',
+    letter_yours: 'sevgilerle,',
+    letter_sign: '— Selin & stüdyo ✿'
+  };
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.original = el.innerHTML; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WOLO Zine — Independent Media Press · Issue Nº 04</title>
+
+<meta name="description" content="A small but loud media studio in London, printing photography, film and social content for restaurants, beauty, and the brands that still believe in pictures. Issue Nº 04 / SS 2026." />
+<meta name="theme-color" content="#f3ead2" />
+<link rel="canonical" href="https://wolo.studio/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="WOLO Zine" />
+<meta property="og:title" content="WOLO — Riso Zine" />
+<meta property="og:description" content="Pictures, printed like jazz, shot like love letters." />
+<meta property="og:url" content="https://wolo.studio/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"WOLO Zine","description":"An independent media zine, printing photography and film for the brave brands.","url":"https://wolo.studio","telephone":"+44-207-459-1024","email":"hello@worldlondonmedia.com","priceRange":"££","address":{"@type":"PostalAddress","streetAddress":"Unit 4, Old Print Yard","addressLocality":"Clerkenwell","postalCode":"EC1V 9AT","addressCountry":"GB"},"foundingDate":"2021"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:    #f3ead2;
+    --paper-2:  #e9dcb8;
+    --ink:      #1c1c1c;
+    --blue:     #2c52bd;
+    --pink:     #ff3d8b;
+    --green:    #4d7a3e;
+    --display:  'Big Shoulders Display', sans-serif;
+    --serif:    'Newsreader', serif;
+    --mono:     'DM Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.55;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(28,28,28,0.18) 1px, transparent 0);
+    background-size: 4px 4px;
+  }
+  ::selection { background: var(--pink); color: var(--paper); }
+
+  /* PAPER TEXTURE */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.04 0 0 0 0 0.03 0 0 0 0.7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 16px; left: 16px; right: 16px;
+    z-index: 1000;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 14px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .logo {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 26px;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .logo .b { color: var(--blue); }
+  .logo .p { color: var(--pink); }
+  .nav-links { display: flex; gap: 24px; list-style: none; }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color .25s;
+  }
+  .nav-links a:hover { color: var(--pink); }
+  .nav-cta {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all .25s;
+    border: 2px solid var(--ink);
+  }
+  .nav-cta:hover { background: var(--pink); border-color: var(--pink); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding: 120px 32px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-issue {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 8px 0;
+    margin-bottom: 40px;
+  }
+  .hero-issue span:nth-child(2) { color: var(--blue); }
+  .hero-issue span:nth-child(3) { color: var(--pink); }
+
+  .hero-title-wrap {
+    position: relative;
+    margin-bottom: 60px;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(80px, 17vw, 280px);
+    line-height: 0.82;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+  }
+  .hero h1 .blue {
+    color: var(--blue);
+    mix-blend-mode: multiply;
+    display: inline-block;
+    transform: translateX(-12px) translateY(8px);
+  }
+  .hero h1 .pink {
+    color: var(--pink);
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    text-transform: none;
+    mix-blend-mode: multiply;
+  }
+  .hero h1 .underline {
+    position: relative;
+    display: inline-block;
+  }
+  .hero h1 .underline::after {
+    content: '';
+    position: absolute;
+    bottom: 12%; left: -2%;
+    width: 104%; height: 22%;
+    background: var(--pink);
+    z-index: -1;
+    mix-blend-mode: multiply;
+    transform: rotate(-1.5deg);
+  }
+  .hero h1 .green { color: var(--green); }
+
+  .hero-bottom {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 320px;
+    gap: 40px;
+    align-items: end;
+  }
+  .hero-syn {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.35;
+    font-weight: 400;
+    max-width: 480px;
+  }
+  .hero-syn em { color: var(--pink); font-style: italic; }
+  .hero-stamp {
+    display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 200px; height: 200px;
+    border: 3px solid var(--blue);
+    color: var(--blue);
+    border-radius: 50%;
+    font-family: var(--display);
+    font-weight: 900;
+    text-transform: uppercase;
+    transform: rotate(-8deg);
+    text-align: center;
+    line-height: 0.95;
+    padding: 12px;
+    mix-blend-mode: multiply;
+    background: rgba(44, 82, 189, 0.08);
+  }
+  .hero-stamp .top { font-size: 14px; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .hero-stamp .big { font-size: 48px; letter-spacing: -0.02em; line-height: 0.85; }
+  .hero-stamp .bot { font-size: 11px; letter-spacing: 0.1em; margin-top: 6px; }
+
+  .hero-image {
+    aspect-ratio: 4/5;
+    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--blue);
+    position: relative;
+  }
+  .hero-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 1px 1px, var(--ink) 1px, transparent 0);
+    background-size: 4px 4px;
+    mix-blend-mode: multiply;
+    opacity: 0.45;
+    filter: contrast(1.4);
+  }
+  .hero-image::after {
+    content: '◐ FIG. 01';
+    position: absolute;
+    top: 8px; left: 8px;
+    font-family: var(--mono);
+    font-size: 10px;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 4px 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border: 1px solid var(--ink);
+  }
+
+  /* TAPE */
+  .tape {
+    position: absolute;
+    background: rgba(255, 61, 139, 0.7);
+    width: 110px; height: 28px;
+    border: 1px dashed rgba(28, 28, 28, 0.3);
+    z-index: 5;
+    box-shadow: 2px 2px 0 rgba(28,28,28,0.1);
+  }
+
+  /* MARQUEE */
+  .marquee {
+    background: var(--blue);
+    color: var(--paper);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 14px 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+  .marquee-track {
+    display: inline-block;
+    animation: scrollL 40s linear infinite;
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  .marquee .pink-dot { color: var(--pink); margin: 0 16px; }
+  @keyframes scrollL {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* CHAPTERS (services as zine articles) */
+  .chapters {
+    padding: 100px 32px;
+  }
+  .chapters-head {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: end;
+  }
+  .chapters-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--blue);
+  }
+  .chapters-label .num {
+    display: block;
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 0.85;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.04em;
+  }
+  .chapters-head h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(48px, 7vw, 110px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+  .chapters-head h2 .pink {
+    color: var(--pink);
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+  }
+  .chapters-head h2 .blue { color: var(--blue); }
+
+  .chap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .chap {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 28px;
+    position: relative;
+    transition: transform .35s cubic-bezier(.5,1.4,.5,1);
+    cursor: pointer;
+  }
+  .chap:hover {
+    transform: translate(-4px, -4px) rotate(-0.5deg);
+    box-shadow: 8px 8px 0 var(--blue);
+  }
+  .chap:nth-child(2):hover { box-shadow: 8px 8px 0 var(--pink); }
+  .chap:nth-child(3):hover { box-shadow: 8px 8px 0 var(--green); }
+  .chap:nth-child(4):hover { box-shadow: 8px 8px 0 var(--pink); }
+  .chap:nth-child(5):hover { box-shadow: 8px 8px 0 var(--blue); }
+  .chap:nth-child(6):hover { box-shadow: 8px 8px 0 var(--green); }
+  .chap-no {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 48px; height: 48px;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 22px;
+    margin-bottom: 24px;
+    background: var(--blue);
+    color: var(--paper);
+  }
+  .chap:nth-child(2n) .chap-no { background: var(--pink); }
+  .chap:nth-child(3n) .chap-no { background: var(--green); }
+  .chap h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    margin-bottom: 12px;
+  }
+  .chap h3 em {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    text-transform: none;
+    color: var(--pink);
+  }
+  .chap p {
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .chap-tags {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    line-height: 1.7;
+    color: var(--blue);
+    border-top: 1px dashed var(--ink);
+    padding-top: 16px;
+  }
+  .chap-tape { top: -14px; right: 24px; }
+
+  /* SPREAD (work as polaroid grid) */
+  .spread {
+    padding: 80px 32px;
+    background: var(--paper-2);
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    position: relative;
+  }
+  .spread::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 1px 1px, var(--blue) 0.5px, transparent 0);
+    background-size: 8px 8px;
+    opacity: 0.18;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+  .spread-head {
+    position: relative;
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 32px;
+    align-items: end;
+  }
+  .spread-head .num {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 0.85;
+    color: var(--blue);
+    mix-blend-mode: multiply;
+    letter-spacing: -0.04em;
+  }
+  .spread-head h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(48px, 7vw, 110px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .spread-head h2 .pink {
+    color: var(--pink);
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    text-transform: none;
+  }
+  .spread-head .pull {
+    font-family: var(--serif);
+    font-size: 14px;
+    line-height: 1.45;
+    text-align: right;
+    max-width: 240px;
+    margin-left: auto;
+  }
+
+  .polaroid-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 24px;
+    position: relative;
+  }
+  .polaroid {
+    background: var(--paper);
+    padding: 14px 14px 56px;
+    border: 1px solid rgba(28, 28, 28, 0.2);
+    box-shadow: 4px 8px 24px -8px rgba(28, 28, 28, 0.25);
+    transition: transform .4s cubic-bezier(.5,1.4,.5,1);
+    cursor: pointer;
+    position: relative;
+  }
+  .polaroid:nth-child(1) { transform: rotate(-2deg); }
+  .polaroid:nth-child(2) { transform: rotate(1.5deg); margin-top: 24px; }
+  .polaroid:nth-child(3) { transform: rotate(-1deg); }
+  .polaroid:nth-child(4) { transform: rotate(2deg); margin-top: 16px; }
+  .polaroid:nth-child(5) { transform: rotate(1deg); }
+  .polaroid:nth-child(6) { transform: rotate(-2deg); margin-top: 32px; }
+  .polaroid:nth-child(7) { transform: rotate(2.5deg); }
+  .polaroid:nth-child(8) { transform: rotate(-1deg); margin-top: 16px; }
+  .polaroid:hover { transform: rotate(0) scale(1.04); z-index: 5; }
+  .polaroid .img {
+    aspect-ratio: 1/1;
+    background: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 10px;
+  }
+  .polaroid h4 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    font-style: italic;
+    margin-top: 4px;
+  }
+  .polaroid .meta {
+    font-family: var(--mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    text-align: center;
+    color: var(--blue);
+    margin-top: 4px;
+  }
+  .pol-1 .img { background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=600&q=80'); }
+  .pol-2 .img { background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80'); }
+  .pol-3 .img { background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&q=80'); }
+  .pol-4 .img { background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=600&q=80'); }
+  .pol-5 .img { background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80'); }
+  .pol-6 .img { background-image: url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?w=600&q=80'); }
+  .pol-7 .img { background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80'); }
+  .pol-8 .img { background-image: url('https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=600&q=80'); }
+
+  /* MANIFESTO */
+  .manifesto {
+    padding: 120px 32px;
+    position: relative;
+  }
+  .manifesto-text {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(40px, 6vw, 110px);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    max-width: 1500px;
+  }
+  .manifesto-text .pink {
+    color: var(--pink);
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    text-transform: none;
+  }
+  .manifesto-text .blue { color: var(--blue); }
+  .manifesto-text .strike { text-decoration: line-through; text-decoration-color: var(--pink); text-decoration-thickness: 5px; opacity: 0.5; }
+  .manifesto-attr {
+    margin-top: 60px;
+    border-top: 1px solid var(--ink);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  /* PROCESS as numbered zine pages */
+  .pages {
+    padding: 100px 32px;
+    background: var(--paper-2);
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+  .pages-head {
+    margin-bottom: 60px;
+  }
+  .pages h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(48px, 7vw, 110px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .pages h2 .pink {
+    color: var(--pink);
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    text-transform: none;
+  }
+  .pages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .page {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 24px;
+    position: relative;
+    transition: transform .4s cubic-bezier(.5,1.4,.5,1);
+    cursor: pointer;
+  }
+  .page:hover { transform: rotate(-1deg) scale(1.02); }
+  .page-marker {
+    position: absolute;
+    top: -14px; left: 16px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .page:nth-child(2) .page-marker { background: var(--blue); }
+  .page:nth-child(3) .page-marker { background: var(--pink); }
+  .page:nth-child(4) .page-marker { background: var(--green); }
+  .page-num {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 96px;
+    line-height: 0.85;
+    color: var(--blue);
+    mix-blend-mode: multiply;
+    letter-spacing: -0.04em;
+    margin: 12px 0 8px;
+  }
+  .page:nth-child(2) .page-num { color: var(--pink); }
+  .page:nth-child(3) .page-num { color: var(--green); }
+  .page:nth-child(4) .page-num { color: var(--ink); }
+  .page h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .page p {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .page-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--blue);
+    border-top: 1px dashed var(--ink);
+    padding-top: 12px;
+  }
+
+  /* STATS */
+  .stats {
+    padding: 80px 32px;
+    background: var(--paper);
+    border-bottom: 2px solid var(--ink);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .stat {
+    padding: 32px 24px 32px 0;
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 100px;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--blue);
+    mix-blend-mode: multiply;
+  }
+  .stat-num em {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--pink);
+    font-size: 36px;
+  }
+  .stat-label {
+    margin-top: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 140px 32px 60px;
+    text-align: center;
+    position: relative;
+  }
+  .contact-stamp {
+    display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 160px; height: 160px;
+    border: 3px solid var(--pink);
+    color: var(--pink);
+    border-radius: 50%;
+    font-family: var(--display);
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 32px;
+    transform: rotate(-6deg);
+    background: rgba(255, 61, 139, 0.06);
+    padding: 12px;
+    line-height: 0.95;
+    mix-blend-mode: multiply;
+  }
+  .contact-stamp .top { font-size: 13px; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .contact-stamp .big { font-size: 36px; }
+  .contact-stamp .bot { font-size: 11px; letter-spacing: 0.1em; margin-top: 4px; }
+
+  .contact h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(72px, 12vw, 200px);
+    line-height: 0.85;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    margin-bottom: 32px;
+  }
+  .contact h2 .pink {
+    color: var(--pink);
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    text-transform: none;
+  }
+  .contact h2 .blue { color: var(--blue); }
+  .contact a.mail {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 56px);
+    color: var(--ink);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 4px solid var(--pink);
+    padding-bottom: 4px;
+    transition: color .25s, border-color .25s;
+  }
+  .contact a.mail:hover { color: var(--pink); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 32px 24px;
+    border-top: 4px solid var(--pink);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  .foot-brand {
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--paper);
+    text-transform: uppercase;
+  }
+  .foot-brand .b { color: var(--blue); }
+  .foot-brand .p { color: var(--pink); }
+  footer h4 {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 12px;
+    color: var(--pink);
+    font-weight: 500;
+  }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 6px; opacity: 0.85; font-size: 12px; }
+  footer a { color: inherit; text-decoration: none; }
+  footer a:hover { color: var(--pink); }
+  .foot-bot {
+    border-top: 1px solid rgba(243, 234, 210, 0.15);
+    padding-top: 16px;
+    display: flex; justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.7;
+  }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* V2 PACK */
+  .skip-link { position: absolute; top: -100px; left: 8px; background: var(--ink); color: var(--paper); padding: 8px 16px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--pink); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 3px; background: var(--pink); z-index: 10000; transition: width .12s ease-out; pointer-events: none; mix-blend-mode: multiply; }
+  .back-top { position: fixed; bottom: 24px; right: 24px; width: 52px; height: 52px; background: var(--paper); color: var(--ink); border: 2px solid var(--ink); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .35s, background .25s; z-index: 999; font-family: var(--display); font-weight: 900; font-size: 22px; box-shadow: 4px 4px 0 var(--ink); }
+  .back-top.visible { opacity: 1; pointer-events: auto; }
+  .back-top:hover { background: var(--pink); color: var(--paper); }
+  /* Tape elements gain subtle wobble on hover */
+  .tape { transition: transform .35s cubic-bezier(.5,1.4,.5,1); }
+  .chap:hover .tape, .polaroid:hover ~ .tape { transform: rotate(2deg) scale(1.05); }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+
+  .lang-toggle {
+    display: inline-flex;
+    border: 2px solid var(--ink);
+    overflow: hidden;
+    margin-left: 8px;
+  }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--ink);
+    border: none;
+    padding: 6px 11px;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .lang-toggle button.active { background: var(--pink); color: var(--paper); }
+
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 64px; }
+    .hero-bottom { grid-template-columns: 1fr; }
+    .hero-stamp { width: 140px; height: 140px; }
+    .hero-stamp .big { font-size: 32px; }
+    .chap-grid, .pages-grid { grid-template-columns: 1fr; }
+    .polaroid-grid { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(2) { border-right: none; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .chapters-head, .spread-head, .pages-head { grid-template-columns: 1fr; gap: 16px; }
+    .spread-head h2 { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<button class="back-top" aria-label="Back to top">↑</button>
+
+<nav>
+  <a href="../../index.html" class="logo">WO<span class="b">L</span><span class="p">O</span> ZINE</a>
+  <ul class="nav-links">
+    <li><a href="#chapters" data-i18n="nav_chapters">Chapters</a></li>
+    <li><a href="#spread" data-i18n="nav_spread">The Spread</a></li>
+    <li><a href="#pages" data-i18n="nav_process">Process</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta" data-i18n="nav_cta">Subscribe ↗</a>
+  <div class="lang-toggle">
+    <button data-l="en" onclick="setLang('en')">EN</button>
+    <button data-l="tr" onclick="setLang('tr')">TR</button>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <div class="hero-issue">
+    <span data-i18n="hero_issue_1">Issue Nº 04 · SS 2026</span>
+    <span data-i18n="hero_issue_2">An independent media zine</span>
+    <span data-i18n="hero_issue_3">Printed in London</span>
+  </div>
+
+  <div class="hero-title-wrap">
+    <h1 data-i18n="hero_h1">
+      <span class="blue">Pictures,</span><br/>
+      <span class="underline">printed</span> <span class="pink">like jazz,</span><br/>
+      shot like <span class="green">love letters.</span>
+    </h1>
+    <span class="tape" style="top: 18%; right: 12%; transform: rotate(8deg);"></span>
+  </div>
+
+  <div class="hero-bottom">
+    <p class="hero-syn" data-i18n="hero_syn">A <em>small but loud</em> media studio in London, printing photography, film and social content for restaurants, beauty, and the brands that still believe in pictures.</p>
+    <div class="hero-stamp">
+      <span class="top">★ Edition</span>
+      <span class="big">04</span>
+      <span class="bot">SS · 2026</span>
+    </div>
+    <div style="position: relative;">
+      <div class="hero-image"></div>
+      <span class="tape" style="top: -14px; left: 30%;"></span>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    REAL FOOD <span class="pink-dot">●</span>
+    REAL ROOMS <span class="pink-dot">●</span>
+    REAL PEOPLE <span class="pink-dot">●</span>
+    NO STOCK PHOTOS <span class="pink-dot">●</span>
+    SHOT IN LONDON · LISBON · ISTANBUL <span class="pink-dot">●</span>
+    REAL FOOD <span class="pink-dot">●</span>
+    REAL ROOMS <span class="pink-dot">●</span>
+    REAL PEOPLE <span class="pink-dot">●</span>
+    NO STOCK PHOTOS <span class="pink-dot">●</span>
+    SHOT IN LONDON · LISBON · ISTANBUL <span class="pink-dot">●</span>
+  </div>
+</div>
+
+<section class="chapters" id="chapters">
+  <div class="chapters-head">
+    <div class="chapters-label" data-i18n="chap_label">
+      <span class="num">01.</span>
+      § Chapters / What we make
+    </div>
+    <h2 data-i18n="chap_h2">Six <span class="pink">articles,</span> one <span class="blue">obsession</span> with light.</h2>
+  </div>
+
+  <div class="chap-grid">
+    <div class="chap reveal">
+      <span class="tape chap-tape"></span>
+      <div class="chap-no">i</div>
+      <h3>Photo<em>graphy</em></h3>
+      <p>Stills lit and built like editorial. Hospitality, food, beauty, fashion — the rooms we shoot remember themselves.</p>
+      <div class="chap-tags">EDITORIAL · STILLS · LOOKBOOKS</div>
+    </div>
+    <div class="chap reveal">
+      <span class="tape chap-tape"></span>
+      <div class="chap-no">ii</div>
+      <h3>Film &amp; <em>motion</em></h3>
+      <p>Brand films, shorts, and the rare social cut that doesn't smell like an ad. Shot on cinema, edited like jazz.</p>
+      <div class="chap-tags">35MM · DOCUMENTARY · REELS</div>
+    </div>
+    <div class="chap reveal">
+      <span class="tape chap-tape"></span>
+      <div class="chap-no">iii</div>
+      <h3>Creative <em>direction</em></h3>
+      <p>Concept, casting, locations, the small cruel decisions. We start with the why and end with the print.</p>
+      <div class="chap-tags">CONCEPT · CASTING · ART DIR</div>
+    </div>
+    <div class="chap reveal">
+      <span class="tape chap-tape"></span>
+      <div class="chap-no">iv</div>
+      <h3>Social <em>editorial</em></h3>
+      <p>Monthly visual production for brands who treat their feed like a magazine. Strategy through publishing.</p>
+      <div class="chap-tags">STRATEGY · PRODUCTION · CALENDAR</div>
+    </div>
+    <div class="chap reveal">
+      <span class="tape chap-tape"></span>
+      <div class="chap-no">v</div>
+      <h3>Brand <em>identity</em></h3>
+      <p>Visual systems built to hold for a decade — type, palette, photographic codes — and kept honest.</p>
+      <div class="chap-tags">IDENTITY · PRINT · DIGITAL</div>
+    </div>
+    <div class="chap reveal">
+      <span class="tape chap-tape"></span>
+      <div class="chap-no">vi</div>
+      <h3>Studio <em>rental</em></h3>
+      <p>Our 2,000 sq ft daylight studio in Hackney. Half-day, full-day, with crew or without. Coffee included.</p>
+      <div class="chap-tags">DAYLIGHT · BLACKOUT · CREW</div>
+    </div>
+  </div>
+</section>
+
+<section class="spread" id="spread">
+  <div class="spread-head">
+    <div class="num">02.</div>
+    <h2 data-i18n="spread_h2">The <span class="pink">centre</span> spread</h2>
+    <div class="pull" data-i18n="spread_pull">— Recent prints, lightly tilted &amp; loosely organised. Click to read the full feature.</div>
+  </div>
+
+  <div class="polaroid-grid">
+    <div class="polaroid pol-1 reveal"><div class="img"></div><h4>Marsala &amp; Smoke</h4><div class="meta">Restaurant · 2025</div></div>
+    <div class="polaroid pol-2 reveal"><div class="img"></div><h4>Hackney Plates</h4><div class="meta">Editorial · 2025</div></div>
+    <div class="polaroid pol-3 reveal"><div class="img"></div><h4>Folie Nº 12</h4><div class="meta">Beauty · 2024</div></div>
+    <div class="polaroid pol-4 reveal"><div class="img"></div><h4>Atelier Soho</h4><div class="meta">Brand · 2024</div></div>
+    <div class="polaroid pol-5 reveal"><div class="img"></div><h4>Vogue Italia</h4><div class="meta">Editorial · 2025</div></div>
+    <div class="polaroid pol-6 reveal"><div class="img"></div><h4>Casa Lago</h4><div class="meta">Hotel · 2025</div></div>
+    <div class="polaroid pol-7 reveal"><div class="img"></div><h4>Maison Lutèce</h4><div class="meta">Direction · 2024</div></div>
+    <div class="polaroid pol-8 reveal"><div class="img"></div><h4>Cervo Bay</h4><div class="meta">Hospitality · 2025</div></div>
+  </div>
+</section>
+
+<section class="manifesto">
+  <p class="manifesto-text" data-i18n="manif_text">
+    We <span class="blue">print</span> like it's <span class="strike">1999.</span> We <span class="pink">shoot</span> like it matters. We <span class="blue">don't make ads.</span> We make <em><span class="pink">pictures</span></em> that earn the page they sit on.
+  </p>
+  <div class="manifesto-attr">
+    <span>§ 03 · ZINE MANIFESTO</span>
+    <span>EST. 2021 · LONDON · CLERKENWELL</span>
+  </div>
+</section>
+
+<section class="pages" id="pages">
+  <div class="pages-head">
+    <div class="chapters-label" data-i18n="pages_label">
+      <span class="num">04.</span>
+      § Process / How we work
+    </div>
+    <h2 data-i18n="pages_h2">Four <span class="pink">pages,</span> one rhythm.</h2>
+  </div>
+  <div class="pages-grid">
+    <div class="page reveal">
+      <span class="page-marker">PAGE 01</span>
+      <div class="page-num">i.</div>
+      <h3>Listen</h3>
+      <p>30-minute first call, no slides. We meet, walk through your space, eat your food, read the menus.</p>
+      <div class="page-tag">WEEK 01 · DISCOVERY</div>
+    </div>
+    <div class="page reveal">
+      <span class="page-marker">PAGE 02</span>
+      <div class="page-num">ii.</div>
+      <h3>Direct</h3>
+      <p>References, palette, casting, locations. We pin everything to a wall before any camera comes out.</p>
+      <div class="page-tag">WEEK 02 · DIRECTION</div>
+    </div>
+    <div class="page reveal">
+      <span class="page-marker">PAGE 03</span>
+      <div class="page-num">iii.</div>
+      <h3>Shoot</h3>
+      <p>Small crew. Long lights. Real food, real people, real rooms. We move slowly because mistakes get expensive.</p>
+      <div class="page-tag">WEEK 03 · PRODUCTION</div>
+    </div>
+    <div class="page reveal">
+      <span class="page-marker">PAGE 04</span>
+      <div class="page-num">iv.</div>
+      <h3>Print</h3>
+      <p>Selects in 48 hours. Final delivery in 10 working days. Graded for paper and screen separately.</p>
+      <div class="page-tag">WEEK 04 · DELIVERY</div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="stat-num">128 <em>features</em></div>
+      <div class="stat-label">EDITORIAL FEATURES PUBLISHED</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">63 <em>brands</em></div>
+      <div class="stat-label">RESTAURANTS · HOTELS · BRANDS</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">04 <em>years</em></div>
+      <div class="stat-label">OF PATIENT, INDIE CRAFT</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">∞ <em>cups</em></div>
+      <div class="stat-label">FLAT WHITES · COUNTING SINCE</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-stamp">
+    <span class="top">★ Approved</span>
+    <span class="big">YES</span>
+    <span class="bot">Booking Q3</span>
+  </div>
+  <h2 data-i18n="contact_h2">Send us a <span class="pink">letter.</span><br/>We <span class="blue">write back.</span></h2>
+  <a href="mailto:hello@worldlondonmedia.com" class="mail">hello@worldlondonmedia.com →</a>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">WO<span class="b">L</span><span class="p">O</span></div>
+      <p style="margin-top: 12px; opacity: 0.7; max-width: 260px; font-family: var(--serif); font-size: 14px;">An independent media zine, printed in London since 2021.</p>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <ul>
+        <li>Unit 4, Old Print Yard</li>
+        <li>Clerkenwell, EC1V 9AT</li>
+        <li>London, UK</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Issues</h4>
+      <ul>
+        <li><a href="#">Nº 01 · SS24</a></li>
+        <li><a href="#">Nº 02 · AW24</a></li>
+        <li><a href="#">Nº 03 · SS25</a></li>
+        <li><a href="#">Nº 04 · SS26</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Subscribe</h4>
+      <ul>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Are.na</a></li>
+        <li><a href="#">Print archive</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 WOLO ZINE · CO. № 13442198</span>
+    <span>SET IN BIG SHOULDERS · NEWSREADER · DM MONO</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 80);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  // V2 scroll + back
+  const _progress = document.querySelector('.scroll-progress');
+  const _backTop = document.querySelector('.back-top');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    _progress.style.width = ((window.scrollY / Math.max(max, 1)) * 100) + '%';
+    _backTop.classList.toggle('visible', window.scrollY > 600);
+  }, { passive: true });
+  _backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* i18n */
+  const i18n_tr = {
+    nav_chapters: 'Bölümler', nav_spread: 'Orta Sayfa', nav_process: 'Süreç', nav_contact: 'İletişim', nav_cta: 'Abone ol ↗',
+    hero_issue_1: 'Sayı Nº 04 · İlkbahar/Yaz 2026',
+    hero_issue_2: 'Bağımsız bir medya zine\'i',
+    hero_issue_3: 'Londra\'da basıldı',
+    hero_h1: '<span class="blue">Kareler,</span><br/><span class="underline">caz gibi</span> <span class="pink">basıldı,</span><br/>aşk mektubu gibi <span class="green">çekildi.</span>',
+    hero_syn: 'Londra\'da <em>küçük ama yüksek sesli</em> bir medya stüdyosu — restoranlar, güzellik, ve hâlâ karelere inanan markalar için fotoğraf, film ve sosyal içerik basıyor.',
+    chap_label: '<span class="num">01.</span> § Bölümler / Ne üretiyoruz',
+    chap_h2: 'Altı <span class="pink">makale,</span> ışığa tek <span class="blue">takıntı.</span>',
+    spread_h2: '<span class="pink">Orta</span> sayfa',
+    spread_pull: '— Yakın baskılar, hafifçe eğri ve gevşek dizilmiş. Tam yazıyı okumak için tıkla.',
+    manif_text: '<span class="blue">1999</span> gibi <span class="strike">basıyoruz.</span> Önemliymiş gibi <span class="pink">çekiyoruz.</span> <span class="blue">Reklam yapmıyoruz.</span> Üzerine bastığı sayfayı hak eden <em><span class="pink">kareler</span></em> yapıyoruz.',
+    pages_label: '<span class="num">04.</span> § Süreç / Nasıl çalışıyoruz',
+    pages_h2: 'Dört <span class="pink">sayfa,</span> bir ritim.',
+    contact_h2: 'Bize <span class="pink">mektup</span> yaz.<br/><span class="blue">Cevap yazarız.</span>'
+  };
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.original = el.innerHTML; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+</script>
+
+</body>
+</html>

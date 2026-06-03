@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Atelier Vert · World London Media — A Studio in the Romantic Tradition</title>
+
+<meta name="description" content="An atelier in the old sense of the word — a small London studio of photographers and filmmakers. By appointment, for the brands and houses who still care." />
+<meta name="theme-color" content="#1f3326" />
+<link rel="canonical" href="https://worldlondonmedia.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="World London Media · Atelier Vert" />
+<meta property="og:title" content="Atelier Vert · World London Media" />
+<meta property="og:description" content="Of flowers, films, &amp; quiet things." />
+<meta property="og:url" content="https://worldlondonmedia.com/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&q=80" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Atelier Vert · World London Media","description":"A small London studio of photographers and filmmakers, in the romantic tradition.","url":"https://worldlondonmedia.com","email":"hello@worldlondonmedia.com","priceRange":"£££","address":{"@type":"PostalAddress","streetAddress":"Unit 4, Old Print Yard","addressLocality":"Clerkenwell","postalCode":"EC1V 9AT","addressCountry":"GB"},"foundingDate":"2021"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Cormorant+SC:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest:    #1f3326;
+    --forest-2:  #2c4633;
+    --rose:      #c89c97;
+    --rose-2:    #d4b3ae;
+    --gold:      #b89048;
+    --gold-2:    #d4b074;
+    --cream:     #f4ecda;
+    --cream-2:   #ebe0c5;
+    --display:   'Yeseva One', serif;
+    --caps:      'Marcellus', serif;
+    --serif:     'EB Garamond', serif;
+    --sc:        'Cormorant SC', serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--forest);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--rose); color: var(--forest); }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='1'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.20 0 0 0 0 0.15 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+  }
+
+  /* SVG ORNAMENTS */
+  .ornament-flourish {
+    display: block;
+    margin: 0 auto;
+    color: var(--gold);
+  }
+
+  /* TOP BAND */
+  .topband {
+    background: var(--forest);
+    color: var(--gold-2);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gold);
+    text-align: center;
+    font-family: var(--caps);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    overflow: hidden;
+  }
+  .topband-track {
+    display: inline-block;
+    animation: scrollL 60s linear infinite;
+    white-space: nowrap;
+  }
+  .topband .gold { color: var(--rose-2); margin: 0 16px; }
+  @keyframes scrollL {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* NAV */
+  nav {
+    background: var(--cream);
+    padding: 28px 48px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    border-bottom: 1px solid var(--forest);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-left, .nav-right {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+  .nav-right { justify-content: flex-end; }
+  nav a {
+    color: var(--forest);
+    text-decoration: none;
+    font-family: var(--caps);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    transition: color .35s;
+    position: relative;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 50%;
+    width: 0; height: 1px;
+    background: var(--rose);
+    transition: width .4s, left .4s;
+  }
+  nav a:hover { color: var(--rose); }
+  nav a:hover::after { width: 100%; left: 0; }
+  .logo {
+    font-family: var(--display);
+    font-size: 36px;
+    color: var(--forest);
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: -0.005em;
+    line-height: 0.95;
+  }
+  .logo .gold { color: var(--rose); font-style: italic; }
+  .logo small {
+    display: block;
+    font-family: var(--caps);
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    margin-top: 4px;
+    color: var(--gold);
+  }
+  .nav-cta {
+    border: 1px solid var(--forest);
+    padding: 10px 22px;
+    color: var(--forest) !important;
+    font-family: var(--caps);
+    font-size: 11px !important;
+    transition: all .35s;
+    border-radius: 0 !important;
+  }
+  .nav-cta:hover { background: var(--forest); color: var(--cream) !important; }
+
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--forest);
+    overflow: hidden;
+    margin-left: 12px;
+  }
+  .lang-toggle button {
+    background: transparent;
+    color: var(--forest);
+    border: none;
+    padding: 5px 11px;
+    font-family: var(--caps);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: all .25s;
+    text-transform: uppercase;
+  }
+  .lang-toggle button.active { background: var(--forest); color: var(--gold-2); }
+
+  /* ORNAMENTAL DIVIDER */
+  .ornament-divider {
+    text-align: center;
+    margin: 24px 0;
+    color: var(--gold);
+    font-size: 18px;
+    letter-spacing: 0.4em;
+  }
+  .ornament-divider::before, .ornament-divider::after {
+    content: '';
+    display: inline-block;
+    width: 80px; height: 1px;
+    background: var(--gold);
+    vertical-align: middle;
+    margin: 0 16px;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 90vh;
+    padding: 80px 48px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  .hero::before, .hero::after {
+    content: '';
+    position: absolute;
+    width: 280px;
+    height: 100%;
+    top: 0;
+    pointer-events: none;
+    opacity: 0.18;
+    background-repeat: no-repeat;
+  }
+  .hero::before {
+    left: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 280 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23b89048' stroke-width='1.5' fill='none' stroke-linecap='round'%3E%3Cpath d='M40 0 Q 80 80 60 160 Q 40 240 100 320 Q 160 400 80 480 Q 0 560 80 640 Q 160 720 100 800'/%3E%3Cpath d='M30 100 Q 70 110 60 130 Q 50 150 80 160 M70 130 L 90 120 M70 130 L 80 145' /%3E%3Cpath d='M75 280 Q 100 290 90 310 Q 80 330 110 340 M95 310 L 115 300 M95 310 L 105 325' /%3E%3Cpath d='M65 480 Q 90 490 80 510 Q 70 530 100 540 M85 510 L 105 500 M85 510 L 95 525' /%3E%3Ccircle cx='90' cy='200' r='18' /%3E%3Ccircle cx='90' cy='200' r='8' /%3E%3Ccircle cx='100' cy='420' r='16' /%3E%3Ccircle cx='100' cy='420' r='6' /%3E%3Ccircle cx='90' cy='620' r='20' /%3E%3Ccircle cx='90' cy='620' r='10' /%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero::after {
+    right: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 280 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23b89048' stroke-width='1.5' fill='none' stroke-linecap='round'%3E%3Cpath d='M240 0 Q 200 80 220 160 Q 240 240 180 320 Q 120 400 200 480 Q 280 560 200 640 Q 120 720 180 800'/%3E%3Cpath d='M250 100 Q 210 110 220 130 Q 230 150 200 160 M210 130 L 190 120 M210 130 L 200 145' /%3E%3Cpath d='M205 280 Q 180 290 190 310 Q 200 330 170 340 M185 310 L 165 300 M185 310 L 175 325' /%3E%3Cpath d='M215 480 Q 190 490 200 510 Q 210 530 180 540 M195 510 L 175 500 M195 510 L 185 525' /%3E%3Ccircle cx='190' cy='200' r='18' /%3E%3Ccircle cx='190' cy='200' r='8' /%3E%3Ccircle cx='180' cy='420' r='16' /%3E%3Ccircle cx='180' cy='420' r='6' /%3E%3Ccircle cx='190' cy='620' r='20' /%3E%3Ccircle cx='190' cy='620' r='10' /%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-eyebrow {
+    font-family: var(--sc);
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.45em;
+    margin-bottom: 32px;
+    font-weight: 400;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(56px, 9vw, 156px);
+    line-height: 0.95;
+    letter-spacing: -0.005em;
+    color: var(--forest);
+    max-width: 1300px;
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--rose);
+  }
+  .hero-blurb {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.5;
+    max-width: 680px;
+    color: var(--forest);
+    opacity: 0.85;
+    margin: 0 auto 40px;
+  }
+  .hero-blurb em { color: var(--rose); font-style: normal; font-family: var(--display); font-size: 1.05em; }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 28px;
+    background: var(--forest);
+    color: var(--cream);
+    text-decoration: none;
+    font-family: var(--caps);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    border: 1px solid var(--gold);
+    transition: all .35s;
+  }
+  .hero-cta:hover { background: var(--rose); color: var(--cream); border-color: var(--rose); }
+
+  /* HERO IMAGE FRAME */
+  .hero-frame {
+    margin-top: 48px;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16/9;
+    background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    border: 8px solid var(--cream);
+    box-shadow:
+      0 0 0 1px var(--gold),
+      0 0 0 12px var(--cream),
+      0 0 0 13px var(--gold),
+      0 30px 80px -20px rgba(31, 51, 38, 0.4);
+    position: relative;
+    z-index: 2;
+  }
+  .hero-frame-cap {
+    margin-top: 32px;
+    font-family: var(--sc);
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+  }
+
+  /* SECTION TEMPLATE */
+  .section {
+    padding: 120px 48px;
+    position: relative;
+  }
+  .section-eyebrow {
+    text-align: center;
+    font-family: var(--sc);
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.45em;
+    margin-bottom: 16px;
+  }
+  .section h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(48px, 6.5vw, 110px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--forest);
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .section h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--rose);
+  }
+
+  /* COLLECTION (services) */
+  .collection {
+    background: var(--cream-2);
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+  }
+  .col-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 64px 80px;
+  }
+  .col-item {
+    text-align: center;
+    padding: 32px 16px;
+    border-top: 1px solid rgba(31, 51, 38, 0.2);
+    border-bottom: 1px solid rgba(31, 51, 38, 0.2);
+    cursor: pointer;
+    transition: background .35s;
+  }
+  .col-item:hover { background: rgba(184, 144, 72, 0.08); }
+  .col-no {
+    font-family: var(--display);
+    font-size: 22px;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .col-item h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+  .col-item h3 em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--rose); }
+  .col-item p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 460px;
+    margin: 0 auto 16px;
+    color: var(--forest);
+    opacity: 0.85;
+  }
+  .col-tags {
+    font-family: var(--sc);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+  }
+
+  /* GALLERY */
+  .gallery-grid {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+  }
+  .g-item { cursor: pointer; }
+  .g-frame {
+    background: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border: 6px solid var(--cream);
+    box-shadow:
+      0 0 0 1px var(--gold),
+      0 0 0 8px var(--cream),
+      0 0 0 9px var(--gold);
+    transition: transform 1s cubic-bezier(.5,1.4,.5,1);
+  }
+  .g-item:hover .g-frame { transform: rotate(-1deg) scale(1.02); }
+  .g-cap {
+    margin-top: 24px;
+    text-align: center;
+  }
+  .g-cap h4 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 28px;
+  }
+  .g-cap h4 em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--rose); }
+  .g-cap .meta {
+    font-family: var(--sc);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    margin-top: 6px;
+  }
+  .g-1 { grid-column: 1 / 7; }
+  .g-1 .g-frame { aspect-ratio: 4/5; background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?w=1200&q=80'); }
+  .g-2 { grid-column: 8 / 13; padding-top: 80px; }
+  .g-2 .g-frame { aspect-ratio: 3/4; background-image: url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=900&q=80'); }
+  .g-3 { grid-column: 1 / 5; padding-top: 40px; }
+  .g-3 .g-frame { aspect-ratio: 1/1; background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80'); }
+  .g-4 { grid-column: 6 / 13; }
+  .g-4 .g-frame { aspect-ratio: 16/10; background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1400&q=80'); }
+
+  /* MANIFESTO */
+  .manifesto {
+    background: var(--forest);
+    color: var(--cream);
+    padding: 140px 48px;
+    text-align: center;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    position: relative;
+  }
+  .manifesto-text {
+    font-family: var(--display);
+    font-size: clamp(36px, 4.6vw, 76px);
+    line-height: 1.1;
+    max-width: 1100px;
+    margin: 0 auto;
+    color: var(--cream);
+  }
+  .manifesto-text em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold-2);
+  }
+  .manifesto-attr {
+    margin-top: 32px;
+    font-family: var(--sc);
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    color: var(--gold-2);
+  }
+
+  /* PROCESS */
+  .process {
+    background: var(--cream);
+  }
+  .process-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    list-style: none;
+  }
+  .p-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 1.4fr;
+    gap: 60px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(31, 51, 38, 0.25);
+    align-items: baseline;
+    cursor: pointer;
+    transition: padding-left .55s cubic-bezier(.65,0,.35,1);
+  }
+  .p-row:last-child { border-bottom: 1px solid rgba(31, 51, 38, 0.25); }
+  .p-row:hover { padding-left: 24px; background: rgba(184, 144, 72, 0.05); }
+  .p-num {
+    font-family: var(--display);
+    font-size: 56px;
+    color: var(--rose);
+    line-height: 1;
+  }
+  .p-row h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.05;
+    color: var(--forest);
+  }
+  .p-row h3 em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--rose); }
+  .p-row p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--forest);
+    opacity: 0.85;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--rose);
+    color: var(--forest);
+    padding: 140px 48px 80px;
+    text-align: center;
+    border-top: 1px solid var(--gold);
+  }
+  .contact h2 {
+    font-family: var(--display);
+    font-size: clamp(56px, 9vw, 160px);
+    color: var(--forest);
+    margin-bottom: 32px;
+  }
+  .contact h2 em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--cream); }
+  .contact-mail {
+    font-family: var(--display);
+    font-size: clamp(28px, 4vw, 56px);
+    color: var(--forest);
+    text-decoration: none;
+    border-bottom: 2px solid var(--forest);
+    padding-bottom: 4px;
+    transition: color .35s, border-color .35s;
+  }
+  .contact-mail:hover { color: var(--cream); border-color: var(--cream); }
+  .contact-rule {
+    width: 1px; height: 60px;
+    background: var(--forest);
+    opacity: 0.5;
+    margin: 32px auto;
+  }
+  .contact-meta {
+    font-family: var(--sc);
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    color: var(--forest);
+    opacity: 0.85;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--forest);
+    color: var(--cream);
+    padding: 60px 48px 24px;
+    text-align: center;
+    border-top: 1px solid var(--gold);
+  }
+  .foot-mono {
+    font-family: var(--display);
+    font-size: clamp(72px, 11vw, 180px);
+    line-height: 0.95;
+    color: var(--cream);
+    margin-bottom: 32px;
+  }
+  .foot-mono em { font-family: var(--serif); font-style: italic; font-weight: 500; color: var(--rose-2); }
+  .foot-bot {
+    border-top: 1px solid rgba(244, 236, 218, 0.2);
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--sc);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    color: var(--gold-2);
+  }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* V2 PACK */
+  .skip-link { position: absolute; top: -100px; left: 8px; background: var(--forest); color: var(--gold-2); padding: 8px 16px; font-family: var(--caps); font-size: 11px; text-transform: uppercase; letter-spacing: 0.3em; z-index: 10001; transition: top .25s; text-decoration: none; }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible { outline: 1px solid var(--gold); outline-offset: 4px; }
+  .scroll-progress { position: fixed; top: 0; left: 0; width: 0; height: 2px; background: var(--gold); z-index: 10000; transition: width .12s ease-out; pointer-events: none; }
+  .back-top { position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px; border-radius: 50%; background: transparent; color: var(--forest); border: 1px solid var(--gold); cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .35s, background .35s, color .35s, transform .35s; z-index: 999; font-family: var(--display); font-size: 20px; }
+  .back-top.visible { opacity: 1; pointer-events: auto; }
+  .back-top:hover { background: var(--gold); color: var(--cream); transform: translateY(-3px); }
+  /* SVG vines breathing animation */
+  .hero::before, .hero::after { animation: vinebreath 6s ease-in-out infinite alternate; }
+  @keyframes vinebreath { from { opacity: 0.18; } to { opacity: 0.28; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+
+  @media (max-width: 900px) {
+    .hero::before, .hero::after { display: none; }
+    nav { padding: 16px 20px; }
+    .nav-left, .nav-right { display: none; }
+    .section { padding: 80px 24px; }
+    .col-grid { grid-template-columns: 1fr; gap: 40px; }
+    .gallery-grid > * { grid-column: 1 / -1 !important; padding-top: 0 !important; }
+    .p-row { grid-template-columns: 1fr; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<button class="back-top" aria-label="Back to top">↑</button>
+
+<div class="topband">
+  <div class="topband-track">
+    <span>WORLD LONDON MEDIA · ATELIER VERT</span>
+    <span class="gold">❦</span>
+    <span>EST. MMXXI · LONDON</span>
+    <span class="gold">❦</span>
+    <span>VOL. IV · SS MMXXVI</span>
+    <span class="gold">❦</span>
+    <span>BY APPOINTMENT</span>
+    <span class="gold">❦</span>
+    <span>WORLD LONDON MEDIA · ATELIER VERT</span>
+    <span class="gold">❦</span>
+    <span>EST. MMXXI · LONDON</span>
+    <span class="gold">❦</span>
+    <span>VOL. IV · SS MMXXVI</span>
+    <span class="gold">❦</span>
+    <span>BY APPOINTMENT</span>
+    <span class="gold">❦</span>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-left">
+    <a href="#collection" data-i18n="nav_collection">Collection</a>
+    <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+    <a href="#process" data-i18n="nav_process">Process</a>
+  </div>
+  <a href="../../index.html" class="logo">
+    Atelier <span class="gold">Vert</span>
+    <small>· WORLD LONDON MEDIA · MMXXI ·</small>
+  </a>
+  <div class="nav-right">
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Correspondence</a>
+    <div class="lang-toggle">
+      <button data-l="en" onclick="setLang('en')">EN</button>
+      <button data-l="tr" onclick="setLang('tr')">TR</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+<section class="hero">
+  <div class="hero-eyebrow" data-i18n="hero_eyebrow">— A studio in the romantic tradition —</div>
+  <h1 data-i18n="hero_h1">Of <em>flowers,</em> films,<br/>&amp; <em>quiet</em> things.</h1>
+  <p class="hero-blurb" data-i18n="hero_blurb">An <em>atelier</em> in the old sense of the word — a small London studio of photographers and filmmakers, working slowly, by appointment, for the brands and houses who still <em>care.</em></p>
+  <a href="#contact" class="hero-cta" data-i18n="hero_cta">Begin a correspondence ❦</a>
+
+  <div class="hero-frame"></div>
+  <p class="hero-frame-cap" data-i18n="hero_frame_cap">— Casa Lago, Como · Spring MMXXVI —</p>
+</section>
+
+<section class="section collection" id="collection">
+  <p class="section-eyebrow" data-i18n="sec_col_label">— Of the Collection —</p>
+  <h2 data-i18n="sec_col_title">Six <em>chambers</em> of craft.</h2>
+  <p class="ornament-divider">❦ ❦ ❦</p>
+
+  <div class="col-grid">
+    <div class="col-item reveal">
+      <div class="col-no">i.</div>
+      <h3>Photo<em>graphy</em></h3>
+      <p>Editorial stills for hospitality, food and fashion. Lit by hand, shot until the room remembers itself.</p>
+      <div class="col-tags">EDITORIAL · STILLS · LOOKBOOKS</div>
+    </div>
+    <div class="col-item reveal">
+      <div class="col-no">ii.</div>
+      <h3>Film &amp; <em>motion</em></h3>
+      <p>Brand films, documentary shorts, the rare social cut that doesn't smell like an advertisement.</p>
+      <div class="col-tags">35MM · DOCUMENTARY · REELS</div>
+    </div>
+    <div class="col-item reveal">
+      <div class="col-no">iii.</div>
+      <h3>Creative <em>direction</em></h3>
+      <p>Concept, casting, locations, and the small cruel decisions that make a campaign feel inevitable.</p>
+      <div class="col-tags">CONCEPT · CASTING · ART DIRECTION</div>
+    </div>
+    <div class="col-item reveal">
+      <div class="col-no">iv.</div>
+      <h3>Social <em>editorial</em></h3>
+      <p>Monthly visual production for brands who treat their feed as a magazine — strategy through publishing.</p>
+      <div class="col-tags">STRATEGY · PRODUCTION · CALENDAR</div>
+    </div>
+    <div class="col-item reveal">
+      <div class="col-no">v.</div>
+      <h3>Identity &amp; <em>print</em></h3>
+      <p>Visual systems built to hold for a decade. Typography, palette, photographic codes — kept honest.</p>
+      <div class="col-tags">IDENTITY · PRINT · DIGITAL</div>
+    </div>
+    <div class="col-item reveal">
+      <div class="col-no">vi.</div>
+      <h3>Bespoke <em>commissions</em></h3>
+      <p>For private clients, residences, and one-off projects — discreet, considered, and held closely.</p>
+      <div class="col-tags">PRIVATE · BY APPOINTMENT</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <p class="section-eyebrow" data-i18n="sec_gal_label">— A Selected Garden of Recent Work —</p>
+  <h2 data-i18n="sec_gal_title">Four <em>obsessions,</em><br/>tenderly arranged.</h2>
+  <p class="ornament-divider">❦ ❦ ❦</p>
+
+  <div class="gallery-grid">
+    <div class="g-item g-1 reveal">
+      <div class="g-frame"></div>
+      <div class="g-cap">
+        <h4>Marsala &amp; <em>Smoke</em></h4>
+        <span class="meta">— RESTAURANT · 2025 —</span>
+      </div>
+    </div>
+    <div class="g-item g-2 reveal">
+      <div class="g-frame"></div>
+      <div class="g-cap">
+        <h4>Folie <em>Nº 12</em></h4>
+        <span class="meta">— BEAUTY · 2024 —</span>
+      </div>
+    </div>
+    <div class="g-item g-3 reveal">
+      <div class="g-frame"></div>
+      <div class="g-cap">
+        <h4>Hackney <em>Plates</em></h4>
+        <span class="meta">— EDITORIAL · 2025 —</span>
+      </div>
+    </div>
+    <div class="g-item g-4 reveal">
+      <div class="g-frame"></div>
+      <div class="g-cap">
+        <h4>Atelier <em>Soho</em></h4>
+        <span class="meta">— BRAND FILM · 2024 —</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto">
+  <p class="manifesto-text" data-i18n="manif_text">A photograph is a pressed flower, the <em>quiet</em> sound of a brand made permanent, the room you walk into <em>twice.</em></p>
+  <p class="manifesto-attr">— S. ÇAĞLAYAN · KURUCU —</p>
+</section>
+
+<section class="section process" id="process">
+  <p class="section-eyebrow" data-i18n="sec_proc_label">— Of the Method —</p>
+  <h2 data-i18n="sec_proc_title">Four <em>movements,</em><br/>one rhythm.</h2>
+  <p class="ornament-divider">❦ ❦ ❦</p>
+
+  <ul class="process-list">
+    <li class="p-row reveal">
+      <span class="p-num">i.</span>
+      <h3>The first <em>conversation</em></h3>
+      <p>A meeting, a walk through your space, a meal in your kitchen. The brief writes itself once we know the room and the people.</p>
+    </li>
+    <li class="p-row reveal">
+      <span class="p-num">ii.</span>
+      <h3>Direction &amp; <em>preparation</em></h3>
+      <p>References, palette, casting, locations, schedule — pinned to the wall, approved before any camera comes out of its case.</p>
+    </li>
+    <li class="p-row reveal">
+      <span class="p-num">iii.</span>
+      <h3>Principal <em>photography</em></h3>
+      <p>Small crews. Long lights. Real food, real people, real rooms. We move slowly because mistakes get expensive in post.</p>
+    </li>
+    <li class="p-row reveal">
+      <span class="p-num">iv.</span>
+      <h3>Edit &amp; <em>delivery</em></h3>
+      <p>Selects in 48 hours. Final masters within 10 working days. Graded for paper and screen, archived indefinitely.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="contact" id="contact">
+  <p class="section-eyebrow" style="color: var(--cream);" data-i18n="contact_label">— Correspondence —</p>
+  <h2 data-i18n="contact_h2">Tell us your <em>story.</em></h2>
+  <a href="mailto:hello@worldlondonmedia.com" class="contact-mail">hello@worldlondonmedia.com</a>
+  <div class="contact-rule"></div>
+  <p class="contact-meta" data-i18n="contact_meta">— BY APPOINTMENT · LONDON · EC1V —</p>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-mono">Atelier <em>Vert</em></div>
+  <div class="foot-bot">
+    <span>© MMXXVI · WORLD LONDON MEDIA · CO. № 13442198</span>
+    <span>SET IN YESEVA ONE · MARCELLUS · EB GARAMOND</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 90);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const t = document.getElementById(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  // V2
+  const _progress = document.querySelector('.scroll-progress');
+  const _backTop = document.querySelector('.back-top');
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    _progress.style.width = ((window.scrollY / Math.max(max, 1)) * 100) + '%';
+    _backTop.classList.toggle('visible', window.scrollY > 600);
+  }, { passive: true });
+  _backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* i18n */
+  const i18n_tr = {
+    nav_collection: 'Koleksiyon', nav_gallery: 'Galeri', nav_process: 'Yöntem', nav_cta: 'Mektup',
+    hero_eyebrow: '— Romantik gelenekteki bir stüdyo —',
+    hero_h1: '<em>Çiçeklerin,</em> filmlerin<br/>ve <em>sessiz</em> şeylerin atölyesi.',
+    hero_blurb: 'Eski anlamıyla bir <em>atölye</em> — Londra\'da küçük bir fotoğrafçı ve filmci stüdyosu. Yavaş çalışırız, randevuyla. Hâlâ <em>özen</em> gösteren marka ve evler için.',
+    hero_cta: 'Bir mektup başlat ❦',
+    hero_frame_cap: '— Casa Lago, Como · İlkbahar MMXXVI —',
+    sec_col_label: '— Koleksiyondan —',
+    sec_col_title: 'Altı <em>oda</em> · zanaat.',
+    sec_gal_label: '— Yakın işlerden seçili bir bahçe —',
+    sec_gal_title: 'Dört <em>takıntı,</em><br/>özenle yerleştirildi.',
+    manif_text: 'Bir fotoğraf bir kurutulmuş çiçektir; bir markanın <em>sessiz</em> sesinin kalıcılaşmış hali, iki kez girdiğin <em>oda.</em>',
+    sec_proc_label: '— Yöntem üzerine —',
+    sec_proc_title: 'Dört <em>hareket,</em><br/>bir ritim.',
+    contact_label: '— Mektup —',
+    contact_h2: 'Bize hikâyenizi <em>anlatın.</em>',
+    contact_meta: '— RANDEVUYLA · LONDRA · EC1V —'
+  };
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (lang === 'tr' && i18n_tr[key]) el.innerHTML = i18n_tr[key];
+      else if (el.dataset.original) el.innerHTML = el.dataset.original;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.toggle('active', b.dataset.l === lang));
+    localStorage.setItem('wolo-lang', lang);
+  }
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.dataset.original = el.innerHTML; });
+  setLang(localStorage.getItem('wolo-lang') || 'en');
+</script>
+
+</body>
+</html>
