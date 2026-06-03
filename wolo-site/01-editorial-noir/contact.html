@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact · World London Media</title>
+  <meta name="description" content="Start a project with World London Media (WoLo), a premium visual production agency in London and Izmir. Email info@worldlondonmedia.com or WhatsApp +44 7717 115002." />
+
+  <!-- favicon: ink zemin (#0e0d0b) + rust (#c0451e) Georgia "W" -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%230e0d0b%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23c0451e%22%3EW%3C%2Ftext%3E%3C%2Fsvg%3E" />
+  <meta name="theme-color" content="#0e0d0b" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://worldlondonmedia.com/contact" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="World London Media" />
+  <meta property="og:title" content="Contact: World London Media" />
+  <meta property="og:description" content="Let's make something that lasts. Start a project with WoLo, a premium visual production agency in London and Izmir." />
+  <meta property="og:url" content="https://worldlondonmedia.com/contact" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=80" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:locale:alternate" content="tr_TR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact: World London Media" />
+  <meta name="twitter:description" content="Let's make something that lasts. Email info@worldlondonmedia.com or WhatsApp +44 7717 115002." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=80" />
+
+  <!-- fonts: Fraunces (serif basliklar/italic) + JetBrains Mono (UI/mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- LCP: contact icin sinematik karanlik kare preload -->
+  <link rel="preload" as="image" fetchpriority="high" crossorigin href="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1100&q=80">
+
+  <!-- paylasilan stiller -->
+  <link rel="stylesheet" href="assets/noir.css">
+
+  <!-- sadece bu sayfaya ozel: statik iletisim formu (Editorial Noir tonu) -->
+  <style>
+    /* contact.html formu: cizgi-alti alanlar, rust odak, serif input degeri */
+    .contact-form-section {
+      padding: 20px 32px 140px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-form-aside .aside-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--rust-soft);
+      opacity: 0.95;
+      margin-bottom: 24px;
+    }
+    .contact-form-aside h3 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(30px, 3.6vw, 48px);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+    .contact-form-aside h3 em { color: var(--rust-soft); }
+    .contact-form-aside p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--paper-2);
+      opacity: 0.85;
+      max-width: 420px;
+    }
+    /* form alanlari: cizgi-alti (underline) editoryal stil */
+    .contact-form { display: flex; flex-direction: column; gap: 8px; }
+    .field {
+      border-bottom: 1px solid rgba(239, 233, 222, 0.18);
+      padding: 22px 0 14px;
+      transition: border-color .4s var(--ease);
+    }
+    .field:focus-within { border-color: var(--rust-soft); }
+    .field label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      opacity: 0.6;
+      margin-bottom: 12px;
+    }
+    .field input,
+    .field textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: var(--paper);
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(20px, 2.4vw, 28px);
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      resize: none;
+    }
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: var(--paper);
+      opacity: 0.28;
+      font-style: italic;
+    }
+    .field input:focus,
+    .field textarea:focus { outline: none; }
+    .field textarea { min-height: 96px; }
+    /* submit: rust pill, glow hover (nav-cta dili) */
+    .form-submit {
+      margin-top: 32px;
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--rust);
+      color: var(--paper);
+      border: 1px solid var(--rust);
+      border-radius: 100px;
+      padding: 16px 32px;
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      cursor: pointer;
+      transition: background .35s var(--ease), box-shadow .35s var(--ease), transform .35s var(--ease);
+    }
+    .form-submit:hover {
+      background: var(--rust-soft);
+      box-shadow: 0 0 0 1px var(--rust-soft), 0 8px 32px -8px rgba(192, 69, 30, 0.7);
+      transform: translateY(-2px);
+    }
+    .form-submit .arrow {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+    .form-note {
+      margin-top: 20px;
+      font-size: 11px;
+      line-height: 1.6;
+      opacity: 0.5;
+      letter-spacing: 0.04em;
+      max-width: 360px;
+    }
+    .form-note a { color: var(--paper); text-decoration: none; border-bottom: 1px solid rgba(224,117,73,0.5); }
+    .form-note a:hover { color: var(--rust-soft); }
+
+    @media (max-width: 900px) {
+      .contact-form-section { grid-template-columns: 1fr; gap: 48px; padding: 12px 20px 100px; }
+    }
+  </style>
+
+  <!-- CDN: GSAP + ScrollTrigger + Lenis (defer; noir.js footer'da en sonda calisir) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js" defer></script>
+</head>
+<body>
+
+<a href="#main" class="skip-link" data-en="Skip to content" data-tr="İçeriğe geç">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-noir" aria-hidden="true"></div>
+<div class="cursor-noir-label" aria-hidden="true">View</div>
+<button class="back-top" aria-label="Back to top" data-cursor="ignore">↑</button>
+
+<!-- ============ NAV (her sayfada birebir ayni; aktif link initNav() ile otomatik) ============ -->
+<nav class="site-nav">
+  <a href="index.html" class="logo" aria-label="World London Media" data-en="World London Media<sup>&reg;</sup>" data-tr="World London Media<sup>&reg;</sup>">World London Media<sup>&reg;</sup></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="work.html" data-en="Work" data-tr="İşler">Work</a></li>
+      <li><a href="services.html" data-en="Services" data-tr="Hizmetler">Services</a></li>
+      <li><a href="studio.html" data-en="Studio" data-tr="Stüdyo">Studio</a></li>
+      <li><a href="contact.html" data-en="Contact" data-tr="İletişim">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta" data-en="Start a Project" data-tr="Proje Başlat">Start a Project</a>
+    <div class="lang-toggle" role="group" aria-label="Language / Dil">
+      <button data-l="en" type="button" onclick="setLang('en')" aria-label="English">EN</button>
+      <button data-l="tr" type="button" onclick="setLang('tr')" aria-label="Türkçe">TR</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span class="bars"></span></button>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ PAGE HERO (kompakt ic sayfa baslik) ============ -->
+<section class="page-hero" aria-label="Contact">
+  <div class="page-eyebrow">
+    <span class="num">04.</span>
+    <span data-en="Get in touch" data-tr="İletişime geç">Get in touch</span>
+  </div>
+  <h1 data-en="Let's <em>talk.</em>" data-tr="Hadi <em>konuşalım.</em>">Let's <em>talk.</em></h1>
+  <p class="page-lead" data-en="A premium visual production agency working between London and Izmir. Tell us what you are building, and we will tell you how we would film it." data-tr="Londra ve İzmir arasında çalışan premium bir görsel üretim ajansı. Ne inşa ettiğinizi anlatın, biz de onu nasıl çekeceğimizi anlatalım.">A premium visual production agency working between London and Izmir. Tell us what you are building, and we will tell you how we would film it.</p>
+  <div class="page-meta">
+    <span data-en="London &middot; Izmir" data-tr="Londra &middot; İzmir">London &middot; Izmir</span>
+    <span data-en="Reply within 24h" data-tr="24 saat içinde yanıt">Reply within 24h</span>
+    <span data-en="Ideas move. Quality shows." data-tr="Fikirler hareket eder. Kalite kendini gösterir.">Ideas move. Quality shows.</span>
+  </div>
+</section>
+
+<!-- ============ MARQUEE (WoLo sloganlari) ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="dot" data-en="Start a project" data-tr="Proje başlat">Start a project</span>
+    <span class="dot" data-en="From content to impact" data-tr="İçerikten etkiye">From content to impact</span>
+    <span class="dot" data-en="London &amp; Izmir" data-tr="Londra &amp; İzmir">London &amp; Izmir</span>
+    <span class="dot" data-en="Ideas move" data-tr="Fikirler hareket eder">Ideas move</span>
+    <span class="dot" data-en="Quality shows" data-tr="Kalite kendini gösterir">Quality shows</span>
+    <span class="dot" data-en="Start a project" data-tr="Proje başlat">Start a project</span>
+    <span class="dot" data-en="From content to impact" data-tr="İçerikten etkiye">From content to impact</span>
+    <span class="dot" data-en="London &amp; Izmir" data-tr="Londra &amp; İzmir">London &amp; Izmir</span>
+    <span class="dot" data-en="Ideas move" data-tr="Fikirler hareket eder">Ideas move</span>
+    <span class="dot" data-en="Quality shows" data-tr="Kalite kendini gösterir">Quality shows</span>
+  </div>
+</div>
+
+<!-- ============ DETAYLI ILETISIM BLOGU (kanallar + lokasyonlar) ============ -->
+<section aria-label="Contact details">
+  <div class="contact-grid reveal">
+    <div class="contact-col">
+      <h3 data-en="Direct <em>lines.</em>" data-tr="Doğrudan <em>hatlar.</em>">Direct <em>lines.</em></h3>
+      <div class="contact-detail">
+        <span class="label" data-en="Email" data-tr="E-posta">Email</span>
+        <span class="value"><a href="mailto:info@worldlondonmedia.com" data-no-transition data-cursor="expand">info@worldlondonmedia.com</a></span>
+      </div>
+      <div class="contact-detail">
+        <span class="label" data-en="WhatsApp" data-tr="WhatsApp">WhatsApp</span>
+        <span class="value"><a href="https://wa.me/447717115002" target="_blank" rel="noopener" data-cursor="expand">+44 7717 115002</a></span>
+      </div>
+      <div class="contact-detail">
+        <span class="label" data-en="Web" data-tr="Web">Web</span>
+        <span class="value"><a href="https://worldlondonmedia.com" target="_blank" rel="noopener" data-cursor="expand">worldlondonmedia.com</a></span>
+      </div>
+    </div>
+
+    <div class="contact-col">
+      <h3 data-en="Two <em>studios.</em>" data-tr="İki <em>stüdyo.</em>">Two <em>studios.</em></h3>
+      <div class="contact-detail">
+        <span class="label" data-en="London" data-tr="Londra">London</span>
+        <span class="value" data-en="United Kingdom<br/>Production &middot; Direction &middot; Post" data-tr="Birleşik Krallık<br/>Prodüksiyon &middot; Yönetim &middot; Post">United Kingdom<br/>Production &middot; Direction &middot; Post</span>
+      </div>
+      <div class="contact-detail">
+        <span class="label" data-en="Izmir" data-tr="İzmir">Izmir</span>
+        <span class="value" data-en="Turkiye<br/>3D &middot; Drone &middot; Commercial" data-tr="Türkiye<br/>3D &middot; Drone &middot; Reklam">Turkiye<br/>3D &middot; Drone &middot; Commercial</span>
+      </div>
+      <div class="contact-detail">
+        <span class="label" data-en="Hours" data-tr="Saatler">Hours</span>
+        <span class="value" data-en="Mon - Fri<br/>09:00 &middot; 19:00 GMT" data-tr="Pzt - Cum<br/>09:00 &middot; 19:00 GMT">Mon - Fri<br/>09:00 &middot; 19:00 GMT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATIK FORM (mailto submit) + studio note ============ -->
+<section class="contact-form-section" aria-label="Project enquiry">
+  <div class="contact-form-aside reveal">
+    <div class="aside-label" data-en="/ Start a project" data-tr="/ Proje başlat">/ Start a project</div>
+    <h3 data-en="Tell us the <em>feeling</em> you are after." data-tr="Peşinde olduğunuz <em>duyguyu</em> anlatın.">Tell us the <em>feeling</em> you are after.</h3>
+    <p data-en="A few lines is enough to begin. The brand, the goal, the rough timing. We read every message ourselves and reply within a day." data-tr="Başlamak için birkaç satır yeter. Marka, hedef, kabaca zamanlama. Her mesajı kendimiz okur ve bir gün içinde yanıt veririz.">A few lines is enough to begin. The brand, the goal, the rough timing. We read every message ourselves and reply within a day.</p>
+  </div>
+
+  <form class="contact-form reveal" action="mailto:info@worldlondonmedia.com" method="post" enctype="text/plain" aria-label="Project enquiry form">
+    <div class="field">
+      <label for="cf-name" data-en="Your name" data-tr="Adınız">Your name</label>
+      <input type="text" id="cf-name" name="name" autocomplete="name" required
+             data-ph-en="Jane Studio" data-ph-tr="Ayşe Stüdyo" placeholder="Jane Studio" />
+    </div>
+    <div class="field">
+      <label for="cf-email" data-en="Email" data-tr="E-posta">Email</label>
+      <input type="email" id="cf-email" name="email" autocomplete="email" required
+             data-ph-en="you@brand.com" data-ph-tr="siz@marka.com" placeholder="you@brand.com" />
+    </div>
+    <div class="field">
+      <label for="cf-message" data-en="The project" data-tr="Proje">The project</label>
+      <textarea id="cf-message" name="message" rows="3" required
+                data-ph-en="The brand, the goal, the rough timing." data-ph-tr="Marka, hedef, kabaca zamanlama."
+                placeholder="The brand, the goal, the rough timing."></textarea>
+    </div>
+
+    <button type="submit" class="form-submit" data-cursor="ignore">
+      <span data-en="Send enquiry" data-tr="Mesajı gönder">Send enquiry</span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
+    </button>
+
+    <p class="form-note" data-en="Prefer email? Write to <a href=&quot;mailto:info@worldlondonmedia.com&quot; data-no-transition>info@worldlondonmedia.com</a> directly. This form opens your mail app." data-tr="E-postayı mı tercih edersiniz? Doğrudan <a href=&quot;mailto:info@worldlondonmedia.com&quot; data-no-transition>info@worldlondonmedia.com</a> adresine yazın. Bu form e-posta uygulamanızı açar.">Prefer email? Write to <a href="mailto:info@worldlondonmedia.com" data-no-transition>info@worldlondonmedia.com</a> directly. This form opens your mail app.</p>
+  </form>
+</section>
+
+<!-- ============ BUYUK TIPOGRAFIK KAPANIS (Let's make something that lasts) ============ -->
+<section class="contact" aria-label="Closing">
+  <div class="contact-label" data-en="/ Begin" data-tr="/ Başlayalım">/ Begin</div>
+  <h2 data-en="Let's make something <em>that lasts.</em>" data-tr="Kalıcı <em>bir şey yapalım.</em>">Let's make something <em>that lasts.</em></h2>
+  <a href="mailto:info@worldlondonmedia.com" class="contact-mail" data-no-transition data-cursor="expand">info@worldlondonmedia.com</a>
+  <div class="contact-channels">
+    <a href="https://wa.me/447717115002" target="_blank" rel="noopener" data-en="WhatsApp &middot; +44 7717 115002" data-tr="WhatsApp &middot; +44 7717 115002">WhatsApp &middot; +44 7717 115002</a>
+    <span data-en="London &middot; Izmir" data-tr="Londra &middot; İzmir">London &middot; Izmir</span>
+    <a href="work.html" data-en="See the work &rarr;" data-tr="İşleri gör &rarr;">See the work &rarr;</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER (her sayfada birebir ayni) ============ -->
+<footer class="site-footer">
+  <div>
+    <a href="index.html" class="foot-brand">World <em>London</em><br/>Media<sub>&reg;</sub></a>
+    <div class="foot-motto" data-en="Ideas move. Quality shows." data-tr="Fikirler hareket eder. Kalite kendini gösterir.">Ideas move. Quality shows.</div>
+  </div>
+  <div>
+    <h4 data-en="Studio" data-tr="Stüdyo">Studio</h4>
+    <ul>
+      <li data-en="London, United Kingdom" data-tr="Londra, Birleşik Krallık">London, United Kingdom</li>
+      <li data-en="Izmir, Turkiye" data-tr="İzmir, Türkiye">Izmir, Turkiye</li>
+      <li><a href="mailto:info@worldlondonmedia.com" data-no-transition>info@worldlondonmedia.com</a></li>
+      <li><a href="https://wa.me/447717115002" target="_blank" rel="noopener">+44 7717 115002</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4 data-en="Disciplines" data-tr="Disiplinler">Disciplines</h4>
+    <ul>
+      <li><a href="services.html" data-en="Brand Films" data-tr="Marka Filmleri">Brand Films</a></li>
+      <li><a href="services.html" data-en="Advertising" data-tr="Reklam">Advertising</a></li>
+      <li><a href="services.html" data-en="3D Visualization" data-tr="3D Görselleştirme">3D Visualization</a></li>
+      <li><a href="services.html" data-en="Drone Cinematography" data-tr="Drone Sinematografi">Drone Cinematography</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4 data-en="Elsewhere" data-tr="Diğer">Elsewhere</h4>
+    <ul>
+      <li><a href="https://worldlondonmedia.com" target="_blank" rel="noopener">worldlondonmedia.com</a></li>
+      <li><a href="work.html" data-en="Selected Work" data-tr="Seçili İşler">Selected Work</a></li>
+      <li><a href="contact.html" data-en="Start a Project" data-tr="Proje Başlat">Start a Project</a></li>
+      <li><a href="../../index.html" data-en="Gallery" data-tr="Galeri">Gallery</a></li>
+    </ul>
+  </div>
+  <div class="foot-bot">
+    <span data-en="&copy; 2026 World London Media &middot; London &amp; Izmir" data-tr="&copy; 2026 World London Media &middot; Londra &amp; İzmir">&copy; 2026 World London Media &middot; London &amp; Izmir</span>
+    <span data-en="Set in Fraunces &amp; JetBrains Mono" data-tr="Fraunces &amp; JetBrains Mono ile dizildi">Set in Fraunces &amp; JetBrains Mono</span>
+  </div>
+</footer>
+
+<!-- paylasilan JS EN SONDA (GSAP/Lenis CDN'leri head'de defer ile yuklendi) -->
+<script src="assets/noir.js"></script>
+
+<!-- bu sayfaya ozel: placeholder'lari da dile gore cevir (noir.js textContent/innerHTML uygular, placeholder degil) -->
+<script>
+  (function () {
+    // setLang sonrasi placeholder senkronu: data-ph-en / data-ph-tr
+    function applyPlaceholders() {
+      var lang = document.documentElement.lang || 'en';
+      var nodes = document.querySelectorAll('[data-ph-en]');
+      for (var i = 0; i < nodes.length; i++) {
+        var ph = (lang === 'tr') ? nodes[i].getAttribute('data-ph-tr') : nodes[i].getAttribute('data-ph-en');
+        if (ph !== null) nodes[i].setAttribute('placeholder', ph);
+      }
+    }
+    // global setLang'i sarmalayip placeholder guncellemesini ekle
+    var _setLang = window.setLang;
+    if (typeof _setLang === 'function') {
+      window.setLang = function (lang) { _setLang(lang); applyPlaceholders(); };
+    }
+    // ilk yukleme + sayfa hazir olunca senkronize et
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', applyPlaceholders);
+    } else {
+      applyPlaceholders();
+    }
+  })();
+</script>
+</body>
+</html>

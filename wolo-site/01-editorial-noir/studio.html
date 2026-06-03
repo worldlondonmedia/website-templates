@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio &middot; World London Media</title>
+  <meta name="description" content="Inside World London Media (WoLo): a premium visual production agency working between London and Izmir. Our philosophy, our process, and the two cities we work from. Ideas move. Quality shows." />
+
+  <!-- favicon: ink zemin (#0e0d0b) + rust (#c0451e) Georgia "W" -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%230e0d0b%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23c0451e%22%3EW%3C%2Ftext%3E%3C%2Fsvg%3E" />
+  <meta name="theme-color" content="#0e0d0b" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://worldlondonmedia.com/studio.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="World London Media" />
+  <meta property="og:title" content="Studio &middot; World London Media" />
+  <meta property="og:description" content="Inside the studio. A premium visual production agency working between London and Izmir. Ideas move. Quality shows." />
+  <meta property="og:url" content="https://worldlondonmedia.com/studio.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&q=80" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:locale:alternate" content="tr_TR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Studio &middot; World London Media" />
+  <meta name="twitter:description" content="Inside the studio. Our philosophy and process, across London and Izmir." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&q=80" />
+
+  <!-- fonts: Fraunces (serif basliklar/italic) + JetBrains Mono (UI/mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- LCP: studio sayfasi about gorseli preload -->
+  <link rel="preload" as="image" fetchpriority="high" crossorigin href="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1100&q=80">
+
+  <!-- paylasilan stiller -->
+  <link rel="stylesheet" href="assets/noir.css">
+
+  <!-- CDN: GSAP + ScrollTrigger + Lenis (defer; noir.js footer'da en sonda calisir) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js" defer></script>
+
+  <!-- studio.html'e ozel kucuk yerlesim destekleri (kimligi degil, sadece bu sayfanin grid'ini tamamlar) -->
+  <style>
+    /* About: metin + gorsel iki kolon, page-hero altinda nefes alan blok */
+    .studio-about {
+      padding: 100px 32px 120px;
+      border-bottom: 1px solid rgba(239, 233, 222, 0.1);
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .studio-about .about-copy p {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(20px, 2.2vw, 28px);
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      color: var(--paper);
+      margin-bottom: 28px;
+    }
+    .studio-about .about-copy p:last-of-type { margin-bottom: 0; }
+    .studio-about .about-copy em { font-style: italic; color: var(--rust-soft); }
+    .studio-about .about-copy .about-kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--rust-soft);
+      opacity: 0.95;
+      margin-bottom: 28px;
+      display: block;
+    }
+    .studio-about .about-figure {
+      aspect-ratio: 4/5;
+      border-radius: 3px;
+      overflow: hidden;
+      background: #1a1815;
+      position: relative;
+      box-shadow: 0 24px 70px -28px rgba(0,0,0,0.6);
+    }
+    .studio-about .about-figure img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: saturate(0.85) contrast(1.04) brightness(0.92);
+      will-change: transform;
+    }
+    .studio-about .about-figure::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(14,13,11,0.55) 100%);
+    }
+    .studio-about .about-figure .figure-cap {
+      position: absolute; bottom: 14px; left: 16px; z-index: 2;
+      font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em;
+      opacity: 0.85;
+    }
+
+    /* Locations: London + Izmir iki kart, peacock alttonlu sinir */
+    .studio-locations {
+      padding: 130px 32px;
+      border-bottom: 1px solid rgba(239, 233, 222, 0.1);
+    }
+    .locations-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 60px;
+    }
+    .location-card {
+      border: 1px solid rgba(239, 233, 222, 0.12);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      background: var(--ink-2);
+      transition: border-color .5s var(--ease), transform .5s var(--ease);
+    }
+    .location-card:hover { border-color: rgba(31, 74, 77, 0.7); transform: translateY(-4px); }
+    .location-card .loc-visual {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      position: relative;
+      background: #15140f;
+    }
+    .location-card .loc-visual img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: grayscale(0.45) contrast(1.05) brightness(0.82);
+      transition: transform 1s var(--ease), filter 1s var(--ease);
+      will-change: transform;
+    }
+    .location-card:hover .loc-visual img { transform: scale(1.06); filter: grayscale(0) contrast(1.08) brightness(0.92); }
+    .location-card .loc-visual::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(14,13,11,0.15) 0%, rgba(14,13,11,0.7) 100%);
+    }
+    .location-card .loc-index {
+      position: absolute; top: 14px; left: 16px; z-index: 2;
+      font-family: var(--mono);
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      opacity: 0.8;
+    }
+    .location-card .loc-body { padding: 32px 28px 36px; }
+    .location-card .loc-name {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+    .location-card .loc-name em { color: var(--rust-soft); font-style: italic; }
+    .location-card .loc-role {
+      font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em;
+      color: var(--rust-soft); opacity: 0.95; margin-bottom: 18px;
+    }
+    .location-card .loc-note {
+      font-size: 13px; line-height: 1.6; opacity: 0.72; max-width: 42ch;
+    }
+
+    @media (max-width: 900px) {
+      .studio-about { grid-template-columns: 1fr; gap: 40px; padding: 72px 20px 90px; }
+      .studio-about .about-figure { order: -1; }
+      .studio-locations { padding: 90px 20px; }
+      .locations-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link" data-en="Skip to content" data-tr="İçeriğe geç">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-noir" aria-hidden="true"></div>
+<div class="cursor-noir-label" aria-hidden="true">View</div>
+<button class="back-top" aria-label="Back to top" data-cursor="ignore">↑</button>
+
+<!-- ============ NAV (her sayfada birebir ayni; aktif link initNav ile otomatik) ============ -->
+<nav class="site-nav">
+  <a href="index.html" class="logo" aria-label="World London Media" data-en="World London Media<sup>&reg;</sup>" data-tr="World London Media<sup>&reg;</sup>">World London Media<sup>&reg;</sup></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="work.html" data-en="Work" data-tr="İşler">Work</a></li>
+      <li><a href="services.html" data-en="Services" data-tr="Hizmetler">Services</a></li>
+      <li><a href="studio.html" data-en="Studio" data-tr="Stüdyo">Studio</a></li>
+      <li><a href="contact.html" data-en="Contact" data-tr="İletişim">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta" data-en="Start a Project" data-tr="Proje Başlat">Start a Project</a>
+    <div class="lang-toggle" role="group" aria-label="Language / Dil">
+      <button data-l="en" type="button" onclick="setLang('en')" aria-label="English">EN</button>
+      <button data-l="tr" type="button" onclick="setLang('tr')" aria-label="Türkçe">TR</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span class="bars"></span></button>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero" aria-label="Studio">
+  <div class="page-eyebrow">
+    <span class="num">/ 03</span>
+    <span data-en="The Studio" data-tr="Stüdyo">The Studio</span>
+  </div>
+  <h1 data-en="A studio of light, <em>patience</em> and craft." data-tr="Işığın, <em>sabrın</em> ve zanaatın stüdyosu.">A studio of light, <em>patience</em> and craft.</h1>
+  <p class="page-lead" data-en="World London Media is a premium visual production agency working between London and Izmir. We make brand films, advertising, 3D visualization and drone cinematography for brands who treat an image as a promise." data-tr="World London Media, Londra ve İzmir arasında çalışan premium bir görsel üretim ajansıdır. Bir görüntüyü bir söz olarak gören markalar için marka filmleri, reklam, 3D görselleştirme ve drone sinematografi üretiriz.">World London Media is a premium visual production agency working between London and Izmir. We make brand films, advertising, 3D visualization and drone cinematography for brands who treat an image as a promise.</p>
+  <div class="page-meta">
+    <span data-en="London &middot; Izmir" data-tr="Londra &middot; İzmir">London &middot; Izmir</span>
+    <span data-en="Visual production agency" data-tr="Görsel üretim ajansı">Visual production agency</span>
+    <span data-en="Ideas move. Quality shows." data-tr="Fikirler hareket eder. Kalite kendini gösterir.">Ideas move. Quality shows.</span>
+  </div>
+</section>
+
+<!-- ============ ABOUT (WoLo kim) ============ -->
+<section class="studio-about" aria-label="About the studio">
+  <div class="about-copy reveal">
+    <span class="about-kicker" data-en="/ Who we are" data-tr="/ Biz kimiz">/ Who we are</span>
+    <p data-en="We are a small team of directors, cinematographers and 3D artists who care about one thing above all: the <em>feeling</em> a frame leaves behind." data-tr="Tek bir şeyi her şeyin üstünde tutan küçük bir yönetmen, görüntü yönetmeni ve 3D sanatçısı ekibiyiz: bir karenin geride bıraktığı <em>duygu.</em>">We are a small team of directors, cinematographers and 3D artists who care about one thing above all: the <em>feeling</em> a frame leaves behind.</p>
+    <p data-en="From London and Izmir, we partner with brands across film, advertising and visualization. Two cities, one standard. We keep the team tight so the craft stays close, and we treat every project as a piece of cinema, whatever its length." data-tr="Londra ve İzmir'den; film, reklam ve görselleştirme alanlarında markalarla iş ortaklığı kuruyoruz. İki şehir, tek standart. Ekibi küçük tutarız ki zanaat yakın kalsın, ve her projeye uzunluğu ne olursa olsun bir sinema parçası gibi davranırız.">From London and Izmir, we partner with brands across film, advertising and visualization. Two cities, one standard. We keep the team tight so the craft stays close, and we treat every project as a piece of cinema, whatever its length.</p>
+    <p data-en="We have worked with Samsung, Karaca, LC Waikiki, Yeni Raki, Le Cordon Bleu and Barrus London, among others. From content to impact: that is the whole job." data-tr="Diğerlerinin yanı sıra Samsung, Karaca, LC Waikiki, Yeni Rakı, Le Cordon Bleu ve Barrus London ile çalıştık. İçerikten etkiye: bütün iş bu.">We have worked with Samsung, Karaca, LC Waikiki, Yeni Raki, Le Cordon Bleu and Barrus London, among others. From content to impact: that is the whole job.</p>
+  </div>
+  <div class="about-figure reveal">
+    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1100&q=80" data-parallax alt="Cinematographer at work in cinematic studio light" loading="lazy" decoding="async" />
+    <span class="figure-cap" data-en="On set &middot; Izmir" data-tr="Sette &middot; İzmir">On set &middot; Izmir</span>
+  </div>
+</section>
+
+<!-- ============ MARQUEE (WoLo sloganlari) ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="dot" data-en="Ideas move" data-tr="Fikirler hareket eder">Ideas move</span>
+    <span class="dot" data-en="Quality shows" data-tr="Kalite kendini gösterir">Quality shows</span>
+    <span class="dot" data-en="Cinema first" data-tr="Önce sinema">Cinema first</span>
+    <span class="dot" data-en="Light speaks" data-tr="Işık konuşur">Light speaks</span>
+    <span class="dot" data-en="From content to impact" data-tr="İçerikten etkiye">From content to impact</span>
+    <span class="dot" data-en="Ideas move" data-tr="Fikirler hareket eder">Ideas move</span>
+    <span class="dot" data-en="Quality shows" data-tr="Kalite kendini gösterir">Quality shows</span>
+    <span class="dot" data-en="Cinema first" data-tr="Önce sinema">Cinema first</span>
+    <span class="dot" data-en="Light speaks" data-tr="Işık konuşur">Light speaks</span>
+    <span class="dot" data-en="From content to impact" data-tr="İçerikten etkiye">From content to impact</span>
+  </div>
+</div>
+
+<!-- ============ PHILOSOPHY (motto + manifesto, word-reveal) ============ -->
+<section class="philosophy" aria-label="Philosophy">
+  <div class="philosophy-grid">
+    <div>
+      <div class="philosophy-label" data-en="/ Philosophy" data-tr="/ Felsefe">/ Philosophy</div>
+      <p class="philosophy-quote reveal" data-en="Ideas <em>move.</em><br/>Quality <em>shows.</em>" data-tr="Fikirler <em>hareket eder.</em><br/>Kalite <em>kendini gösterir.</em>">Ideas <em>move.</em><br/>Quality <em>shows.</em></p>
+      <p class="philosophy-attr" data-en="World London Media &middot; London &amp; Izmir" data-tr="World London Media &middot; Londra &amp; İzmir">World London Media &middot; London &amp; Izmir</p>
+    </div>
+    <div class="philosophy-body">
+      <p class="reveal" data-en="Design, for us, is not decoration: it is conveying the right emotion, accurately. We do not fear whitespace. We treat animation as a tool, never a goal. Every choice of light, typeface and cut answers to one question, what should the viewer feel?" data-tr="Tasarım bizim için süsleme değildir: doğru duyguyu doğru aktarmaktır. Boşluktan korkmayız. Animasyonu bir araç olarak görürüz, asla bir amaç olarak değil. Işık, yazı karakteri ve kurguyla ilgili her seçim tek bir soruya yanıt verir: izleyici ne hissetmeli?">Design, for us, is not decoration: it is conveying the right emotion, accurately. We do not fear whitespace. We treat animation as a tool, never a goal. Every choice of light, typeface and cut answers to one question, what should the viewer feel?</p>
+      <p class="reveal" data-en="So we begin with the feeling, and build everything backward from there. Minimalist, cinematic, with room to breathe. From content to impact: a frame should be a promise the brand can keep." data-tr="Bu yüzden duyguyla başlar, her şeyi oradan geriye doğru inşa ederiz. Minimalist, sinematik, nefes alacak alanla. İçerikten etkiye: bir kare, markanın tutabileceği bir söz olmalıdır.">So we begin with the feeling, and build everything backward from there. Minimalist, cinematic, with room to breathe. From content to impact: a frame should be a promise the brand can keep.</p>
+      <a href="work.html" class="philosophy-link" data-en="See the work &rarr;" data-tr="İşleri gör &rarr;">See the work &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS (4 adim: Discover / Direct / Produce / Deliver) ============ -->
+<section class="process" aria-label="Process">
+  <div class="process-head">
+    <div>
+      <div class="index-num">04.</div>
+      <div class="index-label" data-en="How we work" data-tr="Nasıl çalışırız">How we work</div>
+    </div>
+    <h2 class="index-title" data-en="Four steps, from idea to <em>delivery.</em>" data-tr="Fikirden teslime <em>dört adım.</em>">Four steps, from idea to <em>delivery.</em></h2>
+  </div>
+
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-visual">
+        <span class="big-num">01</span>
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80" alt="Discovery: notes and references on a desk" loading="lazy" decoding="async" />
+      </div>
+      <div class="step-num" data-en="Step 01" data-tr="Adım 01">Step 01</div>
+      <h3 data-en="Discover" data-tr="Keşfet">Discover</h3>
+      <p data-en="We listen first. We map your brand, your audience and the feeling you want to leave behind, then turn it into a single clear direction." data-tr="Önce dinleriz. Markanızı, izleyicinizi ve geride bırakmak istediğiniz duyguyu çıkarır, sonra bunu tek ve net bir yöne dönüştürürüz.">We listen first. We map your brand, your audience and the feeling you want to leave behind, then turn it into a single clear direction.</p>
+    </div>
+
+    <div class="process-step reveal">
+      <div class="step-visual">
+        <span class="big-num">02</span>
+        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=700&q=80" alt="Director planning a shot, framing and storyboard" loading="lazy" decoding="async" />
+      </div>
+      <div class="step-num" data-en="Step 02" data-tr="Adım 02">Step 02</div>
+      <h3 data-en="Direct" data-tr="Yönet">Direct</h3>
+      <p data-en="We shape the look. Boards, references, light and movement come together into a treatment, so everyone sees the film before a single frame is shot." data-tr="Görünümü biçimlendiririz. Storyboard, referanslar, ışık ve hareket bir treatment'ta birleşir, böylece tek bir kare çekilmeden herkes filmi görür.">We shape the look. Boards, references, light and movement come together into a treatment, so everyone sees the film before a single frame is shot.</p>
+    </div>
+
+    <div class="process-step reveal">
+      <div class="step-visual">
+        <span class="big-num">03</span>
+        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=700&q=80" alt="Camera crew on set during production" loading="lazy" decoding="async" />
+      </div>
+      <div class="step-num" data-en="Step 03" data-tr="Adım 03">Step 03</div>
+      <h3 data-en="Produce" data-tr="Üret">Produce</h3>
+      <p data-en="We shoot with the patience of cinema. Cinema lenses, the right crew and the time it takes to get the frame, not just a frame." data-tr="Sinemanın sabrıyla çekeriz. Sinema lensleri, doğru ekip ve herhangi bir kareyi değil, doğru kareyi yakalamak için gereken zaman.">We shoot with the patience of cinema. Cinema lenses, the right crew and the time it takes to get the frame, not just a frame.</p>
+    </div>
+
+    <div class="process-step reveal">
+      <div class="step-visual">
+        <span class="big-num">04</span>
+        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=700&q=80" alt="Editor color grading footage in post production" loading="lazy" decoding="async" />
+      </div>
+      <div class="step-num" data-en="Step 04" data-tr="Adım 04">Step 04</div>
+      <h3 data-en="Deliver" data-tr="Teslim">Deliver</h3>
+      <p data-en="We finish in post: edit, color and sound, cut to every format you need. One cinematic master, tuned for film, digital and social." data-tr="Postta bitiririz: kurgu, renk ve ses; ihtiyacınız olan her formata göre kurgulanır. Tek bir sinematik master, film, dijital ve sosyal için ayarlanır.">We finish in post: edit, color and sound, cut to every format you need. One cinematic master, tuned for film, digital and social.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS (sayac) ============ -->
+<section class="stats" aria-label="Studio in numbers">
+  <div class="index-head">
+    <div>
+      <div class="index-num">05.</div>
+      <div class="index-label" data-en="In numbers" data-tr="Rakamlarla">In numbers</div>
+    </div>
+    <h2 class="index-title" data-en="A small studio with a <em>long</em> reach." data-tr="<em>Uzağa</em> uzanan küçük bir stüdyo.">A small studio with a <em>long</em> reach.</h2>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat reveal">
+      <div class="stat-num"><span class="count" data-to="2">0</span></div>
+      <div class="stat-label" data-en="Cities &middot; London &amp; Izmir" data-tr="Şehir &middot; Londra &amp; İzmir">Cities &middot; London &amp; Izmir</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num"><span class="count" data-to="6">0</span></div>
+      <div class="stat-label" data-en="Disciplines under one roof" data-tr="Tek çatı altında disiplin">Disciplines under one roof</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num"><span class="count" data-to="40">0</span><em>+</em></div>
+      <div class="stat-label" data-en="Brands trusted the lens" data-tr="Lense güvenen marka">Brands trusted the lens</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num"><span class="count" data-to="100">0</span><em>%</em></div>
+      <div class="stat-label" data-en="In-house craft, idea to edit" data-tr="Fikirden kurguya kendi zanaatımız">In-house craft, idea to edit</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATIONS (London + Izmir) ============ -->
+<section class="studio-locations" aria-label="Locations">
+  <div class="index-head">
+    <div>
+      <div class="index-num">06.</div>
+      <div class="index-label" data-en="Where we work" data-tr="Nerede çalışırız">Where we work</div>
+    </div>
+    <h2 class="index-title" data-en="Two cities, <em>one</em> standard." data-tr="İki şehir, <em>tek</em> standart.">Two cities, <em>one</em> standard.</h2>
+  </div>
+
+  <div class="locations-grid">
+    <article class="location-card reveal">
+      <div class="loc-visual">
+        <span class="loc-index">01 / GB</span>
+        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1000&q=80" data-parallax alt="London skyline at dusk, cinematic" loading="lazy" decoding="async" />
+      </div>
+      <div class="loc-body">
+        <h2 class="loc-name" data-en="<em>London</em>" data-tr="<em>Londra</em>"><em>London</em></h2>
+        <div class="loc-role" data-en="United Kingdom &middot; Production base" data-tr="Birleşik Krallık &middot; Prodüksiyon merkezi">United Kingdom &middot; Production base</div>
+        <p class="loc-note" data-en="Our London base keeps us close to brands, agencies and crews across the UK and Europe. Direction, production and the conversations that start a project." data-tr="Londra merkezimiz bizi Birleşik Krallık ve Avrupa genelindeki markalara, ajanslara ve ekiplere yakın tutar. Yönetim, prodüksiyon ve bir projeyi başlatan görüşmeler.">Our London base keeps us close to brands, agencies and crews across the UK and Europe. Direction, production and the conversations that start a project.</p>
+      </div>
+    </article>
+
+    <article class="location-card reveal">
+      <div class="loc-visual">
+        <span class="loc-index">02 / TR</span>
+        <img src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?w=1000&q=80" data-parallax alt="Izmir coastline by the Aegean sea in golden light" loading="lazy" decoding="async" />
+      </div>
+      <div class="loc-body">
+        <h2 class="loc-name" data-en="<em>Izmir</em>" data-tr="<em>İzmir</em>"><em>Izmir</em></h2>
+        <div class="loc-role" data-en="Turkiye &middot; Production &amp; post" data-tr="Türkiye &middot; Prodüksiyon &amp; post">Turkiye &middot; Production &amp; post</div>
+        <p class="loc-note" data-en="Our Izmir studio is where much of the craft happens: shoots along the Aegean, 3D, edit, color and sound. Mediterranean light, year round." data-tr="İzmir stüdyomuz, zanaatın büyük kısmının gerçekleştiği yer: Ege boyunca çekimler, 3D, kurgu, renk ve ses. Yıl boyu Akdeniz ışığı.">Our Izmir studio is where much of the craft happens: shoots along the Aegean, 3D, edit, color and sound. Mediterranean light, year round.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="section-foot">
+    <a href="contact.html" class="text-link" data-cursor="expand" data-en="Find us &rarr;" data-tr="Bize ulaş &rarr;">Find us &rarr;</a>
+  </div>
+</section>
+
+<!-- ============ CONTACT CTA ============ -->
+<section class="contact" aria-label="Contact">
+  <div class="contact-label" data-en="/ Begin" data-tr="/ Başlayalım">/ Begin</div>
+  <h2 data-en="Let's make something <em>that lasts.</em>" data-tr="Kalıcı <em>bir şey üretelim.</em>">Let's make something <em>that lasts.</em></h2>
+  <a href="contact.html" class="contact-mail" data-cursor="expand" data-en="Start a project &rarr;" data-tr="Proje başlat &rarr;">Start a project &rarr;</a>
+  <div class="contact-channels">
+    <a href="mailto:info@worldlondonmedia.com" data-no-transition>info@worldlondonmedia.com</a>
+    <a href="https://wa.me/447717115002" target="_blank" rel="noopener" data-en="WhatsApp &middot; +44 7717 115002" data-tr="WhatsApp &middot; +44 7717 115002">WhatsApp &middot; +44 7717 115002</a>
+    <span data-en="London &middot; Izmir" data-tr="Londra &middot; İzmir">London &middot; Izmir</span>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER (her sayfada birebir ayni) ============ -->
+<footer class="site-footer">
+  <div>
+    <a href="index.html" class="foot-brand">World <em>London</em><br/>Media<sub>&reg;</sub></a>
+    <div class="foot-motto" data-en="Ideas move. Quality shows." data-tr="Fikirler hareket eder. Kalite kendini gösterir.">Ideas move. Quality shows.</div>
+  </div>
+  <div>
+    <h4 data-en="Studio" data-tr="Stüdyo">Studio</h4>
+    <ul>
+      <li data-en="London, United Kingdom" data-tr="Londra, Birleşik Krallık">London, United Kingdom</li>
+      <li data-en="Izmir, Turkiye" data-tr="İzmir, Türkiye">Izmir, Turkiye</li>
+      <li><a href="mailto:info@worldlondonmedia.com" data-no-transition>info@worldlondonmedia.com</a></li>
+      <li><a href="https://wa.me/447717115002" target="_blank" rel="noopener">+44 7717 115002</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4 data-en="Disciplines" data-tr="Disiplinler">Disciplines</h4>
+    <ul>
+      <li><a href="services.html" data-en="Brand Films" data-tr="Marka Filmleri">Brand Films</a></li>
+      <li><a href="services.html" data-en="Advertising" data-tr="Reklam">Advertising</a></li>
+      <li><a href="services.html" data-en="3D Visualization" data-tr="3D Görselleştirme">3D Visualization</a></li>
+      <li><a href="services.html" data-en="Drone Cinematography" data-tr="Drone Sinematografi">Drone Cinematography</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4 data-en="Elsewhere" data-tr="Diğer">Elsewhere</h4>
+    <ul>
+      <li><a href="https://worldlondonmedia.com" target="_blank" rel="noopener">worldlondonmedia.com</a></li>
+      <li><a href="work.html" data-en="Selected Work" data-tr="Seçili İşler">Selected Work</a></li>
+      <li><a href="contact.html" data-en="Start a Project" data-tr="Proje Başlat">Start a Project</a></li>
+      <li><a href="../../index.html" data-en="Gallery" data-tr="Galeri">Gallery</a></li>
+    </ul>
+  </div>
+  <div class="foot-bot">
+    <span data-en="&copy; 2026 World London Media &middot; London &amp; Izmir" data-tr="&copy; 2026 World London Media &middot; Londra &amp; İzmir">&copy; 2026 World London Media &middot; London &amp; Izmir</span>
+    <span data-en="Set in Fraunces &amp; JetBrains Mono" data-tr="Fraunces &amp; JetBrains Mono ile dizildi">Set in Fraunces &amp; JetBrains Mono</span>
+  </div>
+</footer>
+
+<!-- paylasilan JS EN SONDA (GSAP/Lenis CDN'leri head'de defer ile yuklendi) -->
+<script src="assets/noir.js"></script>
+</body>
+</html>
