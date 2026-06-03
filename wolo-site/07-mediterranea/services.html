@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Disciplines · World London Media</title>
+<meta name="description" content="Six disciplines, one standard of craft. Brand films, advertising, 3D visualization, corporate film, commercial production and drone cinematography. World London Media, London and Izmir." />
+
+<!-- favicon: kobalt zemin + sun-gold W -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%231a2548%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23d8a630%22%3EW%3C%2Ftext%3E%3C%2Fsvg%3E">
+<meta name="theme-color" content="#ebe1c8" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Disciplines · World London Media" />
+<meta property="og:description" content="Six disciplines, one standard of craft. A premium visual production studio. London + Izmir." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80" />
+
+<!-- fonts: preconnect + display=swap + preload kritik aileler -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@200;300;400;500;600&family=DM+Mono:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@200;300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/med.css">
+
+<!-- services.html'e ozel: numarali service-row + dahil listesi (ortak palet/font ile) -->
+<style>
+  /* numarali derinlemesine disiplin satiri: editorial, krem zemin */
+  .svc-rows { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--ink); }
+  .svc-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: var(--sp-7);
+    align-items: start;
+    padding: var(--sp-7) 0;
+    border-bottom: 1px solid var(--ink);
+    position: relative;
+  }
+  /* satir ustunde altin capa cizgisi reveal ile cizilir (krem-altin imza) */
+  .svc-row::before {
+    content: '';
+    position: absolute; left: 0; top: -1px;
+    width: 0; height: 2px; background: var(--sun);
+    transition: width var(--dur-slow) var(--ease-out);
+  }
+  .svc-row.in::before { width: 100%; }
+  .svc-row-head { position: sticky; top: 110px; }
+  .svc-row-num {
+    font-family: var(--display);
+    font-style: italic; font-weight: 400;
+    font-size: clamp(64px, 9vw, 132px);
+    line-height: 0.82;
+    color: var(--terra);
+    display: block;
+    margin-bottom: var(--sp-3);
+  }
+  .svc-row h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(34px, 5.2vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0 0 var(--sp-3);
+    max-width: 14ch;
+  }
+  .svc-row h2 em { font-style: italic; font-weight: 300; color: var(--terra); }
+  .svc-row h2 .cobalt { color: var(--cobalt); font-style: italic; font-weight: 300; }
+  .svc-row-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--cobalt);
+    display: inline-block;
+    border-top: 1px dashed var(--ink);
+    padding-top: var(--sp-2);
+  }
+  .svc-row-body p {
+    font-family: var(--display);
+    font-size: clamp(19px, 2vw, 24px);
+    line-height: 1.5;
+    color: var(--ink);
+    opacity: 0.92;
+    margin-bottom: var(--sp-4);
+    max-width: 46ch;
+  }
+  .svc-row-body p em { font-style: italic; color: var(--terra); }
+  .svc-row-body .incl-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--cobalt);
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: var(--sp-3);
+  }
+  .svc-row-body .incl-label::before { content: '✺'; color: var(--sun); font-size: 1.1em; }
+  .incl { list-style: none; display: grid; gap: 1px; background: var(--ink); border: 1px solid var(--ink); }
+  .incl li {
+    background: var(--cream);
+    padding: 14px 18px;
+    font-family: var(--body);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+    display: flex; align-items: baseline; gap: 12px;
+    transition: background var(--dur-fast), padding-left var(--dur-fast);
+  }
+  .incl li::before {
+    content: '✺';
+    color: var(--terra);
+    font-size: 11px;
+    flex-shrink: 0;
+    transition: color var(--dur-fast);
+  }
+  .incl li strong { font-weight: 600; }
+  .incl li:hover { background: #efe6d0; padding-left: 24px; }
+  .incl li:hover::before { color: var(--sun-ink); }
+
+  /* services ozet seridi */
+  .svc-overview {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4);
+  }
+  .svc-ov {
+    border: 1px solid var(--ink); background: var(--cream);
+    padding: 26px 24px;
+    box-shadow: 0 4px 12px -8px rgba(26,37,54,0.18);
+  }
+  .svc-ov .ov-k { font-family: var(--display); font-style: italic; font-size: clamp(38px, 5vw, 60px); line-height: 1; color: var(--terra); }
+  .svc-ov .ov-l { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--cobalt); margin-top: var(--sp-2); }
+
+  @media (max-width: 900px) {
+    .svc-row { grid-template-columns: 1fr; gap: var(--sp-4); padding: var(--sp-6) 0; }
+    .svc-row-head { position: static; top: auto; }
+    .svc-overview { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .svc-overview { grid-template-columns: 1fr; }
+    .svc-row-num { font-size: 56px; }
+  }
+</style>
+
+<!-- MOTION: GSAP + ScrollTrigger + Lenis (head'de defer) -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+</head>
+<body>
+
+<a href="#main" class="skip-link" data-en="Skip to content" data-tr="İçeriğe geç">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="page-trans" aria-hidden="true"><span class="pt-mark">✺</span></div>
+
+<div class="topbar" role="region" aria-label="Studio note">
+  <span data-en='WORLD LONDON MEDIA <span class="terra">✺</span> A PREMIUM VISUAL PRODUCTION STUDIO <span class="terra">✺</span> LONDON + IZMIR <span class="terra">✺</span> IDEAS MOVE. QUALITY SHOWS.' data-tr='WORLD LONDON MEDIA <span class="terra">✺</span> PREMIUM GÖRSEL ÜRETİM STÜDYOSU <span class="terra">✺</span> LONDRA + İZMİR <span class="terra">✺</span> IDEAS MOVE. QUALITY SHOWS.'>WORLD LONDON MEDIA <span class="terra">✺</span> A PREMIUM VISUAL PRODUCTION STUDIO <span class="terra">✺</span> LONDON + IZMIR <span class="terra">✺</span> IDEAS MOVE. QUALITY SHOWS.</span>
+</div>
+
+<nav aria-label="Primary">
+  <button class="nav-burger" aria-label="Menu / Menü" aria-controls="drawer"><span></span></button>
+  <div class="nav-left">
+    <a href="work.html" data-nav="work.html" data-en="Work" data-tr="İşler">Work</a>
+    <a href="services.html" data-nav="services.html" data-en="Services" data-tr="Hizmetler">Services</a>
+    <a href="studio.html" data-nav="studio.html" data-en="Studio" data-tr="Stüdyo">Studio</a>
+    <a href="contact.html" data-nav="contact.html" data-en="Contact" data-tr="İletişim">Contact</a>
+  </div>
+  <a href="index.html" class="logo" data-nav="index.html" aria-label="World London Media · home">
+    World <span class="it">London</span> Media
+    <small data-en="WoLo · LONDON + IZMIR · MMXXVI" data-tr="WoLo · LONDRA + İZMİR · MMXXVI">WoLo · LONDON + IZMIR · MMXXVI</small>
+  </a>
+  <div class="nav-right">
+    <a href="contact.html" class="nav-cta" data-en="Start a Project" data-tr="Proje Başlat">Start a Project</a>
+    <div class="lang-toggle" role="group" aria-label="Language / Dil">
+      <button data-l="en" onclick="setLang('en')" aria-label="Switch to English">EN</button>
+      <button data-l="tr" onclick="setLang('tr')" aria-label="Türkçe'ye geç">TR</button>
+    </div>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer" aria-label="Mobile menu">
+  <a href="work.html" data-nav="work.html" data-en="Work" data-tr="İşler">Work</a>
+  <a href="services.html" data-nav="services.html" data-en="Services" data-tr="Hizmetler">Services</a>
+  <a href="studio.html" data-nav="studio.html" data-en="Studio" data-tr="Stüdyo">Studio</a>
+  <a href="contact.html" data-nav="contact.html" data-en="Contact" data-tr="İletişim">Contact</a>
+  <a href="contact.html" class="drawer-cta" data-en="Start a Project" data-tr="Proje Başlat">Start a Project</a>
+  <div class="drawer-foot" data-en="WoLo · London + Izmir" data-tr="WoLo · Londra + İzmir">WoLo · London + Izmir</div>
+</div>
+
+<main id="main">
+
+<!-- PAGE HEAD: ic sayfa hero (krem zemin, kobalt baslik) -->
+<header class="page-head">
+  <p class="ph-eyebrow" data-en="What we make · Six disciplines" data-tr="Ne üretiriz · Altı disiplin">What we make · Six disciplines</p>
+  <h1 data-en="Discip<em>lines</em>" data-tr="Hizmet<em>ler</em>">Discip<em>lines</em></h1>
+  <p class="ph-sub" data-en="Six disciplines, <em>one standard of craft.</em> Story, light, motion and pixels, made to carry your brand from content to impact." data-tr="Altı disiplin, <em>tek bir ustalık standardı.</em> Hikaye, ışık, hareket ve piksel, markanızı içerikten etkiye taşımak için.">Six disciplines, <em>one standard of craft.</em> Story, light, motion and pixels, made to carry your brand from content to impact.</p>
+</header>
+
+<!-- OVERVIEW seridi -->
+<section class="section" aria-label="Overview" style="padding-block: var(--sp-7)">
+  <div class="svc-overview">
+    <div class="svc-ov reveal">
+      <div class="ov-k">06</div>
+      <div class="ov-l" data-en="Disciplines under one roof" data-tr="Tek çatı altında disiplin">Disciplines under one roof</div>
+    </div>
+    <div class="svc-ov reveal">
+      <div class="ov-k">02</div>
+      <div class="ov-l" data-en="Cities · London + Izmir" data-tr="Şehir · Londra + İzmir">Cities · London + Izmir</div>
+    </div>
+    <div class="svc-ov reveal">
+      <div class="ov-k" data-en="End to end" data-tr="Uçtan uca">End to end</div>
+      <div class="ov-l" data-en="Concept · Production · Delivery" data-tr="Konsept · Prodüksiyon · Teslim">Concept · Production · Delivery</div>
+    </div>
+  </div>
+</section>
+
+<!-- ALTI DISIPLIN: numarali derinlemesine service-row -->
+<section class="section" aria-label="Disciplines in depth" style="padding-top: var(--sp-4)">
+  <div class="svc-rows">
+
+    <!-- 01 -->
+    <article class="svc-row reveal">
+      <div class="svc-row-head">
+        <span class="svc-row-num">01</span>
+        <h2 data-en="Brand <em>Films</em>" data-tr="Marka <em>Filmleri</em>">Brand <em>Films</em></h2>
+        <span class="svc-row-tag" data-en="STORY · DIRECTION · CINEMA" data-tr="HİKAYE · YÖNETİM · SİNEMA">STORY · DIRECTION · CINEMA</span>
+      </div>
+      <div class="svc-row-body">
+        <p data-en="We find the one true emotion in a brand and film it, frame by frame, until it feels inevitable. A brand film is not an advert, it is the studio learning to speak in your voice. We write, direct and cut it as a single, deliberate piece of cinema." data-tr="Bir markadaki tek gerçek duyguyu buluruz ve onu, kaçınılmaz hissettirene kadar kare kare filme alırız. Marka filmi bir reklam değildir, stüdyonun sizin sesinizle konuşmayı öğrenmesidir. Tek, bilinçli bir sinema parçası olarak yazar, yönetir ve kurgularız.">We find the one true emotion in a brand and film it, frame by frame, until it feels inevitable. A brand film is not an advert, it is the studio learning to speak in your voice. We write, direct and cut it as a single, deliberate piece of cinema.</p>
+        <p class="incl-label" data-en="What's included" data-tr="Neler dahil">What's included</p>
+        <ul class="incl">
+          <li><strong data-en="Concept &amp; script" data-tr="Konsept ve senaryo">Concept &amp; script</strong></li>
+          <li><strong data-en="Direction &amp; cinematography" data-tr="Yönetmenlik ve görüntü yönetimi">Direction &amp; cinematography</strong></li>
+          <li><strong data-en="Editing, grade &amp; sound design" data-tr="Kurgu, renk ve ses tasarımı">Editing, grade &amp; sound design</strong></li>
+          <li><strong data-en="Versions for every channel" data-tr="Her kanal için versiyonlar">Versions for every channel</strong></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="svc-row reveal">
+      <div class="svc-row-head">
+        <span class="svc-row-num">02</span>
+        <h2 data-en="Adver<em>tising</em>" data-tr="Rek<em>lam</em>">Adver<em>tising</em></h2>
+        <span class="svc-row-tag" data-en="TV · DIGITAL · SOCIAL" data-tr="TV · DİJİTAL · SOSYAL">TV · DIGITAL · SOCIAL</span>
+      </div>
+      <div class="svc-row-body">
+        <p data-en="Campaigns that earn attention instead of buying it. We start from a single, sharp idea and build it out for every screen it will ever live on. From the first concept through the final cut, the work stays <em>on brand and on message.</em>" data-tr="İlgiyi satın almak yerine kazanan kampanyalar. Tek, keskin bir fikirden başlar ve onu yaşayacağı her ekran için kurgularız. İlk konsepttan final kurguya kadar iş, <em>marka ve mesaja sadık</em> kalır.">Campaigns that earn attention instead of buying it. We start from a single, sharp idea and build it out for every screen it will ever live on. From the first concept through the final cut, the work stays <em>on brand and on message.</em></p>
+        <p class="incl-label" data-en="What's included" data-tr="Neler dahil">What's included</p>
+        <ul class="incl">
+          <li><strong data-en="Campaign concept &amp; key visual" data-tr="Kampanya konsepti ve ana görsel">Campaign concept &amp; key visual</strong></li>
+          <li><strong data-en="TV &amp; film production" data-tr="TV ve film prodüksiyonu">TV &amp; film production</strong></li>
+          <li><strong data-en="Social-first cutdowns" data-tr="Sosyal odaklı kısa kurgular">Social-first cutdowns</strong></li>
+          <li><strong data-en="Adaptation across formats" data-tr="Formatlar arası uyarlama">Adaptation across formats</strong></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 03 -->
+    <article class="svc-row reveal">
+      <div class="svc-row-head">
+        <span class="svc-row-num">03</span>
+        <h2 data-en="3D <em>Visualization</em>" data-tr="3D <em>Görselleştirme</em>">3D <em>Visualization</em></h2>
+        <span class="svc-row-tag" data-en="RENDER · PRODUCT · ARCHVIZ" data-tr="RENDER · ÜRÜN · ARCHVIZ">RENDER · PRODUCT · ARCHVIZ</span>
+      </div>
+      <div class="svc-row-body">
+        <p data-en="We show the thing before it exists, exactly as it will feel. Photographic renders for products that have not shipped and spaces that have not been built. The result reads as a frame from a film, <em>not a technical drawing.</em>" data-tr="Henüz var olmayanı, tam hissettireceği gibi gösteririz. Henüz çıkmamış ürünler ve henüz inşa edilmemiş mekanlar için fotoğrafik render. Sonuç teknik bir çizim değil, <em>bir film karesi</em> gibi okunur.">We show the thing before it exists, exactly as it will feel. Photographic renders for products that have not shipped and spaces that have not been built. The result reads as a frame from a film, <em>not a technical drawing.</em></p>
+        <p class="incl-label" data-en="What's included" data-tr="Neler dahil">What's included</p>
+        <ul class="incl">
+          <li><strong data-en="Product modelling &amp; rendering" data-tr="Ürün modelleme ve render">Product modelling &amp; rendering</strong></li>
+          <li><strong data-en="Architectural visualization" data-tr="Mimari görselleştirme">Architectural visualization</strong></li>
+          <li><strong data-en="Animated 3D sequences" data-tr="Animasyonlu 3D sekanslar">Animated 3D sequences</strong></li>
+          <li><strong data-en="CGI integrated into live action" data-tr="Canlı çekime entegre CGI">CGI integrated into live action</strong></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 04 -->
+    <article class="svc-row reveal">
+      <div class="svc-row-head">
+        <span class="svc-row-num">04</span>
+        <h2 data-en="Corporate <em>Film</em>" data-tr="Kurumsal <em>Film</em>">Corporate <em>Film</em></h2>
+        <span class="svc-row-tag" data-en="CULTURE · PEOPLE · PURPOSE" data-tr="KÜLTÜR · İNSAN · AMAÇ">CULTURE · PEOPLE · PURPOSE</span>
+      </div>
+      <div class="svc-row-body">
+        <p data-en="Culture, people and purpose, captured without the corporate stiffness. We treat an annual report or a recruitment film with the same restraint and clarity we bring to brand cinema. <em>Honest, never stiff.</em>" data-tr="Kültür, insan ve amaç, kurumsal katılık olmadan. Bir yıllık rapora ya da işe alım filmine, marka sinemasına getirdiğimiz aynı ölçü ve netlikle yaklaşırız. <em>Dürüst, asla katı değil.</em>">Culture, people and purpose, captured without the corporate stiffness. We treat an annual report or a recruitment film with the same restraint and clarity we bring to brand cinema. <em>Honest, never stiff.</em></p>
+        <p class="incl-label" data-en="What's included" data-tr="Neler dahil">What's included</p>
+        <ul class="incl">
+          <li><strong data-en="Interviews &amp; testimonials" data-tr="Röportaj ve referanslar">Interviews &amp; testimonials</strong></li>
+          <li><strong data-en="Company &amp; culture films" data-tr="Şirket ve kültür filmleri">Company &amp; culture films</strong></li>
+          <li><strong data-en="Event &amp; conference coverage" data-tr="Etkinlik ve konferans çekimi">Event &amp; conference coverage</strong></li>
+          <li><strong data-en="Internal &amp; recruitment content" data-tr="İç iletişim ve işe alım içeriği">Internal &amp; recruitment content</strong></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 05 -->
+    <article class="svc-row reveal">
+      <div class="svc-row-head">
+        <span class="svc-row-num">05</span>
+        <h2 data-en="Commercial <em>Production</em>" data-tr="Reklam <em>Prodüksiyonu</em>">Commercial <em>Production</em></h2>
+        <span class="svc-row-tag" data-en="CASTING · CREW · POST" data-tr="CASTING · EKİP · POST">CASTING · CREW · POST</span>
+      </div>
+      <div class="svc-row-body">
+        <p data-en="Casting, locations, crew and post, managed end to end. A full-service production line that turns a board into a finished film, on time and on budget. You approve the work, <em>we carry the logistics.</em>" data-tr="Casting, mekan, ekip ve post, baştan sona yönetilir. Bir storyboard'u bitmiş bir filme dönüştüren tam kapsamlı bir prodüksiyon hattı, zamanında ve bütçesinde. Siz işi onaylarsınız, <em>lojistiği biz taşırız.</em>">Casting, locations, crew and post, managed end to end. A full-service production line that turns a board into a finished film, on time and on budget. You approve the work, <em>we carry the logistics.</em></p>
+        <p class="incl-label" data-en="What's included" data-tr="Neler dahil">What's included</p>
+        <ul class="incl">
+          <li><strong data-en="Casting &amp; location scouting" data-tr="Casting ve mekan keşfi">Casting &amp; location scouting</strong></li>
+          <li><strong data-en="Crew, equipment &amp; logistics" data-tr="Ekip, ekipman ve lojistik">Crew, equipment &amp; logistics</strong></li>
+          <li><strong data-en="On-set production management" data-tr="Sette prodüksiyon yönetimi">On-set production management</strong></li>
+          <li><strong data-en="Full post-production &amp; delivery" data-tr="Tam post prodüksiyon ve teslim">Full post-production &amp; delivery</strong></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 06 -->
+    <article class="svc-row reveal">
+      <div class="svc-row-head">
+        <span class="svc-row-num">06</span>
+        <h2 data-en="Drone <em>Cinematography</em>" data-tr="Drone <em>Sinematografi</em>">Drone <em>Cinematography</em></h2>
+        <span class="svc-row-tag" data-en="AERIAL · FPV · LICENSED" data-tr="HAVADAN · FPV · LİSANSLI">AERIAL · FPV · LICENSED</span>
+      </div>
+      <div class="svc-row-body">
+        <p data-en="The shots that make a place feel monumental. Licensed pilots, cinema-grade rigs and FPV flight bring an aerial scale that a tripod never reaches. Used with restraint, <em>one move can carry a whole film.</em>" data-tr="Bir mekanı anıtsal kılan çekimler. Lisanslı pilotlar, sinema sınıfı donanım ve FPV uçuş, bir tripodun asla ulaşamayacağı havadan bir ölçek getirir. Ölçülü kullanıldığında, <em>tek bir hareket bütün bir filmi taşıyabilir.</em>">The shots that make a place feel monumental. Licensed pilots, cinema-grade rigs and FPV flight bring an aerial scale that a tripod never reaches. Used with restraint, <em>one move can carry a whole film.</em></p>
+        <p class="incl-label" data-en="What's included" data-tr="Neler dahil">What's included</p>
+        <ul class="incl">
+          <li><strong data-en="Licensed pilots &amp; permits" data-tr="Lisanslı pilotlar ve izinler">Licensed pilots &amp; permits</strong></li>
+          <li><strong data-en="Cinema-grade aerial rigs" data-tr="Sinema sınıfı havadan donanım">Cinema-grade aerial rigs</strong></li>
+          <li><strong data-en="FPV &amp; high-speed sequences" data-tr="FPV ve yüksek hızlı sekanslar">FPV &amp; high-speed sequences</strong></li>
+          <li><strong data-en="Aerial grade matched to the edit" data-tr="Kurguyla eşleşen havadan renk">Aerial grade matched to the edit</strong></li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- PROCESS: kobalt capa (krem-kobalt sinematik kontrast: IMZA) -->
+<div class="section-dark" aria-label="Process">
+  <section class="section">
+    <p class="section-eyebrow reveal" data-en="How we work · Four steps" data-tr="Nasıl çalışırız · Dört adım">How we work · Four steps</p>
+    <h2 class="reveal" data-en="One <em>process,</em><br/>every <span class='cobalt'>discipline.</span>" data-tr="Tek bir <em>süreç,</em><br/>her <span class='cobalt'>disiplin.</span>">One <em>process,</em><br/>every <span class="cobalt">discipline.</span></h2>
+    <p class="section-intro reveal" data-en="No matter which discipline you start with, the path is the same: <em>discover, direct, produce, deliver.</em> Clear stages, clear approvals, no surprises." data-tr="Hangi disiplinle başlarsanız başlayın, yol aynıdır: <em>keşfet, yönet, üret, teslim et.</em> Net aşamalar, net onaylar, sürpriz yok.">No matter which discipline you start with, the path is the same: <em>discover, direct, produce, deliver.</em> Clear stages, clear approvals, no surprises.</p>
+
+    <div class="proc-grid">
+      <article class="step reveal">
+        <div class="step-num">01</div>
+        <h3 data-en="Dis<em>cover</em>" data-tr="Keş<em>fet</em>">Dis<em>cover</em></h3>
+        <p data-en="We listen, research and find the single emotion the work has to carry. Strategy before a single frame is shot." data-tr="Dinleriz, araştırırız ve işin taşıması gereken tek duyguyu buluruz. Tek bir kare çekilmeden önce strateji.">We listen, research and find the single emotion the work has to carry. Strategy before a single frame is shot.</p>
+        <div class="step-tag" data-en="BRIEF · RESEARCH · STRATEGY" data-tr="BRİF · ARAŞTIRMA · STRATEJİ">BRIEF · RESEARCH · STRATEGY</div>
+      </article>
+      <article class="step reveal">
+        <div class="step-num">02</div>
+        <h3 data-en="Di<em>rect</em>" data-tr="Yö<em>net</em>">Di<em>rect</em></h3>
+        <p data-en="Concept, script, boards and a visual language you sign off on. You see exactly where it is going before we roll." data-tr="Konsept, senaryo, storyboard ve onaylayacağınız bir görsel dil. Çekime başlamadan nereye gittiğini tam görürsünüz.">Concept, script, boards and a visual language you sign off on. You see exactly where it is going before we roll.</p>
+        <div class="step-tag" data-en="CONCEPT · SCRIPT · BOARDS" data-tr="KONSEPT · SENARYO · STORYBOARD">CONCEPT · SCRIPT · BOARDS</div>
+      </article>
+      <article class="step reveal">
+        <div class="step-num">03</div>
+        <h3 data-en="Pro<em>duce</em>" data-tr="Ü<em>ret</em>">Pro<em>duce</em></h3>
+        <p data-en="Shoot, render, edit and grade. Crew, kit and locations handled, so the only thing you watch is the work getting better." data-tr="Çekim, render, kurgu ve renk. Ekip, ekipman ve mekanlar halledilir, sizin izlediğiniz tek şey işin daha iyiye gitmesidir.">Shoot, render, edit and grade. Crew, kit and locations handled, so the only thing you watch is the work getting better.</p>
+        <div class="step-tag" data-en="SHOOT · EDIT · GRADE" data-tr="ÇEKİM · KURGU · RENK">SHOOT · EDIT · GRADE</div>
+      </article>
+      <article class="step reveal">
+        <div class="step-num">04</div>
+        <h3 data-en="De<em>liver</em>" data-tr="Tes<em>lim</em>">De<em>liver</em></h3>
+        <p data-en="Master files and every cutdown, sized for each channel and ready to ship. From content to impact, on time." data-tr="Master dosyalar ve her kanal için boyutlanmış, yayına hazır tüm kısa kurgular. İçerikten etkiye, zamanında.">Master files and every cutdown, sized for each channel and ready to ship. From content to impact, on time.</p>
+        <div class="step-tag" data-en="MASTERS · CUTDOWNS · SHIP" data-tr="MASTER · KISA KURGU · YAYIN">MASTERS · CUTDOWNS · SHIP</div>
+      </article>
+    </div>
+  </section>
+</div>
+
+<!-- CLIENTS: secili musteriler -->
+<section class="clients-section" aria-label="Selected clients">
+  <div class="clients-wrap">
+    <p class="section-eyebrow reveal" data-en="Selected clients" data-tr="Seçili müşteriler">Selected clients</p>
+    <h2 class="reveal" style="margin-bottom:48px" data-en="Brands we've <em>shown</em> at their best." data-tr="En iyi hallerini <em>gösterdiğimiz</em> markalar.">Brands we've <em>shown</em> at their best.</h2>
+    <div class="clients-grid">
+      <div class="client reveal">Samsung<span class="sub" data-en="Electronics" data-tr="Elektronik">Electronics</span></div>
+      <div class="client reveal">Karaca<span class="sub" data-en="Homeware" data-tr="Ev Yaşamı">Homeware</span></div>
+      <div class="client reveal">LC Waikiki<span class="sub" data-en="Fashion" data-tr="Moda">Fashion</span></div>
+      <div class="client reveal">Yeni Rakı<span class="sub" data-en="Heritage" data-tr="Miras">Heritage</span></div>
+      <div class="client reveal">Le Cordon Bleu<span class="sub" data-en="Culinary" data-tr="Gastronomi">Culinary</span></div>
+      <div class="client reveal">Barrus London<span class="sub" data-en="Hospitality" data-tr="Misafirperverlik">Hospitality</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -> contact.html -->
+<section class="contact" aria-label="Contact">
+  <p class="contact-eyebrow reveal" data-en="Let's begin" data-tr="Başlayalım">Let's begin</p>
+  <h2 class="reveal" data-en="Pick a <em>discipline.</em>" data-tr="Bir <em>disiplin</em> seçin.">Pick a <em>discipline.</em></h2>
+  <p class="contact-sub reveal" data-en="From content to impact. Tell us which discipline fits your brand, or let us help you choose, and we'll take it from there." data-tr="İçerikten etkiye. Markanıza hangi disiplinin uyduğunu söyleyin ya da seçmenize yardım edelim, gerisini biz alalım.">From content to impact. Tell us which discipline fits your brand, or let us help you choose, and we'll take it from there.</p>
+  <div class="contact-actions">
+    <a href="contact.html" class="contact-mail reveal" data-en="Start a Project →" data-tr="Proje Başlat →">Start a Project →</a>
+    <a href="https://wa.me/447717115002" class="contact-wa reveal" data-en="WhatsApp · +44 7717 115002" data-tr="WhatsApp · +44 7717 115002">WhatsApp · +44 7717 115002</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">World London<br/><em>Media</em></div>
+      <p style="margin-top: 16px; font-size: 13px; opacity: 0.85; max-width: 280px;" data-en="A premium visual production studio. Brand films, advertising, 3D, corporate, commercial, drone. London + Izmir." data-tr="Premium görsel üretim stüdyosu. Marka filmleri, reklam, 3D, kurumsal, ticari, drone. Londra + İzmir.">A premium visual production studio. Brand films, advertising, 3D, corporate, commercial, drone. London + Izmir.</p>
+    </div>
+    <div>
+      <h4 data-en="STUDIO" data-tr="STÜDYO">STUDIO</h4>
+      <ul>
+        <li data-en="London, UK" data-tr="Londra, İngiltere">London, UK</li>
+        <li data-en="Izmir, Turkiye" data-tr="İzmir, Türkiye">Izmir, Turkiye</li>
+        <li><a href="https://worldlondonmedia.com">worldlondonmedia.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="SITEMAP" data-tr="SİTE HARİTASI">SITEMAP</h4>
+      <ul>
+        <li><a href="work.html" data-en="Work" data-tr="İşler">Work</a></li>
+        <li><a href="services.html" data-en="Services" data-tr="Hizmetler">Services</a></li>
+        <li><a href="studio.html" data-en="Studio" data-tr="Stüdyo">Studio</a></li>
+        <li><a href="contact.html" data-en="Contact" data-tr="İletişim">Contact</a></li>
+        <li><a href="../../index.html" data-en="Gallery" data-tr="Galeri">Gallery</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="CONTACT" data-tr="İLETİŞİM">CONTACT</h4>
+      <ul>
+        <li><a href="mailto:info@worldlondonmedia.com">info@worldlondonmedia.com</a></li>
+        <li><a href="https://wa.me/447717115002">WhatsApp +44 7717 115002</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span data-en="© 2026 WORLD LONDON MEDIA · IDEAS MOVE. QUALITY SHOWS." data-tr="© 2026 WORLD LONDON MEDIA · IDEAS MOVE. QUALITY SHOWS.">© 2026 WORLD LONDON MEDIA · IDEAS MOVE. QUALITY SHOWS.</span>
+    <span>SET IN CORMORANT INFANT · MANROPE · DM MONO</span>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="Back to top / Yukarı dön">↑</button>
+
+<a href="../../index.html" class="wolo-back" aria-label="Galeriye don">
+  <span class="wolo-back__arrow" aria-hidden="true">&#8592;</span>
+  <span class="wolo-back__label" data-en="Gallery" data-tr="Galeri">Gallery</span>
+</a>
+
+<script defer src="assets/med.js"></script>
+</body>
+</html>

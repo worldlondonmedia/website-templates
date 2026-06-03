@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Selected Work · World London Media</title>
+<meta name="description" content="Selected work by World London Media (WoLo). Brand films, advertising, 3D visualization and commercial production for Samsung, Karaca, LC Waikiki, Yeni Raki, Le Cordon Bleu and Barrus London. London + Izmir." />
+
+<!-- favicon: kobalt zemin + sun-gold W -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%231a2548%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2223%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2219%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23d8a630%22%3EW%3C%2Ftext%3E%3C%2Fsvg%3E">
+<meta name="theme-color" content="#ebe1c8" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Selected Work · World London Media" />
+<meta property="og:description" content="Selected work by WoLo. Brand films, advertising, 3D and commercial production. London + Izmir." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=80" />
+
+<!-- fonts: preconnect + display=swap + preload kritik aileler -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@200;300;400;500;600&family=DM+Mono:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@200;300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/med.css">
+
+<!-- sayfaya ozel: vitrin kapsiyon notu (med.css'teki .work-cap'i bozmadan ekstra satir) -->
+<style>
+  /* work-cap-note: her is karesinin altinda 8-12 kelimelik kapsiyon.
+     Mediterranea paleti: krem zemin uzerinde mono-ust-baslik + serif govde tonu. */
+  .work-cap-note {
+    font-family: var(--body);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink);
+    opacity: 0.82;
+    margin-top: var(--sp-2);
+    max-width: 42ch;
+  }
+</style>
+
+<!-- MOTION: GSAP + ScrollTrigger + Lenis (head'de defer) -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+</head>
+<body>
+
+<a href="#main" class="skip-link" data-en="Skip to content" data-tr="İçeriğe geç">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="page-trans" aria-hidden="true"><span class="pt-mark">✺</span></div>
+
+<div class="topbar" role="region" aria-label="Studio note">
+  <span data-en='WORLD LONDON MEDIA <span class="terra">✺</span> A PREMIUM VISUAL PRODUCTION STUDIO <span class="terra">✺</span> LONDON + IZMIR <span class="terra">✺</span> IDEAS MOVE. QUALITY SHOWS.' data-tr='WORLD LONDON MEDIA <span class="terra">✺</span> PREMIUM GÖRSEL ÜRETİM STÜDYOSU <span class="terra">✺</span> LONDRA + İZMİR <span class="terra">✺</span> IDEAS MOVE. QUALITY SHOWS.'>WORLD LONDON MEDIA <span class="terra">✺</span> A PREMIUM VISUAL PRODUCTION STUDIO <span class="terra">✺</span> LONDON + IZMIR <span class="terra">✺</span> IDEAS MOVE. QUALITY SHOWS.</span>
+</div>
+
+<nav aria-label="Primary">
+  <button class="nav-burger" aria-label="Menu / Menü" aria-controls="drawer"><span></span></button>
+  <div class="nav-left">
+    <a href="work.html" data-nav="work.html" data-en="Work" data-tr="İşler">Work</a>
+    <a href="services.html" data-nav="services.html" data-en="Services" data-tr="Hizmetler">Services</a>
+    <a href="studio.html" data-nav="studio.html" data-en="Studio" data-tr="Stüdyo">Studio</a>
+    <a href="contact.html" data-nav="contact.html" data-en="Contact" data-tr="İletişim">Contact</a>
+  </div>
+  <a href="index.html" class="logo" data-nav="index.html" aria-label="World London Media · home">
+    World <span class="it">London</span> Media
+    <small data-en="WoLo · LONDON + IZMIR · MMXXVI" data-tr="WoLo · LONDRA + İZMİR · MMXXVI">WoLo · LONDON + IZMIR · MMXXVI</small>
+  </a>
+  <div class="nav-right">
+    <a href="contact.html" class="nav-cta" data-en="Start a Project" data-tr="Proje Başlat">Start a Project</a>
+    <div class="lang-toggle" role="group" aria-label="Language / Dil">
+      <button data-l="en" onclick="setLang('en')" aria-label="Switch to English">EN</button>
+      <button data-l="tr" onclick="setLang('tr')" aria-label="Türkçe'ye geç">TR</button>
+    </div>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer" aria-label="Mobile menu">
+  <a href="work.html" data-nav="work.html" data-en="Work" data-tr="İşler">Work</a>
+  <a href="services.html" data-nav="services.html" data-en="Services" data-tr="Hizmetler">Services</a>
+  <a href="studio.html" data-nav="studio.html" data-en="Studio" data-tr="Stüdyo">Studio</a>
+  <a href="contact.html" data-nav="contact.html" data-en="Contact" data-tr="İletişim">Contact</a>
+  <a href="contact.html" class="drawer-cta" data-en="Start a Project" data-tr="Proje Başlat">Start a Project</a>
+  <div class="drawer-foot" data-en="WoLo · London + Izmir" data-tr="WoLo · Londra + İzmir">WoLo · London + Izmir</div>
+</div>
+
+<main id="main">
+
+<!-- PAGE HEADER: ic sayfa hero, krem zemin + kobalt baslik -->
+<header class="page-head">
+  <p class="ph-eyebrow reveal" data-en="Selected work · 2026" data-tr="Seçili işler · 2026">Selected work · 2026</p>
+  <h1 class="reveal" data-en="Selected <span class='cobalt'>Work</span>" data-tr="Seçili <span class='cobalt'>İşler</span>">Selected <span class="cobalt">Work</span></h1>
+  <p class="ph-sub reveal" data-en="A placeholder vitrine, ready to hold real films and frames. Six brands, six disciplines, <em>one standard of craft.</em> Every frame swaps to the real cut when it lands." data-tr="Gerçek film ve karelere hazır bir yer tutucu vitrin. Altı marka, altı disiplin, <em>tek bir ustalık standardı.</em> Her kare, gerçek kurgu geldiğinde yerini alır.">A placeholder vitrine, ready to hold real films and frames. Six brands, six disciplines, <em>one standard of craft.</em> Every frame swaps to the real cut when it lands.</p>
+</header>
+
+<!-- MARQUEE: secili musteriler seridi -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Samsung</span><span class="sun">✺</span>
+    <span class="cream">Karaca</span><span class="sun">✺</span>
+    <span>LC Waikiki</span><span class="sun">✺</span>
+    <span class="cream">Yeni Rakı</span><span class="sun">✺</span>
+    <span>Le Cordon Bleu</span><span class="sun">✺</span>
+    <span class="cream">Barrus London</span><span class="sun">✺</span>
+    <span>Samsung</span><span class="sun">✺</span>
+    <span class="cream">Karaca</span><span class="sun">✺</span>
+    <span>LC Waikiki</span><span class="sun">✺</span>
+    <span class="cream">Yeni Rakı</span><span class="sun">✺</span>
+    <span>Le Cordon Bleu</span><span class="sun">✺</span>
+    <span class="cream">Barrus London</span><span class="sun">✺</span>
+  </div>
+</div>
+
+<!-- VITRIN: 6 is karesi. data-lightbox + data-lb-* hook'lari ile med.js openLightbox.
+     ASSET SWAP: .frame-inner background-image -> gercek poster; data-lb-img -> lightbox buyuk gorsel.
+     ?fm=webp + ?w boyut + loading=lazy hazir. -->
+<section class="section" aria-label="Work vitrine">
+  <p class="section-eyebrow reveal" data-en="The vitrine · Six projects" data-tr="Vitrin · Altı proje">The vitrine · Six projects</p>
+  <h2 class="reveal" data-en="Work we <em>believe</em><br/>in, frame by <span class='cobalt'>frame.</span>" data-tr="İnandığımız işler,<br/>kare kare <span class='cobalt'>çerçeve.</span>">Work we <em>believe</em><br/>in, frame by <span class="cobalt">frame.</span></h2>
+  <p class="section-intro reveal" data-en="Click any frame to open it larger. These are placeholders, sized and captioned, <em>ready for the real cut.</em>" data-tr="Büyütmek için herhangi bir kareye tıklayın. Bunlar boyutlandırılmış ve açıklamalı yer tutucular, <em>gerçek kurguya hazır.</em>">Click any frame to open it larger. These are placeholders, sized and captioned, <em>ready for the real cut.</em></p>
+
+  <div class="work-grid cols-2">
+
+    <!-- 01 · Karaca · Brand Film -->
+    <a href="#" class="work-item reveal" data-lightbox
+       data-lb-img="https://images.unsplash.com/photo-1556910103-1c02745aae4d?fm=webp&w=1600&q=80"
+       data-lb-title="Karaca · <em>Brand Film</em>"
+       data-lb-meta="Brand Film · 2025 · placeholder"
+       aria-label="Karaca, brand film, open larger">
+      <span class="badge" data-en="★ Brand Film" data-tr="★ Marka Filmi">★ Brand Film</span>
+      <div class="frame"><div class="frame-inner" style="background-image:url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?fm=webp&w=1400&q=80')"></div><span class="cue" aria-hidden="true"></span></div>
+      <div class="work-cap">
+        <h4 data-en="<em>Karaca</em>" data-tr="<em>Karaca</em>"><em>Karaca</em></h4>
+        <span class="meta" data-en="Brand Film · 2025" data-tr="Marka Filmi · 2025">Brand Film · 2025</span>
+      </div>
+      <p class="work-cap-note" data-en="Homeware heritage reframed as quiet, cinematic ritual at the table." data-tr="Ev yaşamı mirasını, sofrada sakin ve sinematik bir ritüele dönüştürdük.">Homeware heritage reframed as quiet, cinematic ritual at the table.</p>
+    </a>
+
+    <!-- 02 · Samsung · Advertising -->
+    <a href="#" class="work-item reveal" data-lightbox
+       data-lb-img="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?fm=webp&w=1600&q=80"
+       data-lb-title="Samsung · <em>Advertising</em>"
+       data-lb-meta="Advertising · 2024 · placeholder"
+       aria-label="Samsung, advertising, open larger">
+      <span class="badge" data-en="★ Advertising" data-tr="★ Reklam">★ Advertising</span>
+      <div class="frame"><div class="frame-inner" loading="lazy" style="background-image:url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?fm=webp&w=1400&q=80')"></div><span class="cue" aria-hidden="true"></span></div>
+      <div class="work-cap">
+        <h4 data-en="<em>Samsung</em>" data-tr="<em>Samsung</em>"><em>Samsung</em></h4>
+        <span class="meta" data-en="Advertising · 2024" data-tr="Reklam · 2024">Advertising · 2024</span>
+      </div>
+      <p class="work-cap-note" data-en="A multi-screen campaign built to earn attention across TV, digital and social." data-tr="TV, dijital ve sosyalde ilgiyi kazanmak için kurgulanmış çok ekranlı bir kampanya.">A multi-screen campaign built to earn attention across TV, digital and social.</p>
+    </a>
+
+    <!-- 03 · LC Waikiki · Commercial Production -->
+    <a href="#" class="work-item reveal" data-lightbox
+       data-lb-img="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?fm=webp&w=1600&q=80"
+       data-lb-title="LC Waikiki · <em>Commercial</em>"
+       data-lb-meta="Commercial Production · 2025 · placeholder"
+       aria-label="LC Waikiki, commercial production, open larger">
+      <span class="badge" data-en="★ Commercial" data-tr="★ Reklam Prodüksiyonu">★ Commercial</span>
+      <div class="frame"><div class="frame-inner" loading="lazy" style="background-image:url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?fm=webp&w=1400&q=80')"></div><span class="cue" aria-hidden="true"></span></div>
+      <div class="work-cap">
+        <h4 data-en="LC <em>Waikiki</em>" data-tr="LC <em>Waikiki</em>">LC <em>Waikiki</em></h4>
+        <span class="meta" data-en="Commercial · 2025" data-tr="Reklam Prod. · 2025">Commercial · 2025</span>
+      </div>
+      <p class="work-cap-note" data-en="Full-service fashion production, casting through final cut, on time and on budget." data-tr="Tam kapsamlı moda prodüksiyonu, castingden final kurguya, zamanında ve bütçesinde.">Full-service fashion production, casting through final cut, on time and on budget.</p>
+    </a>
+
+    <!-- 04 · Yeni Raki · Corporate Film -->
+    <a href="#" class="work-item reveal" data-lightbox
+       data-lb-img="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?fm=webp&w=1600&q=80"
+       data-lb-title="Yeni Raki · <em>Corporate Film</em>"
+       data-lb-meta="Corporate Film · 2024 · placeholder"
+       aria-label="Yeni Raki, corporate film, open larger">
+      <span class="badge" data-en="★ Corporate" data-tr="★ Kurumsal">★ Corporate</span>
+      <div class="frame"><div class="frame-inner" loading="lazy" style="background-image:url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?fm=webp&w=1400&q=80')"></div><span class="cue" aria-hidden="true"></span></div>
+      <div class="work-cap">
+        <h4 data-en="Yeni <em>Raki</em>" data-tr="Yeni <em>Rakı</em>">Yeni <em>Raki</em></h4>
+        <span class="meta" data-en="Corporate Film · 2024" data-tr="Kurumsal Film · 2024">Corporate Film · 2024</span>
+      </div>
+      <p class="work-cap-note" data-en="A heritage house told without the corporate stiffness, restraint and warmth on purpose." data-tr="Köklü bir markayı kurumsal katılık olmadan, bilerek ölçü ve sıcaklıkla anlattık.">A heritage house told without the corporate stiffness, restraint and warmth on purpose.</p>
+    </a>
+
+    <!-- 05 · Le Cordon Bleu · 3D Visualization -->
+    <a href="#" class="work-item reveal" data-lightbox
+       data-lb-img="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?fm=webp&w=1600&q=80"
+       data-lb-title="Le Cordon Bleu · <em>3D Visualization</em>"
+       data-lb-meta="3D Visualization · 2025 · placeholder"
+       aria-label="Le Cordon Bleu, 3D visualization, open larger">
+      <span class="badge" data-en="★ 3D Visualization" data-tr="★ 3D Görselleştirme">★ 3D Visualization</span>
+      <div class="frame"><div class="frame-inner" loading="lazy" style="background-image:url('https://images.unsplash.com/photo-1556909212-d5b604d0c90d?fm=webp&w=1400&q=80')"></div><span class="cue" aria-hidden="true"></span></div>
+      <div class="work-cap">
+        <h4 data-en="Le Cordon <em>Bleu</em>" data-tr="Le Cordon <em>Bleu</em>">Le Cordon <em>Bleu</em></h4>
+        <span class="meta" data-en="3D Visualization · 2025" data-tr="3D Görselleştirme · 2025">3D Visualization · 2025</span>
+      </div>
+      <p class="work-cap-note" data-en="Photographic renders showing the space and the dish exactly as they will feel." data-tr="Mekanı ve tabağı tam hissettirecekleri gibi gösteren fotoğrafik renderlar.">Photographic renders showing the space and the dish exactly as they will feel.</p>
+    </a>
+
+    <!-- 06 · Barrus London · Drone Cinematography -->
+    <a href="#" class="work-item reveal" data-lightbox
+       data-lb-img="https://images.unsplash.com/photo-1473773508845-188df298d2d1?fm=webp&w=1600&q=80"
+       data-lb-title="Barrus London · <em>Drone Cinematography</em>"
+       data-lb-meta="Drone Cinematography · 2025 · placeholder"
+       aria-label="Barrus London, drone cinematography, open larger">
+      <span class="badge" data-en="★ Drone" data-tr="★ Drone">★ Drone</span>
+      <div class="frame"><div class="frame-inner" loading="lazy" style="background-image:url('https://images.unsplash.com/photo-1473773508845-188df298d2d1?fm=webp&w=1400&q=80')"></div><span class="cue" aria-hidden="true"></span></div>
+      <div class="work-cap">
+        <h4 data-en="Barrus <em>London</em>" data-tr="Barrus <em>London</em>">Barrus <em>London</em></h4>
+        <span class="meta" data-en="Drone Cinematography · 2025" data-tr="Drone Sinematografi · 2025">Drone Cinematography · 2025</span>
+      </div>
+      <p class="work-cap-note" data-en="Aerial scale that makes a hospitality address feel monumental from the first beat." data-tr="Bir misafirperverlik adresini ilk andan anıtsal kılan havadan ölçek.">Aerial scale that makes a hospitality address feel monumental from the first beat.</p>
+    </a>
+
+  </div>
+</section>
+
+<!-- CONTACT CTA -> contact.html -->
+<section class="contact" id="contact" aria-label="Contact">
+  <p class="contact-eyebrow reveal" data-en="Let's begin" data-tr="Başlayalım">Let's begin</p>
+  <h2 class="reveal" data-en="Your story is the <em>next frame.</em>" data-tr="Hikayeniz bir sonraki <em>kare.</em>">Your story is the <em>next frame.</em></h2>
+  <p class="contact-sub reveal" data-en="From content to impact. Tell us about your brand and where it wants to go, and your project joins this vitrine." data-tr="İçerikten etkiye. Markanız ve nereye gitmek istediği hakkında bize yazın, projeniz bu vitrine katılsın.">From content to impact. Tell us about your brand and where it wants to go, and your project joins this vitrine.</p>
+  <div class="contact-actions">
+    <a href="contact.html" class="contact-mail reveal" data-en="Start a Project →" data-tr="Proje Başlat →">Start a Project →</a>
+    <a href="https://wa.me/447717115002" class="contact-wa reveal" data-en="WhatsApp · +44 7717 115002" data-tr="WhatsApp · +44 7717 115002">WhatsApp · +44 7717 115002</a>
+  </div>
+</section>
+</main>
+
+<!-- LIGHTBOX: SADECE work.html. med.js openLightbox/closeLightbox doldurur. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Work preview">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" aria-label="Close / Kapat">×</button>
+    <div class="lightbox-media" aria-hidden="true"></div>
+    <div class="lightbox-cap">
+      <h4></h4>
+      <span class="lb-meta"></span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">World London<br/><em>Media</em></div>
+      <p style="margin-top: 16px; font-size: 13px; opacity: 0.85; max-width: 280px;" data-en="A premium visual production studio. Brand films, advertising, 3D, corporate, commercial, drone. London + Izmir." data-tr="Premium görsel üretim stüdyosu. Marka filmleri, reklam, 3D, kurumsal, ticari, drone. Londra + İzmir.">A premium visual production studio. Brand films, advertising, 3D, corporate, commercial, drone. London + Izmir.</p>
+    </div>
+    <div>
+      <h4 data-en="STUDIO" data-tr="STÜDYO">STUDIO</h4>
+      <ul>
+        <li data-en="London, UK" data-tr="Londra, İngiltere">London, UK</li>
+        <li data-en="Izmir, Turkiye" data-tr="İzmir, Türkiye">Izmir, Turkiye</li>
+        <li><a href="https://worldlondonmedia.com">worldlondonmedia.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="SITEMAP" data-tr="SİTE HARİTASI">SITEMAP</h4>
+      <ul>
+        <li><a href="work.html" data-en="Work" data-tr="İşler">Work</a></li>
+        <li><a href="services.html" data-en="Services" data-tr="Hizmetler">Services</a></li>
+        <li><a href="studio.html" data-en="Studio" data-tr="Stüdyo">Studio</a></li>
+        <li><a href="contact.html" data-en="Contact" data-tr="İletişim">Contact</a></li>
+        <li><a href="../../index.html" data-en="Gallery" data-tr="Galeri">Gallery</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-en="CONTACT" data-tr="İLETİŞİM">CONTACT</h4>
+      <ul>
+        <li><a href="mailto:info@worldlondonmedia.com">info@worldlondonmedia.com</a></li>
+        <li><a href="https://wa.me/447717115002">WhatsApp +44 7717 115002</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span data-en="© 2026 WORLD LONDON MEDIA · IDEAS MOVE. QUALITY SHOWS." data-tr="© 2026 WORLD LONDON MEDIA · IDEAS MOVE. QUALITY SHOWS.">© 2026 WORLD LONDON MEDIA · IDEAS MOVE. QUALITY SHOWS.</span>
+    <span>SET IN CORMORANT INFANT · MANROPE · DM MONO</span>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="Back to top / Yukarı dön">↑</button>
+
+<a href="../../index.html" class="wolo-back" aria-label="Galeriye don">
+  <span class="wolo-back__arrow" aria-hidden="true">&#8592;</span>
+  <span class="wolo-back__label" data-en="Gallery" data-tr="Galeri">Gallery</span>
+</a>
+
+<script defer src="assets/med.js"></script>
+</body>
+</html>
