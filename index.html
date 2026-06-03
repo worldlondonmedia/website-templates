@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d0d0d'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' font-weight='700' text-anchor='middle' fill='%23c84d2e'>W</text></svg>">
 <title>WOLO · Demo Templates Index</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +38,12 @@
   .v2-banner.v1-mode { background: var(--ink); }
   .v2-banner em { font-family: 'Fraunces', serif; font-style: italic; font-size: 13px; text-transform: none; letter-spacing: 0; }
   .v2-banner span:nth-child(2) { opacity: 0.7; }
+
+  /* WoLo: demo'lardan ayri, aksan renkli kendi pill'i */
+  .wolo-toggle { margin-left: 12px; background: transparent; color: var(--acc); border: 1px solid var(--acc); border-radius: 100px; padding: 6px 16px; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; cursor: pointer; transition: all .25s; white-space: nowrap; }
+  .wolo-toggle::before { content: '\25CF'; margin-right: 7px; font-size: 8px; vertical-align: middle; }
+  .wolo-toggle:hover, .wolo-toggle.active { background: var(--acc); color: var(--paper); }
+  .v2-banner.wolo-mode { background: linear-gradient(90deg, var(--ink) 0%, var(--ink) 45%, var(--acc) 100%); }
 
   .hero { padding: 100px 32px 60px; border-bottom: 1px solid rgba(13,13,13,0.15); }
   .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--acc); margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
@@ -144,6 +151,7 @@
     <button data-v="v1" onclick="setVersion('v1')">v1 yeni</button>
     <button data-v="v2" onclick="setVersion('v2')">v2 polish</button>
   </div>
+  <button class="wolo-toggle" id="woloToggle" data-v="wolo" onclick="setVersion('wolo')" title="WoLo gercek site">WoLo</button>
 </header>
 
 <div class="v2-banner" id="verBanner">
@@ -317,6 +325,16 @@
   <a href="templates-v2/12-collage/index.html" class="tpl-row"><span class="tpl-num">12.</span><span class="tpl-name"><em>Collage</em></span><span class="tpl-tag"><span class="label">— Dada / cut-and-paste</span>Krem + 5 renk<br/>Anton · Yeseva · Marker · Pixel<br/>Çatışan tipografi<div class="preview-strip p12"><span></span><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">Dada / cut-and-paste. 5 farklı font karışık.</span><span class="tpl-arrow">→</span></a>
 </ul>
 
+<!-- WOLO - gercek sirket sitesi (wolo-site/) -->
+<ul class="tpl-list" id="list-wolo" style="display:none;">
+  <a href="wolo-site/01-editorial-noir/index.html" class="tpl-row"><span class="tpl-num">01.</span><span class="tpl-name">Editorial <em>Noir</em></span><span class="tpl-tag"><span class="label">· Koyu sinematik · imza</span>Koyu mürekkep + krem + pas<br/>Fraunces · JetBrains Mono<br/>Custom cursor + lightbox<div class="preview-strip p1"><span></span><span></span><span></span></div></span><span class="tpl-desc">Sessiz, koyu, sinematik. İşlerin üzerinde parladığı koyu kanvas. Önerilen taban.</span><span class="tpl-arrow">→</span></a>
+  <a href="wolo-site/02-maison-suite/index.html" class="tpl-row"><span class="tpl-num">02.</span><span class="tpl-name">Maison <em>Suite</em></span><span class="tpl-tag"><span class="label">· Lüks maison</span>Zümrüt + krem + altın<br/>Bodoni Moda · Forum · Outfit<br/>Showreel + portfolio<div class="preview-strip p7"><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">Aman / Faena hissi. Zümrüt + altın, didone tipografi, high-end butik.</span><span class="tpl-arrow">→</span></a>
+  <a href="wolo-site/03-atelier-vert/index.html" class="tpl-row"><span class="tpl-num">03.</span><span class="tpl-name">Atelier <em>Vert</em></span><span class="tpl-tag"><span class="label">· Romantik ornamental</span>Orman yeşili + gül + altın<br/>Yeseva One · EB Garamond<br/>Vine SVG + lightbox<div class="preview-strip p9"><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">Art Nouveau dokunuşu. Ornamental asma SVG'leri, sıcak, zarif.</span><span class="tpl-arrow">→</span></a>
+  <a href="wolo-site/04-soft-atelier/index.html" class="tpl-row"><span class="tpl-num">04.</span><span class="tpl-name">Soft <em>Atelier</em></span><span class="tpl-tag"><span class="label">· Yumuşak editoryal</span>Krem + terra + adaçayı<br/>Italiana · Cormorant<br/>Gallery + sayaç<div class="preview-strip p4"><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">Sıcak, ince ağırlıklı editoryal. Aman x Aesop hissi.</span><span class="tpl-arrow">→</span></a>
+  <a href="wolo-site/05-cinema-reel/index.html" class="tpl-row"><span class="tpl-num">05.</span><span class="tpl-name">Cinema <em>Reel</em></span><span class="tpl-tag"><span class="label">· Sinema afişi · hareket önde</span>Siyah + krem + kırmızı + altın<br/>Antonio · Special Elite<br/>Now Showing reel<div class="preview-strip p5"><span></span><span></span><span></span><span></span></div></span><span class="tpl-desc">En dramatik, en film. Dev condensed tipografi, Now Showing vitrini.</span><span class="tpl-arrow">→</span></a>
+  <a href="wolo-site/06-runway/index.html" class="tpl-row"><span class="tpl-num">06.</span><span class="tpl-name"><em>Runway</em></span><span class="tpl-tag"><span class="label">· Moda lookbook</span>Kemik + mürekkep + kırmızı<br/>Bricolage Grotesque · Manrope<br/>Lookbook + cursor preview<div class="preview-strip p11"><span></span><span></span><span></span></div></span><span class="tpl-desc">Yüksek kontrast editoryal lookbook. Clapperboard hero, kırmızı seam.</span><span class="tpl-arrow">→</span></a>
+</ul>
+
 <section class="notes">
   <div class="notes-grid">
     <div>
@@ -340,7 +358,7 @@
 
 <footer>
   <span>WOLO Demo Templates · v3.0 · 2026</span>
-  <span>v1 yeni · v2 polished · 24 template toplam</span>
+  <span>v1 yeni · v2 polished · WoLo gerçek site · 6 aday</span>
 </footer>
 
 <script>
@@ -353,7 +371,11 @@
       verBanner_v2_note: 'Full SEO + accessibility + scroll progress + back-to-top + per-template polish on the original 12 directions.',
       verBanner_v2_hint: 'Switch back to v1 to see the new designs.',
       list_label_v1: '— Index · 12 fresh directions (v1)',
-      list_label_v2: '— Index · 12 polished originals (v2)'
+      list_label_v2: '— Index · 12 polished originals (v2)',
+      verBanner_wolo_label: 'WoLo · the real site',
+      verBanner_wolo_note: 'WoLo\'s own company site: 6 candidates, real content + GSAP/Lenis cinematic motion. The chosen one goes to Stack A (Next.js).',
+      verBanner_wolo_hint: 'Switch to v1 or v2 for the demo templates.',
+      list_label_wolo: 'Index · WoLo real site · 6 candidates'
     },
     tr: {
       verBanner_v1_label: 'v1 · Yeni 12 yön',
@@ -361,7 +383,10 @@
       verBanner_v1_hint: 'v2\'ye geçmek için sağ üst toggle.',
       verBanner_v2_label: 'v2 · Polished originals',
       verBanner_v2_note: 'Önceki 12 yönde tam SEO + accessibility + scroll progress + back-to-top paketi.',
-      verBanner_v2_hint: 'v1\'e dönmek için sağ üstten değiştir.'
+      verBanner_v2_hint: 'v1\'e dönmek için sağ üstten değiştir.',
+      verBanner_wolo_label: 'WoLo · gerçek site',
+      verBanner_wolo_note: 'WoLo\'nun kendi şirket sitesi: 6 aday, gerçek içerik + GSAP/Lenis sinematik hareket. Biri seçilince Stack A (Next.js) ile üretilecek.',
+      verBanner_wolo_hint: 'Demo template\'ler için v1/v2\'ye dön.'
     }
   };
 
@@ -387,18 +412,21 @@
     verNote.textContent = t['verBanner_' + ver + '_note'];
     verHint.textContent = t['verBanner_' + ver + '_hint'];
     if (lang === 'en') {
-      listLabel.textContent = ver === 'v1' ? i18n.en.list_label_v1 : i18n.en.list_label_v2;
+      listLabel.textContent = ver === 'v1' ? i18n.en.list_label_v1 : ver === 'v2' ? i18n.en.list_label_v2 : i18n.en.list_label_wolo;
     } else {
-      listLabel.textContent = ver === 'v1' ? '— Index · Yeni 12 yön (v1)' : '— Index · 12 polished orijinal (v2)';
+      listLabel.textContent = ver === 'v1' ? '— Index · Yeni 12 yön (v1)' : ver === 'v2' ? '— Index · 12 polished orijinal (v2)' : 'Index · WoLo gerçek site · 6 aday';
     }
-    verCount.textContent = ver === 'v1' ? (lang === 'en' ? '12 fresh + 12 polished' : '12 yeni + 12 polished') : '12 polished originals';
+    verCount.textContent = ver === 'wolo' ? (lang === 'en' ? 'WoLo · 6 builds' : 'WoLo · 6 aday') : (ver === 'v1' ? (lang === 'en' ? '12 fresh + 12 polished' : '12 yeni + 12 polished') : '12 polished originals');
   }
 
   function setVersion(v) {
     document.getElementById('list-v1').style.display = v === 'v1' ? '' : 'none';
     document.getElementById('list-v2').style.display = v === 'v2' ? '' : 'none';
+    const lw = document.getElementById('list-wolo'); if (lw) lw.style.display = v === 'wolo' ? '' : 'none';
     document.querySelectorAll('.ver-toggle button').forEach(b => b.classList.toggle('active', b.dataset.v === v));
+    const wb = document.getElementById('woloToggle'); if (wb) wb.classList.toggle('active', v === 'wolo');
     verBanner.classList.toggle('v1-mode', v === 'v1');
+    verBanner.classList.toggle('wolo-mode', v === 'wolo');
     localStorage.setItem('wolo-version', v);
     updateBanner();
   }
